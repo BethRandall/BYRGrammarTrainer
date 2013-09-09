@@ -458,7 +458,8 @@ function sendDebug(a, b, c, d)
 // Submit answer
 function submitAnswer()
 {
-	//var tempSentence = currentAnswerWords.join(" ");
+	if (currentAnswerWords.length == 0) { return; }
+    //var tempSentence = currentAnswerWords.join(" ");
 	//tempSentence += ".";
 	
 	//DetermineFeedback();
