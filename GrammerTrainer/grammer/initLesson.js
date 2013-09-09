@@ -223,12 +223,13 @@ function initUserInterface() {
     verbWords = theLesson.verbWords.sort();
     
     if(typeof theLesson.adjectiveWords != 'undefined') {
-        adjectiveWords = theLesson.adjectiveWords.sort();
-    }
+        adjectiveWords = theLesson.adjectiveWords.sort(); }
     
     if(typeof theLesson.pronounWords != 'undefined') {
-        pronounWords = theLesson.pronounWords.sort();
-    }
+        pronounWords = theLesson.pronounWords.sort(); }
+    
+    if(typeof theLesson.prepositionWords != 'undefined') {
+        prepositionWords = theLesson.prepositionWords.sort(); }
 
     //alert("The step is " + step);
     
@@ -360,30 +361,27 @@ function initUserInterface() {
     layoutDraggableWords(document.getElementById('nounList'), nounWords, 'noun');
     layoutDraggableWords(document.getElementById('verbList'), verbWords, 'verb');
 
-    
     if(typeof adjectiveWords != 'undefined') {
         layoutDraggableWords(document.getElementById('adjectiveList'), adjectiveWords, 'adjective');
     } else {
-        $("#adjectiveTab").hide();
-    }
+        $("#adjectiveTab").hide(); }
     
     if(typeof pronounWords != 'undefined') {
         layoutDraggableWords(document.getElementById('pronounList'), pronounWords, 'pronoun');
     } else {
-        $("#pronounTab").hide();
-    }
-
+        $("#pronounTab").hide(); }
     
+    if(typeof prepositionWords != 'undefined') {
+        layoutDraggableWords(document.getElementById('prepositionList'), prepositionWords, 'preposition');
+    } else {
+        $("#prepositionTab").hide(); }
 
     if(typeof firstExercise.oralprompt == "undefined") {
         $("#oralPromptButton").hide();
     }
     if(typeof firstExercise.oralpromptText == "undefined") {
-        $("#oralpromptText").hide();
-    }
+        $("#oralpromptText").hide(); }
     
     setMultipleChoicePref();
     appLoaded();
-
-
 }
