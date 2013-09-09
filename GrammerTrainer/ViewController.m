@@ -419,7 +419,7 @@
         youreIn = YES;
         
         if (youreIn) {
-            NSLog(@"Your In!");
+            NSLog(@"You're in!");
             [self handleCorrectPassword];
         } else {
             [self showWrongPasswordAlert:userName_];
