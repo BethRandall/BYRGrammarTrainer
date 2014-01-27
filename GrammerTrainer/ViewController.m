@@ -88,6 +88,7 @@
 @synthesize loginInfo = loginInfo_;
 @synthesize versionLabel = versionLabel_;
 @synthesize resultsDict = resultsDict_;
+static NSString *versionNumber = @"1.7";
 
 - (void)didReceiveMemoryWarning
 {
@@ -111,21 +112,18 @@
         newFrame2 = CGRectOffset(_rightOverlayView.frame, _rightOverlayView.bounds.size.width, 0.0);
 
         menuVisible = NO;
-    } else {
-        
+    } else { 
         signLabel_.text = currentLevel_.levelName;
 
         newFrame = CGRectOffset(_leftOverlayView.frame, _leftOverlayView.bounds.size.width, 0.0);
         newFrame2 = CGRectOffset(_rightOverlayView.frame, -_rightOverlayView.bounds.size.width, 0.0);
         menuVisible = YES;
     }
-    
 
     [UIView animateWithDuration:1.0 animations:^{
         _leftOverlayView.frame = newFrame;
         _rightOverlayView.frame = newFrame2;
     }];
-    
 }
 
 - (void)loadInstructionsVideo {
@@ -194,7 +192,6 @@
 
 - (void)loadLesson:(Lesson *)theLesson {
     
-    
     NSString *lessonFileName = theLesson.loadFile;
     
     NSLog(@"loadLesson: %@", lessonFileName);
@@ -202,20 +199,16 @@
     //NSString *lessonFile = [[NSBundle mainBundle] pathForResource:[lessonFileName stringByDeletingPathExtension] ofType:@"json"];
 
     NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
-
     
     if (docsDir) {
         
         //[self showMenu]; // 
-        
         // This copies selected lesson into initDataModel.js, this will be inserted once page finishes loading
         //[self copyOverLesson:lessonFileName];
-
         
         signLabel_.text = [NSString stringWithFormat:@"Loading %@...", theLesson.lessonName];
         
         NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
-
         
         NSURL *url;
         
@@ -229,13 +222,11 @@
                                       otherButtonTitles:@"OK", nil];
             
             [alertView show];
-
             
             //url = [[NSBundle mainBundle] URLForResource:@"playTutorialVideo" withExtension:@"html"];
             
             pendingDataModelLoad = NO;
-
-            
+  
         } else {
             
             NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
@@ -243,8 +234,6 @@
             //NSString *baseURLWithQuery = [self addQueryStringToUrlString:baseURLStr withDictionary:[NSDictionary dictionaryWithObject:[lessonFileName stringByDeletingPathExtension] forKey:@"lesson"]];
             
             NSString *query = [NSString stringWithFormat:@"lesson=%@", lessonFileName];  
-            
-
             
             NSString *encodedPath = [baseURLStr stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
             
@@ -254,9 +243,6 @@
             
             pendingDataModelLoad = YES;
             
-            
-            //
-            
             NSLog(@"Load request: %@", url);
             
             NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc] initWithURL:url
@@ -264,12 +250,8 @@
                                                                        timeoutInterval:30.0];
             
             [_theWebView loadRequest:theRequest];
-
-
         }
-        
-        
-
+    
     } else {
         
         NSString *theMessage = [NSString stringWithFormat:@"The referenced javascript file %@ was not found.", lessonFileName ];
@@ -277,9 +259,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Not Found" message:theMessage
                                                        delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
-
     }
-     
 }
 
 - (IBAction)logoutButtonPushed:(id)sender {
@@ -332,12 +312,9 @@
     signLabel_.hidden = YES;
     // Need to add delay to give time for webview to load
     [self performSelector:@selector(showMessageBoard) withObject:signLabel_ afterDelay:2.0];
-    
-    
 }
 
 - (void)handleCorrectPassword {
-    
     
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:2.00];
@@ -350,8 +327,6 @@
     [UIView commitAnimations];
   
     [self addAnimationOverlay];
-    
-
 /*    
     [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationTransitionFlipFromRight animations:^{
         
@@ -365,13 +340,11 @@
     }];
         
 */
-
-    
 }
 
 - (void)showWrongPasswordAlert:(NSString *)userName {
     
-    NSString *theMessage = [NSString stringWithFormat:@"Hi %@! Wrong Password. Try Again or see the teacher for help!", userName ];
+    NSString *theMessage = [NSString stringWithFormat:@"Hi %@! Wrong Password. Try again or see the teacher for help!", userName ];
     // open a alert with an OK and cancel button
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong Password" message:theMessage
                                                    delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
@@ -379,7 +352,7 @@
 }
 - (void)showWrongUserNameAlert:(NSString *)userName {
     
-    NSString *theMessage = [NSString stringWithFormat:@"Hi %@, I don't recognize this username. Try Again or see the teacher for help!", userName ];
+    NSString *theMessage = [NSString stringWithFormat:@"Hi %@, I don't recognize this username. Try again or see the teacher for help!", userName ];
     // open a alert with an OK and cancel button
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Wrong Username" message:theMessage
                                                    delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
@@ -388,8 +361,10 @@
 
 - (void)checkPassword:(NSString *)password forUser:(NSString *)user {
     
+    user = [user stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     self.userName = user;
-    NSLog(@"UserName: %@", userName_);
+
+    NSLog(@"BYR UserName: +%@+", userName_ );
     
     NSString *moduleName;
     
@@ -462,10 +437,8 @@
         
     menuVisible = NO;
     
-    signLabel_.text = @"Welcome to Grammer Trainer";
+    signLabel_.text = [NSString stringWithFormat:@"Welcome to SentenceWeaver %@", versionNumber];
 
-
-    
     
     [UIView animateWithDuration:0.7 animations:^{
         _leftOverlayView.frame = newFrame;
@@ -515,34 +488,22 @@
     
     menuVisible = YES;
     
-
-    
     [UIView animateWithDuration:0.7 animations:^{
         iconView_.frame = newFrame2;
 
     } completion:^(BOOL finished){
         
         [UIView animateWithDuration:0.7 animations:^{
-        
-            _leftOverlayView.frame = newFrame;
-
-        }];
-
-        
+            _leftOverlayView.frame = newFrame; }];
     }];
-
-    
 }
 
 - (void)layoutIcons: (NSArray *)levelsArray {
-	
-		
+
 	// reset iconScrollView
 	for (UIView *view in [iconScrollView_ subviews])
 	{
-		[view removeFromSuperview];
-	}
-	
+		[view removeFromSuperview]; }
 	
 	NSUInteger xIndex = 0;
 	NSUInteger yIndex = 0;
@@ -558,9 +519,6 @@
     
     NSUInteger iconsPerRow = 2;
     NSUInteger iconsPerPage = 4;
-
-	
-	
 	
 	for (Level *theLevel in levelsArray) {
 		
@@ -576,8 +534,7 @@
 		[newButton addTarget:self action:@selector(buttonPushed:) forControlEvents:UIControlEventTouchUpInside];
 		newButton.bounds = CGRectMake(0, 0, hSpacing, vSpacing);
 		newButton.center = CGPointMake(xOffset+(pageIndex*10.0) + xIndex*hSpacing, yOffset + yIndex*vSpacing - xIndex*perspectiveShift);
-		
-        
+		      
 		//UIImage *iconImage = [iconImageDict objectForKey:[menuItemDict objectForKey:@"iconFileName"]];
 
         [newButton setImage:[UIImage imageNamed:@"levelIcon.png"] forState:UIControlStateNormal];		
@@ -603,11 +560,9 @@
 		buttonLabel.backgroundColor = [UIColor clearColor];
 		buttonLabel.textColor = [UIColor darkGrayColor];
 		
-		
 		[self.iconScrollView addSubview:buttonLabel];
 		
-		index++;
-	}
+		index++; }
 	
 	// set the content size so it can be scrollable
 	CGFloat pageCount = ceilf([levelsArray count] / 9.0f);
@@ -616,15 +571,11 @@
 	//iconScrollPageControl.numberOfPages = pageCount;
 	//iconScrollPageControl.currentPage = 0;
 	//[iconScrollPageControl updateCurrentPageDisplay];
-	
 }
-
-
 
 #pragma mark - View lifecycle
 
 - (void)copyWebSiteFromBundle {
-    
     
     NSString *grammerDir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grammer"];
     NSFileManager *fileMgr = [NSFileManager defaultManager];
@@ -636,7 +587,6 @@
     BOOL didCopy = [fileMgr copyItemAtPath:grammerDir toPath:docsDir error:&error];
     
     NSLog(@"%d: Check For Errors: %@",didCopy, error);
-    
 }
 
 /* Returns a URL to a local movie in the app bundle. */
@@ -668,7 +618,6 @@
     [_rightOverlayView addSubview: player.view];
     // ...
     [player play];
-    
 }
 
 - (void)viewDidLoad
@@ -687,7 +636,6 @@
     // Set up default values.
     self.theTableView.sectionHeaderHeight = HEADER_HEIGHT;
     
-    
     // Open a stream for the file we're going to receive into.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -699,13 +647,11 @@
     if (userDict) {
         [loginInfo_ addEntriesFromDictionary:userDict];
     } else {
-        NSLog(@"No login.plist found. Will need to wait for google spreadsheet results to come back.");
-    }
+        NSLog(@"No login.plist found. Will need to wait for google spreadsheet results to come back."); }
 
     NSString *sUserAgentString = [NSString stringWithFormat:@"Version %@ (%@)", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"], [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]];
     
     self.versionLabel.text = sUserAgentString;
-
     
     // Going to post results to a goole spreadsheet
     theSpreadsheetController_ = [[SpreadsheetController alloc] init];
@@ -720,64 +666,61 @@
     openSectionIndex_ = NSNotFound;
     
     [self layoutIcons:self.levels];
-
     
     [self copyWebSiteFromBundle];
     
     // Instanciate JSON parser library
     json = [ SBJSON new ];
-
-    signLabel_.text = @"Welcome to Grammar Trainer!";
-    
-    [self synchWithServer];
-
+    signLabel_.text = [NSString stringWithFormat:@"Welcome to SentenceWeaver %@", versionNumber];
+    //[self synchWithServer];
 }
 
-- (void)synchWithServer {
+//- (void)synchWithServer {
     
     // Create operation queue
-    NSOperationQueue *operationQueue = [NSOperationQueue new];
+  //  NSOperationQueue *operationQueue = [NSOperationQueue new];
     // set maximum operations possible
-    [operationQueue setMaxConcurrentOperationCount:2];
+    //[operationQueue setMaxConcurrentOperationCount:2];
     
     // Download a bunch of stuff from server
-    NSString *theURL = @"https://dl.dropbox.com/u/26582460/grammerApp/lessonFiles.json";
-    // https://dl.dropbox.com/u/26582460/grammerApp/lessonFiles.json
-    
+    // following is Eric's dropbox copy
+    // NSString *theURL = @"https://dl.dropbox.com/u/26582460/grammerApp/lessonFiles.json";
+    // following address works; BYR's specific link to Public file, NOT Public folder.
+    // BYR: is "lessonFiles.json" actually used by the program?
+    //NSString *theURL = @"https://dl.dropbox.com/s/8nqcd7iut8kswtf/lessonFiles.json";
+        
     // Were just going to download all the files and replace local copies every time - thing about improving this later
     
     // All files when downloaded are simple saved in the same place
     
-    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+    //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
     
-    NSString *filePath = [docsDir stringByAppendingPathComponent:@"lessonFiles.json"];
+    //NSString *filePath = [docsDir stringByAppendingPathComponent:@"lessonFiles.json"];
     
-    DownloadUrlToDiskOperation *operation = [[DownloadUrlToDiskOperation alloc] initWithUrl:[NSURL URLWithString:theURL] saveToFilePath:filePath];
+    //DownloadUrlToDiskOperation *operation = [[DownloadUrlToDiskOperation alloc] initWithUrl:[NSURL URLWithString:theURL] saveToFilePath:filePath];
     
-    [operation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:NULL];
-    [operationQueue addOperation:operation]; // operation starts as soon as its added
-}
-
-
-
+    //[operation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:NULL];
+    //[operationQueue addOperation:operation]; // operation starts as soon as its added
+//}
 
 #pragma mark -
 #pragma KVO Observing
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)operation change:(NSDictionary *)change context:(void *)context {
     
-
+    // BYR:  is the following chunk of code actually used?
+    NSLog(@"AARDVARK!  Inside observeValueForKeyPath:  ");
     
     if([operation isKindOfClass:[DownloadUrlToDiskOperation class]]) {
         
         DownloadUrlToDiskOperation *downloadOperation = (DownloadUrlToDiskOperation *)operation;
         
-        NSLog(@"Finished Downloading: %@", [downloadOperation.connectionURL absoluteString]);
+        NSLog(@"AARDVARK!!!!!!!!!!: %@", [downloadOperation.connectionURL absoluteString]);
+
         NSString *filePath = downloadOperation.filePath;
-        
         NSString *lastPathComponent  = [filePath lastPathComponent];
-        
                     
         if ([lastPathComponent isEqualToString:@"lessonFiles.json"]) {
+            NSLog(@"**************found lessonFiles.json:  *******************");
             
             
             NSData *myJSONData = [[NSData alloc] initWithContentsOfFile:filePath];
@@ -786,40 +729,41 @@
             NSError* error;
             NSArray* fileNames = [NSJSONSerialization
                                   JSONObjectWithData:myJSONData //1
-                                  
                                   options:kNilOptions
                                   error:&error];
-                        
-            
             if (!error) {
-                
-                
+      
                 // Create operation queue
                 NSOperationQueue *operationQueue = [NSOperationQueue new];
                 // set maximum operations possible
                 [operationQueue setMaxConcurrentOperationCount:2];
-
-                
-                for (NSString *fileName in fileNames) {
-                    
-                    NSString *base = @"https://dl.dropbox.com/u/26582460/grammerApp/";
-
-                    // Download a bunch of stuff from server
-                    NSString *theURL = [NSString stringWithFormat:@"%@%@",base,fileName];
+                            
+               // BYR: To the best of my knowledge, "grammerManifest" and "lessonDict" are never actually used.
+               //  Just in case, here are their addresses in my dropbox:
+               //                     @"https://www.dropbox.com/s/bipi4bfbhu9nkd3/grammerManifest.json",
+               //                     @"https://www.dropbox.com/s/9923oucw0w5v2un/lessonDict.json",
+   
+               for (NSString *fileName in fileNames) {
+        
+                   // NSLog(@"BYR about to access Eric's dropbox:  filename:  %@", fileName);
+                   // NSString *base = @"https://dl.dropbox.com/u/26582460/grammerApp/";
+                   // Download lesson files from server
+                   
+                   //NSString *theURL = @"https://dl.dropbox.com/s/2zpr6hdf9c174ed/pt_lesson_1.json";
+             
+                   //NSString *theURL = [NSString stringWithFormat:@"%@%@",base,fileName];
                                         
-                    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+                  //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
                     
-                    NSString *filePath = [docsDir stringByAppendingPathComponent:fileName];
+                  //NSString *filePath = [docsDir stringByAppendingPathComponent:fileName];
                     
-                    DownloadUrlToDiskOperation *operation = [[DownloadUrlToDiskOperation alloc] initWithUrl:[NSURL URLWithString:theURL] saveToFilePath:filePath];
+                  //DownloadUrlToDiskOperation *operation = [[DownloadUrlToDiskOperation alloc] initWithUrl:[NSURL URLWithString:theURL] saveToFilePath:filePath];
                     
-                    [operation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:NULL];
-                    [operationQueue addOperation:operation]; // operation starts as soon as its added
-
-                }
+                   [operation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:NULL];
+                   [operationQueue addOperation:operation]; // operation starts as soon as its added  
+            }
                 
             } else {
-                
                 
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR"
                                                                 message:@"lessonFiles.json not valid"
@@ -827,35 +771,24 @@
                                                       cancelButtonTitle:@"Close"
                                                       otherButtonTitles: nil];
                 [alert show];
-                
             }
             
         } else if ([lastPathComponent hasSuffix:@".json"])  {
             
-            
             NSData *myJSONData = [[NSData alloc] initWithContentsOfFile:filePath];
-            
-            
             NSError* error;
             NSDictionary* testDict = [NSJSONSerialization
                                   JSONObjectWithData:myJSONData //1
                                   
                                   options:kNilOptions
-                                  error:&error];
-
-            
-            
-            if (!testDict) {
-                
-                
-                
+                                  error:&error];            
+            if (!testDict) {   
                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR!!!"
                                                                 message:[NSString stringWithFormat:@"%@ is not Valid JSON! Fix before continuing! Could cause crash.", lastPathComponent]
                                                                delegate:self
                                                       cancelButtonTitle:@"Close"
                                                       otherButtonTitles: nil];
                 [alert show];
-                
             }
         }
     }
@@ -869,49 +802,36 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-
-    
     // To reduce memory pressure, reset the section info array if the view is unloaded.
 	self.sectionInfoArray = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
-    
-
-    
-}
+    [super viewWillAppear:animated]; }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-}
+    [super viewDidAppear:animated]; }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-	[super viewWillDisappear:animated];
-}
+	[super viewWillDisappear:animated]; }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
-	[super viewDidDisappear:animated];
-}
+	[super viewDidDisappear:animated]; }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     if (interfaceOrientation==UIInterfaceOrientationLandscapeLeft || interfaceOrientation==UIInterfaceOrientationLandscapeRight)
         return YES;
     
-    return NO;
-}
-
+    return NO; }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration {
     
-    iconScrollView_.frame = CGRectMake(0.0, 172.0, 320.0, 768.0-80.0-20.0-100.0);
-    
-}
+    iconScrollView_.frame = CGRectMake(0.0, 172.0, 320.0, 768.0-80.0-20.0-100.0); }
 
 #pragma mark Text View Delegate
 
@@ -922,6 +842,10 @@
         if ([textView.text hasSuffix:@"\n"]) {
             
             NSString *trimmed = [loginTextView_.text substringWithRange:NSMakeRange(0, [loginTextView_.text length]-1)];
+            // trim trailing spaces
+            trimmed = [trimmed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            //BYR I have never seen this log:  is this code in use?
+            NSLog(@"1. trimmed:  +%@+", trimmed);
             
             [self checkPassword:passwordTextView_.text forUser:trimmed];
             [textView setText:@""]; // Blank it out
@@ -932,11 +856,14 @@
         if ([textView.text hasSuffix:@"\n"]) {
             
             NSString *trimmed = [textView.text substringWithRange:NSMakeRange(0, [textView.text length]-1)];
+            // trim trailing spaces
+            trimmed = [trimmed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             textView.text = trimmed;
+             //BYR I have never seen this log:  is this code in use?
+            NSLog(@"2. trimmed:  +%@+", trimmed);
             [textView resignFirstResponder];
             [passwordTextView_ becomeFirstResponder];
         }
-
     }
 }
 
@@ -944,21 +871,16 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
     
-    return [modules_ count];
-}
-
+    return [modules_ count]; }
 
 -(NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section {
-    
-	
+    	
     Module *theModule = (Module *)[modules_ objectAtIndex:section];
     
-    return [theModule.lessons count];
-}
+    return [theModule.lessons count]; }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     /*
     static NSString *CellIdentifier = @"Cell";
     
@@ -988,12 +910,9 @@
 
     //cell.textLabel.text = [theLesson lessonName];
     //cell.detailTextLabel.text = [theLesson topic];
-    
-    
 	cell.scoreLabel.text = [theLesson topic];
 	//cell.descriptionOne.text = [dictItem objectForKey:@"Metric"];
 	cell.descriptionTwo.text = [theLesson lessonName];
-    
     
     NSDictionary *stateDict = [theLesson.resultsDictionary objectForKey:@"jsonStateVector"];
     NSArray *dotMatrix = [stateDict objectForKey:@"dotMatrix"];
@@ -1001,7 +920,6 @@
     
     NSArray *redoMatrix = [stateDict objectForKey:@"promptsToRedo"];
 
-    
     NSString *pctCmp = [NSString stringWithFormat:@"%d of %d", currentStep, [dotMatrix count]];
     NSString *correctCnt = [NSString stringWithFormat:@"%d", currentStep];
     NSString *wrongCnt = [NSString stringWithFormat:@"%d", [redoMatrix count]];
@@ -1024,19 +942,15 @@
     } else {
         
         cell.greenCount.text = @"";
-        cell.redCount.text = @"";
-        
-    }
+        cell.redCount.text = @""; }
     
     cell.checkMark.image = [UIImage imageNamed:imageName];
-
 	
 	//[cell setPosition:UACellBackgroundViewPositionMiddle];
 	[cell setColor:UACellBackgroundLightGray];
 	
 	[cell setPosition:UACellBackgroundViewPositionMiddle];
 
-    
     return cell;
 }
 
@@ -1047,7 +961,6 @@
         if(num.integerValue == 2)
             i++;
     }
-    
     return  i;
 }
 
@@ -1060,13 +973,9 @@
     NSString *pctCmp = [NSString stringWithFormat:@"%d of %d", currentStep, [indexArray count]];
     
     return ([pctCmp isEqualToString:@"0 of 0"])?nil:pctCmp;
-    
 }
 
-
-
 -(UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
-    
 
     Module *theModule = (Module *)[modules_ objectAtIndex:section];
 
@@ -1089,8 +998,6 @@
     return sectionView;
 }
 
-
-
 -(CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
     
 	//SectionInfo *sectionInfo = [self.sectionInfoArray objectAtIndex:indexPath.section];
@@ -1100,13 +1007,8 @@
     return 88;
 }
 
- 
-
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
 
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath.section];
     
@@ -1121,28 +1023,20 @@
     
     switch (indexPath.row) {
         case 0: {
-
             [self loadLesson:theLesson];
-
             break;
         }
         case 1: {
-            
             [self loadLesson:theLesson];
             break;
         }            
-            
         default: {
-            
             [self loadLesson:theLesson];
             break;
         }
     }
-
-
     [tableView deselectRowAtIndexPath:indexPath animated:YES];     
 }
-
 
 #pragma Native Web Interface
 
@@ -1168,7 +1062,6 @@
     
     NSString *resultArrayString = [json stringWithObject:resultArray allowScalar:YES error:&error];
 
-    
     //DLog(@"resultArrayString: %@", resultArrayString);
     
     NSLog(@"returnResult for callbackID: %d result:%@", callbackId,resultArrayString);
@@ -1176,13 +1069,15 @@
     // We need to perform selector with afterDelay 0 in order to avoid weird recursion stop
     // when calling NativeBridge in a recursion more then 200 times :s (fails ont 201th calls!!!)
     [self performSelector:@selector(returnResultAfterDelay:) withObject:[NSString stringWithFormat:@"NativeBridge.resultForCallback(%d,%@);",callbackId,resultArrayString] afterDelay:0];
+    NSLog(@"back from returnResultAfterDelay 3: ");
 }
 
 -(void)returnResultAfterDelay:(NSString*)str {
     // Now perform this selector with waitUntilDone:NO in order to get a huge speed boost! (about 3x faster on simulator!!!)
-    NSLog(@"stringByEvaluatingJavaScriptFromString: %@", str);
+    NSLog(@"AARDVARK stringByEvaluatingJavaScriptFromString: %@", str);
 
     [self.theWebView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:str waitUntilDone:NO];
+    NSLog(@"about to exit returnResultAfterDelay: ");
 }
 
 
@@ -1227,14 +1122,12 @@
     
     [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *theData, NSError *error) {
         
-        
         // If there was an error getting the data
         if (error) {
             
             // Save the encoded URL to a file, we'll try again later
               
             NSString *path = [[self docDir] stringByAppendingPathComponent:@"offline.plist"];
-
             NSMutableArray *cacheArray;
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
@@ -1242,8 +1135,7 @@
                 cacheArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
             } else {
                 // File does not yet exist, we'll create it
-                cacheArray = [NSMutableArray new];
-            }
+                cacheArray = [NSMutableArray new]; }
                  
             [cacheArray addObject:theRequest.URL.absoluteString];            
             [cacheArray writeToFile:path atomically:YES];
@@ -1251,12 +1143,8 @@
             NSLog(@"Error: %@", error);
             return;
         }
-        
-        NSLog(@"Alright! No Error");
-                
-        
+        NSLog(@"All right! No Error");
     }];
-    
 	
 }
 
@@ -1264,9 +1152,7 @@
     
     //         NSString *uniqueFile = [NSString stringWithFormat:@"%@_%@_%@_%@.plist",self.userName, currentLevel_.index,currentModule_.index,currentLesson_.index];
 
-    // Need to insert this into ...
-    
-    
+    // Need to insert this into ...    
 }
 
 // Implements all you native function in this one, by matching 'functionName' and parsing 'args'
@@ -1275,15 +1161,11 @@
 {
     // 
     
-    if ([functionName isEqualToString:@"lessonLoaded"]) {
-        
+    if ([functionName isEqualToString:@"lessonLoaded"]) { 
         NSLog(@"Did call lessonLoaded");
         [self showMenu];
-        
-    }  else if ([functionName isEqualToString:@"showMenu"]) {
-        
+    }  else if ([functionName isEqualToString:@"showMenu"]) { 
         NSLog(@"Did call showMenu");
-        
         [self showMenu];
         [self.theTableView reloadData];
         
@@ -1298,29 +1180,18 @@
         
         // Save user, lesson, stateVector
         // userName
-        //
-        
+        //   
         
         NSDictionary *stateDict  = @{@"jsonStateVector": args};
-        
         currentLesson_.resultsDictionary = stateDict;
-
-        
         NSString *uniqueFile = [NSString stringWithFormat:@"%@_%@_%@_%@.plist",self.userName, currentLevel_.index,currentModule_.index,currentLesson_.index]; 
-
         NSString *path = [[self docDir] stringByAppendingPathComponent:uniqueFile];
-
         [stateDict writeToFile:path atomically:YES];
         // [self updateStateWithDict:stateDict ];
-        
         NSLog(@"saveState arg: %@", args);    
-        
-        
-        
     }  else if ([functionName isEqualToString:@"getGender"]) {
-        
         NSLog(@"Javascript: getGender");
-        
+
         NSDictionary *userInfo = [self.loginInfo objectForKey:userName_];
         NSString *gender = @"male";
         if (userInfo) {
@@ -1328,20 +1199,16 @@
             gender = [morf isEqualToString:@"M"]?@"male":@"female";
             NSLog(@"Gender is %@", morf);
         }
-        
         [self returnResult:callbackId args:gender,nil];
         
-    }  else if ([functionName isEqualToString:@"doShowMultipleChoice"]) {
+    //}  else if ([functionName isEqualToString:@"doShowMultipleChoice"]) {
         
-        NSLog(@"Javascript: doShowMultipleChoice");
-        
+        //NSLog(@"Javascript: doShowMultipleChoice");
         // Should return YES or NO to web side
         
-        [self returnResult:callbackId args:currentLesson_.showMultipleChoice,nil];
-
-        
-        
-    }  else if ([functionName isEqualToString:@"printDebug"]) {
+        //[self returnResult:callbackId args:currentLesson_.showMultipleChoice,nil];
+      
+    } else if ([functionName isEqualToString:@"printDebug"]) {
         
         NSString *oneArg = (NSString*)[args objectAtIndex:0];
         NSString *twoArg = (NSString*)[args objectAtIndex:1];
@@ -1349,18 +1216,13 @@
         NSString *fourArg = (NSString*)[args objectAtIndex:3];
         
         NSLog(@"Debug: %@, %@, %@, %@", oneArg, twoArg,threeArg,fourArg);
-
-
     }  else if ([functionName isEqualToString:@"recordNative"]) {
-        
         NSLog(@"Did call recordNative");
         
         if ([args count]!=4) {
             NSLog(@"recordNative exactly 4 arguments!");
             return;
         }
-        
-        
         
         NSString *feedback = (NSString*)[args objectAtIndex:0];
         NSString *responseText = (NSString*)[args objectAtIndex:1];
@@ -1372,10 +1234,8 @@
         
         if ([feedback isEqualToString:@"CorrectAnswer"]) {
             
-
-            
             UIAlertView *alertView = [[UIAlertView alloc] 
-                         initWithTitle:@"Alright!"
+                         initWithTitle:@"All right!"
                          message:@"That is the correct answer!" 
                          delegate:self 
                          cancelButtonTitle:nil 
@@ -1383,7 +1243,6 @@
 
             [alertView show];
             // Further processing in alertView:didDismissWithButtonIndex:
-
         }
         
         // Prepare a dictionary of values and send it to the server
@@ -1393,7 +1252,6 @@
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *formattedDateString = [dateFormatter stringFromDate:now];
-
         
         NSLog(@"Values: %@, %@, %@, %@, %@",userName_, formattedDateString, feedback,responseText,points);
         
@@ -1416,14 +1274,14 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     
-    if ([alertView.title isEqualToString:@"Alright!"]) {
+    if ([alertView.title isEqualToString:@"All right!"]) {
             // Tell webview to goto next exercise
         // Instead of calling resetLesson() we pass init using our saved stateVector
         NSString *javascriptString = @"goToNextExercise();";
         [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:0.1];
+        //NSLog(@"back from returnResultAfterDelay: ");
     }
 }
-
 
 #pragma UIWebview Delegate 
 
@@ -1446,11 +1304,8 @@
         NSDictionary *stateVectorDict  = currentLesson_.resultsDictionary; //[[NSDictionary alloc] initWithContentsOfFile:path];
 
         if (stateVectorDict) {
-            
-            //
-            
+             
             NSDictionary *stateVector = [stateVectorDict objectForKey:@"jsonStateVector"];
-            
             
             NSMutableString *someJavaScript = [NSMutableString new];
             [someJavaScript appendFormat:@"currentLessonNumber = %@;", [stateVector objectForKey:@"currentLessonNumber"] ];
@@ -1465,7 +1320,6 @@
 
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"indexArray"] withName:@"indexArray"]];
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"dotMatrix"] withName:@"dotMatrix"]];
-
                         
             /*
            
@@ -1481,8 +1335,6 @@
              currentRedoPromptNumber = 0;
              indexArray = [8,3,7,0,14,5,6,2,11,9,1,10,12,4,15,13];
              dotMatrix = [0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,0];
-             
-             
             */
             
             NSLog(@"The Dict: %@", someJavaScript);
@@ -1490,18 +1342,13 @@
             // Instead of calling resetLesson() we pass init using our saved stateVector
             NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"initUserInterface();" ];            
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
+            NSLog(@"back from returnResultAfterDelay 1: ");
 
         } else {
-            
             NSString *javascriptString = @"resetLesson();  initUserInterface();";
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
-
+            NSLog(@"back from returnResultAfterDelay 2: ");
         }
-        
-        
-        //
-        
-        
         
         //NSString *javascriptString = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:nil];
         
@@ -1515,10 +1362,7 @@
         
         //[self.theWebView stringByEvaluatingJavaScriptFromString:javascriptString];
     } else {
-        
-        [self showMenu];
-
-    }
+        [self showMenu];    }
 
 }
 
@@ -1547,8 +1391,6 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     
     NSLog(@"webViewDidFailLoadWithError: %@", error);
-
-    
 }
 
 - (BOOL)webView:(UIWebView *)webView2 shouldStartLoadWithRequest:(NSURLRequest *)request  navigationType:(UIWebViewNavigationType)navigationType {
@@ -1556,7 +1398,6 @@
 	NSString *requestString = [[request URL] absoluteString];
     
     NSLog(@"request : %@",requestString);
-    
     
     if ([requestString hasPrefix:@"js-frame:"]) {
         
@@ -1566,13 +1407,10 @@
 		int callbackId = [((NSString*)[components objectAtIndex:2]) intValue];
         NSString *argsAsString = [(NSString*)[components objectAtIndex:3] 
                                   stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        NSArray *args = (NSArray*)[json objectWithString:argsAsString error:nil];
-        
+        NSArray *args = (NSArray*)[json objectWithString:argsAsString error:nil]; 
         [self handleCall:function callbackId:callbackId args:args];
-        
         return NO;
     }
-    
     return YES;
 }
 
@@ -1601,8 +1439,6 @@
 
              */
             
-        
-            
             GDataSpreadsheetCustomElement *element;
             element = [customElements objectForKey:@"firstname"];
             NSString *firstname = [element stringValue];
@@ -1611,7 +1447,6 @@
             element = [customElements objectForKey:@"lastname"];
 			//plotLocation.longitude = [[element stringValue] floatValue];
             NSString *lastname = [element stringValue];
-
             
             //CoreOppAnnotation *pin = [[CoreOppAnnotation alloc] initWithCoordinate:plotLocation];
             element = [customElements objectForKey:@"gender"];
@@ -1634,21 +1469,13 @@
                                       @"login": login,
                                       @"password": password};
             
-            
-            
             [loginInfo_ setObject:userDict forKey:login];
-            
-                    
         }
         
-
         NSString *loginPlist = [[self docDir] stringByAppendingPathComponent:  @"login.plist"];
         
-        [loginInfo_ writeToFile:loginPlist atomically:YES];
-
-        
+        [loginInfo_ writeToFile:loginPlist atomically:YES];      
     }
-    
 }
 
 - (NSString *)docDir {
@@ -1658,7 +1485,6 @@
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
     return documentsDirectory;
-
 }
 
 
