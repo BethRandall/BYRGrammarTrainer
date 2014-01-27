@@ -6,65 +6,53 @@ function BlockMove(event)
 
 $(document).ready(function(){
                   // Grammar tab functionality: shows one category and hides others
-                  $('#nounTab').addClass('active');
-                  $('#selectedAnswerList>section').hide();
-                  $('#nounList').show();
-                  
+                  // if there is no noun list, show pronoun list.  Code is in initLesson.js.
                   
                   $('#answerCategoryTabContainer ul li').click(function(){
-                                                               if(!$(this).hasClass('active')) {
-                                                               $('.answerCategoryTab').removeClass('active');
-                                                               $(this).addClass('active');
-                                                               $('#selectedAnswerList>section').hide();
+                      if(!$(this).hasClass('active')) {
+                          $('.answerCategoryTab').removeClass('active');
+                          $(this).addClass('active');
+                          $('#selectedAnswerList>section').hide();
                                                                
-                                                               var tab = $(this).attr('id');
-                                                               tab = tab.substr(0,(tab.indexOf('T')));
-                                                               tab = "#" + tab +"List";
-                                                               
-                                                               $(tab).show();
-                                                               
-                                                               }
-                                                               });
-                  
-                  
+                          var tab = $(this).attr('id');
+                          tab = tab.substr(0,(tab.indexOf('T')));
+                          tab = "#" + tab +"List";                                     
+                          $(tab).show();                                     
+                          }
+                      });
+                   
                   // Orator button
-                  $("#oralPromptButton").click(function(){
-                                               saySomething();
-                                               });
+                  $("#oralPromptButton").click(function(){ saySomething(); });
                   
                   // Delete button
-                  $("#answerContainer #deleteButton").click(function(){
-                                                            eraseAnswer();
-                                                            });
+                  $("#answerContainer #deleteButton").click(function(){ eraseAnswer(); });
                   
                   // Menu button
-                  $("#menuButton").click(function(){
-                                         showMenu();
-                                         });
+                  $("#menuButton").click(function(){ showMenu(); });
                   
                   // Submit button
-                  $("#answerContainer #submitButton").click(function(){
-                                                            submitAnswer();
-                                                            });
+                  $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
                   
                   // Multiple choice button
-                  $("#multipleChoiceContainer #multipleChoiceTab").click(function(){
-                                                                         // Function for the multiple choice button
-                                                                         document.getElementById("multipleChoiceTab").style.backgroundColor = "#7f3b1b";
-                                                                         document.getElementById("multipleChoiceTab").style.color = "#ffffff";
-                                                                         $("#imageAnimationContainer").hide();
-                                                                         $("#multipleChoiceDisplay").show();
-                                                                         $("#multipleChoiceBox").show();
-                                                                         });
+                  // BYR AFAIK this code is not used.
+                 // $("#multipleChoiceContainer #multipleChoiceTab").click(function(){
+                      // Function for the multiple choice button
+                   //   document.getElementById("multipleChoiceTab").style.backgroundColor = "#7f3b1b"; // reddish-brown
+                     // document.getElementById("multipleChoiceTab").style.color = "#ffffff"; // white
+                     // ("#imageAnimationContainer").hide();
+                      //alert ("wombat will show multiple choice");
+                     // $("#multipleChoiceDisplay").show();
+                      //$("#multipleChoiceBox").show();
+                      //});
                   
-                  $("#multipleChoiceCloseBtn").click(function(){
-                                                     document.getElementById("multipleChoiceTab").style.backgroundColor = "#fdd79e";
-                                                     document.getElementById("multipleChoiceTab").style.color = "#522611";
-                                                     $("#imageAnimationContainer").show();
-                                                     $("#multipleChoiceDisplay").hide();
-                                                     $("#multipleChoiceBox").hide();
-                                                     });
-                  
+                  // BYR AFAIK this code is not used.
+                  //$("#multipleChoiceCloseBtn").click(function(){
+                    //  document.getElementById("multipleChoiceTab").style.backgroundColor = "#fdd79e"; // orangey-beige
+                      //document.getElementById("multipleChoiceTab").style.color = "#522611"; // dark brown
+                      //$("#imageAnimationContainer").show();
+                      //$("#multipleChoiceDisplay").hide();
+                      //$("#multipleChoiceBox").hide();
+                      //});
                   
                   });
 
@@ -78,7 +66,6 @@ var currentExerciseNumber;
 var currentAnswer = "";
 // Current word being dragged
 var currentWord;
-
 
 // Redo mode
 var redoMode = false;
@@ -100,7 +87,6 @@ var verbWords;
 var adjectiveWords;
 var pronounWords;
 
-
 // Dot Array
 var dotMatrix;
 
@@ -117,8 +103,6 @@ dotImageRed.src = "img/redDot.png";
 var dotImageGreen = new Image(20,20);
 dotImageGreen.src = "img/greenDot.png";
 
-
-
 // Add a draggable word to the answer
 function addWordToAnswer(targetWord, wordID)
 {
@@ -126,6 +110,7 @@ function addWordToAnswer(targetWord, wordID)
 	var tempAnswerID = 0;
 	var tempWord;
 	var tempLeftPosition = 4;
+    var shift = 0;
 	
 	//var tempJQueryString = wordID;
 	var tempJQueryPosition = $("#" + wordID).offset();
@@ -139,29 +124,27 @@ function addWordToAnswer(targetWord, wordID)
 		playSound("wordDropSound");
 		
 		// If there is nothing in the answer box
-		if( currentAnswerWords.length == 0 )
-		{
+		if( currentAnswerWords.length == 0 ) {
 			// Just add one word in the answer box
 			currentAnswerWords.push(targetWord);
 			// Clear "Drop answer here" message
-			$("#droppableAnswerBox p").html(" ");
-		}
+           // if ((currentExercise.prefill != 'undefined') && (currentExercise.prefill.length > 0)) {
+             // $("#droppableAnswerBox p").html(prefill);
+            //} else {
+              $("#droppableAnswerBox p").html(" "); //}
+        }
 		else
 		{
 			// If there is only one answer word in the answer box
 			if( currentAnswerWords.length == 1 )
 			{
 				// If the word being dragged is on the left side of the answer word
-				if( (tempJQueryPosition.left + (document.getElementById(wordID).offsetWidth / 2)) < ($("#droppableAnswerBox p #answer_0").offset().left + document.getElementById("answer_0").offsetWidth / 2) )
-				{
+				if( (tempJQueryPosition.left + (document.getElementById(wordID).offsetWidth / 2)) < ($("#droppableAnswerBox p #answer_0").offset().left + document.getElementById("answer_0").offsetWidth / 2) ) {
 					// Add the dragged word to the left of the sentence
-					currentAnswerWords.unshift(targetWord);
-				}
-				else
-				{
+					currentAnswerWords.unshift(targetWord); }
+				else {
 					// Otherwise, add the dragged word to the right of the sentence
-					currentAnswerWords.push(targetWord);
-				}
+					currentAnswerWords.push(targetWord); }
 			}
 			else
 			{
@@ -169,13 +152,11 @@ function addWordToAnswer(targetWord, wordID)
 				if( (tempJQueryPosition.left + (document.getElementById(wordID).offsetWidth / 2)) < ($("#droppableAnswerBox p #answer_0").offset().left + document.getElementById("answer_0").offsetWidth / 2) )
 				{
 					// Add the dragged word to the left of the sentence
-					currentAnswerWords.unshift(targetWord);
-				}
+					currentAnswerWords.unshift(targetWord); }
 				else if( (tempJQueryPosition.left + (document.getElementById(wordID).offsetWidth / 2)) >= ($("#droppableAnswerBox p #answer_" + (currentAnswerWords.length - 1)).offset().left + document.getElementById("answer_" + (currentAnswerWords.length - 1)).offsetWidth / 2) )
 				{
 					// If the word being dragged is on the right side of the last answer word, then add the dragged word to the right of the sentence
-					currentAnswerWords.push(targetWord);
-				}
+					currentAnswerWords.push(targetWord); }
 				else
 				{
 					for( var i = 0; i < (currentAnswerWords.length - 1); i++ )
@@ -241,7 +222,6 @@ function addWordToAnswer(targetWord, wordID)
 			tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2;
 			//alert("Current left position of answer_" + i + " is " + tempLeftPosition + "!");
 		}
-		
         
         $("#speechBubble p").html(currentAnswerWords.join(" "));
         
@@ -283,10 +263,9 @@ function moveAnswer(answerNumber)
 				if( (tempJQueryPosition.left >= wordBeingObservedOffset.left) && (foundTheSpot == false) )
 				{
 					wordBackwardsTrack = i;
-					foundTheSpot = true;
-					//alert("Found the spot!");
-				}
-			}
+					foundTheSpot = true; }
+					//alert("Found the spot!"); }
+            }
 			
 			if( !foundTheSpot )
 			{
@@ -294,12 +273,11 @@ function moveAnswer(answerNumber)
 				{
 					var wordBeingObservedOffset = $("#droppableAnswerBox p #answer_" + j).offset();
 					
-					if( ((tempJQueryPosition.left + document.getElementById("answer_" + answerNumber).offsetWidth) <= (wordBeingObservedOffset.left + document.getElementById("answer_" + j).offsetWidth)) && (foundTheSpot == false) )
-					{
+					if( ((tempJQueryPosition.left + document.getElementById("answer_" + answerNumber).offsetWidth) <= (wordBeingObservedOffset.left + document.getElementById("answer_" + j).offsetWidth)) && (foundTheSpot == false) ) {
 						wordBackwardsTrack = j;
 						foundTheSpot = true;
 						//alert("Found the spot in the back!");
-					}
+                    }
 				}
 			}
 			
@@ -315,12 +293,11 @@ function moveAnswer(answerNumber)
 	else
 	{
 		// Erase the word
-		currentAnswerWords.splice(answerNumber, 1);
-	}
+		currentAnswerWords.splice(answerNumber, 1); }
 	
 	// Clear the draggable answer array
 	draggableAnswerWords = new Array();
-	
+   	
 	// Make all words in the answer array lower case
 	for( var i = 0; i < currentAnswerWords.length; i++ )
 	{
@@ -328,8 +305,7 @@ function moveAnswer(answerNumber)
 		if( (currentAnswerWords[i] !== "I") )
 		{
 			var targetWordForLowerCase = currentAnswerWords[i].toLowerCase();
-			currentAnswerWords[i] = targetWordForLowerCase;
-		}
+			currentAnswerWords[i] = targetWordForLowerCase; }
 	}
 	
 	// The first letter of the word must be capital
@@ -353,8 +329,7 @@ function moveAnswer(answerNumber)
 		$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + i + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[i] + "</div>");
 		var tempAnswerString = "answer_" + i;
 		draggableAnswerWords[i] = new webkit_draggable(tempAnswerString, {revert : false, onStart : function(){currentWord = currentAnswerWords[i];}, onEnd : function(i){return function() {moveAnswer(i);}} (i)});
-		tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2;
-	}
+		tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2; }
 	
 	// Add period
 	tempAnswerID++;
@@ -362,9 +337,7 @@ function moveAnswer(answerNumber)
 	
 	// If there are no words in the answer array, then clear the answer box
 	if( currentAnswerWords.length == 0 )
-	{
-		eraseAnswer();
-	}
+	{ eraseAnswer(); }
 }
 
 // Erase the whole answer
@@ -372,10 +345,27 @@ function eraseAnswer()
 {
 	//currentAnswer = "";
 	currentAnswerWords = new Array();
-	$("#droppableAnswerBox p").html("Drop answer here.");
+    if ((typeof currentExercise.prefill != 'undefined') && (currentExercise.prefill.length > 0)) {
+        $("#droppableAnswerBox p").html(currentExercise.prefill);
+    }
+    else {
+        $("#droppableAnswerBox p").html("Drop answer here."); }
     $("#speechBubble p").html(" ");
-    
 }
+
+//function initAnswer() {
+  //  if ((typeof currentExercise.prefill != 'undefined') && (currentExercise.prefill.length > 0)) {
+    //    alert("in initAnswer:  found currentExercise defined prefill:  ");
+
+      //  var pre = currentExercise.prefill.trim();
+        //var res = pre.split(" ");
+        //for (var i = 0; i < res.length; i++) {
+          //  alert("will push res[i]: " + res[i]);
+            ///currentAnswerWords.push(res[i]);
+       // }
+        //alert("after initAnswer, length of currentAnswerWords:  " + currentAnswerWords.length);
+    //}
+//}
 
 function saySomething() {
     
@@ -383,15 +373,13 @@ function saySomething() {
         // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
         currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
     }else{
-        currentExercise = theLesson.exerciseArray[indexArray[step]];
-    }
+        currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
     var theElement = "<audio id=\"prompt_" + step + "\" src=\"" + currentExercise.oralprompt + "\"></audio>";
     
     $("body").append(theElement);
     
-	playSound("prompt_" + step);
-    
+	playSound("prompt_" + step);    
 }
 
 
@@ -399,61 +387,28 @@ function showMenu()
 {
 	//alert("Coming Soon...");
     
-    NativeBridge.call("showMenu");
-    
-}
+    NativeBridge.call("showMenu"); }
 
 function sendValues(a, b, c, d)
 {
 	// Send some values to the navtive side
-	
 	// The send arg is an array of arguments
-	
 	//for( var i = 0; i &lt; arguments.length; i++ ) {
     //    arguments[ i ] ;
     //}
     
-    NativeBridge.call("recordNative", [a,b,c,d]);
-    
+    NativeBridge.call("recordNative", [a,b,c,d]);    
 }
-
-function setMultipleChoicePref() {
-    
-    if (typeof NativeBridge != 'undefined') {
-        NativeBridge.call("doShowMultipleChoice", "", function (response) {
-                          if(response != null) {
-                          
-                          if(response == "YES") {
-                          $("#multipleChoiceBox").show();
-                          //alert("Show Multiple Choice? " + response);
-                          } else {
-                          $("#multipleChoiceBox").hide();
-                          //alert("Show Multiple Choice? " + response);
-                          }
-                          }
-                          });
-    } else {
-        alert("NativeBridge is NOT defined!");
-        
-    }
-    
-}
-
 
 function sendDebug(a, b, c, d)
 {
     // Send some values to the navtive side
-    
     // The send arg is an array of arguments
-    
     //for( var i = 0; i &lt; arguments.length; i++ ) {
     //    arguments[ i ] ;
     //}
-    
-    NativeBridge.call("printDebug", [a,b,c,d]);
-    
+    NativeBridge.call("printDebug", [a,b,c,d]);  
 }
-
 
 // Submit answer
 function submitAnswer()
@@ -461,12 +416,73 @@ function submitAnswer()
 	if (currentAnswerWords.length == 0) { return; }
     //var tempSentence = currentAnswerWords.join(" ");
 	//tempSentence += ".";
-	
 	//DetermineFeedback();
+    //alert("about to go to MetaDetermineFeedback: ");
 	MetaDetermineFeedback();
+    //alert("back from MetaDetermineFeedback: ");
 	
 	// Update the dot feedback matrix
 	updateDotFeedback();
+}
+
+// This function is used by encrypted code INTENGINEAP_NEW_E.js
+function Noun(word)
+{
+    var nounArray = new Array("one", "circle", "square", "triangle", "rectangle", "oval", "elipse", "diamond", "shape", "dot", "spot", "stripe", "top", "bottom", "right", "left", "middle", "inside", "outside", "front", "corner", "edge", "arrow", "girl", "boy");
+    if (Member(GetRoot(word), nounArray)) return true;
+    else return false;
+}
+
+// This function is used by encrypted code INTENGINEAP_NEW_E.js
+function SuppletiveSets()
+{
+    var suppletiveSets = new Array();
+    suppletiveSets[0] = new Array("be", "is", "are", "am", "was", "were");
+    suppletiveSets[1] = new Array("he", "him", "his");
+    suppletiveSets[2] = new Array("she", "her", "hers");
+    suppletiveSets[3] = new Array("they", "them", "their");
+    suppletiveSets[4] = new Array("have", "has");
+    return suppletiveSets;
+    // …
+    // for irregular verbs (including those only irregular in their spelling), comparative adjectives and pronouns (nominative, accusative, possessive,
+    // absolute possessive).  The first member should always be the default root form (nominative/simple present/singular/absolutive)
+}
+
+// This function is used by encrypted code INTENGINEAP_NEW_E.js
+function ParaphraseSets()
+{
+    var paraphraseSets = new Array();
+    paraphraseSets[0] = new Array("under", "underneath", "beneath", "below");
+    paraphraseSets[1] = new Array("above", "over");
+    paraphraseSets[2] = new Array("in", "inside");
+    paraphraseSets[3] = new Array("small", "little");
+    paraphraseSets[4] = new Array("smaller", "littler");
+    paraphraseSets[5] = new Array("smallest", "littlest");
+    paraphraseSets[6] = new Array("big", "large");
+    paraphraseSets[7] = new Array("bigger", "larger");
+    paraphraseSets[8] = new Array("biggest", "largest");
+    paraphraseSets[9] = new Array(".", "!");
+    paraphraseSets[10] = new Array("medium", "medium-sized", "medium-size", "mid-size", "mid-sized", "medium sized", "medium size", "mid size", "mid sized");
+    paraphraseSets[11] = new Array("oval", "elipse");
+    paraphraseSets[12] = new Array("except", "except for", "but", "besides", "save");
+    paraphraseSets[13] = new Array("between", "in between");
+    paraphraseSets[14] = new Array("close", "near");
+    paraphraseSets[15] = new Array("farther", "further");
+    paraphraseSets[16] = new Array("gray", "grey");
+    paraphraseSets[17] = new Array("color", "colour");
+    paraphraseSets[18] = new Array("dot", "spot");
+    paraphraseSets[19] = new Array("thin", "narrow");
+    paraphraseSets[20] = new Array("beside", "by");
+    return paraphraseSets;
+    // …
+    // A list of paraphraseSets for synonymous stems like may/might or alternative spellings (e.g. of British or American English)
+}
+
+// This function is used by encrypted code INTENGINEAP_NEW_E.js
+function MajorWords()
+{
+    var majorWords = new Array("it", "they", "them", "this", "that", "these", "those", "have", "has", "is", "are", "point", "one", "circle", "square", "triangle", "rectangle", "oval", "elipse", "diamond", "shape", "dot", "spot", "stripe", "top", "bottom", "high", "low", "up", "down", "right", "left", "middle", "inside", "outside", "front", "behind", "corner", "edge", "blue", "red", "green", "yellow", "orange", "purple", "color", "colour", "dark", "light", "black", "gray", "grey", "small", "little", "big", "large", "long", "short", "tall", "thin", "narrow", "medium", "medium-size", "medium-sized", "mid-size", "mid-sized",  "medium size", "medium sized", "mid size", "mid sized", "close", "near", "farther", "further", "all", "except", "except for", "beside", "besides", "save", "but", "only", "just", "each", "every", "some", "none", "no", "neither", "both", "by", "girl", "boy", "call", "help");
+    return majorWords;
 }
 
 // Moves to the next exercise when the user clicks the active next button
@@ -477,24 +493,17 @@ function goToNextExercise()
 	for( var i = 0; i < dotMatrix.length; i++ )
 	{
 		if( dotMatrix[i] == DOT_CORRECT )
-		{
-			greenDotCounter++;
-		}
-	}
+		{ greenDotCounter++; } }
 	
 	// If all the dots are green, then go to the congratuations page
 	if( greenDotCounter >= theLesson.exerciseArray.length )
 	{
 		//window.location.replace("gt_congratulations.html");
-        
         // For now we just exit out to the native side, but we should add some congratulatons here!
-        showMenu();
-        
-	}
+        showMenu(); }
 	else
 	{
         // All the dots are not green. Were either have not been through all the quesions, or we got some wrong. Determine which.
-        
         // determine if we are in redoMode or if we should move to redoMode
 		// If the user is redoing the prompts he/she got wrong
 		if( redoMode )
@@ -532,25 +541,20 @@ function goToNextExercise()
 			{
                 // Nope. Were still on the first round. Advance to next question.
 				currentExerciseNumber++;
-                step++;
-			}
+                step++; }
 			else
 			{
                 // All redo questions have now been answered once. But all dots are not green so stay in redo mode.
-                
 				for( var j = 0; j < dotMatrix.length; j++ )
 				{
                     // take all the wrong answers and move them to incomplete
 					if( dotMatrix[j] == DOT_WRONG )
-					{
-						dotMatrix[j] = DOT_INCOMPLETE;
-					}
+					{ dotMatrix[j] = DOT_INCOMPLETE; }
 				}
 				currentRedoPromptNumber = 0;
 				currentExerciseNumber = Number(promptsToRedo[0]) + 1;
                 step = 0;
 			}
-            
 		}
 		else
 		{
@@ -572,9 +576,7 @@ function goToNextExercise()
 				{
                     // take all the wrong answers and move them to incomplete
 					if( dotMatrix[j] == DOT_WRONG )
-					{
-						dotMatrix[j] = DOT_INCOMPLETE;
-					}
+					{ dotMatrix[j] = DOT_INCOMPLETE; }
 				}
 				currentRedoPromptNumber = 0;
 				currentExerciseNumber = Number(promptsToRedo[0]) + 1;
@@ -610,17 +612,13 @@ function saveProgramState() {
 }
 
 // Go to next exercise by updating the current question and answer
-
 // Called when the user hits the Next Button
 
 function updateExercise()
 {
 	// Update question
-    
-    
     // First save state
     saveProgramState();
-    
     
     if(redoMode) {
         // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
@@ -631,68 +629,26 @@ function updateExercise()
     
     if(typeof currentExercise.lessonImage == "undefined") {
         // Lesson uses video
-        
+        //setVideo(currentExercise);
         document.getElementById('video').pause();
         $("#video").attr("src", currentExercise.lessonVideo);
         //alert($('#video').attr("src"));
         document.getElementById('video').load();
         //document.getElementById('video').play();
         
-        
-        
-        document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.prompt + "</p>";
-        
+      //  if (currentExercise.prompt != "undefined") {
+            document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.prompt + "</p>"; //}
+        //else {
+          //  if (currentExercise.question != "undefined") {
+            //    document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.question + "</p>"; }
+            //}
+        //}
         
         $("#video_box p").text(currentExercise.question);
         
-        
-        if(typeof currentExercise.oralprompt == "undefined") {
-            document.getElementById('oralpromptText').innerHTML = "";
-            $("#oralPromptButton").hide();
-            $("#oralpromptText").hide();
-        } else {
-            document.getElementById('oralpromptText').innerHTML = currentExercise.oralpromptText;
-            $("#oralPromptButton").show();
-            $("#oralpromptText").show();
-        }
-        
-        // If the question text contains the substring "empty ballon" show the empty ballon
-        var theQuestion  = currentExercise.question;
-        var theIndex = theQuestion.search("empty balloon");
-        if (theIndex > 0) {
-            
-            $("#speechBubble").show();
-            
-            var bubbleSpecsString  = currentExercise.balloonSpecs;
-            
-            var specs = bubbleSpecsString.split(",");
-            
-            if (specs[0] == "left") {
-                
-                $("#speechBubble").css("top", "10px");
-                $("#speechBubble").css("left", "350px");
-                
-                $("#speechBubble p").removeClass("speechRight");
-                $("#speechBubble p").addClass("speechLeft");
-                
-                
-            } else {
-                
-                $("#speechBubble").css("top", "10px");
-                $("#speechBubble").css("left", "10px");
-                
-                $("#speechBubble p").removeClass("speechLeft");
-                $("#speechBubble p").addClass("speechRight");
-                
-                
-            }
-            
-            
-            
-        } else {
-            $("#speechBubble").hide();
-        }
-        
+        setOralPrompt(currentExercise);
+        setSpeechBubble(currentExercise);
+ 
     } else {
         
         //alert("image: " + currentExercise.lessonImage);
@@ -702,25 +658,24 @@ function updateExercise()
         $("#quoteBox").text(currentExercise.question);
         //$("#quoteBoxAnswer").text(currentExercise.answers[0]);
         $("#questionContainer").text(currentExercise.question);
-        
-        
-        
     }
     
     $("#speechBubble p").html(" ");
     
-	
+    // if wordlists are defined at the lesson level, use them;
+    // if wordslists are defined at the exercise level, write over the lesson level.
+    setWordLists(theLesson);
+    setWordLists(currentExercise);
+ 
+    setWordTabs();
+    
 	// Clear answer feedback box
 	$("#answerContainer #answerFeedbackBox p").html("  ");
 	//$("#answerContainer #answerFeedbackBox p").html("Your answer has not been submitted yet.");
 	
 	// Update multiple choices
-	$("#multipleChoiceBox #presentedChoices").html("<p>" + currentExercise.multipleChoice[0] + "</p>");
-	for(var answerChoice = 1; answerChoice < currentExercise.multipleChoice.length; answerChoice++)
-	{
-		$("#multipleChoiceBox #presentedChoices").append("<p>" + currentExercise.multipleChoice[answerChoice] + "</p>");
-	}
-	
+    setMultipleChoiceBox(currentExercise);
+    
 	// Update dot feedback
 	updateDotFeedback();
 	
@@ -738,7 +693,6 @@ function updateDotFeedback()
 	$("#dotContainer").html("");
     
     //alert("dotContainer: " + dotMatrix);
-    
 	
 	for( var d = 0; d < dotMatrix.length; d++ )
 	{
@@ -747,31 +701,25 @@ function updateDotFeedback()
 			$("#dotContainer").append("<br />");
 			if(dotMatrix[d] == DOT_INCOMPLETE)
 			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />");
-			}
+				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
 			else if(dotMatrix[d] == DOT_WRONG)
 			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />");
-			}
+				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
 			else
 			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />");
-			}
+				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
 		}
 		else
 		{
 			if(dotMatrix[d] == DOT_INCOMPLETE)
 			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />");
-			}
+				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
 			else if(dotMatrix[d] == DOT_WRONG)
 			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />");
-			}
+				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
 			else
 			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />");
-			}
+				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
 		}
 	}
 }
@@ -779,35 +727,29 @@ function updateDotFeedback()
 // Plays sound
 function playSound(soundID)
 {
-	document.getElementById(soundID).play();
-}
+	document.getElementById(soundID).play(); }
 
 // When the page is finished loading, run this function
 function appLoaded()
 {
 	$("#loadingScreen").hide();
     
-    if(typeof lessonFileName != "undefined") {
+    //if(typeof lessonFileName != "undefined") {
         //alert("lessonFileName: " + lessonFileName);
-    }
-    
+    //}
     NativeBridge.call("lessonLoaded");
-    
-}
-
-function MajorWords()
-{
-	//this is my code; replace with yours!
-	return new Array("it", "they", "them", "this", "that", "these", "those", "blue", "green", "yellow", "red", "orange", "purple", "call", "help", "girl", "boy", "one", "circle", "square", "triangle", "rectangle", "oval", "elipse", "diamond", "shape", "dot", "spot", "stripe", "top", "bottom", "right", "left", "middle", "inside", "outside", "front", "corner", "edge", "arrow");
 }
 
 //Check for polite mode
 function NotPolite(theFeedbackType)
 {
-    if(theFeedbackType.indexOf("polite") !== -1 && theFeedbackType.indexOf("Polite") !== -1)
+    //if(theFeedbackType.indexOf("polite") !== -1 && theFeedbackType.indexOf("Polite") !== -1)
+    if (theFeedbackType == "subjectRequest") { return false; }
+    if(theFeedbackType.indexOf("polite") == -1 && theFeedbackType.indexOf("Polite") == -1)
     {
-        return true;
-    }
+        //alert("not polite: ");
+        return true; }
+    //alert("polite: ");
     return false;
 }
 
@@ -821,16 +763,26 @@ function MetaDetermineFeedback()
     
 	var currentExercise = new GetExercise(exnum); //see function below
     
-    
 	var score = GetScore(); //see function below
+    //alert("back from GetScore: " + score);
     //next you need to determine whether this is the user's first time through an exercise--see code below
 	var status = GetStatus();  // always returns "freshAnswer". Why? I don't know i didn't write it.
+    //alert("back from GetStatus: " + status);
     //next, get the user's response from the responseBox and clean it up:
 	var tempSentenceArray = currentAnswerWords;
-	if( tempSentenceArray[0] != "I" )
-	{
-		tempSentenceArray[0] = String(tempSentenceArray[0]).toLowerCase();
-	}
+    //var tempSentenceArray = new Array();
+    //BYR get rid of prefill here.
+    //if ((typeof currentExercise.prefill != 'undefined') && (currentExercise.prefill.length > 0)) {
+      //  var pre = currentExercise.prefill.trim();
+        //var res = pre.split(" ");
+      //  alert("res.length, currentAnswerWords.length:  " + res.length + ", " + currentAnswerWords.length());
+       // for (var i = res.length; i < currentAnswerWords.length(); i++) {
+         //   tempSentenceArray.push(currentAnswerWords[i]);
+        //}
+    //}
+    //else { tempSentenceArray = currentAnswerWords; }
+	if( tempSentenceArray[0] != "I" ) {
+		tempSentenceArray[0] = String(tempSentenceArray[0]).toLowerCase(); }
 	var tempSentence = tempSentenceArray.join(" ");
 	var lowerCaseTempSentence = tempSentence;
 	lowerCaseTempSentence += ".";
@@ -840,32 +792,27 @@ function MetaDetermineFeedback()
     //next, turn this response into an array of words, in the order given
 	var tokenizedResponse = TokenizeResponse(response);
     //next, call DetermineFeedback with response and tokenizedResponse as arguments
-    
-    
-    
+    //alert("will call DetermineFeedback: ");
 	var feedbackTuple = DetermineFeedback(response, tokenizedResponse, currentExercise, exnum, score, status);
-    
-    
+    //alert("back from DetermineFeedback: ");
     //feedBackTuple consists of the following pieces of information:
 	var feedbackType = feedbackTuple[1];
 	var wordButtonMarkingInfo = feedbackTuple[2];
 	var message = feedbackTuple[3];
 	var points = feedbackTuple[4];
+    //alert("the type of feedback is: " + feedbackType);
+    //alert("the feedback message is: " + message);
     
     sendDebug(feedbackTuple,message,feedbackType,exnum);
 	
 	sendValues(feedbackType,response,points,exnum);
 	
-	//alert("the type of feedback is: " + feedbackType);
 	//alert("your word button marking info is " + wordButtonMarkingInfo);  //if its undefined there are no words to maark
-	//alert("the feedback message is: " + message);
 	//alert("the number of points the user has is: " + points);
 	
 	// Write the message to the feedback box
 	//$("#answerFeedbackBox p").html(message);
 	
-    
-    
 	var tempNum; // Index of current question
     
     if(redoMode) {
@@ -875,7 +822,6 @@ function MetaDetermineFeedback()
         tempNum = indexArray[step];
     }
     
-	
     //alert("tempNum:" + tempNum);
     
 	// Pinpoints the punctuation at the end of the sentence
@@ -946,7 +892,7 @@ function MetaDetermineFeedback()
             // Change the background color of wrong words to red
             for(var k = 0; k < wrongAnswerNumbers.length; k++)
             {
-                $("#answer_" + wrongAnswerNumbers[k]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+                $("#answer_" + wrongAnswerNumbers[k]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); // dark red
             }
         }
     }
@@ -974,30 +920,26 @@ function MetaDetermineFeedback()
             for( var j = 0; j < convertToFullNPList.length; j++ )
             {
                 if( tempAnswersInArray[i] == convertToFullNPList[j] )
-                {
-                    fullNPNumbers.push(i);
-                }
+                { fullNPNumbers.push(i); }
             }
             
             for( var k = 0; k < convertToPronounList.length; k++ )
             {
                 if( tempAnswersInArray[i] == convertToPronounList[k] )
-                {
-                    pronounNumbers.push(i);
-                }
+                { pronounNumbers.push(i); }
             }
         }
         
         // Change the background color of wrong words to red
         for( var l = 0; l < fullNPNumbers.length; l++ )
         {
-            $("#answer_" + fullNPNumbers[l]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+            $("#answer_" + fullNPNumbers[l]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); // dark red
         }
         
         // Change the background color of wrong words to orange
         for( var m = 0; m < pronounNumbers.length; m++ )
         {
-            $("#answer_" + pronounNumbers[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat");
+            $("#answer_" + pronounNumbers[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat"); // raw sienna
         }
     }
 	if (feedbackType == "morphologyFeedback")
@@ -1048,40 +990,32 @@ function MetaDetermineFeedback()
             for( var j = 0; j < wrongForms.length; j++ )
             {
                 if( tempAnswersInArray[i] == wrongForms[j] )
-                {
-                    wrongFormNumbers.push(i);
-                }
+                { wrongFormNumbers.push(i); }
             }
             
             for( var k = 0; k < wrongEndings.length; k++ )
             {
                 if( tempAnswersInArray[i] == wrongEndings[k] )
-                {
-                    wrongEndingNumbers.push(i);
-                }
+                { wrongEndingNumbers.push(i); }
             }
             
             for( var l = 0; l < needEndings.length; l++ )
             {
                 if( tempAnswersInArray[i] == needEndings[l] )
-                {
-                    needEndingNumbers.push(i);
-                }
+                { needEndingNumbers.push(i); }
             }
             
             for( var m = 0; m < needEndings.length; m++ )
             {
                 if( tempAnswersInArray[i] == needEndings[m] )
-                {
-                    needEndingNumbers.push(i);
-                }
+                { needEndingNumbers.push(i); }
             }
         }
         
         // Change the background color of wrong words to orange
         for( var a = 0; a < wrongFormNumbers.length; a++ )
         {
-            $("#answer_" + wrongFormNumbers[a]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat");
+            $("#answer_" + wrongFormNumbers[a]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat"); // raw sienna
         }
         
         // Change the background color of wrong words to red
@@ -1091,7 +1025,7 @@ function MetaDetermineFeedback()
             //alert("Stem word: " + stemWord);
             var targetEnding = tempAnswersInArray[wrongEndingNumbers[b]].substr(stemWord.length);
             //alert("Extra ending: " + targetEnding);
-            $("#answer_" + wrongEndingNumbers[b]).html(stemWord + "<span style=\"color:#990000\">" + targetEnding + "</span>");
+            $("#answer_" + wrongEndingNumbers[b]).html(stemWord + "<span style=\"color:#990000\">" + targetEnding + "</span>"); // dark red
             //$("#answer_" + wrongEndingNumbers[b]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
         }
         
@@ -1100,16 +1034,16 @@ function MetaDetermineFeedback()
         {
             //var mainWord = tempAnswersInArray[needEndingNumber[c]];
             //$("#answer_" + needEndingNumbers[c]).html(mainWord + "<span style=\"color:#990000\">" + _ + "</span>");
-            $("#answer_" + needEndingNumbers[c]).append("<span style=\"color:#990000\">_</span>");
+            $("#answer_" + needEndingNumbers[c]).append("<span style=\"color:#990000\">_</span>"); // dark red
         }
         
-        // Change the background color of wrong words to #22ff00
+        // Change the background color of wrong words to #22ff00; BYR would be bright green!
         for( var d = 0; d < wrongFormAndEndingNumbers.length; d++ )
         {
             var stemWord = GetStem(String(tempAnswersInArray[wrongEndingNumbers[d]]));
             var targetEnding = tempAnswersInArray[wrongEndingNumbers[d]].substr(stemWord.length);
-            $("#answer_" + wrongFormAndEndingNumbers[d]).html(stemWord + "<span style=\"color:#990000\">" + targetEnding + "</span>");
-            $("#answer_" + wrongFormAndEndingNumbers[d]).css("background", "#ff9900 url(img/watercolorTextureTransparent.png) repeat");
+            $("#answer_" + wrongFormAndEndingNumbers[d]).html(stemWord + "<span style=\"color:#990000\">" + targetEnding + "</span>"); // dark red
+            $("#answer_" + wrongFormAndEndingNumbers[d]).css("background", "#ff9900 url(img/watercolorTextureTransparent.png) repeat"); // orange
         }
     }
 	if (feedbackType == "articleFeedback")
@@ -1156,12 +1090,14 @@ function MetaDetermineFeedback()
         for( var l = 0; l < nounWithWrongArticleNumbers.length; l++ )
         {
             $("#answer_" + nounWithWrongArticleNumbers[l]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+            // dark red
         }
         
         // Change the background color of wrong words to yellow
         for( var m = 0; m < nounMissingAnArticleNumbers.length; m++ )
         {
             $("#answer_" + nounMissingAnArticleNumbers[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat");
+            // raw sienna
         }
     }
 	if (feedbackType == "strandedArticle")
@@ -1214,13 +1150,14 @@ function MetaDetermineFeedback()
             //alert("lastOrderNumber: " + lastOrderNumber);
             for( var j = firstOrderNumber; j <= lastOrderNumber; j++ )
             {
-                $("#answer_" + j).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+                $("#answer_" + j).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); // dark red
             }
         }
     }
     
     if ((feedbackType == "missingWordsPolite") || (feedbackType == "subjectRequest") || (feedbackType == "wrongWordsPolite") || (feedbackType == "missingWords"))
     {
+        //alert("in businessLogic:  looking at feedbackType echidna:");
         var missingWordsList = wordButtonMarkingInfo;
         //alert("Missing words: " + missingWordsList);
         
@@ -1228,8 +1165,7 @@ function MetaDetermineFeedback()
         {
             if( dotMatrix[tempNum] != DOT_WRONG )
                 promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
+            dotMatrix[tempNum] = DOT_WRONG; }
         
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
@@ -1240,33 +1176,17 @@ function MetaDetermineFeedback()
         {
             if( (i == missingWordsList.length - 1) && (missingWordsList.length > 1) )
             {
-                $("#answerFeedbackBox p").append(" and");
-            }
-            $("#answerFeedbackBox p").append(" <span style=\"color:#990000\">" + missingWordsList[i] + "</span>");
+                $("#answerFeedbackBox p").append(" and"); }
+            $("#answerFeedbackBox p").append(" <span style=\"color:#990000\">" + missingWordsList[i] + "</span>"); // dark red
             if( i < (missingWordsList.length - 1) )
             {
-                $("#answerFeedbackBox p").append(",");
-            }
+                $("#answerFeedbackBox p").append(","); }
         }
         $("#answerFeedbackBox p").append(".");
     }
 }
 
-function GetExNum()
-{
-	//your code for determining the current exercise number goes here! I'm just returning 0 for now
-	return step;
-	//return 0;
-}
-
-/*
- function SuppletiveSets()
- {
- var suppletiveSets = new Array();
- suppletiveSets[0] = new Array("is", "are")
- return suppletiveSets;
- }
- */
+function GetExNum() { return step; }
 
 function GetExercise(exerciseNumber)
 {
@@ -1294,30 +1214,36 @@ function GetExercise(exerciseNumber)
         theCurrentExercise = theLesson.exerciseArray[indexArray[exerciseNumber]];
     }
     
-    if(typeof theCurrentExercise.multipleChoice != 'undefined')
-        this.choices = theCurrentExercise.multipleChoice;
+    if(typeof theCurrentExercise.multipleChoice != 'undefined') {
+        this.choices = theCurrentExercise.multipleChoice; }
     
-    if(typeof theCurrentExercise.answers != 'undefined')
-        this.untokenizedAnswersList = theCurrentExercise.answers;
+    if(typeof theCurrentExercise.answers != 'undefined') {
+        this.untokenizedAnswersList = theCurrentExercise.answers; }
     
-    if(typeof theCurrentExercise.pronounNounLists != 'undefined')
-        this.pronounNounLists = theCurrentExercise.pronounNounLists;
+    if(typeof theCurrentExercise.pronounNounLists != 'undefined') {
+        this.pronounNounLists = theCurrentExercise.pronounNounLists; }
     
-    if(typeof theCurrentExercise.specialWordsList != 'undefined')
-        this.specialWordsList = theCurrentExercise.specialWordsList;
-    
-    if(typeof theCurrentExercise.specialWordsTriggers != 'undefined')
-        this.specialWordsTriggers = theCurrentExercise.specialWordsTriggers;
+    if(typeof theCurrentExercise.specialWordsList != 'undefined') {
+        this.specialWordsList = theCurrentExercise.specialWordsList; }
+     
+    if(typeof theCurrentExercise.specialWordsTriggers != 'undefined') {
+        this.specialWordsTriggers = theCurrentExercise.specialWordsTriggers; }
     
     if(typeof theCurrentExercise.subjectRequest != 'undefined') {
-        //this.subjectRequest = theCurrentExercise.subjectRequest;
-    }
+        this.subjectRequest = theCurrentExercise.subjectRequest; }
     
-    if(typeof theCurrentExercise.unneededWords != 'undefined')
-        this.unneededWords = theCurrentExercise.unneededWords;
+   //   var subjreqstr = "";
+   //   if (this.subjectRequest.length > 0) {
+   //       for (var i = 0; i < this.subjectRequest.length; i++) {
+   //       subjreqstr += this.subjectRequest[i] + ", "; }
+   //   }
+   //   alert("downloaded subjectRequest: " + subjreqstr); }
     
-    if(typeof theCurrentExercise.replaceSubject != 'undefined')
-        this.replaceSubject = theCurrentExercise.replaceSubject;
+    if(typeof theCurrentExercise.unneededWords != 'undefined') {
+        this.unneededWords = theCurrentExercise.unneededWords; }
+    
+    if(typeof theCurrentExercise.replaceSubject != 'undefined') {
+        this.replaceSubject = theCurrentExercise.replaceSubject; }
     
 	this.answersList = TokenizeEachAnswer(this.untokenizedAnswersList);
 	this.allAnswersList = this.answersList;
@@ -1329,13 +1255,9 @@ function GetExercise(exerciseNumber)
 function GetScore()
 {
     //your code for getting the user's current score goes here; for now, I'm just returning 0
-	return 0;
-}
-
+	return 0; }
 
 function GetStatus()
 {
-	return "freshAnswer";
+	return "freshAnswer"; }
 	//return "editedAnswer";
-}
-

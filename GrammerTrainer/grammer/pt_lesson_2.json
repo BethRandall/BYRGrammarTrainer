@@ -1,124 +1,366 @@
 {
-	"pronounWords": [
-	    "it", 
-	    "this", 
-	    "that", 
-	    "they", 
-	    "these", 
-	    "those"
-	], 
-	"nounWords": [
-	    "a", 
-	    "an", 
-	    "the", 
-	    "arrow", 
-	    "arrows", 
-	    "circle", 
-	    "circles", 
-	    "oval", 
-	    "ovals", 
-	    "rectangle", 
-	    "rectangles", 
-	    "square", 
-	    "squares", 
-	    "triangle", 
-	    "triangles"
-	], 
-	"adjectiveWords": [
-	    "blue", 
-	    "green", 
-	    "orange", 
-	    "red", 
-	    "yellow"
-	], 
-	"verbWords": [
-	    "is", 
-	    "are"
-	],
-    "exerciseArray": [
-        {
-            "lessonImage": "Ccs.jpg", 
-            "unneededWords": [
-                "three"
-            ], 
-            "multipleChoice": [
-                "Circles.", 
-                "Squares.", 
-                "Triangles.", 
-                "Rectangles."
-            ], 
-            "question": "What are these?", 
-            "answers": [
-                "these are circles .", 
-                "those are circles .", 
-                "they are circles .", 
-                "they're circles .", 
-                "circles ."
-            ]
-        }, 
-        {
-            "lessonImage": "Sqs.jpg", 
-            "unneededWords": [
-                "four"
-            ], 
-            "multipleChoice": [
-                "Circles.", 
-                "Squares.", 
-                "Triangles.", 
-                "Rectangles."
-            ], 
-            "question": "What are these?", 
-            "answers": [
-                "these are squares .", 
-                "those are squares .", 
-                "they are squares .", 
-                "they're squares .", 
-                "squares ."
-            ]
-        }, 
-        {
-            "lessonImage": "Tgs.jpg", 
-            "unneededWords": [
-                "three"
-            ], 
-            "multipleChoice": [
-                "Circles.", 
-                "Squares.", 
-                "Triangles.", 
-                "Rectangles."
-            ], 
-            "question": "What are these?", 
-            "answers": [
-                "these are triangles .", 
-                "those are triangles .", 
-                "they are triangles .", 
-                "they're triangles .", 
-                "triangles ."
-            ]
-        }, 
-        {
-            "lessonImage": "Rts.jpg", 
-            "unneededWords": [
-                "four"
-            ], 
-            "multipleChoice": [
-                "Circles.", 
-                "Squares.", 
-                "Triangles.", 
-                "Rectangles."
-            ], 
-            "question": "What are these?", 
-            "answers": [
-                "these are rectangles .", 
-                "those are rectangles .", 
-                "they are rectangles .", 
-                "they're rectangles .", 
-                "rectangles ."
-            ]
-        }
-    ], 
+    "lessonNumber": "2",
+    "lessonTopic": "Lesson 2: More Shapes.",
+    "lessonType": "multiple_choice",
+    "nounWords": [
+                  "a",
+                  "an",
+                  "the",
+                  "arrow",
+                  "arrows",
+                  "circle",
+                  "circles",
+                  "oval",
+                  "ovals",
+                  "rectangle",
+                  "rectangles",
+                  "square",
+                  "squares",
+                  "triangle",
+                  "triangles"
+                  ],
     "verbWords": [
-        "is", 
-        "are"
-    ]
+                  "is",
+                  "are"
+                  ],
+    "pronounWords": [
+                     "it",
+                     "this",
+                     "that",
+                     "they",
+                     "these",
+                     "those"
+                     ],
+    "subjects": [
+                 "NPl"
+                 ],
+    "exerciseList": [
+                     [
+                      "NPl",
+                      "0"
+                      ],
+                     [
+                      "NPl",
+                      "1"
+                      ],
+                     [
+                      "NPl",
+                      "2"
+                      ],
+                     [
+                      "NPl",
+                      "3"
+                      ]
+                     ],
+    "subjectMasteryLimit": "4",
+    "exerciseArray": [
+                      {
+                      "lessonImage": "Ccs.jpg",
+                      "pictureA": "Ccs.jpg",
+                      "pictureB": ".jpg",
+                      "question": "What are these?",
+                      "multipleChoice": [
+                                         "Circles.",
+                                         "Squares.",
+                                         "Triangles.",
+                                         "Rectangles."
+                                         ],
+                      "answers": [
+                                  "these are circles.",
+                                  "those are circles.",
+                                  "they are circles.",
+                                  "they're circles.",
+                                  "circles."
+                                  ],
+                      "morphemesList": [
+                                        [
+                                         "circle",
+                                         "s"
+                                         ]
+                                        ],
+                      "articleNounList": [
+                                          [
+                                           "",
+                                           "circles"
+                                           ]
+                                          ],
+                      "unneededWords": [
+                                        "three"
+                                        ],
+                      "nounWords": [
+                                    "a",
+                                    "an",
+                                    "the",
+                                    "arrow",
+                                    "arrows",
+                                    "circle",
+                                    "circles",
+                                    "oval",
+                                    "ovals",
+                                    "rectangle",
+                                    "rectangles",
+                                    "square",
+                                    "squares",
+                                    "triangle",
+                                    "triangles"
+                                    ],
+                      "adjectiveWords": [],
+                      "verbWords": [
+                                    "is",
+                                    "are"
+                                    ],
+                      "pronounWords": [
+                                       "it",
+                                       "this",
+                                       "that",
+                                       "they",
+                                       "these",
+                                       "those"
+                                       ],
+                      "prepositionWords": [],
+                      "functionButtons": [],
+                      "subject": "NPl",
+                      "pronounNounLists": [],
+                      "specialWordsList": [],
+                      "specialWordsTriggers": [],
+                      "subjectRequest": [],
+                      "replaceSubject": [],
+                      "startWords": [],
+                      "untokenizedAnswersList": [],
+                      "saidFrame": "",
+                      "quote": "",
+                      "timeCaption": ""
+                      },
+                      {
+                      "lessonImage": "Sqs.jpg",
+                      "pictureA": "Sqs.jpg",
+                      "pictureB": ".jpg",
+                      "question": "What are these?",
+                      "multipleChoice": [
+                                         "Circles.",
+                                         "Squares.",
+                                         "Triangles.",
+                                         "Rectangles."
+                                         ],
+                      "answers": [
+                                  "these are squares.",
+                                  "those are squares.",
+                                  "they are squares.",
+                                  "they're squares.",
+                                  "squares."
+                                  ],
+                      "morphemesList": [
+                                        [
+                                         "square",
+                                         "s"
+                                         ]
+                                        ],
+                      "articleNounList": [
+                                          [
+                                           "",
+                                           "squares"
+                                           ]
+                                          ],
+                      "unneededWords": [
+                                        "four"
+                                        ],
+                      "nounWords": [
+                                    "a",
+                                    "an",
+                                    "the",
+                                    "arrow",
+                                    "arrows",
+                                    "circle",
+                                    "circles",
+                                    "oval",
+                                    "ovals",
+                                    "rectangle",
+                                    "rectangles",
+                                    "square",
+                                    "squares",
+                                    "triangle",
+                                    "triangles"
+                                    ],
+                      "adjectiveWords": [],
+                      "verbWords": [
+                                    "is",
+                                    "are"
+                                    ],
+                      "pronounWords": [
+                                       "it",
+                                       "this",
+                                       "that",
+                                       "they",
+                                       "these",
+                                       "those"
+                                       ],
+                      "prepositionWords": [],
+                      "functionButtons": [],
+                      "subject": "NPl",
+                      "pronounNounLists": [],
+                      "specialWordsList": [],
+                      "specialWordsTriggers": [],
+                      "subjectRequest": [],
+                      "replaceSubject": [],
+                      "startWords": [],
+                      "untokenizedAnswersList": [],
+                      "saidFrame": "",
+                      "quote": "",
+                      "timeCaption": ""
+                      },
+                      {
+                      "lessonImage": "Tgs.jpg",
+                      "pictureA": "Tgs.jpg",
+                      "pictureB": ".jpg",
+                      "question": "What are these?",
+                      "multipleChoice": [
+                                         "Circles.",
+                                         "Squares.",
+                                         "Triangles.",
+                                         "Rectangles."
+                                         ],
+                      "answers": [
+                                  "these are triangles.",
+                                  "those are triangles.",
+                                  "they are triangles.",
+                                  "they're triangles.",
+                                  "triangles."
+                                  ],
+                      "morphemesList": [
+                                        [
+                                         "triangle",
+                                         "s"
+                                         ]
+                                        ],
+                      "articleNounList": [
+                                          [
+                                           "",
+                                           "triangles"
+                                           ]
+                                          ],
+                      "unneededWords": [
+                                        "three"
+                                        ],
+                      "nounWords": [
+                                    "a",
+                                    "an",
+                                    "the",
+                                    "arrow",
+                                    "arrows",
+                                    "circle",
+                                    "circles",
+                                    "oval",
+                                    "ovals",
+                                    "rectangle",
+                                    "rectangles",
+                                    "square",
+                                    "squares",
+                                    "triangle",
+                                    "triangles"
+                                    ],
+                      "adjectiveWords": [],
+                      "verbWords": [
+                                    "is",
+                                    "are"
+                                    ],
+                      "pronounWords": [
+                                       "it",
+                                       "this",
+                                       "that",
+                                       "they",
+                                       "these",
+                                       "those"
+                                       ],
+                      "prepositionWords": [],
+                      "functionButtons": [],
+                      "subject": "NPl",
+                      "pronounNounLists": [],
+                      "specialWordsList": [],
+                      "specialWordsTriggers": [],
+                      "subjectRequest": [],
+                      "replaceSubject": [],
+                      "startWords": [],
+                      "untokenizedAnswersList": [],
+                      "saidFrame": "",
+                      "quote": "",
+                      "timeCaption": ""
+                      },
+                      {
+                      "lessonImage": "Rts.jpg",
+                      "pictureA": "Rts.jpg",
+                      "pictureB": ".jpg",
+                      "question": "What are these?",
+                      "multipleChoice": [
+                                         "Circles.",
+                                         "Squares.",
+                                         "Triangles.",
+                                         "Rectangles."
+                                         ],
+                      "answers": [
+                                  "these are rectangles.",
+                                  "those are rectangles.",
+                                  "they are rectangles.",
+                                  "they're rectangles.",
+                                  "rectangles."
+                                  ],
+                      "morphemesList": [
+                                        [
+                                         "rectangle",
+                                         "s"
+                                         ]
+                                        ],
+                      "articleNounList": [
+                                          [
+                                           "",
+                                           "rectangles"
+                                           ]
+                                          ],
+                      "unneededWords": [
+                                        "four"
+                                        ],
+                      "nounWords": [
+                                    "a",
+                                    "an",
+                                    "the",
+                                    "arrow",
+                                    "arrows",
+                                    "circle",
+                                    "circles",
+                                    "oval",
+                                    "ovals",
+                                    "rectangle",
+                                    "rectangles",
+                                    "square",
+                                    "squares",
+                                    "triangle",
+                                    "triangles"
+                                    ],
+                      "adjectiveWords": [],
+                      "verbWords": [
+                                    "is",
+                                    "are"
+                                    ],
+                      "pronounWords": [
+                                       "it",
+                                       "this",
+                                       "that",
+                                       "they",
+                                       "these",
+                                       "those"
+                                       ],
+                      "prepositionWords": [],
+                      "functionButtons": [],
+                      "subject": "NPl",
+                      "pronounNounLists": [],
+                      "specialWordsList": [],
+                      "specialWordsTriggers": [],
+                      "subjectRequest": [],
+                      "replaceSubject": [],
+                      "startWords": [],
+                      "untokenizedAnswersList": [],
+                      "saidFrame": "",
+                      "quote": "",
+                      "timeCaption": ""
+                      }
+                      ]
 }

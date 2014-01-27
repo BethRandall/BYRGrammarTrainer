@@ -1,30 +1,7 @@
 {
     "exerciseArray": [
                       {
-                      "question": "The girls are are talking to you. They telling you that you will call them. Look at the empty balloon over the girls. What words do the girls use? Type the words that go into the balloon.",
-                      "unneededWords": [
-                                        "use",
-                                        "uses",
-                                        "word",
-                                        "words",
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "answers": [
-                                  "you will call us."
-                                  ],
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_1.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/4_youwillcallus_noBalloon.m4v",
-                      "balloonSpecs": "left, 100, 10"
-                      },
-                      {
+                      "exnum": "1",
                       "question": "The girl is talking to you. She is telling you that she will call you. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -39,16 +16,15 @@
                                   "I will call you."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      
+                      ],
                       "oralprompt": "sounds/prompt_2.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The girl said that she will call you.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/1_iwillcallyou_noBalloon.m4v",
-                      "balloonSpecs": "right, 100, 10"
+                      "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "2",
                       "question": "The girl is talking to you. She is telling you that you will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -63,16 +39,15 @@
                                   "you will call me."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      
+                      ],
                       "oralprompt": "sounds/prompt_3.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The girl said that you will call her.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/2_youwillcallme_noBalloon.m4v",
-                      "balloonSpecs": "right, 100, 10"
+                      "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "3",
                       "question": "The girls are talking to you. They are telling you that they will call you. Look at the empty balloon over the girls. What words do the girls use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -87,17 +62,16 @@
                                   "we will call you."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      
+                      ],
                       "oralprompt": "sounds/prompt_4.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The girls said that they will call you.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/3_wewillcallyou_noBalloon.m4v",
                       "balloonSpecs": "left, 100, 10"
                       },
                       {
-                      "question": "The girl is talking to the boy. She is telling him that you will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
+                      "exnum": "4",
+                      "question": "The girls are are talking to you. They telling you that you will call them. Look at the empty balloon over the girls. What words do the girls use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
                                         "uses",
@@ -108,116 +82,17 @@
                                         "that"
                                         ],
                       "answers": [
-                                  "he_she will call me."
+                                  "you will call us."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_5.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/10_willcallme_boy_noBallon_HE_SHE.m4v",
-                      "balloonSpecs": "right, 100, 10"
-                      },
-                      {
-                      "question": "The boy is talking to the girl. He is telling her that he will call you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
-                      "unneededWords": [
-                                        "use",
-                                        "uses",
-                                        "word",
-                                        "words",
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "answers": [
-                                  "I will call him_her."
-                                  ],
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_6.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/11_iwillcallher_girl_noBalloon.m4v",
+                      ],
+                      "oralprompt": "sounds/prompt_1.m4a",
+                      "prompt": "The girls said that you will call them.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/4_youwillcallus_noBalloon.m4v",
                       "balloonSpecs": "left, 100, 10"
                       },
                       {
-                      "question": "The boy is talking to the girl. He is telling her that you will call him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
-                      "unneededWords": [
-                                        "use",
-                                        "uses",
-                                        "word",
-                                        "words",
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "answers": [
-                                  "he_she will call me."
-                                  ],
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_7.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/9_iwillcall_boy_noBalloon_HIM_HER.m4v",
-                      "balloonSpecs": "right, 100, 10"
-                      },
-                      {
-                      "question": "The girl is talking to the boy. She is telling him that she will call you. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
-                      "unneededWords": [
-                                        "use",
-                                        "uses",
-                                        "word",
-                                        "words",
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "answers": [
-                                  "I will call him_her."
-                                  ],
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_8.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/12_willcallme_girl_noBalloon_HE_SHE.m4v",
-                      "balloonSpecs": "right, 100, 10"
-                      },
-                      {
-                      "question": "The girl is talking to you. She is telling you that the boy will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
-                      "unneededWords": [
-                                        "use",
-                                        "uses",
-                                        "word",
-                                        "words",
-                                        "saying",
-                                        "telling",
-                                        "that",
-                                        "boy"
-                                        ],
-                      "answers": [
-                                  "he will call me."
-                                  ],
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_9.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/8_hewillcallme_girl_noBalloon.m4v",
-                      "balloonSpecs": "right, 100, 10"
-                      },
-                      {
+                      "exnum": "5",
                       "question": "The boy is talking to you. He is telling you that he will call the girl. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -233,16 +108,14 @@
                                   "I will call her."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "oralprompt": "sounds/prompt_10.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The boy said that he will call the girl.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/5_iwillcallher_boy_noBalloon.m4v",
                       "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "6",
                       "question": "The boy is talking to you. He is telling you that the girl will call him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -258,16 +131,14 @@
                                   "she will call me."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "oralprompt": "sounds/prompt_11.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The boy said that the girl will call him.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/6_shewillcallme_boy_noBalloon.m4v",
                       "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "7",
                       "question": "The girl is talking to you. She is telling you that she will call the boy. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -283,17 +154,38 @@
                                   "I will call him."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "oralprompt": "sounds/prompt_12.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The girl said that she will call the boy.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/7_iwillcallhim_girl_noBalloon.m4v",
-                      "balloonSpecs": "right, 100, 10"
+                      "balloonSpecs": "left, 100, 10"
                       },
                       {
-                      "question": "The girl is talking to the boy. She is telling him that he will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
+                      "exnum": "8",
+                      "question": "The girl is talking to you. She is telling you that the boy will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
+                      "unneededWords": [
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that",
+                                        "boy"
+                                        ],
+                      "answers": [
+                                  "he will call me."
+                                  ],
+                      "multipleChoice": [
+                      ],
+                      "oralprompt": "sounds/prompt_9.m4a",
+                      "prompt": "The girl said that the boy will call her.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/8_hewillcallme_girl_noBalloon.m4v",
+                      "balloonSpecs": "left, 100, 10"
+                      },
+                      {
+                      "exnum": "9",
+                      "question": "The boy is talking to the girl. He is telling her that he will call you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
                                         "uses",
@@ -304,19 +196,83 @@
                                         "that"
                                         ],
                       "answers": [
-                                  "you will call me."
+                                  "I will call him_her."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "oralprompt": "sounds/prompt_13.m4a",
-                      "prompt": "Need to fill this oralpromptText",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/16_youwillcallme_girl_noBalloon.m4v",
-                      "balloonSpecs": "right, 100, 10"
+                      ],
+                      "oralprompt": "sounds/prompt_6.m4a",
+                      "prompt": "The boy said that he will call you.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/11_iwillcallher_girl_noBalloon.m4v",
+                      "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "10",
+                      "question": "The boy is talking to the girl. He is telling her that you will call him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
+                      "unneededWords": [
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "answers": [
+                                  "he_she will call me."
+                                  ],
+                      "multipleChoice": [
+                      ],
+                      "oralprompt": "sounds/prompt_7.m4a",
+                      "prompt": "The boy said that you will call him.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/9_iwillcall_boy_noBalloon_HIM_HER.m4v",
+                      "balloonSpecs": "left, 100, 10"
+                      },
+                      {
+                      "exnum": "11",
+                      "question": "The girl is talking to the boy. She is telling him that she will call you. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
+                      "unneededWords": [
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "answers": [
+                                  "I will call him_her."
+                                  ],
+                      "multipleChoice": [
+                      ],
+                      "oralprompt": "sounds/prompt_8.m4a",
+                      "prompt": "The girl said that she will call you.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/12_willcallme_girl_noBalloon_HE_SHE.m4v",
+                      "balloonSpecs": "left, 100, 10"
+                      },
+                      {
+                      "exnum": "12",
+                      "question": "The girl is talking to the boy. She is telling him that you will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
+                      "unneededWords": [
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "answers": [
+                                  "he_she will call me."
+                                  ],
+                      "multipleChoice": [
+                      ],
+                      "oralprompt": "sounds/prompt_5.m4a",
+                      "prompt": "The girl said that you will call her.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/10_willcallme_boy_noBallon_HE_SHE.m4v",
+                      "balloonSpecs": "left, 100, 10"
+                      },
+                      {
+                      "exnum": "13",
                       "question": "The boy is talking to the girl. He is telling her that he will call her. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -331,16 +287,14 @@
                                   "I will call you."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "oralprompt": "sounds/prompt_14.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The boy said that he will call the girl.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/13_iwillcallyou_boy_noBalloon.m4v",
                       "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "14",
                       "question": "The boy is talking to the girl. He is telling her that she will call him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -355,16 +309,14 @@
                                   "you will call me."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "oralprompt": "sounds/prompt_15.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The boy said that the girl will call him.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/14_youwillcallme_boy_noBalloon.m4v",
                       "balloonSpecs": "left, 100, 10"
                       },
                       {
+                      "exnum": "15",
                       "question": "The girl is talking to the boy. She is telling him that she will call him. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
                       "unneededWords": [
                                         "use",
@@ -379,36 +331,50 @@
                                   "I will call you."
                                   ],
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "oralprompt": "sounds/prompt_16.m4a",
-                      "prompt": "Need to fill this oralpromptText",
+                      "prompt": "The girl said that she will call the boy.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/15_iwillcallyou_girl_noBalloon.m4v",
-                      "balloonSpecs": "right, 100, 10"
+                      "balloonSpecs": "left, 100, 10"
+                      },
+                      {
+                      "exnum": "16",
+                      "question": "The girl is talking to the boy. She is telling him that he will call her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
+                      "unneededWords": [
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "answers": [
+                                  "you will call me."
+                                  ],
+                      "multipleChoice": [
+                      ],
+                      "oralprompt": "sounds/prompt_13.m4a",
+                      "prompt": "The girl said that the boy will call her.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/commingsoon.m4v",
+                      "balloonSpecs": "left, 100, 10"
                       }
                       ],
     "pronounWords": [
-                     "i",
-                     "me",
-                     "you", 
-                     "he", 
+                     "I",
+                     "you",
+                     "he",
                      "she",
                      "him",
                      "her",
                      "them",
                      "they",
-                     "us",
-                     "we"
-                     ], 
-    "nounWords": [
-                  "a", 
-                  "the" 
-                  ], 
+                     "me",
+                     "we",
+                     "us"
+                     ],
     "verbWords": [
                   "will",
-                  "call" 
+                  "call"
                   ]
-
 }

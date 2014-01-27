@@ -1,6 +1,24 @@
 {
+    "pronounWords": [
+                     "I",
+                     "you",
+                     "he",
+                     "she",
+                     "him",
+                     "her",
+                     "them",
+                     "they",
+                     "me",
+                     "we",
+                     "us"
+                     ],
+    "verbWords": [
+                  "will",
+                  "help"
+                  ],
     "exerciseArray": [
                       {
+                      "exnum": "1",
                       "timeCaption": "Now",
                       "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
                       "multipleChoice": [
@@ -17,12 +35,12 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "I will help you.",
                       "prompt": "The boy said that ",
+                      "quote": "I will help you.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/1_lesson_2.m4v"
                       },
                       {
+                      "exnum": "2",
                       "timeCaption": "Now",
                       "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
                       "multipleChoice": [
@@ -39,16 +57,16 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "You will help me.",
                       "prompt": "The boy said that ",
+                      "quote": "You will help me.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/2_lesson_2.m4v"
                       },
                       {
+                      "exnum": "3",
                       "timeCaption": "Now",
                       "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
                       "multipleChoice": [
-                                         "they will help me.",
+                                         "They will help me.",
                                          "I will help them.",
                                          "You will help us.",
                                          "We will help you."
@@ -61,16 +79,16 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "They are saying that ",
-                      "quote": "We will help you.",
                       "prompt": "The boys said that ",
+                      "quote": "We will help you.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/3_lesson_2.m4v"
                       },
                       {
+                      "exnum": "4",
                       "timeCaption": "Now",
                       "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
                       "multipleChoice": [
-                                         "they will help me.",
+                                         "They will help me.",
                                          "I will help them.",
                                          "You will help us.",
                                          "We will help you."
@@ -83,106 +101,18 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "They are saying that ",
-                      "quote": "You will help us.",
                       "prompt": "The boys said that ",
+                      "quote": "You will help us.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/4_lesson_2.m4v"
                       },
                       {
-                      "timeCaption": "Now",
-                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-                      "multipleChoice": [
-                                         "He will help me.",
-                                         "He will helphim_her.",
-                                         "She will help him.",
-                                         "I will help him."
-                                         ],
-                      "answers": [
-                                  "he will help me."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "I will help him_her.",
-                      "prompt": "The boy said that ",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/5_lesson_2.m4v"
-                      },
-                      {
-                      "timeCaption": "Now",
-                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-                      "multipleChoice": [
-                                         "He will help me.",
-                                         "He will help her.",
-                                         "He_She will help him.",
-                                         "I will help him."
-                                         ],
-                      "answers": [
-                                  "I will help him."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "He_She will help me.",
-                      "prompt": "The boy said that ",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/6_lesson_2.m4v"
-                      },
-                      {
-                      "timeCaption": "Now",
-                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
-                      "multipleChoice": [
-                                         "She will help me.",
-                                         "She will helphim_her.",
-                                         "He will help her.",
-                                         "I will help her."
-                                         ],
-                      "answers": [
-                                  "she will help me."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "saidFrame": "She is saying that ",
-                      "quote": "I will help him_her.",
-                      "prompt": "The girl said that ",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/7_lesson_2.m4v"
-                      },
-                      {
-                      "timeCaption": "Now",
-                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
-                      "multipleChoice": [
-                                         "She will help me.",
-                                         "She will help him.",
-                                         "He_She will help her.",
-                                         "I will help her."
-                                         ],
-                      "answers": [
-                                  "I will help her."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "saidFrame": "She is saying that ",
-                      "quote": "He_She will help me.",
-                      "prompt": "The girl said that ",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/8_lesson_2.m4v"
-                      },
-                      {
+                      "exnum": "5",
                       "timeCaption": "Now",
                       "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
                       "multipleChoice": [
-                                         "He will help the girl.",
-                                         "The girl will help him.",
-                                         "I will help the girl.",
+                                         "He will help her.",
+                                         "She will help him.",
+                                         "I will help him.",
                                          "I will help her."
                                          ],
                       "answers": [
@@ -194,18 +124,18 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "I will help her.",
                       "prompt": "The boy said that ",
+                      "quote": "I will help her.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_2.m4v"
                       },
                       {
+                      "exnum": "6",
                       "timeCaption": "Now",
                       "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
                       "multipleChoice": [
-                                         "He will help the girl.",
-                                         "The girl will help him.",
-                                         "I will help the girl.",
+                                         "He will help her.",
+                                         "She will help him.",
+                                         "I will help him.",
                                          "I will help her."
                                          ],
                       "answers": [
@@ -217,18 +147,18 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "She will help me.",
                       "prompt": "The boy said that ",
+                      "quote": "She will help me.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/10_lesson_2.m4v"
                       },
                       {
+                      "exnum": "7",
                       "timeCaption": "Now",
                       "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
                       "multipleChoice": [
-                                         "She will help the boy.",
-                                         "The boy will help her.",
-                                         "I will help the boy.",
+                                         "She will help him.",
+                                         "He will help her.",
+                                         "I will help her.",
                                          "I will help him."
                                          ],
                       "answers": [
@@ -240,18 +170,18 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "She is saying that ",
-                      "quote": "I will help him.",
                       "prompt": "The girl said that ",
+                      "quote": "I will help him.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/11_lesson_2.m4v"
                       },
                       {
+                      "exnum": "8",
                       "timeCaption": "Now",
                       "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
                       "multipleChoice": [
-                                         "She will help the boy.",
-                                         "The boy will help her.",
-                                         "I will help the boy.",
+                                         "She will help him.",
+                                         "He will help her.",
+                                         "I will help her.",
                                          "I will help him."
                                          ],
                       "answers": [
@@ -263,12 +193,100 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "She is saying that ",
-                      "quote": "He will help me.",
                       "prompt": "The girl said that ",
+                      "quote": "He will help me.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/12_lesson_2.m4v"
                       },
                       {
+                      "exnum": "9",
+                      "timeCaption": "Now",
+                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+                      "multipleChoice": [
+                                         "He will help me.",
+                                         "He will help her.",
+                                         "She will help him.",
+                                         "I will help him."
+                                         ],
+                      "answers": [
+                                  "he will help me."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "prompt": "The boy said that ",
+                      "quote": "I will help him_her.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/5_lesson_2.m4v"
+                      },
+                      {
+                      "exnum": "10",
+                      "timeCaption": "Now",
+                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+                      "multipleChoice": [
+                                         "He will help me.",
+                                         "He will help her.",
+                                         "She will help him.",
+                                         "I will help him."
+                                         ],
+                      "answers": [
+                                  "I will help him."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "prompt": "The boy said that ",
+                      "quote": "He_She will help me.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/6_lesson_2.m4v"
+                      },
+                      {
+                      "exnum": "11",
+                      "timeCaption": "Now",
+                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      "multipleChoice": [
+                                         "She will help me.",
+                                         "She will help him.",
+                                         "He will help her.",
+                                         "I will help her."
+                                         ],
+                      "answers": [
+                                  "She will help me."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "prompt": "The girl said that ",
+                      "quote": "I will help him_her.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/7_lesson_2.m4v"
+                      },
+                      {
+                      "exnum": "12",
+                      "timeCaption": "Now",
+                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      "multipleChoice": [
+                                         "She will help me.",
+                                         "She will help him.",
+                                         "He will help her.",
+                                         "I will help her."
+                                         ],
+                      "answers": [
+                                  "I will help her."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "prompt": "The girl said that ",
+                      "quote": "He_She will help me.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/8_lesson_2.m4v"
+                      },
+                      {
+                      "exnum": "13",
                       "timeCaption": "Now",
                       "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
                       "multipleChoice": [
@@ -286,12 +304,12 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "I will help you.",
                       "prompt": "The boy said that ",
+                      "quote": "I will help you.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/13_lesson_2.m4v"
                       },
                       {
+                      "exnum": "14",
                       "timeCaption": "Now",
                       "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
                       "multipleChoice": [
@@ -309,12 +327,12 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "He is saying that ",
-                      "quote": "You will help me.",
                       "prompt": "The boy said that ",
+                      "quote": "You will help me.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_2.m4v"
                       },
                       {
+                      "exnum": "15",
                       "timeCaption": "Now",
                       "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
                       "multipleChoice": [
@@ -332,12 +350,12 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "She is saying that ",
-                      "quote": "I will help you.",
                       "prompt": "The girl said that ",
+                      "quote": "I will help you.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/15_lesson_2.m4v"
                       },
                       {
+                      "exnum": "16",
                       "timeCaption": "Now",
                       "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
                       "multipleChoice": [
@@ -355,31 +373,9 @@
                                         "telling",
                                         "that"
                                         ],
-                      "saidFrame": "She is saying that ",
-                      "quote": "You will help me.",
                       "prompt": "The girl said that ",
+                      "quote": "You will help me.",
                       "lessonVideo": "gt_videos/transportation_theme_videos/16_lesson_2.m4v"
                       }
-                      ],
-    "verbWords": [
-                  "will",
-                  "help",
-                  "call"
-                  ],
-    "nounWords": [
-                  "girl",
-                  "boy",
-                  "the",
-                  "I",
-                  "you",
-                  "we",
-                  "she",
-                  "he",
-                  "they",
-                  "me",
-                  "us",
-                  "her",
-                  "him",
-                  "them"
-                  ]
+                      ]
 }

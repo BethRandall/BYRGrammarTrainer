@@ -274,8 +274,8 @@ p.speechRight:after
 
 #multipleChoiceContainer #multipleChoiceTab
 {
-	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat;
-	color: #522611;
+	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; /* pale orangey-beige */
+	color: #522611; /* dark brown */
 	font-size: 18px;
 	font-weight: bold;
 	padding: 12px;
@@ -283,7 +283,6 @@ p.speechRight:after
 	border-top-right-radius: 10px;
 	
 	-webkit-box-shadow:inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2);
-
 }
 
 #multipleChoiceDisplay
@@ -293,19 +292,20 @@ p.speechRight:after
 	height:100%;
 	margin-left:-8px;
 	margin-top:-28px;
-	background-color:#000;
+	/* background-color:#000; */
 	opacity: 0.5;
 	z-index:10;
 	
 }
 
+/* BYR:  This chunk of code is in use.  */
 #multipleChoiceBox
 {
 	position:absolute;
 	top:530px;
-	left:500px;
-	background:#fdd79f url(img/canvasTextureTransparent.png) repeat;
-	color: #522611;
+	left:600px;
+	background:#fdd79f url(img/canvasTextureTransparent.png) repeat; /* orangey-beige */
+	color: #522611; /* dark burgundy */
 	font-size: 18px;
 	font-weight: bold;
 	width:500px;
@@ -323,13 +323,17 @@ p.speechRight:after
 	margin-right: 20px;
 }
 
+/* BYR:  There is currently no way to close the multiple choice box.
+   AFAIK, this chunk of code is not in use.  However, if you comment it
+   out, the dot container goes all the way to the right.  */
+
 #multipleChoiceCloseBtn
 {	
 	position:absolute;
 	top:240px;
 	left:445px;
 	background:#7f3b1b url(img/watercolorTextureTransparent.png) repeat;
-	color: #fdd79e;
+	color: #fdd79e; /* dark brown */
 	text-align:center;
 	font-size: 42px;
 	padding-top:5px;
@@ -391,7 +395,8 @@ p.speechRight:after
 
 #answerContainer
 {
-	background:#bf5e30 url(img/watercolorTextureTransparent.png) repeat;
+	/* background:#bf5e30 url(img/watercolorTextureTransparent.png) repeat; */ /* light brown */
+    background:#3a1302 url(img/watercolorTextureTransparent.png) repeat;  /* dark brown */
 	width: 100%;
 	position: fixed;
 	top: 360px;
@@ -469,9 +474,11 @@ p.speechRight:after
 
 #answerContainer #deleteButton
 {
-	background:#7f3b1b url(img/watercolorTextureTransparent.png) repeat;
+	/* background:#7f3b1b url(img/watercolorTextureTransparent.png) repeat; */ 
+    background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; 
 	border-radius: 10px;
-	color: #ffffff;
+	// color: #ffffff;
+    color: #522611;
 	position: relative;
 	padding: 20px 10px 10px;
 	height: 25px;
@@ -488,8 +495,8 @@ p.speechRight:after
 
 #answerCategoryTabContainer
 {
-	background:#bf5e30 url(img/watercolorTextureTransparent.png) repeat;
-	width: 100%;
+	background:#bf5e30 url(img/watercolorTextureTransparent.png) repeat; /* brick red */
+ 	width: 100%;
 	height: 200px;
 	font-size: 20px;
 	position: fixed;
@@ -509,28 +516,29 @@ p.speechRight:after
 {
 	display: inline;
 	font-size: 20px;
-	color: #522611;
+	color: #522611; /* dark brown */
 	padding: 14px 16px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+    /*position: fixed;
+    z-index: 3*/
 	
 	-webkit-box-shadow:inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2);
 }
 
 #answerCategoryTabContainer ul li.answerCategoryTab{
-	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat;
-	color: #48220f;	
+	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; /* beige */
+    color: #48220f; /* dark brown */	
 }
 
 #answerCategoryTabContainer ul li.active {
-	background:#7f3b1b url(img/canvasTextureTransparent.png) repeat;
+	background:#7f3b1b url(img/canvasTextureTransparent.png) repeat; /* medium brown */
 	color:#ffffff;
 	z-index:3;
 	position:relative;
 	top:-1px;
 	
 	-webkit-box-shadow:0 3px 2px rgba(0,0,0,0.4), inset -3px -3px 3px rgba(0,0,0,0.2);
-
 }
 
 #selectedAnswerList
@@ -544,16 +552,37 @@ p.speechRight:after
 	z-index:2;
 	
 	-webkit-box-shadow:0 3px 2px rgba(0,0,0,0.4);
-
 }
 
-.draggableWord
+
+.posTab
 {
-	background:#b0d1f0 url(img/watercolorTextureTransparent.png) repeat;
+	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; /* beige */
 	position: absolute;
 	border-radius: 10px;
 	font-size:18px;
-	color: #000000;
+	color: #48220f; /* dark brown */
+	font-stretch: condensed;
+	font-weight: bold;
+	z-index: 3;
+	
+	-webkit-box-shadow:inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2);
+}
+
+.posTab .listTab
+{
+	position: absolute;
+	z-index: 3;
+}
+
+
+.draggableWord
+{
+	background:#b0d1f0 url(img/watercolorTextureTransparent.png) repeat; /* light blue */
+	position: absolute;
+	border-radius: 10px;
+	font-size:18px;
+	color: #000000; 
 	font-stretch: condensed;
 	font-weight: bold;
 	z-index: 5;
@@ -650,7 +679,6 @@ For when exercise is completed, next button is active
 	font-weight: bold;
 	text-decoration: none;
 }
-
 
 /*Video CSS Code*/
 

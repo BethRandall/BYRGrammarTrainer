@@ -1,7 +1,6 @@
 {
     "pronounWords": [
-                     "i",
-                     "me",
+                     "I",
                      "you",
                      "he",
                      "she",
@@ -9,37 +8,17 @@
                      "her",
                      "them",
                      "they",
+                     "me",
+                     "we",
                      "us"
                      ],
-    "nounWords": [
-                  "a",
-                  "the"
-                  ],
     "verbWords": [
                   "will",
                   "call"
                   ],
     "exerciseArray": [
                       {
-                      "prompt": "The girls said that ",
-                      "quote": "You will call us.",
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "question": "The girls are talking to you. Look at the words in the balloon over the girls. What are they saying to you?",
-                      "answers": [
-                                  "I will call them."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/4_youwillcallus.m4v"
-                      },
-                      {
+                      "exnum": "1",
                       "prompt": "The girl said that ",
                       "quote": "I will call you.",
                       "multipleChoice": [
@@ -59,13 +38,11 @@
                       "lessonVideo": "gt_videos/transportation_theme_videos/1_iwillcallyou.m4v"
                       },
                       {
+                      "exnum": "2",
                       "prompt": "The girl said that ",
                       "quote": "You will call me.",
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "question": "The girl is talking to you. Look at the words in the balloon over the girl. What is she saying to you?",
                       "answers": [
                                   "I will call her."
@@ -78,13 +55,11 @@
                       "lessonVideo": "gt_videos/transportation_theme_videos/2_youwillcallme.m4v"
                       },
                       {
+                      "exnum": "3",
                       "prompt": "The girls said that ",
                       "quote": "We will call you.",
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "question": "The girls are talking to you. Look at the words in the balloon over the girls. What are they saying to you?",
                       "answers": [
                                   "they will call me."
@@ -97,109 +72,28 @@
                       "lessonVideo": "gt_videos/transportation_theme_videos/3_wewillcallyou.m4v"
                       },
                       {
-                      "prompt": "The girl said that ",
-                      "quote": "He_She will call me.",
+                      "exnum": "4",
+                      "prompt": "The girls said that ",
+                      "quote": "You will call us.",
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      ],
+                      "question": "The girls are talking to you. Look at the words in the balloon over the girls. What are they saying to you?",
                       "answers": [
-                                  "I will call her."
+                                  "I will call them."
                                   ],
                       "unneededWords": [
                                         "saying",
                                         "telling",
                                         "that"
                                         ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/11_iwillcallher_girl_her.m4v"
+                      "lessonVideo": "gt_videos/transportation_theme_videos/4_youwillcallus.m4v"
                       },
                       {
-                      "prompt": "The boy said that ",
-                      "quote": "I will call him_her.",
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-                      "answers": [
-                                  "he will call me."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/10_hewillcallme_boy_he.m4v"
-                      },
-                      {
-                      "prompt": "The boy said that ",
-                      "quote": "He_She will call me.",
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-                      "answers": [
-                                  "I will call him."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/9_iwillcallhim_boy_him.m4v"
-                      },
-                      {
-                      "prompt": "The girl said that ",
-                      "quote": "I will call him_her.",
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
-                      "answers": [
-                                  "she will call me."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/12_shewillcallme_girl_she.m4v"
-                      },
-                      {
-                      "prompt": "The girl said that ",
-                      "quote": "He will call me.",
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
-                      "answers": [
-                                  "the boy will call her.",
-                                  "he will call her."
-                                  ],
-                      "unneededWords": [
-                                        "saying",
-                                        "telling",
-                                        "that"
-                                        ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/8_hewillcallme_girl.m4v"
-                      },
-                      {
+                      "exnum": "5",
                       "prompt": "The boy said that ",
                       "quote": "I will call her.",
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
                       "answers": [
                                   "he will call the girl.",
@@ -213,13 +107,11 @@
                       "lessonVideo": "gt_videos/transportation_theme_videos/5_iwillcallher_boy.m4v"
                       },
                       {
+                      "exnum": "6",
                       "prompt": "The boy said that ",
                       "quote": "She will call me.",
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
                       "answers": [
                                   "the girl will call him.",
@@ -233,13 +125,11 @@
                       "lessonVideo": "gt_videos/transportation_theme_videos/6_shewillcallme_boy.m4v"
                       },
                       {
+                      "exnum": "7",
                       "prompt": "The girl said that ",
                       "quote": "I will call him.",
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
                       "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
                       "answers": [
                                   "she will call the boy.",
@@ -253,33 +143,95 @@
                       "lessonVideo": "gt_videos/transportation_theme_videos/7_iwillcallhim_girl.m4v"
                       },
                       {
-                      "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
-                      "quote": "You will call me.",
+                      "exnum": "8",
                       "prompt": "The girl said that ",
-                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      "quote": "He will call me.",
+                      "multipleChoice": [
+                      ],
+                      "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
                       "answers": [
+                                  "the boy will call her.",
                                   "he will call her."
                                   ],
-                      "pronounNounLists": [
-                                           "he,boy,mandatory_pronoun"
-                                           ],
                       "unneededWords": [
                                         "saying",
                                         "telling",
                                         "that"
                                         ],
-                      "lessonVideo": "gt_videos/transportation_theme_videos/16_youwillcallme_girl.m4v"
+                      "lessonVideo": "gt_videos/transportation_theme_videos/8_hewillcallme_girl.m4v"
+                      },
+                      {
+                      "exnum": "9",
+                      "prompt": "The boy said that ",
+                      "quote": "I will call him_her.",
+                      "multipleChoice": [
+                      ],
+                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+                      "answers": [
+                                  "he will call me."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "lessonVideo": "gt_videos/transportation_theme_videos/10_hewillcallme_boy_he.m4v"
+                      },
+                      {
+                      "exnum": "10",
+                      "prompt": "The boy said that ",
+                      "quote": "He_She will call me.",
+                      "multipleChoice": [
+                      ],
+                      "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+                      "answers": [
+                                  "I will call him."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "lessonVideo": "gt_videos/transportation_theme_videos/9_iwillcallhim_boy_him.m4v"
+                      },
+                      {
+                      "exnum": "11",
+                      "prompt": "The girl said that ",
+                      "quote": "I will call him_her.",
+                      "multipleChoice": [
+                      ],
+                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      "answers": [
+                                  "she will call me."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "lessonVideo": "gt_videos/transportation_theme_videos/12_shewillcallme_girl_she.m4v"
+                      },
+                      {
+                      "exnum": "12",
+                      "prompt": "The girl said that ",
+                      "quote": "He_She will call me.",
+                      "multipleChoice": [
+                      ],
+                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      "answers": [
+                                  "I will call her."
+                                  ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "lessonVideo": "gt_videos/transportation_theme_videos/11_iwillcallher_girl_her.m4v"
                       },
                       {
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
+                      "exnum": "13",
                       "quote": "I will call you.",
                       "prompt": "The boy said that ",
                       "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
@@ -298,10 +250,8 @@
                       },
                       {
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
+                      "exnum": "14",
                       "quote": "You will call me.",
                       "prompt": "The boy said that ",
                       "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
@@ -320,10 +270,8 @@
                       },
                       {
                       "multipleChoice": [
-                                         "one",
-                                         "two",
-                                         "three"
-                                         ],
+                      ],
+                      "exnum": "15",
                       "quote": "I will call you.",
                       "prompt": "The girl said that ",
                       "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
@@ -339,6 +287,26 @@
                                         "that"
                                         ],
                       "lessonVideo": "gt_videos/transportation_theme_videos/15_iwillcallyou_girl.m4v"
+                      },
+                      {
+                      "multipleChoice": [
+                      ],
+                      "exnum": "16",
+                      "quote": "You will call me.",
+                      "prompt": "The girl said that ",
+                      "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
+                      "answers": [
+                                  "he will call her."
+                                  ],
+                      "pronounNounLists": [
+                                           "he,boy,mandatory_pronoun"
+                                           ],
+                      "unneededWords": [
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "lessonVideo": "gt_videos/transportation_theme_videos/16_youwillcallme_girl.m4v"
                       }
                       ]
 }
