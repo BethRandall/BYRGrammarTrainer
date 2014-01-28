@@ -116,51 +116,6 @@ function setOralPrompt(context) {
             $("#oralpromptText").hide(); } }
 }
 
-/*
-
-function setVideo(context) {
-
-        // Lesson uses video 
-        document.getElementById('video').pause();
-        $("#video").attr("src", context.lessonVideo);
-        //alert($('#video').attr("src"));
-        document.getElementById('video').load();
-        //document.getElementById('video').play();
-        //  if (currentExercise.prompt != "undefined") {
-        document.getElementById('questionContainer').innerHTML = "<p>" +  context.prompt + "</p>"; //}
-        //else {
-        //  if (currentExercise.question != "undefined") {
-        //    document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.question + "</p>"; } }}
-           
-        $("#video_box p").text(context.question);
-        
-        setOralPrompt(context); 
-        // If the question text contains the substring "empty ballon" show the empty ballon
-        var theQuestion  = context.question;
-        var theIndex = theQuestion.search("empty balloon");
-        if (theIndex > 0) {  
-            $("#speechBubble").show();
-            var bubbleSpecsString  = context.balloonSpecs;
-            var specs = bubbleSpecsString.split(",");
-            if (specs[0] == "left") { 
-                $("#speechBubble").css("top", "10px");
-                $("#speechBubble").css("left", "350px");
-                
-                $("#speechBubble p").removeClass("speechRight");
-                $("#speechBubble p").addClass("speechLeft");
-            } else {
-                $("#speechBubble").css("top", "10px");
-                $("#speechBubble").css("left", "10px");
-                
-                $("#speechBubble p").removeClass("speechLeft");
-                $("#speechBubble p").addClass("speechRight");
-            }
-        } else {
-            $("#speechBubble").hide(); }
-        
-}
- */
-
 function setSpeechBubble(context) {
     // If the question text contains the substring "empty ballon" show the empty ballon
     var theQuestion  = context.question;
