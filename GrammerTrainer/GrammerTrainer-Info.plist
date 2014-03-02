@@ -28,8 +28,6 @@
 				<string>Default-Landscape~ipad.png</string>
 				<string>icon72@2x.png</string>
 			</array>
-			<key>UIPrerenderedIcon</key>
-			<false/>
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>

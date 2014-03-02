@@ -418,12 +418,16 @@
                                           him_her = 'her';
                                           he_she = 'she';
                                           Him_Her = 'Her';
-                                          He_She = 'She';                          
+                                          He_She = 'She';
+                                          HE_SHE = 'SHE';
+                                          HIM_HER = 'HER';
                                       } else {
                                           him_her = 'him';
                                           he_she = 'he';
                                           Him_Her = 'Him';
-                                          He_She = 'He';                          
+                                          He_She = 'He';
+                                          HE_SHE = 'HE';
+                                          HIM_HER = 'HIM';
                                       }
                                         updateGender();
                                   } else { alert("No Response"); }
@@ -435,7 +439,9 @@
         var him_her = 'him';
         var he_she = 'he';
         var Him_Her = 'Him';
-        var He_She = 'He';   
+        var He_She = 'He';
+        var HE_SHE = 'HE';
+        var HIM_HER = 'HIM';
           
         function updateGender() {
             // Loop through theLesson/exerciseArray/multipleChoice, answers and make text replacements
@@ -459,7 +465,20 @@
                     theExercise.lessonVideo = theExercise.lessonVideo.replace("him_her",him_her);
                     theExercise.lessonVideo = theExercise.lessonVideo.replace("he_she",he_she);
                     theExercise.lessonVideo = theExercise.lessonVideo.replace("Him_Her",Him_Her);
-                    theExercise.lessonVideo = theExercise.lessonVideo.replace("He_She",He_She); }
+                    theExercise.lessonVideo = theExercise.lessonVideo.replace("He_She",He_She);
+                    theExercise.lessonVideo = theExercise.lessonVideo.replace("HE_SHE",HE_SHE);
+                    theExercise.lessonVideo = theExercise.lessonVideo.replace("HIM_HER",HIM_HER);
+                    //alert("lessonVideo:  " + theExercise.lessonVideo);
+                }
+               if(typeof theExercise.balloonPrefill != 'undefined') {
+                    theExercise.balloonPrefill = theExercise.balloonPrefill.replace("him_her",him_her);
+                    theExercise.balloonPrefill = theExercise.balloonPrefill.replace("he_she",he_she);
+                    theExercise.balloonPrefill = theExercise.balloonPrefill.replace("Him_Her",Him_Her);
+                    theExercise.balloonPrefill = theExercise.balloonPrefill.replace("He_She",He_She);
+                    theExercise.balloonPrefill = theExercise.balloonPrefill.replace("HE_SHE",HE_SHE);
+                    theExercise.balloonPRefill = theExercise.balloonPrefill.replace("HIM_HER",HIM_HER);
+                }
+                    
             }
         }
 

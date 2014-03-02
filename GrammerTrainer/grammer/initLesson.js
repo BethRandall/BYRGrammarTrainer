@@ -117,17 +117,10 @@ function setOralPrompt(context) {
 }
 
 function setSpeechBubble(context) {
-    // If the question text contains the substring "empty ballon" show the empty ballon
-    var theQuestion  = context.question;
-    var theIndex = theQuestion.search("empty balloon");
-    if (theIndex > 0) {
-        
+    if (typeof context.balloonSpecs != "undefined") {
         $("#speechBubble").show();
-        
-        var bubbleSpecsString  = context.balloonSpecs;
-        
+        var bubbleSpecsString = context.balloonSpecs;
         var specs = bubbleSpecsString.split(",");
-        
         if (specs[0] == "left") {
             
             $("#speechBubble").css("top", "10px");
@@ -144,9 +137,9 @@ function setSpeechBubble(context) {
             $("#speechBubble p").addClass("speechRight");
         }
     } else {
-        $("#speechBubble").hide();
-    }
-    
+        $("#speechBubble").hide(); }
+    if (typeof context.balloonPrefill != "undefined") {
+        $("#speechBubble p").html(context.balloonPrefill); }
 }
 
 
@@ -279,12 +272,5 @@ function initUserInterface() {
     // word list are initialized in <lesson>.json file
     setWordTabs();
     setOralPrompt(firstExercise);
-    /*
-    
-    if(typeof firstExercise.oralprompt == "undefined") {
-        $("#oralPromptButton").hide(); }
-    if(typeof firstExercise.oralpromptText == "undefined") {
-        $("#oralpromptText").hide(); }
-     */
-     appLoaded();
+    appLoaded();
 }

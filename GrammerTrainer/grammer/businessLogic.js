@@ -223,7 +223,8 @@ function addWordToAnswer(targetWord, wordID)
 			//alert("Current left position of answer_" + i + " is " + tempLeftPosition + "!");
 		}
         
-        $("#speechBubble p").html(currentAnswerWords.join(" "));
+        if (typeof currentExercise.balloonPrefill == "undefined") {
+            $("#speechBubble p").html(currentAnswerWords.join(" ")); }
         
 		// Add period
 		tempAnswerID++;
@@ -350,7 +351,8 @@ function eraseAnswer()
     }
     else {
         $("#droppableAnswerBox p").html("Drop answer here."); }
-    $("#speechBubble p").html(" ");
+    if (typeof currentExercise.balloonPrefill == "undefined") {
+        $("#speechBubble p").html(" "); }
 }
 
 //function initAnswer() {
@@ -413,7 +415,9 @@ function sendDebug(a, b, c, d)
 // Submit answer
 function submitAnswer()
 {
+    // if someone hits "submit" on an empty answer, nothing happens.
 	if (currentAnswerWords.length == 0) { return; }
+    if (backDoor()) { return; }
     //var tempSentence = currentAnswerWords.join(" ");
 	//tempSentence += ".";
 	//DetermineFeedback();
@@ -423,6 +427,23 @@ function submitAnswer()
 	
 	// Update the dot feedback matrix
 	updateDotFeedback();
+}
+
+// "backdoor" method for advancing to particular exercise; repeat an answer word the same number of times
+// as the number of the desired exercise.
+function backDoor() {
+    //for (var j = 0; j < currentAnswerWords.length; j++) {
+      //  alert("currentAnswerWords[" + j + "]:  " + currentAnswerWords[j]); }
+    //alert("currentAnswerWords.length: " + currentAnswerWords.length);
+    for (var i = 0; i + 1 < currentAnswerWords.length; i++) {
+        if (currentAnswerWords[i].toLowerCase() == currentAnswerWords[i + 1].toLowerCase()) {
+           // alert("currentAnswerWords[i] == currentAnswerWords[i+1]: i = " + i); }
+           continue; }
+        else { return false; } }
+    alert("found " + currentAnswerWords.length + " repeated words.");
+    currentExerciseNumber = currentAnswerWords.length;
+    GetExercise();
+    return true;
 }
 
 // This function is used by encrypted code INTENGINEAP_NEW_E.js
@@ -633,6 +654,7 @@ function updateExercise()
         document.getElementById('video').pause();
         $("#video").attr("src", currentExercise.lessonVideo);
         //alert($('#video').attr("src"));
+        //alert("will load video:  " + currentExercise.lessonVideo);
         document.getElementById('video').load();
         //document.getElementById('video').play();
         
@@ -648,7 +670,7 @@ function updateExercise()
         
         setOralPrompt(currentExercise);
         setSpeechBubble(currentExercise);
- 
+        
     } else {
         
         //alert("image: " + currentExercise.lessonImage);
@@ -660,7 +682,8 @@ function updateExercise()
         $("#questionContainer").text(currentExercise.question);
     }
     
-    $("#speechBubble p").html(" ");
+    if (typeof currentExercise.balloonPrefill == "undefined") {
+        $("#speechBubble p").html(" "); }
     
     // if wordlists are defined at the lesson level, use them;
     // if wordslists are defined at the exercise level, write over the lesson level.
