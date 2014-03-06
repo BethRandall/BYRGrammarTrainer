@@ -45,16 +45,20 @@ function setWordTabs() {
     } else {
         $("#nounTab").hide(); }
     if((typeof verbWords != 'undefined') && (verbWords.length > 0)) {
+        $('#verbTab').removeClass('active');
         layoutDraggableWords(document.getElementById('verbList'), verbWords, 'verb');
     } else {
         $("#verbTab").hide(); }
     if((typeof adjectiveWords != 'undefined') && (adjectiveWords.length > 0))  {
+        $('#adjectiveTab').removeClass('active');
         layoutDraggableWords(document.getElementById('adjectiveList'), adjectiveWords, 'adjective');
     } else {
         $("#adjectiveTab").hide(); }
     // if there's no list of nounWords, make pronounTab active, if it exists.
     if((typeof pronounWords != 'undefined') && (pronounWords.length > 0)) {
         layoutDraggableWords(document.getElementById('pronounList'), pronounWords, 'pronoun');
+        if (typeof nounWords != "undefined") {
+            $('#pronounTab').removeClass('active'); }
         if (typeof nounWords == 'undefined') {
             $('#pronounTab').addClass('active');
             $('#selectedAnswerList>section').hide();
@@ -62,6 +66,7 @@ function setWordTabs() {
     } else {
         $("#pronounTab").hide(); }
     if((typeof prepositionWords != 'undefined') && (prepositionWords.length > 0)) {
+        $('#prepositionTab').removeClass('active');
         layoutDraggableWords(document.getElementById('prepositionList'), prepositionWords, 'preposition');
     } else {
         $("#prepositionTab").hide(); }

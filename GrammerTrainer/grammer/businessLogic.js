@@ -224,7 +224,7 @@ function addWordToAnswer(targetWord, wordID)
 		}
         
         if (typeof currentExercise.balloonPrefill == "undefined") {
-            $("#speechBubble p").html(currentAnswerWords.join(" ")); }
+            $("#speechBubble p").html(currentAnswerWords.join(" ") + "."); }
         
 		// Add period
 		tempAnswerID++;
@@ -331,6 +331,9 @@ function moveAnswer(answerNumber)
 		var tempAnswerString = "answer_" + i;
 		draggableAnswerWords[i] = new webkit_draggable(tempAnswerString, {revert : false, onStart : function(){currentWord = currentAnswerWords[i];}, onEnd : function(i){return function() {moveAnswer(i);}} (i)});
 		tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2; }
+   
+    if (typeof currentExercise.balloonPrefill == "undefined") {
+        $("#speechBubble p").html(currentAnswerWords.join(" ") + "."); }
 	
 	// Add period
 	tempAnswerID++;
