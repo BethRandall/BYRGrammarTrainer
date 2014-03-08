@@ -9,7 +9,6 @@
                   "arrows",
                   "circle",
                   "circles",
-                  "BYRlocal",
                   "oval",
                   "ovals",
                   "rectangle",
@@ -181,6 +180,7 @@
                       "adjectiveWords": [],
                       "verbWords": [
                                     "is",
+                                    "PONTIFICATES",
                                     "are"
                                     ],
                       "pronounWords": [
@@ -344,76 +344,6 @@
                                        "this",
                                        "that",
                                        "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "aNSg",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": ""
-                      },
-                      {
-                      "lessonImage": "Cc.jpg",
-                      "pictureA": "Cc.jpg",
-                      "pictureB": ".jpg",
-                      "question": "What is this?",
-                      "multipleChoice": [],
-                      "answers": [
-                                  "it is a circle.",
-                                  "it's a circle.",
-                                  "this is a circle.",
-                                  "that is a circle.",
-                                  "that's a circle.",
-                                  "a circle."
-                                  ],
-                      "morphemesList": [
-                                        [
-                                         "circle",
-                                         ""
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "a",
-                                           "circle"
-                                           ]
-                                          ],
-                      "unneededWords": [
-                                        "one"
-                                        ],
-                      "nounWords": [
-                                    "a",
-                                    "the",
-                                    "arrow",
-                                    "arrows",
-                                    "circle",
-                                    "circles",
-                                    "oval",
-                                    "ovals",
-                                    "rectangle",
-                                    "rectangles",
-                                    "square",
-                                    "squares",
-                                    "triangle",
-                                    "triangles"
-                                    ],
-                      "adjectiveWords": [],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "this",
-                                       "that",
                                        "these",
                                        "those"
                                        ],
