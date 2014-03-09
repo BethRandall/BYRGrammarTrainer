@@ -1,7 +1,7 @@
 {
     "lessonNumber": "5",
     "lessonTopic": "Lesson 3: Even More Shapes.",
-    "lessonType": "multiple_choice",
+    "lessonType": "open_choice",
     "nounWords": [
         "a",
         "an",
@@ -52,10 +52,6 @@
             "pictureB": ".jpg",
             "question": "What is this?",
             "multipleChoice": [
-                "An arrow.",
-                "A square.",
-                "A triangle.",
-                "A rectangle."
             ],
             "answers": [
                 "it is an arrow.",
@@ -130,10 +126,6 @@
             "pictureB": ".jpg",
             "question": "What is this?",
             "multipleChoice": [
-                "An oval.",
-                "A square.",
-                "A circle.",
-                "A rectangle."
             ],
             "answers": [
                 "it is an oval.",

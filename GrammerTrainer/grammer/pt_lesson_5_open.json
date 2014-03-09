@@ -1,7 +1,7 @@
 {
     "lessonNumber": "12",
     "lessonTopic": "Lesson 5: More Colored Shapes.",
-    "lessonType": "multiple_choice",
+    "lessonType": "open_choice",
     "nounWords": [
         "a",
         "an",
@@ -64,10 +64,6 @@
             "pictureB": ".jpg",
             "question": "What are these?",
             "multipleChoice": [
-                "Yellow triangles.",
-                "Green triangles.",
-                "Yellow squares.",
-                "Green squares."
             ],
             "answers": [
                 "these are yellow triangles.",
@@ -144,10 +140,6 @@
             "pictureB": ".jpg",
             "question": "What are these?",
             "multipleChoice": [
-                "Yellow triangles.",
-                "Green triangles.",
-                "Yellow squares.",
-                "Green squares."
             ],
             "answers": [
                 "these are green triangles.",
@@ -223,12 +215,7 @@
             "pictureA": "RdCcs.jpg",
             "pictureB": ".jpg",
             "question": "What are these?",
-            "multipleChoice": [
-                "Red triangles.",
-                "Blue triangles.",
-                "Red circles.",
-                "Blue circles."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "these are red circles.",
                 "those are red circles.",
@@ -304,10 +291,6 @@
             "pictureB": ".jpg",
             "question": "What are these?",
             "multipleChoice": [
-                "Red triangles.",
-                "Blue triangles.",
-                "Red circles.",
-                "Blue circles."
             ],
             "answers": [
                 "these are blue circles.",

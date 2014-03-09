@@ -185,9 +185,9 @@
                 return "";
         }
         
-        function myJsonTextToObject(myJSONtext) { 	
+        function myJsonTextToObject(myJSONtext) {
             
-            if (myJSONtext.length > 0) {
+             if (myJSONtext.length > 0) {
                 theLesson = eval('(' + myJSONtext + ')');
                 checkGender();
                 
@@ -215,14 +215,30 @@
             xobj.send(null);
         }
         
+        function myLoadLocalJson(filename) {
+            var xobj = new XMLHttpRequest();
+            var fileToGet = filename;
+            
+            xobj.open('GET', fileToGet, true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4) {
+                    var jsonTexto = xobj.responseText;
+                    myJsonTextToObject(jsonTexto); }
+            }
+            xobj.send(null);
+        }
+        
        var lessonName = queryString("lesson");
        //alert("lessonName is:  " + lessonName);
         
        if (lessonName.length > 0) {
-           if (lessonName == "pt_lesson_1.json") {
-                myLoadJson("https://dl.dropbox.com/s/2zpr6hdf9c174ed/pt_lesson_1.json"); }
+           
+           myLoadLocalJson(lessonName);
+           /*
            //if (lessonName == "pt_lesson_1.json") {
-             //  myLoadJson("grammer/js/pt_lesson_1.json"); }
+             //myLoadJson("https://dl.dropbox.com/s/2zpr6hdf9c174ed/pt_lesson_1.json"); }
+           if (lessonName == "pt_lesson_1.json") {
+               myLoadLocalJson("pt_lesson_1.json"); }
 
            if (lessonName == "pt_lesson_1_open.json") {
                 myLoadJson("https://dl.dropbox.com/s/04xurl7d9068lmf/pt_lesson_1_open.json"); }
@@ -273,6 +289,7 @@
            if (lessonName == "pn_tutorial.json") {
                myLoadJson("https://dl.dropbox.com/s/0jaadmdq4ngjfse/pn_tutorial.json"); }
             //myLoadJson(lessonName);
+            */
         } //else {
           //  document.write("Must set lesson query parameter json filename");
         //}

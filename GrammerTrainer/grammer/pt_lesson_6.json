@@ -1,397 +1,521 @@
 {
-    "lessonNumber": "12",
-    "lessonTopic": "Lesson 5: More Colored Shapes.",
+    "lessonNumber": "16",
+    "lessonTopic": "Lesson 6: What color is the shape?",
     "lessonType": "multiple_choice",
     "nounWords": [
-                  "a",
-                  "an",
-                  "the",
-                  "arrow",
-                  "arrows",
-                  "circle",
-                  "circles",
-                  "oval",
-                  "ovals",
-                  "rectangle",
-                  "rectangles",
-                  "square",
-                  "squares",
-                  "triangle",
-                  "triangles"
-                  ],
+        "a",
+        "an",
+        "the",
+        "circle",
+        "circles",
+        "rectangle",
+        "rectangles",
+        "square",
+        "squares",
+        "triangle",
+        "triangles"
+    ],
     "adjectiveWords": [
-                       "blue",
-                       "green",
-                       "orange",
-                       "red",
-                       "yellow"
-                       ],
+        "blue",
+        "green",
+        "orange",
+        "red",
+        "yellow"
+    ],
     "verbWords": [
-                  "is",
-                  "are"
-                  ],
+        "is",
+        "are"
+    ],
     "pronounWords": [
-                     "it",
-                     "this",
-                     "that",
-                     "they",
-                     "these",
-                     "those"
-                     ],
+        "it",
+        "this",
+        "that",
+        "they",
+        "these",
+        "those"
+    ],
     "subjects": [
-                 "detAdjNPl"
-                 ],
+        "beSg_adj"
+    ],
     "exerciseList": [
-                     [
-                      "detAdjNPl",
-                      "0"
-                      ],
-                     [
-                      "detAdjNPl",
-                      "1"
-                      ],
-                     [
-                      "detAdjNPl",
-                      "2"
-                      ],
-                     [
-                      "detAdjNPl",
-                      "3"
-                      ]
-                     ],
-    "subjectMasteryLimit": "4",
+        [
+            "beSg_adj",
+            "0"
+        ],
+        [
+            "beSg_adj",
+            "1"
+        ],
+        [
+            "beSg_adj",
+            "2"
+        ],
+        [
+            "beSg_adj",
+            "3"
+        ],
+        [
+            "beSg_adj",
+            "8"
+        ]
+    ],
+    "subjectMasteryLimit": "5",
     "exerciseArray": [
-                      {
-                      "lessonImage": "YlTgs.jpg",
-                      "pictureA": "YlTgs.jpg",
-                      "pictureB": ".jpg",
-                      "question": "What are these?",
-                      "multipleChoice": [
-                                         "Yellow triangles.",
-                                         "Green triangles.",
-                                         "Yellow squares.",
-                                         "Green squares."
-                                         ],
-                      "answers": [
-                                  "these are yellow triangles.",
-                                  "those are yellow triangles.",
-                                  "they are yellow triangles.",
-                                  "they're yellow triangles.",
-                                  "yellow triangles."
-                                  ],
-                      "morphemesList": [
-                                        [
-                                         "triangle",
-                                         "s"
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "",
-                                           "triangles"
-                                           ]
-                                          ],
-                      "unneededWords": [
-                                        "four"
-                                        ],
-                      "nounWords": [
-                                    "a",
-                                    "an",
-                                    "the",
-                                    "arrow",
-                                    "arrows",
-                                    "circle",
-                                    "circles",
-                                    "oval",
-                                    "ovals",
-                                    "rectangle",
-                                    "rectangles",
-                                    "square",
-                                    "squares",
-                                    "triangle",
-                                    "triangles"
-                                    ],
-                      "adjectiveWords": [
-                                         "blue",
-                                         "green",
-                                         "orange",
-                                         "red",
-                                         "yellow"
-                                         ],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "it",
-                                       "this",
-                                       "that",
-                                       "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "detAdjNPl",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": ""
-                      },
-                      {
-                      "lessonImage": "GnTgs.jpg",
-                      "pictureA": "GnTgs.jpg",
-                      "pictureB": ".jpg",
-                      "question": "What are these?",
-                      "multipleChoice": [
-                                         "Yellow triangles.",
-                                         "Green triangles.",
-                                         "Yellow squares.",
-                                         "Green squares."
-                                         ],
-                      "answers": [
-                                  "these are green triangles.",
-                                  "those are green triangles.",
-                                  "they are green triangles.",
-                                  "they're green triangles.",
-                                  "green triangles."
-                                  ],
-                      "morphemesList": [
-                                        [
-                                         "triangle",
-                                         "s"
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "",
-                                           "triangles"
-                                           ]
-                                          ],
-                      "unneededWords": [
-                                        "four"
-                                        ],
-                      "nounWords": [
-                                    "a",
-                                    "an",
-                                    "the",
-                                    "arrow",
-                                    "arrows",
-                                    "circle",
-                                    "circles",
-                                    "oval",
-                                    "ovals",
-                                    "rectangle",
-                                    "rectangles",
-                                    "square",
-                                    "squares",
-                                    "triangle",
-                                    "triangles"
-                                    ],
-                      "adjectiveWords": [
-                                         "blue",
-                                         "green",
-                                         "orange",
-                                         "red",
-                                         "yellow"
-                                         ],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "it",
-                                       "this",
-                                       "that",
-                                       "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "detAdjNPl",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": ""
-                      },
-                      {
-                      "lessonImage": "RdCcs.jpg",
-                      "pictureA": "RdCcs.jpg",
-                      "pictureB": ".jpg",
-                      "question": "What are these?",
-                      "multipleChoice": [
-                                         "Red triangles.",
-                                         "Blue triangles.",
-                                         "Red circles.",
-                                         "Blue circles."
-                                         ],
-                      "answers": [
-                                  "these are red circles.",
-                                  "those are red circles.",
-                                  "they are red circles.",
-                                  "they're red circles.",
-                                  "red circles."
-                                  ],
-                      "morphemesList": [
-                                        [
-                                         "circle",
-                                         "s"
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "",
-                                           "circles"
-                                           ]
-                                          ],
-                      "unneededWords": [
-                                        "two"
-                                        ],
-                      "nounWords": [
-                                    "a",
-                                    "an",
-                                    "the",
-                                    "arrow",
-                                    "arrows",
-                                    "circle",
-                                    "circles",
-                                    "oval",
-                                    "ovals",
-                                    "rectangle",
-                                    "rectangles",
-                                    "square",
-                                    "squares",
-                                    "triangle",
-                                    "triangles"
-                                    ],
-                      "adjectiveWords": [
-                                         "blue",
-                                         "green",
-                                         "orange",
-                                         "red",
-                                         "yellow"
-                                         ],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "it",
-                                       "this",
-                                       "that",
-                                       "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "detAdjNPl",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": ""
-                      },
-                      {
-                      "lessonImage": "BlCcs.jpg",
-                      "pictureA": "BlCcs.jpg",
-                      "pictureB": ".jpg",
-                      "question": "What are these?",
-                      "multipleChoice": [
-                                         "Red triangles.",
-                                         "Blue triangles.",
-                                         "Red circles.",
-                                         "Blue circles."
-                                         ],
-                      "answers": [
-                                  "these are blue circles.",
-                                  "those are blue circles.",
-                                  "they are blue circles.",
-                                  "they're blue circles.",
-                                  "blue circles."
-                                  ],
-                      "morphemesList": [
-                                        [
-                                         "circle",
-                                         "s"
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "",
-                                           "circles"
-                                           ]
-                                          ],
-                      "unneededWords": [
-                                        "two"
-                                        ],
-                      "nounWords": [
-                                    "a",
-                                    "an",
-                                    "the",
-                                    "arrow",
-                                    "arrows",
-                                    "circle",
-                                    "circles",
-                                    "oval",
-                                    "ovals",
-                                    "rectangle",
-                                    "rectangles",
-                                    "square",
-                                    "squares",
-                                    "triangle",
-                                    "triangles"
-                                    ],
-                      "adjectiveWords": [
-                                         "blue",
-                                         "green",
-                                         "orange",
-                                         "red",
-                                         "yellow"
-                                         ],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "it",
-                                       "this",
-                                       "that",
-                                       "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "detAdjNPl",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": ""
-                      }
-                      ]
+        {
+	    "exnum": "1",
+            "lessonImage": "BlCc.jpg",
+            "pictureA": "BlCc.jpg",
+            "pictureB": ".jpg",
+            "question": "What color is the circle?",
+            "multipleChoice": [
+                "The circle is red.",
+                "The circle is blue.",
+                "The circle is yellow.",
+                "The circle is green."
+            ],
+            "answers": [
+                "the circle is blue.",
+                "the circle's blue.",
+                "it is blue.",
+                "it's blue.",
+                "it is : blue."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    ""
+                ],
+                [
+                    "blue",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "circle",
+                "circles",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "beSg_adj",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "circle",
+                    ""
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "2",
+            "lessonImage": "RdSq.jpg",
+            "pictureA": "RdSq.jpg",
+            "pictureB": ".jpg",
+            "question": "What color is the square?",
+            "multipleChoice": [
+                "The square is yellow.",
+                "The square is green.",
+                "The square is red.",
+                "The square is blue."
+            ],
+            "answers": [
+                "the square is red.",
+                "the square's red.",
+                "it is red.",
+                "it's red."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "red",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "circle",
+                "circles",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "beSg_adj",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "3",
+            "lessonImage": "BlSq.jpg",
+            "pictureA": "BlSq.jpg",
+            "pictureB": ".jpg",
+            "question": "What color is the square?",
+            "multipleChoice": [
+                "The square is red.",
+                "The square is blue.",
+                "The square is green.",
+                "The square is yellow."
+            ],
+            "answers": [
+                "the square is blue.",
+                "the square's blue.",
+                "it is blue.",
+                "it's blue."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "blue",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "circle",
+                "circles",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "beSg_adj",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "4", 
+            "lessonImage": "RdCc.jpg",
+            "pictureA": "RdCc.jpg",
+            "pictureB": ".jpg",
+            "question": "What color is the circle?",
+            "multipleChoice": [
+                "The circle is blue.",
+                "The circle is red.",
+                "The circle is yellow.",
+                "The circle is green."
+            ],
+            "answers": [
+                "the circle is red.",
+                "the circle's red.",
+                "it is red.",
+                "it's red."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    ""
+                ],
+                [
+                    "red",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "circle",
+                "circles",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "beSg_adj",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "circle",
+                    ""
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "5",
+            "lessonImage": "OrTg.jpg",
+            "pictureA": "OrTg.jpg",
+            "pictureB": ".jpg",
+            "question": "What color is the triangle?",
+            "multipleChoice": [
+                "The triangle is orange.",
+                "The triangle is red.",
+                "The triangle is green.",
+                "The triangle is blue."
+            ],
+            "answers": [
+                "the triangle is orange.",
+                "the triangle's orange.",
+                "it is orange.",
+                "it's orange."
+            ],
+            "morphemesList": [
+                [
+                    "triangle",
+                    ""
+                ],
+                [
+                    "orange",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "triangle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "circle",
+                "circles",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "beSg_adj",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "triangle",
+                    ""
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "triangle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        }
+    ]
 }

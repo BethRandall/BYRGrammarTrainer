@@ -1,7 +1,7 @@
 {
-    "lessonNumber": "12",
-    "lessonTopic": "Lesson 5: More Colored Shapes.",
-    "lessonType": "multiple_choice",
+    "lessonNumber": "18",
+    "lessonTopic": "Lesson 7: What color are the shapes?",
+    "lessonType": "open_choice",
     "nounWords": [
         "a",
         "an",
@@ -35,23 +35,23 @@
         "those"
     ],
     "subjects": [
-        "detAdjNPl"
+        "bePl_adj"
     ],
     "exerciseList": [
         [
-            "detAdjNPl",
+            "bePl_adj",
             "0"
         ],
         [
-            "detAdjNPl",
+            "bePl_adj",
             "1"
         ],
         [
-            "detAdjNPl",
+            "bePl_adj",
             "2"
         ],
         [
-            "detAdjNPl",
+            "bePl_adj",
             "3"
         ]
     ],
@@ -59,37 +59,34 @@
     "exerciseArray": [
         {
 	    "exnum": "1",
-            "lessonImage": "YlTgs.jpg",
-            "pictureA": "YlTgs.jpg",
+            "lessonImage": "BlCcs.jpg",
+            "pictureA": "BlCcs.jpg",
             "pictureB": ".jpg",
-            "question": "What are these?",
-            "multipleChoice": [
-                "Yellow triangles.",
-                "Green triangles.",
-                "Yellow squares.",
-                "Green squares."
-            ],
+            "question": "What color are the circles?",
+            "multipleChoice": [            ],
             "answers": [
-                "these are yellow triangles.",
-                "those are yellow triangles.",
-                "they are yellow triangles.",
-                "they're yellow triangles.",
-                "yellow triangles."
+                "the circles are blue.",
+                "they are blue.",
+                "they're blue."
             ],
             "morphemesList": [
                 [
-                    "triangle",
+                    "circle",
                     "s"
+                ],
+                [
+                    "red",
+                    ""
                 ]
             ],
             "articleNounList": [
                 [
-                    "",
-                    "triangles"
+                    "the",
+                    "circles"
                 ]
             ],
             "unneededWords": [
-                "four"
+                "two"
             ],
             "nounWords": [
                 "a",
@@ -125,11 +122,21 @@
             ],
             "prepositionWords": [],
             "functionButtons": [],
-            "subject": "detAdjNPl",
-            "pronounNounLists": [],
+            "subject": "bePl_adj",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "circles",
+                    ""
+                ]
+            ],
             "specialWordsList": [],
             "specialWordsTriggers": [],
-            "subjectRequest": [],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
             "replaceSubject": [],
             "startWords": [],
             "untokenizedAnswersList": [],
@@ -139,37 +146,34 @@
         },
         {
 	    "exnum": "2",
-            "lessonImage": "GnTgs.jpg",
-            "pictureA": "GnTgs.jpg",
+            "lessonImage": "BlSqs.jpg",
+            "pictureA": "BlSqs.jpg",
             "pictureB": ".jpg",
-            "question": "What are these?",
-            "multipleChoice": [
-                "Yellow triangles.",
-                "Green triangles.",
-                "Yellow squares.",
-                "Green squares."
-            ],
+            "question": "What color are the squares?",
+            "multipleChoice": [            ],
             "answers": [
-                "these are green triangles.",
-                "those are green triangles.",
-                "they are green triangles.",
-                "they're green triangles.",
-                "green triangles."
+                "the squares are blue.",
+                "they are blue.",
+                "they're blue."
             ],
             "morphemesList": [
                 [
-                    "triangle",
+                    "square",
                     "s"
+                ],
+                [
+                    "blue",
+                    ""
                 ]
             ],
             "articleNounList": [
                 [
-                    "",
-                    "triangles"
+                    "the",
+                    "squares"
                 ]
             ],
             "unneededWords": [
-                "four"
+                "three"
             ],
             "nounWords": [
                 "a",
@@ -205,11 +209,21 @@
             ],
             "prepositionWords": [],
             "functionButtons": [],
-            "subject": "detAdjNPl",
-            "pronounNounLists": [],
+            "subject": "bePl_adj",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "squares",
+                    ""
+                ]
+            ],
             "specialWordsList": [],
             "specialWordsTriggers": [],
-            "subjectRequest": [],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
             "replaceSubject": [],
             "startWords": [],
             "untokenizedAnswersList": [],
@@ -222,29 +236,26 @@
             "lessonImage": "RdCcs.jpg",
             "pictureA": "RdCcs.jpg",
             "pictureB": ".jpg",
-            "question": "What are these?",
-            "multipleChoice": [
-                "Red triangles.",
-                "Blue triangles.",
-                "Red circles.",
-                "Blue circles."
-            ],
+            "question": "What color are the circles?",
+            "multipleChoice": [            ],
             "answers": [
-                "these are red circles.",
-                "those are red circles.",
-                "they are red circles.",
-                "they're red circles.",
-                "red circles."
+                "the circles are red.",
+                "they are red.",
+                "they're red."
             ],
             "morphemesList": [
                 [
                     "circle",
                     "s"
+                ],
+                [
+                    "red",
+                    ""
                 ]
             ],
             "articleNounList": [
                 [
-                    "",
+                    "the",
                     "circles"
                 ]
             ],
@@ -285,11 +296,21 @@
             ],
             "prepositionWords": [],
             "functionButtons": [],
-            "subject": "detAdjNPl",
-            "pronounNounLists": [],
+            "subject": "bePl_adj",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "circles",
+                    ""
+                ]
+            ],
             "specialWordsList": [],
             "specialWordsTriggers": [],
-            "subjectRequest": [],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
             "replaceSubject": [],
             "startWords": [],
             "untokenizedAnswersList": [],
@@ -299,37 +320,34 @@
         },
         {
 	    "exnum": "4",
-            "lessonImage": "BlCcs.jpg",
-            "pictureA": "BlCcs.jpg",
+            "lessonImage": "RdSqs.jpg",
+            "pictureA": "RdSqs.jpg",
             "pictureB": ".jpg",
-            "question": "What are these?",
-            "multipleChoice": [
-                "Red triangles.",
-                "Blue triangles.",
-                "Red circles.",
-                "Blue circles."
-            ],
+            "question": "What color are the squares?",
+            "multipleChoice": [            ],
             "answers": [
-                "these are blue circles.",
-                "those are blue circles.",
-                "they are blue circles.",
-                "they're blue circles.",
-                "blue circles."
+                "the squares are red.",
+                "they are red.",
+                "they're red."
             ],
             "morphemesList": [
                 [
-                    "circle",
+                    "square",
                     "s"
+                ],
+                [
+                    "red",
+                    ""
                 ]
             ],
             "articleNounList": [
                 [
-                    "",
-                    "circles"
+                    "the",
+                    "squares"
                 ]
             ],
             "unneededWords": [
-                "two"
+                "three"
             ],
             "nounWords": [
                 "a",
@@ -365,11 +383,21 @@
             ],
             "prepositionWords": [],
             "functionButtons": [],
-            "subject": "detAdjNPl",
-            "pronounNounLists": [],
+            "subject": "bePl_adj",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "squares",
+                    ""
+                ]
+            ],
             "specialWordsList": [],
             "specialWordsTriggers": [],
-            "subjectRequest": [],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
             "replaceSubject": [],
             "startWords": [],
             "untokenizedAnswersList": [],

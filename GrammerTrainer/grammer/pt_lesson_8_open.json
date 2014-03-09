@@ -1,7 +1,7 @@
 {
     "lessonNumber": "21",
     "lessonTopic": "Lesson 8: Where is the shape?",
-    "lessonType": "multiple_choice",
+    "lessonType": "open_choice",
     "nounWords": [
         "a",
         "an",
@@ -110,12 +110,7 @@
             "pictureA": "CcOnSq.jpg",
             "pictureB": ".jpg",
             "question": "Where is the circle?",
-            "multipleChoice": [
-                "The circle is under the square.",
-                "The circle is next to the square.",
-                "The circle is on the square.",
-                "The circle is inside the square."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the circle is on aorthe square.",
                 "the circle's on aorthe square.",
@@ -231,10 +226,6 @@
             "pictureB": ".jpg",
             "question": "Where are the triangles?",
             "multipleChoice": [
-                "The triangles are over the rectangle.",
-                "The triangles are on the rectangle.",
-                "The triangles are in the rectangle.",
-                "The triangles are under the rectangle."
             ],
             "answers": [
                 "the triangles are under aorthe rectangle.",
@@ -267,7 +258,6 @@
             "nounWords": [
                 "a",
                 "an",
-                "and",
                 "the",
                 "circle",
                 "circles",
@@ -340,18 +330,13 @@
             "quote": "",
             "timeCaption": ""
         },
-        {
+        { 	
 	    "exnum": "3",
             "lessonImage": "CcBwTgSq.jpg",
             "pictureA": "CcBwTgSq.jpg",
             "pictureB": ".jpg",
             "question": "Where is the circle?",
-            "multipleChoice": [
-                "The circle is over the triangle and the square.",
-                "The circle is under the triangle.",
-                "The circle is over the square.",
-                "The circle is between the triangle and the square."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the circle is between aorthe triangle and anya square.",
                 "the circle's between aorthe triangle and anya square.",
@@ -373,13 +358,16 @@
             "morphemesList": [
                 [
                     "circle",
-                    "" ],
+                    ""
+                ],
                 [
                     "triangle",
-                    "" ],
+                    ""
+                ],
                 [
                     "square",
-                    "" ]
+                    ""
+                ]
             ],
             "articleNounList": [
                 [
@@ -482,10 +470,6 @@
             "pictureB": ".jpg",
             "question": "Where is the circle?",
             "multipleChoice": [
-                "The circle is in the square.",
-                "The circle is between the square.",
-                "The circle is next to the square.",
-                "The circle is under the square."
             ],
             "answers": [
                 "the circle is in aorthe square.",
@@ -593,17 +577,12 @@
             "timeCaption": ""
         },
         {
-	   "exnum": "5", 
-           "lessonImage": "CcsOvRt.jpg",
+	    "exnum": "5",
+            "lessonImage": "CcsOvRt.jpg",
             "pictureA": "CcsOvRt.jpg",
             "pictureB": ".jpg",
             "question": "Where are the circles?",
-            "multipleChoice": [
-                "The circles are in the rectangle.",
-                "The circles are under the rectangle.",
-                "The circles are over the rectangle.",
-                "The circles are on the rectangle."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the circles are over aorthe rectangle.",
                 "they are over aorthe rectangle.",
@@ -713,10 +692,6 @@
             "pictureB": ".jpg",
             "question": "Where is the rectangle?",
             "multipleChoice": [
-                "The rectangle is on the square.",
-                "The rectangle is under the square.",
-                "The rectangle is next to the square.",
-                "The rectangle is above the square."
             ],
             "answers": [
                 "the rectangle is next to aorthe square.",
@@ -821,12 +796,7 @@
             "pictureA": "SqsInCc.jpg",
             "pictureB": ".jpg",
             "question": "Where are the squares?",
-            "multipleChoice": [
-                "The squares are under the circle.",
-                "The squares are in the circle.",
-                "The squares are next to the circle.",
-                "The squares are above the circle."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the squares are in aorthe circle.",
                 "they are in aorthe circle.",
@@ -947,10 +917,6 @@
             "pictureB": ".jpg",
             "question": "Where is the rectangle?",
             "multipleChoice": [
-                "The rectangle is over the triangles.",
-                "The rectangle is in the triangles.",
-                "The rectangle is between the triangles.",
-                "The rectangle is under the triangles."
             ],
             "answers": [
                 "the rectangle is over the triangles.",
@@ -1063,10 +1029,6 @@
             "pictureB": ".jpg",
             "question": "Where is the triangle?",
             "multipleChoice": [
-                "The triangle is behind the square.",
-                "The triangle is in front of the square.",
-                "The triangle is on the square.",
-                "The triangle is in the square."
             ],
             "answers": [
                 "the triangle is behind aorthe square.",
@@ -1187,10 +1149,6 @@
             "pictureB": ".jpg",
             "question": "Where is the square?",
             "multipleChoice": [
-                "The square is behind the triangle.",
-                "The square is in front of the triangle.",
-                "The square is under the triangle.",
-                "The square is in the triangle."
             ],
             "answers": [
                 "the square is in front of aorthe triangle.",
@@ -1305,10 +1263,6 @@
             "pictureB": ".jpg",
             "question": "Where is the circle?",
             "multipleChoice": [
-                "The circle is behind the squares.",
-                "The circle is in front of the squares.",
-                "The circle is on the squares.",
-                "The circle is in the squares."
             ],
             "answers": [
                 "the circle is behind the squares.",
@@ -1431,17 +1385,12 @@
             "timeCaption": ""
         },
         {
-            "exnum": "12",
+	    "exnum": "12",
             "lessonImage": "CcBhSqs.jpg",
             "pictureA": "CcBhSqs.jpg",
             "pictureB": ".jpg",
             "question": "Where are the squares?",
-            "multipleChoice": [
-                "The squares are behind the circle.",
-                "The squares are in front of the circle.",
-                "The squares are under the circle.",
-                "The squares are in the circle."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the squares are in front of aorthe circle.",
                 "they are in front of aorthe circle.",
@@ -1562,10 +1511,6 @@
             "pictureB": ".jpg",
             "question": "Where is the square?",
             "multipleChoice": [
-                "The square is around the circle.",
-                "The square is in the circle.",
-                "The square is on the circle.",
-                "The square is next to the circle."
             ],
             "answers": [
                 "the square is around aorthe circle.",
@@ -1607,7 +1552,7 @@
                 "triangle",
                 "triangles"
             ],
-             "verbWords": [
+            "verbWords": [
                 "is",
                 "are"
             ],
@@ -1678,12 +1623,7 @@
             "pictureA": "SqsInCc.jpg",
             "pictureB": ".jpg",
             "question": "Where is the circle?",
-            "multipleChoice": [
-                "The circle is around the squares.",
-                "The circle is between the squares.",
-                "The circle is in the squares.",
-                "The circle is on the squares."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the circle is around the squares.",
                 "the circle's around the squares.",
@@ -1726,7 +1666,7 @@
                 "triangle",
                 "triangles"
             ],
-             "verbWords": [
+            "verbWords": [
                 "is",
                 "are"
             ],

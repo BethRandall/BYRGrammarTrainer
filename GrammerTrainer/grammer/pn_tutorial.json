@@ -1,0 +1,221 @@
+{
+    "exerciseArray": [
+        {
+            "exnum": "1",
+            "timeCaption": "Now",
+            "question": "The boy is talking to you. He is telling you that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
+            "multipleChoice": [
+                "I will help you.",
+                "You will help me.",
+                "She will help me.",
+                "I will help her."
+            ],
+            "answers": [
+                "I will help you."
+            ],
+            "unneededWords": [
+                "use",
+                "uses",
+                "word",
+                "words",
+                "saying",
+                "telling",
+                "that"
+            ],
+            "oralprompt": "sounds/prompt_1.m4a",
+            "prompt": "The boy said that he will help you.  What goes in the speech bubble?",
+            "lessonVideo": "gt_videos/transportation_theme_videos/1_lesson_1.m4v",
+            "balloonSpecs": "left, 100, 10"
+        },
+             {
+            "exnum": "5",
+            "timeCaption": "Now",
+            "question": "The boy is talking to you. He is telling you that he will help the girl. Look at the empty balloon over the boy. What words does the boy use?Type the words that go into the balloon.",
+            "multipleChoice": [
+                "I will help her.",
+                "She will help me.",
+                "I will help you.",
+                "You will help me."
+            ],
+            "answers": [
+                "I will help her.",
+                "I will help the girl."
+            ],
+            "unneededWords": [
+                "use",
+                "uses",
+                "word",
+                "words",
+                "saying",
+                "telling",
+                "that",
+                "girl"
+            ],
+            "oralprompt": "sounds/prompt_5.m4a",
+            "prompt": "The boy said that he will help the girl.  What goes in the speech bubble?",
+            "lessonVideo": "gt_videos/transportation_theme_videos/5_lesson_1.m4v",
+            "balloonSpecs": "left, 100, 10"
+        },
+          {
+            "exnum": "9",
+            "timeCaption": "Now",
+            "question": "The boy is talking to the girl. He is telling her that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
+            "multipleChoice": [
+                "I will help him_her.",
+                "He_She will help me.",
+                "I will help you.",
+                "You will help me."
+            ],
+            "answers": [
+                "I will help him_her."
+            ],
+            "unneededWords": [
+                "use",
+                "uses",
+                "word",
+                "words",
+                "saying",
+                "telling",
+                "that"
+            ],
+            "oralprompt": "sounds/prompt_9.m4a",
+            "prompt": "The boy said that he will help you.  What goes in the speech bubble?",
+            "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_1.m4v",
+            "balloonSpecs": "right, 100, 10"
+        },
+           {
+            "exnum": "13",
+            "timeCaption": "Now",
+            "question": "The boy is talking to the girl. He is telling her that he will help her. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
+            "multipleChoice": [
+                "I will help you.",
+                "You will help me.",
+                "She will help me.",
+                "I will help her."
+            ],
+            "answers": [
+                "I will help you."
+            ],
+            "unneededWords": [
+                "use",
+                "uses",
+                "word",
+                "words",
+                "saying",
+                "telling",
+                "that"
+            ],
+            "oralprompt": "sounds/prompt_13.m4a",
+            "prompt": "The boy said that he will help the girl.  What goes in the speech bubble?",
+            "lessonVideo": "gt_videos/transportation_theme_videos/13_lesson_1.m4v",
+            "balloonSpecs": "left, 100, 10"
+        },
+       {
+            "exnum": "1",
+            "timeCaption": "Now",
+            "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
+	    "prefill": "The boy says that ",
+            "multipleChoice": [
+                "He will help me.",
+                "I will help him.",
+                "You will help me.",
+                "I will help you."
+            ],
+            "answers": [
+                "he will help me."
+            ],
+            "unneededWords": [
+                "saying",
+                "telling",
+                "that"
+            ],
+            "oldPrompt": "The boy said that ",
+	    "prompt": "Complete this sentence.  The boy says that …",
+            "quote": "I will help you.",
+            "balloonSpecs": "left, 100, 10",
+	    "balloonPrefill": "I will help you.",
+            "lessonVideo": "gt_videos/transportation_theme_videos/1_lesson_2.m4v"
+        },
+        {
+	    "exnum": "5",
+            "multipleChoice": [
+                "He will help the girl.",
+                "The girl will help him.",
+                "I will help the girl.",
+                "I will help her."
+            ],
+            "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
+            "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
+	    "prompt": "Complete this sentence.  The boy says that …",
+	    "prefill":  "The boy says that ",
+	    "balloonSpecs": "left, 100, 10",
+	    "balloonPrefill": "I will help her.",
+            "lessonVideo": "gt_videos/transportation_theme_videos/5_lesson_2.m4v",
+            "answers": [
+                "he will help the girl.",
+                "he will help her."
+            ]
+        },
+         {
+	    "exnum": "9",
+            "multipleChoice": [
+                "He will help me.",
+                "He will help him_her.",
+                "She will help him.",
+                "I will help him."
+            ],
+            "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+            "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+	    "prompt": "Complete this sentence.  The boy says that …",
+	    "prefill":  "The boy says that ",
+            "balloonSpecs": "left, 100, 10",
+	    "balloonPrefill": "I will help him_her.",
+            "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_2_HIM_HER_.m4v",
+            "answers": [
+                "he will help me."
+            ]
+        },
+        {
+            "exnum": "13",
+            "timeCaption": "Now",
+            "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
+	    "prefill": "The boy says that ",
+            "multipleChoice": [
+                "He will help her.",
+                "She will help him.",
+                "He will help me.",
+                "I will help him."
+            ],
+            "answers": [
+                "he will help her.",
+                "he will help the girl."
+            ],
+            "unneededWords": [
+                "saying",
+                "telling",
+                "that"
+            ],
+            "oldPrompt": "The boy said that ",
+	    "prompt": "Complete this sentence.  The boy says that …",
+            "quote": "I will help you.",
+            "lessonVideo": "gt_videos/transportation_theme_videos/13_lesson_2.m4v"
+        } 
+    ],
+    "pronounWords": [
+        "I",
+        "you",
+        "she",
+        "he",
+        "they",
+        "me",
+        "us",
+        "her",
+        "him",
+        "we",
+        "them"
+    ],
+    "verbWords": [
+        "will",
+        "help"
+    ]
+}

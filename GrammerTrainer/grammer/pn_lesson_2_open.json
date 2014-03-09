@@ -21,13 +21,8 @@
             "exnum": "1",
             "timeCaption": "Now",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
-	    "prefill": "The boy says that ",
-            "multipleChoice": [
-                "He will help me.",
-                "I will help him.",
-                "You will help me.",
-                "I will help you."
-            ],
+	    "prefill":  "The boy says that ",
+            "multipleChoice": [            ],
             "answers": [
                 "he will help me."
             ],
@@ -47,12 +42,8 @@
             "exnum": "2",
             "timeCaption": "Now",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
-	    "prefill":  "The boy says that ",
+	    "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help me.",
-                "I will help him.",
-                "You will help me.",
-                "I will help you."
             ],
             "answers": [
                 "I will help him."
@@ -63,7 +54,7 @@
                 "that"
             ],
             "oldPrompt": "The boy said that ",
-            "prompt": "Complete this sentence:  The boy says that …",
+	    "prompt": "Complete this sentence.  The boy says that …",
             "quote": "You will help me.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
@@ -73,13 +64,8 @@
             "exnum": "3",
             "timeCaption": "Now",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
-   	    "prefill": "The boys say that ",
-            "multipleChoice": [
-                "They will help me.",
-                "I will help them.",
-                "You will help us.",
-                "We will help you."
-            ],
+	    "prefill": "The boys say that ",
+            "multipleChoice": [            ],
             "answers": [
                 "they will help me."
             ],
@@ -89,7 +75,7 @@
                 "that"
             ],
             "oldPrompt": "The boys said that ",
-	    "prompt": "Complete this sentence.  The boys say that …",
+            "prompt": "Complete this sentence.  The boys say that …",
             "quote": "We will help you.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "We will help you.",
@@ -99,12 +85,8 @@
             "exnum": "4",
             "timeCaption": "Now",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
-	    "prefill":  "The boys say that ",
+            "prefill": "The boys say that ",
             "multipleChoice": [
-                "They will help me.",
-                "I will help them.",
-                "You will help us.",
-                "We will help you."
             ],
             "answers": [
                 "I will help them."
@@ -115,7 +97,7 @@
                 "that"
             ],
             "oldPrompt": "The boys said that ",
-	    "prompt": "Complete this sentence:  The boys say that …",
+	    "prompt": "Complete this sentence.  The boys say that …",
             "quote": "You will help us.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help us.",
@@ -125,13 +107,8 @@
             "exnum": "5",
             "timeCaption": "Now",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
-	    "prefill": "The boy says that ",
-            "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "I will help him.",
-                "I will help her."
-            ],
+            "prefill":  "The boy says that ",
+            "multipleChoice": [            ],
             "answers": [
                 "he will help the girl.",
                 "he will help her."
@@ -142,7 +119,7 @@
                 "that"
             ],
             "oldPrompt": "The boy said that ",
-	    "prompt":  "Complete this sentence.  The boy says that …",
+	    "prompt": "Complete this sentence.  The boy says that …",
             "quote": "I will help her.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help her.",
@@ -154,10 +131,6 @@
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "I will help him.",
-                "I will help her."
             ],
             "answers": [
                 "the girl will help him.",
@@ -170,7 +143,7 @@
             ],
             "oldPrompt": "The boy said that ",
 	    "prompt": "Complete this sentence.  The boy says that …",
-            "quote": "She will help me.",
+            "quote": "She will help me.",         
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "She will help me.",
             "lessonVideo": "gt_videos/transportation_theme_videos/6_lesson_2.m4v"
@@ -180,12 +153,7 @@
             "timeCaption": "Now",
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "prefill": "The girl says that ",
-            "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "I will help her.",
-                "I will help him."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "she will help the boy.",
                 "she will help him."
@@ -196,7 +164,7 @@
                 "that"
             ],
             "oldPrompt": "The girl said that ",
-	    "prompt": "Complete this sentence.  The girl says that …",
+            "prompt": "Complete this sentence.  The girl says that …",
             "quote": "I will help him.",
             "balloonSpecs": "right, 100, 10",
 	    "balloonPrefill": "I will help him.",
@@ -207,12 +175,7 @@
             "timeCaption": "Now",
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
 	    "prefill": "The girl says that ",
-            "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "I will help her.",
-                "I will help him."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "the boy will help her.",
                 "he will help her."
@@ -223,7 +186,7 @@
                 "that"
             ],
             "oldPrompt": "The girl said that ",
-	    "prompt": "Complete this sentence.  The girl says that …",
+            "prompt": "Complete this sentence.  The girl says that …",
             "quote": "He will help me.",
             "balloonSpecs": "right, 100, 10",
 	    "balloonPrefill": "He will help me.",
@@ -234,12 +197,7 @@
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prefill": "The boy says that ",
-            "multipleChoice": [
-                "He will help me.",
-                "He will help her.",
-                "She will help him.",
-                "I will help him."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "he will help me."
             ],
@@ -249,7 +207,7 @@
                 "that"
             ],
             "oldPrompt": "The boy said that ",
-	    "prompt":  "Complete this sentence:  The boy says that …",
+	    "prompt":  "Complete this sentence.  The boy says that …",
             "quote": "I will help him_her.",
             "balloonSpecs": "right, 100, 10",
 	    "balloonPrefill": "I will help him_her.",
@@ -261,10 +219,6 @@
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help me.",
-                "He will help her.",
-                "She will help him.",
-                "I will help him."
             ],
             "answers": [
                 "I will help him."
@@ -275,7 +229,7 @@
                 "that"
             ],
             "oldPrompt": "The boy said that ",
-            "prompt":  "Complete this sentence:  The boy says that …",
+	    "prompt": "Complete this sentence.  The boy says that …",
             "quote": "He_She will help me.",
             "balloonSpecs": "right, 100, 10",
 	    "balloonPrefill": "He_She will help me.",
@@ -287,10 +241,6 @@
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help me.",
-                "She will help him.",
-                "He will help her.",
-                "I will help her."
             ],
             "answers": [
                 "She will help me."
@@ -301,7 +251,7 @@
                 "that"
             ],
             "oldPrompt": "The girl said that ",
-	    "prompt": "Complete this sentence:  The girl says that …",
+	    "prompt": "Complete this sentence.  The girl says that …",
             "quote": "I will help him_her.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help him_her.",
@@ -311,12 +261,8 @@
             "exnum": "12",
             "timeCaption": "Now",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
-	    "prefill": "The girl says that ",
+            "prefill":  "The girl says that ",
             "multipleChoice": [
-                "She will help me.",
-                "She will help him.",
-                "He will help her.",
-                "I will help her."
             ],
             "answers": [
                 "I will help her."
@@ -327,7 +273,7 @@
                 "that"
             ],
             "oldPrompt": "The girl said that ",
-	    "prompt": "Complete this sentence.  The girl says that …",
+	    "prompt":  "Complete this sentence.  The girl says that …",
             "quote": "He_She will help me.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "He_She will help me.",
@@ -337,13 +283,8 @@
             "exnum": "13",
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-	    "prefill": "The boy says that ",
-            "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
-                "I will help him."
-            ],
+            "prefill":  "The boy says that ",
+            "multipleChoice": [            ],
             "answers": [
                 "he will help her.",
                 "he will help the girl."
@@ -354,7 +295,7 @@
                 "that"
             ],
             "oldPrompt": "The boy said that ",
-	    "prompt": "Complete this sentence.  The boy says that …",
+	    "prompt":  "Complete this sentence.  The boy says that …",
             "quote": "I will help you.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help you.",
@@ -364,12 +305,8 @@
             "exnum": "14",
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-            "prefill": "The boy says that ",
+            "prefill":  "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
-                "I will help him."
             ],
             "answers": [
                 "she will help him.",
@@ -381,7 +318,7 @@
                 "that"
             ],
             "oldPrompt": "The boy said that ",
-	    "prompt":  "The boy says that …",
+	    "prompt": "Complete this sentence.  The boy says that …",
             "quote": "You will help me.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
@@ -392,12 +329,7 @@
             "timeCaption": "Now",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prefill": "The girl says that ",
-            "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "She will help me.",
-                "I will help her."
-            ],
+            "multipleChoice": [            ],
             "answers": [
                 "she will help him.",
                 "she will help the boy."
@@ -418,12 +350,8 @@
             "exnum": "16",
             "timeCaption": "Now",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
-	    "prefill": "The girl says that ",
+            "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "She will help me.",
-                "I will help her."
             ],
             "answers": [
                 "he will help her.",
@@ -435,7 +363,7 @@
                 "that"
             ],
             "oldPrompt": "The girl said that ",
-	    "prompt": "Complete this sentence:  The girl says that …",
+	    "prompt": "Complete this sentence.  The girl says that …",
             "quote": "You will help me.",
             "balloonSpecs": "right, 100, 10",
 	    "balloonPrefill": "You will help me.",
