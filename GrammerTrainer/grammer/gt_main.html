@@ -197,7 +197,8 @@
                     initUserInterface(); }   
             } else { document.write("error in myJsonTextToObject"); };
         }
-        
+    
+        /*
         function myLoadJson(filename) {
             var xobj = new XMLHttpRequest();
             //xobj.overrideMimeType("application/json");
@@ -214,12 +215,12 @@
             }
             xobj.send(null);
         }
+         */
         
         function myLoadLocalJson(filename) {
             var xobj = new XMLHttpRequest();
-            var fileToGet = filename;
-            
-            xobj.open('GET', fileToGet, true);
+    
+            xobj.open('GET', filename, true);
             xobj.onreadystatechange = function () {
                 if (xobj.readyState == 4) {
                     var jsonTexto = xobj.responseText;

@@ -438,6 +438,7 @@ function backDoor() {
     //for (var j = 0; j < currentAnswerWords.length; j++) {
       //  alert("currentAnswerWords[" + j + "]:  " + currentAnswerWords[j]); }
     //alert("currentAnswerWords.length: " + currentAnswerWords.length);
+    if (currentAnswerWords.length < 2) { return false; }
     for (var i = 0; i + 1 < currentAnswerWords.length; i++) {
         if (currentAnswerWords[i].toLowerCase() == currentAnswerWords[i + 1].toLowerCase()) {
            // alert("currentAnswerWords[i] == currentAnswerWords[i+1]: i = " + i); }
