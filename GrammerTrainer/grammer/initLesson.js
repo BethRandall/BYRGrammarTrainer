@@ -249,6 +249,7 @@ function initUserInterface() {
         var lessonFilePath = firstExercise.lessonVideo;
         var posterFilePath = posterFilename(lessonFilePath);
         //var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
+        //document.getElementById('video').pause();
         $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
         
         setVideo(currentExercise);

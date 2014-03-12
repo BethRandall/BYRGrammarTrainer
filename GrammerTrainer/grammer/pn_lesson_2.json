@@ -225,7 +225,7 @@
             "oldPrompt": "The girl said that ",
 	    "prompt": "Complete this sentence.  The girl says that …",
             "quote": "He will help me.",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "He will help me.",
             "lessonVideo": "gt_videos/transportation_theme_videos/8_lesson_2.m4v"
         },
