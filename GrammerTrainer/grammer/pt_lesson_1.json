@@ -52,6 +52,7 @@
     "subjectMasteryLimit": "4",
     "exerciseArray": [
         {
+            "exnum": "1",
             "lessonImage": "Cc.jpg",
             "pictureA": "Cc.jpg",
             "pictureB": ".jpg",
@@ -127,6 +128,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "2",
             "lessonImage": "Sq.jpg",
             "pictureA": "Sq.jpg",
             "pictureB": ".jpg",
@@ -180,8 +182,7 @@
             "adjectiveWords": [],
             "verbWords": [
                 "is",
-		"PONTIFICATES",         
-       		"are"
+       		    "are"
             ],
             "pronounWords": [
                 "it",
@@ -206,6 +207,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "3",
             "lessonImage": "Tg.jpg",
             "pictureA": "Tg.jpg",
             "pictureB": ".jpg",
@@ -284,6 +286,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "4",
             "lessonImage": "Rt.jpg",
             "pictureA": "Rt.jpg",
             "pictureB": ".jpg",

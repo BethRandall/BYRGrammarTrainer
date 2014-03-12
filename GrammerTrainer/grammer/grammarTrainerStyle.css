@@ -110,7 +110,21 @@ p.caption  {
 	margin:0;
 	position: absolute;
 	top: 10px;
-	left: 350px;
+	left: 400px;
+    width: 180px; 
+    height: 100px;
+    background: #FFFFFF;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+}
+
+#oval {
+   width: 200px; 
+   height: 100px; 
+   -moz-border-radius: 100px / 50px; 
+   -webkit-border-radius: 100px / 50px; 
+   border-radius: 100px / 50px;
 }
 
 #oralpromptText {
@@ -135,13 +149,13 @@ p.caption  {
 }
 
 p.speechLeft {
-	padding:10px;
+	padding:20px;
 	position: relative;
-	width: 150px;
+/*	width: 150px;
 	height: 75px;
 	background-color:#FFFFFF;
 	border: 2px solid #000000;
-	border-radius: 10px;
+	border-radius: 10px; */
 
 }
 
@@ -151,32 +165,35 @@ p.speechLeft:before
 	position: absolute;
 	width: 0;
 	height: 0;
-	left: -38px;
-	top: 15px;
+	left: -18px;
+	top: 30px;
 	border: 19px solid;
-	border-color: #000000 #000000 transparent transparent;
+	/* border-color: #000000 #000000 transparent transparent; */ 
+    /*border-color: #fff #fff transparent transparent;*/
+    border-color: transparent #fff #fff transparent;
+
 }
 
 p.speechLeft:after
 {
 	content: ' ';
 	position: absolute;
-	width: 0;
+/*	width: 0;
 	height: 0;
-	left: -32px;
-	top: 17px;
-	border: 19px solid;
-	border-color: #fff #fff transparent transparent;
+	left: -28px;
+	top: 20px;
+    border: 19px solid;
+	border-color: #fff #fff transparent transparent; */
 }
 
 p.speechRight {
 	padding:10px;
 	position: relative;
-	width: 150px;
+/*	width: 150px;
 	height: 75px;
 	background-color:#FFFFFF;
-	border: 2px solid #000000;
-	border-radius: 10px;
+    border: 2px solid #000000;
+	border-radius: 10px; */
 
 }
 
@@ -187,21 +204,21 @@ p.speechRight:before
 	width: 0;
 	height: 0;
 	left: 170px;
-	top: 15px;
+	top: 20px;
 	border: 19px solid;
-	border-color: #000000 transparent transparent #000000;
+	border-color: transparent transparent #fff #fff;
 }
 
 p.speechRight:after
 {
 	content: ' ';
 	position: absolute;
-	width: 0;
+/*	width: 0;
 	height: 0;
 	left: 165px;
 	top: 17px;
 	border: 19px solid;
-	border-color: #fff transparent transparent #fff;
+	border-color: #fff transparent transparent #fff; */
 }
 
 

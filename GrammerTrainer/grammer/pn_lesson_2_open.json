@@ -166,7 +166,7 @@
             "oldPrompt": "The girl said that ",
             "prompt": "Complete this sentence.  The girl says that …",
             "quote": "I will help him.",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help him.",
             "lessonVideo": "gt_videos/transportation_theme_videos/7_lesson_2.m4v"
         },
@@ -209,7 +209,7 @@
             "oldPrompt": "The boy said that ",
 	    "prompt":  "Complete this sentence.  The boy says that …",
             "quote": "I will help him_her.",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help him_her.",
             "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_2_HE_SHE_.m4v"
         },
@@ -231,7 +231,7 @@
             "oldPrompt": "The boy said that ",
 	    "prompt": "Complete this sentence.  The boy says that …",
             "quote": "He_She will help me.",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "He_She will help me.",
             "lessonVideo": "gt_videos/transportation_theme_videos/10_lesson_2_HE_SHE_.m4v"
         },

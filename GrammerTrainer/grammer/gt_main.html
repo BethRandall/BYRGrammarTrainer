@@ -197,25 +197,6 @@
                     initUserInterface(); }   
             } else { document.write("error in myJsonTextToObject"); };
         }
-    
-        /*
-        function myLoadJson(filename) {
-            var xobj = new XMLHttpRequest();
-            //xobj.overrideMimeType("application/json");
-            //var fileURL = 'http://stream.goodwin.drexel.edu/grammerapp/jsoneditoronline/app/web/' + filename;
-            //var fileURL = 'https://dl.dropbox.com/u/26582460/grammerApp/' + filename;
-            
-            var fileURL = filename;
-                       
-            xobj.open('GET', fileURL, true);
-            xobj.onreadystatechange = function () {
-                    if (xobj.readyState == 4) {
-                        var jsonTexto = xobj.responseText;
-                        myJsonTextToObject(jsonTexto); }
-            }
-            xobj.send(null);
-        }
-         */
         
         function myLoadLocalJson(filename) {
             var xobj = new XMLHttpRequest();
@@ -233,65 +214,8 @@
        //alert("lessonName is:  " + lessonName);
         
        if (lessonName.length > 0) {
-           
            myLoadLocalJson(lessonName);
-           /*
-           //if (lessonName == "pt_lesson_1.json") {
-             //myLoadJson("https://dl.dropbox.com/s/2zpr6hdf9c174ed/pt_lesson_1.json"); }
-           if (lessonName == "pt_lesson_1.json") {
-               myLoadLocalJson("pt_lesson_1.json"); }
-
-           if (lessonName == "pt_lesson_1_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/04xurl7d9068lmf/pt_lesson_1_open.json"); }
-           if (lessonName == "pt_lesson_2.json") {
-                myLoadJson("https://dl.dropbox.com/s/5u4wokgoe5h91jk/pt_lesson_2.json"); }
-           if (lessonName == "pt_lesson_2_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/k328f0wqerl60bb/pt_lesson_2_open.json"); }
-           if (lessonName == "pt_lesson_3.json") {
-                myLoadJson("https://dl.dropbox.com/s/zgba604gv57p644/pt_lesson_3.json"); }
-           if (lessonName == "pt_lesson_3_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/50s8r5numkwh6vo/pt_lesson_3_open.json"); }
-           if (lessonName == "pt_lesson_4.json") {
-                myLoadJson("https://dl.dropbox.com/s/kxj32240riedfu8/pt_lesson_4.json"); }
-           if (lessonName == "pt_lesson_4_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/3r376qsa1mv9kz6/pt_lesson_4_open.json"); }
-           if (lessonName == "pt_lesson_5.json") {
-                myLoadJson("https://dl.dropbox.com/s/9s8vkuyhlay18vx/pt_lesson_5.json"); }
-           if (lessonName == "pt_lesson_5_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/h1kk8mz4159sfqj/pt_lesson_5_open.json"); }
-           if (lessonName == "pt_lesson_6.json") {
-                myLoadJson("https://dl.dropbox.com/s/rte8gkzyar3laoh/pt_lesson_6.json"); }
-           if (lessonName == "pt_lesson_6_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/r67gdt254w3i8em/pt_lesson_6_open.json"); }
-           if (lessonName == "pt_lesson_7.json") {
-                myLoadJson("https://dl.dropbox.com/s/fn46m1bl5c5hq6s/pt_lesson_7.json"); }
-           if (lessonName == "pt_lesson_7_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/n94u6wwg3jsf4z2/pt_lesson_7_open.json"); }
-           if (lessonName == "pt_lesson_8.json") {
-                myLoadJson("https://dl.dropbox.com/s/u5y8od8neo2iy4v/pt_lesson_8.json"); }
-           if (lessonName == "pt_lesson_8_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/6hp9knkfabbuv8h/pt_lesson_8_open.json"); }
-           if (lessonName == "pn_lesson_1.json") {
-                myLoadJson("https://dl.dropbox.com/s/sg37pbkr502x5wr/pn_lesson_1.json"); }
-           if (lessonName == "pn_lesson_1_open.json") {
-                myLoadJson("https://dl.dropbox.com/s/k3svl2wg5nbobu6/pn_lesson_1_open.json"); }
-           if (lessonName == "pn_lesson_1_gen.json") {
-               myLoadJson("https://dl.dropbox.com/s/krfjt0f4on01dd6/pn_lesson_1_gen.json"); }
-           if (lessonName == "pn_lesson_2.json") {
-               myLoadJson("https://dl.dropbox.com/s/brzkjzket9yault/pn_lesson_2.json"); }
-           if (lessonName == "pn_lesson_2_open.json") {
-               myLoadJson("https://dl.dropbox.com/s/jtqqnn701d92za4/pn_lesson_2_open.json"); }
-           if (lessonName == "pn_lesson_2_gen.json") {
-               myLoadJson("https://dl.dropbox.com/s/nho4vnnqu26twtw/pn_lesson_2_gen.json"); }
-           if (lessonName == "pn_lesson_3.json") {
-               myLoadJson("https://dl.dropbox.com/s/5dqpyjmg0qtnaik/pn_lesson_3.json"); }
-           if (lessonName == "pn_lesson_3_open.json") {
-               myLoadJson("https://dl.dropbox.com/s/07oem62w6frhn3v/pn_lesson_3_open.json"); }
-           if (lessonName == "pn_tutorial.json") {
-               myLoadJson("https://dl.dropbox.com/s/0jaadmdq4ngjfse/pn_tutorial.json"); }
-            //myLoadJson(lessonName);
-            */
-        } //else {
+         } //else {
           //  document.write("Must set lesson query parameter json filename");
         //}
 

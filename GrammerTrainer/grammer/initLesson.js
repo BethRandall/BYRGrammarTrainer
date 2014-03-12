@@ -147,7 +147,25 @@ function setSpeechBubble(context) {
         $("#speechBubble p").html(context.balloonPrefill); }
 }
 
+function setVideo(context) {
+    // Lesson uses video
+ 
+    document.getElementById('video').pause();
+    $("#video").attr("src", context.lessonVideo);
+    document.getElementById('video').load();
 
+    //  if (currentExercise.prompt != "undefined") {
+    document.getElementById('questionContainer').innerHTML = "<p>" +  context.prompt + "</p>"; //}
+    //else {
+    //  if (currentExercise.question != "undefined") {
+    //    document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.question + "</p>"; }
+    //}
+    //}
+
+    setOralPrompt(context);
+    setSpeechBubble(context);
+}
+    
 function resetLesson() {
     //alert("in resetLesson: ");
     // Lesson Number
@@ -225,18 +243,15 @@ function initUserInterface() {
     // NativeBridge.call("recordNative", ["initDataModel:",firstExercise.lessonVideo,"three"]);
    
     if(typeof firstExercise.lessonImage == "undefined") {
+        
         // Were talking videos...
-        //setVideo(currentExercise);
+     
         var lessonFilePath = firstExercise.lessonVideo;
         var posterFilePath = posterFilename(lessonFilePath);
-        var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
+        //var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
         $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
         
-        document.getElementById('oralpromptText').innerHTML = firstExercise.oralpromptText;
-
-        document.getElementById('questionContainer').innerHTML = "<p>" +  firstExercise.prompt + "</p>";
-        setOralPrompt(currentExercise); 
-        setSpeechBubble(currentExercise);
+        setVideo(currentExercise);
  
     }else {
         

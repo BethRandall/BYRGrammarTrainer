@@ -444,9 +444,9 @@ function backDoor() {
            // alert("currentAnswerWords[i] == currentAnswerWords[i+1]: i = " + i); }
            continue; }
         else { return false; } }
-    alert("found " + currentAnswerWords.length + " repeated words.");
-    currentExerciseNumber = currentAnswerWords.length;
-    GetExercise();
+    //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
+    currentExerciseNumber = currentAnswerWords.length - 1;
+    backDoorUpdateExercise(currentExerciseNumber);
     return true;
 }
 
@@ -639,9 +639,58 @@ function saveProgramState() {
 // Go to next exercise by updating the current question and answer
 // Called when the user hits the Next Button
 
+function backDoorUpdateExercise(newExNum) {
+    // if newExNum is too big for the exercise array, set it to the last index of the array
+    if (newExNum >= (theLesson.exerciseArray).length) {
+        newExNum = theLesson.exerciseArray.length - 1; }
+    // Update question
+    // First save state
+    alert("backdoor to exercise " + (newExNum + 1));
+    saveProgramState();
+
+    currentExercise = theLesson.exerciseArray[newExNum];
+
+    if(typeof currentExercise.lessonImage == "undefined") {
+        // Lesson uses video
+        setVideo(currentExercise); 
+    } else {  
+        //alert("image: " + currentExercise.lessonImage);
+        // This is a photo
+        $("#lessonImage").attr("src", "images/" + currentExercise.lessonImage);
+        $("#quoteBox").text(currentExercise.question);
+        $("#questionContainer").text(currentExercise.question);
+    }
+
+    if (typeof currentExercise.balloonPrefill == "undefined") {
+        $("#speechBubble p").html(" "); }
+
+    // if wordlists are defined at the lesson level, use them;
+    // if wordslists are defined at the exercise level, write over the lesson level.
+    setWordLists(theLesson);
+    setWordLists(currentExercise);
+
+    setWordTabs();
+    
+    // Clear answer feedback box
+    $("#answerContainer #answerFeedbackBox p").html("  ");
+    // Update multiple choices
+    setMultipleChoiceBox(currentExercise);
+    
+    // Update dot feedback
+    updateDotFeedback();
+    
+    // Clear the droppable answer box
+    eraseAnswer();
+
+    // Disable the next button
+    $("#nextButton").html("<a>Next</a>");
+    $("#nextButton a").css({"background":"#08324f","color":"#26527c","-webkit-box-shadow":"0 0 0 transparent"});
+}
+
+
 function updateExercise()
 {
-	// Update question
+ 	// Update question
     // First save state
     saveProgramState();
     
@@ -649,36 +698,15 @@ function updateExercise()
         // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
         currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
     }else{
-        currentExercise = theLesson.exerciseArray[indexArray[step]];
-    }
+        currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
     if(typeof currentExercise.lessonImage == "undefined") {
         // Lesson uses video
-        //setVideo(currentExercise);
-        document.getElementById('video').pause();
-        $("#video").attr("src", currentExercise.lessonVideo);
-        //alert($('#video').attr("src"));
-        //alert("will load video:  " + currentExercise.lessonVideo);
-        document.getElementById('video').load();
-        //document.getElementById('video').play();
-        
-      //  if (currentExercise.prompt != "undefined") {
-            document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.prompt + "</p>"; //}
-        //else {
-          //  if (currentExercise.question != "undefined") {
-            //    document.getElementById('questionContainer').innerHTML = "<p>" +  currentExercise.question + "</p>"; }
-            //}
-        //}
-        
-        $("#video_box p").text(currentExercise.question);
-        
-        setOralPrompt(currentExercise);
-        setSpeechBubble(currentExercise);
+        setVideo(currentExercise);
         
     } else {
         
         //alert("image: " + currentExercise.lessonImage);
-        
         // This is a photo
         $("#lessonImage").attr("src", "images/" + currentExercise.lessonImage);
         $("#quoteBox").text(currentExercise.question);
@@ -1213,7 +1241,13 @@ function MetaDetermineFeedback()
     }
 }
 
-function GetExNum() { return step; }
+function GetExNum() {
+    if (typeof currentExercise.exnum != "undefined") {
+        // alert("found exnum: " + currentExercise.exnum);
+        // subtract 1 because array indices begin at 0 but exnums begin at 1.
+        return (currentExercise.exnum - 1);
+    }
+    return step; }
 
 function GetExercise(exerciseNumber)
 {
