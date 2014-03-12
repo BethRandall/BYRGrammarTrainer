@@ -47,6 +47,7 @@
     "subjectMasteryLimit": "2",
     "exerciseArray": [
         {
+            "exnum": "1",
             "lessonImage": "arrow.jpg",
             "pictureA": "arrow.jpg",
             "pictureB": ".jpg",
@@ -125,6 +126,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "2",
             "lessonImage": "Ov.jpg",
             "pictureA": "Ov.jpg",
             "pictureB": ".jpg",

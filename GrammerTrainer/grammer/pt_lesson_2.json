@@ -55,6 +55,7 @@
     "subjectMasteryLimit": "4",
     "exerciseArray": [
         {
+            "exnum": "1",
             "lessonImage": "Ccs.jpg",
             "pictureA": "Ccs.jpg",
             "pictureB": ".jpg",
@@ -132,6 +133,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "2",
             "lessonImage": "Sqs.jpg",
             "pictureA": "Sqs.jpg",
             "pictureB": ".jpg",
@@ -209,6 +211,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "3",
             "lessonImage": "Tgs.jpg",
             "pictureA": "Tgs.jpg",
             "pictureB": ".jpg",
@@ -286,6 +289,7 @@
             "timeCaption": ""
         },
         {
+            "exnum": "4",
             "lessonImage": "Rts.jpg",
             "pictureA": "Rts.jpg",
             "pictureB": ".jpg",
