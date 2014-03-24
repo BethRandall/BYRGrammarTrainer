@@ -289,9 +289,10 @@ p.speechRight:after
 	left: 830px;
 }
 
+/* BYR:  Is this code in use? */
 #multipleChoiceContainer #multipleChoiceTab
 {
-	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; /* pale orangey-beige */
+	/*background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; pale orangey-beige */
 	color: #522611; /* dark brown */
 	font-size: 18px;
 	font-weight: bold;
@@ -302,6 +303,7 @@ p.speechRight:after
 	-webkit-box-shadow:inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2);
 }
 
+/* BYR:  Is this code in use? */
 #multipleChoiceDisplay
 {
 	position:absolute;
@@ -310,7 +312,8 @@ p.speechRight:after
 	margin-left:-8px;
 	margin-top:-28px;
 	/* background-color:#000; */
-	opacity: 0.5;
+	/*opacity: 0.5;*/
+    opacity: 1;
 	z-index:10;
 	
 }
@@ -331,7 +334,8 @@ p.speechRight:after
 	border-top-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	z-index:11;
+	/*z-index:11;*/
+    z-index: 3;
 }
 
 #multipleChoiceBox p
@@ -700,7 +704,10 @@ For when exercise is completed, next button is active
 /*Video CSS Code*/
 
 #video_box {
-	position: relative; 
+	/*position: relative;*/
+    position: absolute;
+    left: 100px;
+    top: 100 px;
 	}
 #video {
 	background-color: #000;

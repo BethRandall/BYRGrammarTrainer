@@ -520,12 +520,28 @@ function goToNextExercise()
 		if( dotMatrix[i] == DOT_CORRECT )
 		{ greenDotCounter++; } }
 	
-	// If all the dots are green, then go to the congratuations page
+	// If all the dots are green, then go to the congratulations page
+    // BYR:  If all the dots are green, the lesson is finished.  Go on to the next lesson.
 	if( greenDotCounter >= theLesson.exerciseArray.length )
 	{
 		//window.location.replace("gt_congratulations.html");
         // For now we just exit out to the native side, but we should add some congratulatons here!
-        showMenu(); }
+        var nextLesson = "None";
+        nextLesson = getNextLesson(lessonName);
+        if (nextLesson == "None") {
+            showMenu(); }
+        else {
+            //alert("AARDVARK AARDVARK about to load:  " + nextLesson);
+            myLoadLocalJson(nextLesson);
+            //alert("back from myLoadLocalJson: ");
+            lessonName = nextLesson;
+            resetLesson();
+            //alert("back from resetLesson: ");
+            initUserInterface();
+            //alert("back from initUserInterface: ");
+            return;
+        }
+    }
 	else
 	{
         // All the dots are not green. Were either have not been through all the quesions, or we got some wrong. Determine which.
@@ -637,7 +653,6 @@ function saveProgramState() {
 }
 
 // Go to next exercise by updating the current question and answer
-// Called when the user hits the Next Button
 
 function backDoorUpdateExercise(newExNum) {
     // if newExNum is too big for the exercise array, set it to the last index of the array
@@ -656,9 +671,7 @@ function backDoorUpdateExercise(newExNum) {
     } else {  
         //alert("image: " + currentExercise.lessonImage);
         // This is a photo
-        $("#lessonImage").attr("src", "images/" + currentExercise.lessonImage);
-        $("#quoteBox").text(currentExercise.question);
-        $("#questionContainer").text(currentExercise.question);
+        myLoadLessonImage();
     }
 
     if (typeof currentExercise.balloonPrefill == "undefined") {
@@ -705,13 +718,10 @@ function updateExercise()
         setVideo(currentExercise);
         
     } else {
-        
         //alert("image: " + currentExercise.lessonImage);
         // This is a photo
-        $("#lessonImage").attr("src", "images/" + currentExercise.lessonImage);
-        $("#quoteBox").text(currentExercise.question);
-        //$("#quoteBoxAnswer").text(currentExercise.answers[0]);
-        $("#questionContainer").text(currentExercise.question);
+        //alert("AARDVARK will myLoadLessonImage");
+        myLoadLessonImage();
     }
     
     if (typeof currentExercise.balloonPrefill == "undefined") {
@@ -890,7 +900,6 @@ function MetaDetermineFeedback()
     //depending on what sort of feedback this is, different outputs are necessary
 	if (feedbackType == "CorrectAnswer")
     {
-        
         if(redoMode) {
             // When were in redo mode and we get one correct we remove that index from the promptsToRedo array
             //removes 1 element from index 'step'
@@ -902,13 +911,13 @@ function MetaDetermineFeedback()
         //alert("The answer is correct.");
         if( dotMatrix[tempNum] != DOT_WRONG )
         {
-            dotMatrix[tempNum] = DOT_CORRECT;
-        }
+            dotMatrix[tempNum] = DOT_CORRECT; }
         // Display the correct answer feedback
         $("#answerFeedbackBox p").html("Your answer is correct!");
         // Turn on the next button
         $("#nextButton").html("<a href=\"javascript:goToNextExercise()\">Next</a>");
         $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
+        return;
     }
     
     if ((feedbackType == "wrongWords")|| (feedbackType == "wrongWordsPolite"))
@@ -961,8 +970,7 @@ function MetaDetermineFeedback()
         {
             if( dotMatrix[tempNum] != DOT_WRONG )
                 promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
+            dotMatrix[tempNum] = DOT_WRONG; }
         
         // Display the feedback
         $("#answerFeedbackBox p").html("Change the word in red to non-pronoun and/or change the word in orange to pronoun.");
@@ -975,14 +983,12 @@ function MetaDetermineFeedback()
             for( var j = 0; j < convertToFullNPList.length; j++ )
             {
                 if( tempAnswersInArray[i] == convertToFullNPList[j] )
-                { fullNPNumbers.push(i); }
-            }
+                { fullNPNumbers.push(i); } }
             
             for( var k = 0; k < convertToPronounList.length; k++ )
             {
                 if( tempAnswersInArray[i] == convertToPronounList[k] )
-                { pronounNumbers.push(i); }
-            }
+                { pronounNumbers.push(i); } }
         }
         
         // Change the background color of wrong words to red
@@ -1045,26 +1051,22 @@ function MetaDetermineFeedback()
             for( var j = 0; j < wrongForms.length; j++ )
             {
                 if( tempAnswersInArray[i] == wrongForms[j] )
-                { wrongFormNumbers.push(i); }
-            }
+                { wrongFormNumbers.push(i); } }
             
             for( var k = 0; k < wrongEndings.length; k++ )
             {
                 if( tempAnswersInArray[i] == wrongEndings[k] )
-                { wrongEndingNumbers.push(i); }
-            }
+                { wrongEndingNumbers.push(i); } }
             
             for( var l = 0; l < needEndings.length; l++ )
             {
                 if( tempAnswersInArray[i] == needEndings[l] )
-                { needEndingNumbers.push(i); }
-            }
+                { needEndingNumbers.push(i); } }
             
             for( var m = 0; m < needEndings.length; m++ )
             {
                 if( tempAnswersInArray[i] == needEndings[m] )
-                { needEndingNumbers.push(i); }
-            }
+                { needEndingNumbers.push(i); } }
         }
         
         // Change the background color of wrong words to orange
@@ -1128,17 +1130,13 @@ function MetaDetermineFeedback()
                 if( (tempAnswersInArray[i] == nounWithWrongArticleList[j]) && (i != 0) )
                 {
                     if( (tempAnswersInArray[i-1] == "a") || (tempAnswersInArray[i-1] == "an") || (tempAnswersInArray[i-1] == "the") )
-                        nounWithWrongArticleNumbers.push(i-1);
-                }
-            }
+                        nounWithWrongArticleNumbers.push(i-1); } }
             
             for( var k = 0; k < nounMissingAnArticleList.length; k++ )
             {
                 if( tempAnswersInArray[i] == nounMissingAnArticleList[k] )
                 {
-                    nounMissingAnArticleNumbers.push(i);
-                }
-            }
+                    nounMissingAnArticleNumbers.push(i); } }
         }
         
         // Change the background color of wrong words to red
@@ -1265,14 +1263,14 @@ function GetExercise(exerciseNumber)
     
     // indexArray - is used to radomize the exercise
     // exerciseNumber - is a one up index
-    
+
     var theCurrentExercise;
     
     if(redoMode) {
         // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
         theCurrentExercise = theLesson.exerciseArray[promptsToRedo[exerciseNumber]];
     }else{
-        theCurrentExercise = theLesson.exerciseArray[indexArray[exerciseNumber]];
+        theCurrentExercise = theLesson.exerciseArray[exerciseNumber];
     }
     
     if(typeof theCurrentExercise.multipleChoice != 'undefined') {
@@ -1292,13 +1290,6 @@ function GetExercise(exerciseNumber)
     
     if(typeof theCurrentExercise.subjectRequest != 'undefined') {
         this.subjectRequest = theCurrentExercise.subjectRequest; }
-    
-   //   var subjreqstr = "";
-   //   if (this.subjectRequest.length > 0) {
-   //       for (var i = 0; i < this.subjectRequest.length; i++) {
-   //       subjreqstr += this.subjectRequest[i] + ", "; }
-   //   }
-   //   alert("downloaded subjectRequest: " + subjreqstr); }
     
     if(typeof theCurrentExercise.unneededWords != 'undefined') {
         this.unneededWords = theCurrentExercise.unneededWords; }

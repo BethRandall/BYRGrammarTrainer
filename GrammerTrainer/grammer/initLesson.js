@@ -1,10 +1,42 @@
 // Dependencies
 // theLesson object needs to be set up before entering
 
-him_her = 'her';
-he_she = 'she';
-Him_Her = 'Her';
-He_She = 'She';
+// lessonList is a list of SW lessons, in the order that they should be worked.  It is used to go automatically from one lesson to the next.
+var lessonList = new Array( "pt_lesson_1.json",
+                            "pt_lesson_1_open.json",
+                            "pt_lesson_2.json",
+                            "pt_lesson_2_open.json",
+                            "pt_lesson_3.json",
+                            "pt_lesson_3_open.json",
+                            "pt_lesson_4.json",
+                            "pt_lesson_4_open.json",
+                            "pt_lesson_5.json",
+                            "pt_lesson_5_open.json",
+                            "pt_lesson_6.json",
+                            "pt_lesson_6_open.json",
+                            "pt_lesson_7.json",
+                            "pt_lesson_7_open.json",
+                            "pt_lesson_8.json",
+                            "pt_lesson_8_open.json",
+                            "pn_lesson_1.json",
+                            "pn_lesson_1_open.json",
+                            "pn_lesson_1_gen.json",
+                            "pn_lesson_2.json",
+                            "pn_lesson_2_open.json",
+                            "pn_lesson_2_gen.json",
+                            "pn_lesson_3.json",
+                            "pn_lesson_3_open.json" )
+
+function getNextLesson(currentLesson) {
+    for (var i = 0; i < lessonList.length - 1; i++) {
+        if (currentLesson == lessonList[i]) {
+            alert("next lesson:  " + lessonList[i + 1]);
+            return (lessonList[i + 1]);
+        }
+    }
+    return("None");
+}
+
 
 function posterFilename(wholePath) {
     // "gt_videos/transportation_theme_videos/1_lesson_1.m4v"
@@ -74,7 +106,6 @@ function setWordTabs() {
     
 function setMultipleChoiceBox(context) {
     // context is currentExercise.
-    //alert("inside setMultipleChoiceBox: ");
     var choiceArray = context.multipleChoice;
     
     if ((typeof context.multipleChoice == 'undefined') ||  (choiceArray.length < 1)) {
@@ -85,7 +116,7 @@ function setMultipleChoiceBox(context) {
     $("#multipleChoiceBox").show();     
     $("#multipleChoiceBox #presentedChoices").html("");
     
-    //BYR randomize here. 
+    //BYR randomize here.
     var usedDex = new Array(); 
     // initialize usedDex with indices.
     for(var answerChoice = 0; answerChoice < choiceArray.length; answerChoice++) {
@@ -108,8 +139,8 @@ function setOralPrompt(context) {
     if(typeof firstExercise.oralpromptText == "undefined") {
         $("#oralpromptText").hide(); }
     */
-     if(typeof context.oralprompt == "undefined") {
-        document.getElementById('oralpromptText').innerHTML = "";
+    if(typeof context.oralprompt == "undefined") {
+        //document.getElementById('oralpromptText').innerHTML = "";
         $("#oralPromptButton").hide();
         $("#oralpromptText").hide();
     } else {
@@ -165,7 +196,25 @@ function setVideo(context) {
     setOralPrompt(context);
     setSpeechBubble(context);
 }
+
+function myLoadLessonImage() {
     
+    $("#video_box").empty();
+    if (typeof currentExercise.imageType == "undefined") {
+        //alert("found imageType undefined");
+        $("#video_box").append("<img id=\"lessonImage\" width=auto height=\"300\" src=" + "images/" + currentExercise.lessonImage + "></img>");
+    } else {
+        alert("found imageType:");
+        if (currentExercise.imageType == "xlong") {
+            //alert("found xlong");
+            $("#video_box").append("<img id=\"lessonImage\" width=\"500\" height=auto src=" + "images/" + currentExercise.lessonImage + "></img>");
+        }
+    }
+    $("#questionContainer").text(currentExercise.question);
+    $("#speechBubble").hide();
+}
+
+
 function resetLesson() {
     //alert("in resetLesson: ");
     // Lesson Number
@@ -192,16 +241,36 @@ function resetLesson() {
     } else {
         // NOTE: theLesson variables is populated by our <lesson>.json file
         // Randomize the questions in lesson 1
-        
+      
         indexArray = new Array();
-        var randomLength = Number(theLesson.exerciseArray.length);
         
         // Create an array of numbers in numerical order
-        for( var a = 0; a < randomLength; a++ )
+        for( var a = 0; a < theLesson.exerciseArray.length; a++ )
         { indexArray.push(a); }
         
-        // Then, shuffle the numbers
-        //indexArray.sort(function() {return 0.5 - Math.random()});
+        //BYR randomize here.
+        // usedDex will contain a list of indices used in the randomized array.
+        var usedDex = new Array();
+        // initialize usedDex with indices.
+        for(var exerNum = 0; exerNum < theLesson.exerciseArray.length; exerNum++) {
+            usedDex[exerNum] = exerNum; }
+       
+        // randomizing happens in this for loop.
+        for(var exerNum = 0; exerNum < theLesson.exerciseArray.length; exerNum++)
+        {
+            //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>");
+            var randdex =  Math.floor(Math.random()*usedDex.length);
+            var newranddex = usedDex[randdex];
+            // if you don't want to randommize the exercises, comment out the following line:
+            //indexArray[exerNum] = newranddex;
+            usedDex.splice(randdex, 1); }
+        /*
+        var showRandomArray = " ";
+        for (var i = 0; i < randomArray.length; i++) {
+            showRandomArray += randomArray[i] + " ";
+        }
+        alert("randomArray:  " + showRandomArray);
+         */
         
         // Dot Array
         dotMatrix = new Array();
@@ -211,16 +280,15 @@ function resetLesson() {
 }
 
 function initUserInterface() {
-
     //alert("initUserInterface");
     // NOTE: Must call resetLesson() or something else to init vars before calling this
     // Array of answer words
     
     currentAnswerWords = new Array();   // the state of this is not saved
     draggableAnswerWords = new Array(); // the state of this is not saved
-
+    
     // Call Native to find out gender of user
-    // checkGender() inits the following variables; him_her,he_she,Him_Her,He_She                          
+    // checkGender() inits the following variables; him_her,he_she,Him_Her,He_She
     checkGender();
     
     var firstExercise = theLesson.exerciseArray[indexArray[step]];
@@ -230,10 +298,8 @@ function initUserInterface() {
     
      // if wordlists are defined at the lesson level, use them;
     // if wordslists are defined at the exercise level, write over the lesson level.
-    
     setWordLists(theLesson);
     setWordLists(currentExercise);
-    
     //alert("The step is " + step);
     
     //var firstExercise = theLesson.exerciseArray[indexArray[step]];
@@ -243,7 +309,6 @@ function initUserInterface() {
     // NativeBridge.call("recordNative", ["initDataModel:",firstExercise.lessonVideo,"three"]);
    
     if(typeof firstExercise.lessonImage == "undefined") {
-        
         // Were talking videos...
      
         var lessonFilePath = firstExercise.lessonVideo;
@@ -255,18 +320,11 @@ function initUserInterface() {
         setVideo(currentExercise);
  
     }else {
-        
         // This is a photo
-        //$("#video_box").append("<img id=\"lessonImage\" width=\"533\" height=auto src=" + "images/" + firstExercise.lessonImage + "></img>");
-         $("#video_box").append("<img id=\"lessonImage\" width=\"350\" height=auto src=" + "images/" + firstExercise.lessonImage + "></img>");
-        //$("#video_box").append("<div id=\"quoteBox\">" + firstExercise.question + "</div>");
-        //$("#video_box").append("<div id=\"quoteBoxAnswer\">" + firstExercise.answers[0] + "</div>");
-        $("#questionContainer").text(firstExercise.question);
-
-        $("#speechBubble").hide();
+        
+        myLoadLessonImage();
     }
      
-    
     // <img src="smiley.gif" alt="Smiley face" height="42" width="42" />
     // Load the dots (the context needs to be the dotContainer element)
     for( var d = 0; d < dotMatrix.length; d++ )
@@ -287,11 +345,10 @@ function initUserInterface() {
         else
         { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
     }
-    //alert("about to setMultipleChoiceBox: ");
-    setMultipleChoiceBox(firstExercise);
+    setMultipleChoiceBox(currentExercise);
     
     // word list are initialized in <lesson>.json file
     setWordTabs();
-    setOralPrompt(firstExercise);
+    setOralPrompt(currentExercise);
     appLoaded();
 }

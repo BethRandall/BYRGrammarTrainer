@@ -333,6 +333,7 @@
         { 	
 	    "exnum": "3",
             "lessonImage": "CcBwTgSq.jpg",
+            "imageType": "xlong",
             "pictureA": "CcBwTgSq.jpg",
             "pictureB": ".jpg",
             "question": "Where is the circle?",
@@ -579,6 +580,7 @@
         {
 	    "exnum": "5",
             "lessonImage": "CcsOvRt.jpg",
+            "imageType": "xlong",
             "pictureA": "CcsOvRt.jpg",
             "pictureB": ".jpg",
             "question": "Where are the circles?",
@@ -688,6 +690,7 @@
         {
 	    "exnum": "6",
             "lessonImage": "RtNxSq.jpg",
+            "imageType": "xlong",
             "pictureA": "RtNxSq.jpg",
             "pictureB": ".jpg",
             "question": "Where is the rectangle?",

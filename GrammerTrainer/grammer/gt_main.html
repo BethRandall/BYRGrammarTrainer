@@ -190,15 +190,19 @@
              if (myJSONtext.length > 0) {
                 theLesson = eval('(' + myJSONtext + ')');
                 checkGender();
-                
+  
+                 /*
+                  //BYR: this code doesn't make sense.
                 var standAlone = 0; // Set this to run in external browser
                 if(standAlone == 1) {
 					resetLesson();
-                    initUserInterface(); }   
+                    initUserInterface(); }
+                  */
             } else { document.write("error in myJsonTextToObject"); };
         }
         
         function myLoadLocalJson(filename) {
+            //alert("in myLoadLocalJson: " + filename);
             var xobj = new XMLHttpRequest();
     
             xobj.open('GET', filename, true);

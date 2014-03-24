@@ -70,12 +70,10 @@
         case NotReachable:
         {
             statusString = @"Access Not Available";
-
             //Minor interface detail- connectionRequired may return yes, even when the host is unreachable.  We cover that up here...
             connectionRequired= NO;  
             break;
         }
-            
         case ReachableViaWWAN:
         {
             statusString = @"Reachable WWAN";
@@ -90,13 +88,9 @@
     }
     
     NSLog(@"Network Status: %@", statusString);
-
-
-
 }
 
 - (NSString *)docDir {
-    
     // Open a stream for the file we're going to receive into.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -107,7 +101,6 @@
 
 - (void)sendOfflineEntriesToServerIfExist {
 	
-    
     NSString *path = [[self docDir] stringByAppendingPathComponent:@"offline.plist"];
     
     NSMutableArray *cacheArray;
@@ -115,8 +108,7 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         // File found, need to send entries to server
         cacheArray = [[NSMutableArray alloc] initWithContentsOfFile:path];
-        
-        
+
         if (cacheArray) {
             
             for (NSString *theURL in cacheArray) {
@@ -130,7 +122,6 @@
                 
                 [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *theData, NSError *error) {
                     
-
                     // If there was an error getting the data
                     if (error) {
                         
@@ -164,42 +155,14 @@
     } 
 }
 
-
-
 // Levels, Modules ,Lessons
 - (void)readInDataModel:(NSString *)fileName forUser:(NSString *)user {
     
-
     NSURL *url = [[NSBundle mainBundle] URLForResource:fileName withExtension:@"plist"];
     
     NSArray *levelDictionaries = [[NSArray alloc ] initWithContentsOfURL:url];
     
-//     NSError *error;
-
-    
-//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:levelDictionaries
-//                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
-//                                                         error:&error];
-    
-//    NSString *jsonUrl = @"https://dl.dropbox.com/u/26582460/grammerApp/grammerManifest.json";
-//    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:jsonUrl]];
-//    
-//    
-//    if (! jsonData) {
-//        NSLog(@"Got an error: %@", error);
-//    } else {
-//        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//        NSLog(@"JSON: %@", jsonString);
-//    }
-//
-//    
-//    NSArray* levelDictionaries = [NSJSONSerialization
-//                          JSONObjectWithData:jsonData //1
-//                          
-//                          options:kNilOptions
-//                          error:&error];
-    
-    
+    //     NSError *error;
     
     // This will hold the Level objects we create in the loop
     NSMutableArray *levelsArray = [NSMutableArray arrayWithCapacity:[levelDictionaries count]];
@@ -267,7 +230,6 @@
     return stateVectorDict;
 
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
