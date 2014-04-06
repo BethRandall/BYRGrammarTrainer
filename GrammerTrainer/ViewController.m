@@ -52,6 +52,7 @@
 @property (strong, nonatomic) Level *currentLevel;
 @property (strong, nonatomic) Module *currentModule;
 @property (strong, nonatomic) Lesson *currentLesson;
+@property (strong, nonatomic)NSIndexPath *indexPath;
 
 
 @property (strong, nonatomic) NSArray *modules;
@@ -85,6 +86,7 @@
 @synthesize currentModule = currentModule_;
 @synthesize currentLevel = currentLevel_;
 @synthesize currentLesson = currentLesson_;
+@synthesize indexPath = indexPath_;
 @synthesize loginInfo = loginInfo_;
 @synthesize versionLabel = versionLabel_;
 @synthesize resultsDict = resultsDict_;
@@ -100,10 +102,12 @@ static NSString *versionNumber = @"1.11";
 
 - (void)showMenu {
     
-    // This is really means toggle menu
+    // This really means toggle menu
     
     CGRect newFrame;
     CGRect newFrame2;
+    
+    NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
     
     if (menuVisible) {
         // hide menu
@@ -207,9 +211,7 @@ static NSString *versionNumber = @"1.11";
         //[self copyOverLesson:lessonFileName];
         
         signLabel_.text = [NSString stringWithFormat:@"Loading %@...", theLesson.lessonName];
-        
-        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
-        
+        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"]; 
         NSURL *url;
         
         if ([theLesson.loadFile isEqualToString:@"demoTrigger"]) {
@@ -222,13 +224,9 @@ static NSString *versionNumber = @"1.11";
                                       otherButtonTitles:@"OK", nil];
             
             [alertView show];
-            
-            //url = [[NSBundle mainBundle] URLForResource:@"playTutorialVideo" withExtension:@"html"];
-            
+            //url = [[NSBundle mainBundle] URLForResource:@"playTutorialVideo" withExtension:@"html"];  
             pendingDataModelLoad = NO;
-  
-        } else {
-            
+        } else { 
             NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
             
             //NSString *baseURLWithQuery = [self addQueryStringToUrlString:baseURLStr withDictionary:[NSDictionary dictionaryWithObject:[lessonFileName stringByDeletingPathExtension] forKey:@"lesson"]];
@@ -242,9 +240,7 @@ static NSString *versionNumber = @"1.11";
                                                query]];     
             
             pendingDataModelLoad = YES;
-            
-            NSLog(@"Load request: %@", url);
-            
+            NSLog(@"Load request: %@", url); 
             NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc] initWithURL:url
                                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                                        timeoutInterval:30.0];
@@ -364,12 +360,11 @@ static NSString *versionNumber = @"1.11";
     user = [user stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     self.userName = user;
 
-    NSLog(@"BYR UserName: +%@+", userName_ );
+    NSLog(@"BYR UserName: +%@+", userName_);
     
     NSString *moduleName;
     
     moduleName = @"modules";  // modules.plist file
-    
     AppDelegate *theDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [theDelegate readInDataModel:moduleName forUser:userName_];
     
@@ -705,10 +700,11 @@ static NSString *versionNumber = @"1.11";
 
 #pragma mark -
 #pragma KVO Observing
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)operation change:(NSDictionary *)change context:(void *)context {
     
     // BYR:  is the following chunk of code actually used?
-    NSLog(@"AARDVARK!  Inside observeValueForKeyPath:  ");
+    NSLog(@"AARDVARK AARDVARK AARDVARK!  Inside observeValueForKeyPath:  ");
     
     if([operation isKindOfClass:[DownloadUrlToDiskOperation class]]) {
         
@@ -794,11 +790,6 @@ static NSString *versionNumber = @"1.11";
     }
 }
 
-
-
-
-
-
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -844,9 +835,6 @@ static NSString *versionNumber = @"1.11";
             NSString *trimmed = [loginTextView_.text substringWithRange:NSMakeRange(0, [loginTextView_.text length]-1)];
             // trim trailing spaces
             trimmed = [trimmed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-            //BYR I have never seen this log:  is this code in use?
-            NSLog(@"1. trimmed:  +%@+", trimmed);
-            
             [self checkPassword:passwordTextView_.text forUser:trimmed];
             [textView setText:@""]; // Blank it out
         }
@@ -859,8 +847,6 @@ static NSString *versionNumber = @"1.11";
             // trim trailing spaces
             trimmed = [trimmed stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             textView.text = trimmed;
-             //BYR I have never seen this log:  is this code in use?
-            NSLog(@"2. trimmed:  +%@+", trimmed);
             [textView resignFirstResponder];
             [passwordTextView_ becomeFirstResponder];
         }
@@ -1009,6 +995,10 @@ static NSString *versionNumber = @"1.11";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"ECHIDNA indexPath: %@", indexPath);
+    NSLog(@"ECHIDNA indexPath.row: %d", indexPath.row);
+    NSLog(@"ECHIDNA indexPath.section: %d", indexPath.section);
+    NSLog(@"SOPRANO tableView: %@", tableView);
 
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath.section];
     
@@ -1017,26 +1007,65 @@ static NSString *versionNumber = @"1.11";
     // Save the currently selected module and lesson
     self.currentModule = theModule;
     self.currentLesson = theLesson;
+    self.indexPath = indexPath;
     
     currentModule_.index = @(indexPath.section); //  Keeps track of current selection
     currentLesson_.index = @(indexPath.row); //  Keeps track of current selection
     
-    switch (indexPath.row) {
-        case 0: {
+    //switch (indexPath.row) {
+      //  case 0: {
             [self loadLesson:theLesson];
-            break;
-        }
-        case 1: {
-            [self loadLesson:theLesson];
-            break;
-        }            
-        default: {
-            [self loadLesson:theLesson];
-            break;
-        }
-    }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];     
+        //    break;
+        //}
+        //case 1: {
+          //  [self loadLesson:theLesson];
+            //break;
+        //}
+        //default: {
+          //  [self loadLesson:theLesson];
+           // break;
+        //}
+    //}
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)goToNextLesson
+{
+    NSLog(@"MOLTISANTI MOLTISANTI inside goToNextLesson:");
+    
+    NSLog(@"ADRIANA ADRIANA currentLesson_.index:  %@", currentLesson_.index);
+    NSLog(@"CHRISTOFUH index_path_.section: %ld", (long)indexPath_.section);
+    Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
+
+
+    NSInteger currdex = [currentLesson_.index integerValue];
+    currdex = currdex + 1;
+    
+    Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:currdex];
+    
+    // Save the currently selected module and lesson
+    self.currentModule = theModule;
+    self.currentLesson = theLesson;
+    menuVisible = YES;
+    //switch (indexPath.row) {
+      //  case 0: {
+    [self loadLesson:theLesson];
+          //  break;
+        //}
+        //case 1: {
+          //  [self loadLesson:theLesson];
+            //break;
+        //}
+        //default: {
+          //  [self loadLesson:theLesson];
+            //break;
+        //}
+    //}
+    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //menuVisible = NO;
+}
+
 
 #pragma Native Web Interface
 
@@ -1074,7 +1103,7 @@ static NSString *versionNumber = @"1.11";
 
 -(void)returnResultAfterDelay:(NSString*)str {
     // Now perform this selector with waitUntilDone:NO in order to get a huge speed boost! (about 3x faster on simulator!!!)
-    NSLog(@"AARDVARK stringByEvaluatingJavaScriptFromString: %@", str);
+    NSLog(@"stringByEvaluatingJavaScriptFromString: %@", str);
 
     [self.theWebView performSelectorOnMainThread:@selector(stringByEvaluatingJavaScriptFromString:) withObject:str waitUntilDone:NO];
     NSLog(@"about to exit returnResultAfterDelay: ");
@@ -1159,10 +1188,11 @@ static NSString *versionNumber = @"1.11";
 // Use 'callbackId' with 'returnResult' selector when you get some results to send back to javascript
 - (void)handleCall:(NSString*)functionName callbackId:(int)callbackId args:(NSArray*)args
 {
-    // 
-    
-    if ([functionName isEqualToString:@"lessonLoaded"]) { 
-        NSLog(@"Did call lessonLoaded");
+         
+   if ([functionName isEqualToString:@"goToNextLesson"]) {
+        [self goToNextLesson];    
+    } else if ([functionName isEqualToString:@"lessonLoaded"]) {
+        //NSLog(@"Did call lessonLoaded");
         [self showMenu];
     }  else if ([functionName isEqualToString:@"showMenu"]) { 
         NSLog(@"Did call showMenu");
@@ -1173,14 +1203,10 @@ static NSString *versionNumber = @"1.11";
         
         NSLog(@"Did call saveState");
         //[self saveState];
-        
         //NSLog(@"saveState arg count: %d", [args count]);
-
         //NSString *state = (NSString*)[args objectAtIndex:0];
-        
         // Save user, lesson, stateVector
         // userName
-        //   
         
         NSDictionary *stateDict  = @{@"jsonStateVector": args};
         currentLesson_.resultsDictionary = stateDict;
@@ -1340,12 +1366,16 @@ static NSString *versionNumber = @"1.11";
             NSLog(@"The Dict: %@", someJavaScript);
             
             // Instead of calling resetLesson() we pass init using our saved stateVector
-            NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"initUserInterface();" ];            
+            NSLog(@"ELLIOT about to initUserInterface:  ");
+            NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"initUserInterface();" ];
+            //NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"proceedNextLesson();" ];
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 1: ");
 
         } else {
+            NSLog(@"MELFI about to resetLesson and initUserInterface:  ");
             NSString *javascriptString = @"resetLesson();  initUserInterface();";
+            //NSString *javascriptString = @"resetLesson();  proceedNextLesson();";
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 2: ");
         }
@@ -1362,7 +1392,8 @@ static NSString *versionNumber = @"1.11";
         
         //[self.theWebView stringByEvaluatingJavaScriptFromString:javascriptString];
     } else {
-        [self showMenu];    }
+        [self showMenu];
+    }
 
 }
 

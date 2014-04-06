@@ -1,43 +1,6 @@
 // Dependencies
 // theLesson object needs to be set up before entering
 
-// lessonList is a list of SW lessons, in the order that they should be worked.  It is used to go automatically from one lesson to the next.
-var lessonList = new Array( "pt_lesson_1.json",
-                            "pt_lesson_1_open.json",
-                            "pt_lesson_2.json",
-                            "pt_lesson_2_open.json",
-                            "pt_lesson_3.json",
-                            "pt_lesson_3_open.json",
-                            "pt_lesson_4.json",
-                            "pt_lesson_4_open.json",
-                            "pt_lesson_5.json",
-                            "pt_lesson_5_open.json",
-                            "pt_lesson_6.json",
-                            "pt_lesson_6_open.json",
-                            "pt_lesson_7.json",
-                            "pt_lesson_7_open.json",
-                            "pt_lesson_8.json",
-                            "pt_lesson_8_open.json",
-                            "pn_lesson_1.json",
-                            "pn_lesson_1_open.json",
-                            "pn_lesson_1_gen.json",
-                            "pn_lesson_2.json",
-                            "pn_lesson_2_open.json",
-                            "pn_lesson_2_gen.json",
-                            "pn_lesson_3.json",
-                            "pn_lesson_3_open.json" )
-
-function getNextLesson(currentLesson) {
-    for (var i = 0; i < lessonList.length - 1; i++) {
-        if (currentLesson == lessonList[i]) {
-            alert("next lesson:  " + lessonList[i + 1]);
-            return (lessonList[i + 1]);
-        }
-    }
-    return("None");
-}
-
-
 function posterFilename(wholePath) {
     // "gt_videos/transportation_theme_videos/1_lesson_1.m4v"
     // "gt_videos/transportation_theme_videos/poster/1_lesson_1.bmp"
@@ -103,6 +66,48 @@ function setWordTabs() {
     } else {
         $("#prepositionTab").hide(); }
 }
+
+function setWordTabsContext(context) {
+    alert("adjectiveWords: " + context.adjectiveWords);
+    
+    //if nounWords exists, make nounTab active.
+    if((typeof context.nounWords != 'undefined') && (context.nounWords.length > 0)) {
+        layoutDraggableWords(document.getElementById('nounList'), context.nounWords, 'noun');
+        $('#nounTab').addClass('active');
+        $('#selectedAnswerList>section').hide();
+        $('#nounList').show(); // causes draggable words from the nounList to show
+    } else {
+        $("#nounTab").hide(); }
+    if((typeof context.verbWords != 'undefined') && (context.verbWords.length > 0)) {
+        $('#verbTab').removeClass('active');
+        layoutDraggableWords(document.getElementById('verbList'), context.verbWords, 'verb');
+    } else {
+        $("#verbTab").hide(); }
+    if((typeof context.adjectiveWords != 'undefined') && (context.adjectiveWords.length > 0))  {
+        $('#adjectiveTab').removeClass('active');
+        alert("will layout adjectiveWords");
+        layoutDraggableWords(document.getElementById('adjectiveList'), context.adjectiveWords, 'adjective');
+        
+    } else {
+        $("#adjectiveTab").hide(); }
+    // if there's no list of nounWords, make pronounTab active, if it exists.
+    if((typeof context.pronounWords != 'undefined') && (context.pronounWords.length > 0)) {
+        layoutDraggableWords(document.getElementById('pronounList'), context.pronounWords, 'pronoun');
+        if (typeof nounWords != "undefined") {
+            $('#pronounTab').removeClass('active'); }
+        if (typeof nounWords == 'undefined') {
+            $('#pronounTab').addClass('active');
+            $('#selectedAnswerList>section').hide();
+            $('#pronounList').show(); }
+    } else {
+        $("#pronounTab").hide(); }
+    if((typeof context.prepositionWords != 'undefined') && (context.prepositionWords.length > 0)) {
+        $('#prepositionTab').removeClass('active');
+        layoutDraggableWords(document.getElementById('prepositionList'), context.prepositionWords, 'preposition');
+    } else {
+        $("#prepositionTab").hide(); }
+}
+
     
 function setMultipleChoiceBox(context) {
     // context is currentExercise.
@@ -198,22 +203,25 @@ function setVideo(context) {
 }
 
 function myLoadLessonImage() {
-    
+    //alert("in myLoadLessonImage:  currentExercise.lessonImage" + currentExercise.lessonImage);
+
     $("#video_box").empty();
     if (typeof currentExercise.imageType == "undefined") {
         //alert("found imageType undefined");
         $("#video_box").append("<img id=\"lessonImage\" width=auto height=\"300\" src=" + "images/" + currentExercise.lessonImage + "></img>");
     } else {
-        alert("found imageType:");
+        //alert("found imageType:");
         if (currentExercise.imageType == "xlong") {
             //alert("found xlong");
             $("#video_box").append("<img id=\"lessonImage\" width=\"500\" height=auto src=" + "images/" + currentExercise.lessonImage + "></img>");
+        }
+        else {
+              $("#video_box").append("<img id=\"lessonImage\" width=auto height=\"300\" src=" + "images/" + currentExercise.lessonImage + "></img>");
         }
     }
     $("#questionContainer").text(currentExercise.question);
     $("#speechBubble").hide();
 }
-
 
 function resetLesson() {
     //alert("in resetLesson: ");
@@ -243,7 +251,6 @@ function resetLesson() {
         // Randomize the questions in lesson 1
       
         indexArray = new Array();
-        
         // Create an array of numbers in numerical order
         for( var a = 0; a < theLesson.exerciseArray.length; a++ )
         { indexArray.push(a); }
@@ -261,17 +268,9 @@ function resetLesson() {
             //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>");
             var randdex =  Math.floor(Math.random()*usedDex.length);
             var newranddex = usedDex[randdex];
-            // if you don't want to randommize the exercises, comment out the following line:
+            // if you don't want to randomize the exercises, comment out the following line:
             //indexArray[exerNum] = newranddex;
             usedDex.splice(randdex, 1); }
-        /*
-        var showRandomArray = " ";
-        for (var i = 0; i < randomArray.length; i++) {
-            showRandomArray += randomArray[i] + " ";
-        }
-        alert("randomArray:  " + showRandomArray);
-         */
-        
         // Dot Array
         dotMatrix = new Array();
         for( var c = 0; c < theLesson.exerciseArray.length; c++ )
@@ -280,7 +279,6 @@ function resetLesson() {
 }
 
 function initUserInterface() {
-    //alert("initUserInterface");
     // NOTE: Must call resetLesson() or something else to init vars before calling this
     // Array of answer words
     
@@ -291,42 +289,35 @@ function initUserInterface() {
     // checkGender() inits the following variables; him_her,he_she,Him_Her,He_She
     checkGender();
     
-    var firstExercise = theLesson.exerciseArray[indexArray[step]];
-    currentExercise = theLesson.exerciseArray[indexArray[step]];
+    //currentExercise = theLesson.exerciseArray[indexArray[step]];
+    currentExercise = theLesson.exerciseArray[indexArray[0]];
+    //alert("in proceedNextLesson: currentExercise.lessonImage:  " + currentExercise.lessonImage);
     eraseAnswer();
     //initAnswer();
     
-     // if wordlists are defined at the lesson level, use them;
+    // if wordlists are defined at the lesson level, use them;
     // if wordslists are defined at the exercise level, write over the lesson level.
     setWordLists(theLesson);
     setWordLists(currentExercise);
     //alert("The step is " + step);
     
-    //var firstExercise = theLesson.exerciseArray[indexArray[step]];
-
     // Load the video
-    // document.write("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + firstExercise.lessonVideo + "></video>");
     // NativeBridge.call("recordNative", ["initDataModel:",firstExercise.lessonVideo,"three"]);
-   
-    if(typeof firstExercise.lessonImage == "undefined") {
+    
+    if(typeof currentExercise.lessonImage == "undefined") {
         // Were talking videos...
-     
-        var lessonFilePath = firstExercise.lessonVideo;
+        var lessonFilePath = currentExercise.lessonVideo;
         var posterFilePath = posterFilename(lessonFilePath);
         //var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
         //document.getElementById('video').pause();
         $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
-        
         setVideo(currentExercise);
- 
     }else {
         // This is a photo
-        
-        myLoadLessonImage();
-    }
-     
+        myLoadLessonImage(); }
     // <img src="smiley.gif" alt="Smiley face" height="42" width="42" />
     // Load the dots (the context needs to be the dotContainer element)
+    $("#dotContainer").empty();
     for( var d = 0; d < dotMatrix.length; d++ )
     {
         if( (d % 6 == 0) && (d != 0) )
@@ -334,10 +325,8 @@ function initUserInterface() {
             //document.write("<br />");
             //document.write("<img class=\"dotImage\" src=\"img/yellowDot.png\" />");
             // $("#video").attr("src", currentExercise.lessonVideo);
-            
-            $("#dotContainer").append("<br />");    
+            $("#dotContainer").append("<br />");
         }
-        
         if(dotMatrix[d] == DOT_INCOMPLETE)
         { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
         else if(dotMatrix[d] == DOT_WRONG)
@@ -350,5 +339,6 @@ function initUserInterface() {
     // word list are initialized in <lesson>.json file
     setWordTabs();
     setOralPrompt(currentExercise);
-    appLoaded();
+
+    appLoaded(); 
 }

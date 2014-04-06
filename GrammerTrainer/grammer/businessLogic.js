@@ -524,23 +524,9 @@ function goToNextExercise()
     // BYR:  If all the dots are green, the lesson is finished.  Go on to the next lesson.
 	if( greenDotCounter >= theLesson.exerciseArray.length )
 	{
-		//window.location.replace("gt_congratulations.html");
         // For now we just exit out to the native side, but we should add some congratulatons here!
-        var nextLesson = "None";
-        nextLesson = getNextLesson(lessonName);
-        if (nextLesson == "None") {
-            showMenu(); }
-        else {
-            //alert("AARDVARK AARDVARK about to load:  " + nextLesson);
-            myLoadLocalJson(nextLesson);
-            //alert("back from myLoadLocalJson: ");
-            lessonName = nextLesson;
-            resetLesson();
-            //alert("back from resetLesson: ");
-            initUserInterface();
-            //alert("back from initUserInterface: ");
-            return;
-        }
+        NativeBridge.call("goToNextLesson");
+        return;
     }
 	else
 	{
@@ -720,7 +706,6 @@ function updateExercise()
     } else {
         //alert("image: " + currentExercise.lessonImage);
         // This is a photo
-        //alert("AARDVARK will myLoadLessonImage");
         myLoadLessonImage();
     }
     
@@ -802,6 +787,7 @@ function appLoaded()
     //if(typeof lessonFileName != "undefined") {
         //alert("lessonFileName: " + lessonFileName);
     //}
+    //alert("inside appLoaded");
     NativeBridge.call("lessonLoaded");
 }
 

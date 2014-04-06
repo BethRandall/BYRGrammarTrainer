@@ -706,7 +706,7 @@ For when exercise is completed, next button is active
 #video_box {
 	/*position: relative;*/
     position: absolute;
-    left: 100px;
+    left: 50px;
     top: 100 px;
 	}
 #video {

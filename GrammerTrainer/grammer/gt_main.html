@@ -187,10 +187,32 @@
         
         function myJsonTextToObject(myJSONtext) {
             
+            if (myJSONtext.length > 0) {
+                theLesson = eval('(' + myJSONtext + ')');
+                //checkGender();
+          
+                /*
+                 //BYR: this code doesn't make sense.
+                 var standAlone = 0; // Set this to run in external browser
+                 if(standAlone == 1) {
+                 resetLesson();
+                 initUserInterface(); }
+                 */
+            } else { document.write("error in myJsonTextToObject"); };
+        }
+        
+        function myNextJsonTextToObject(myJSONtext) {
+            
              if (myJSONtext.length > 0) {
                 theLesson = eval('(' + myJSONtext + ')');
-                checkGender();
-  
+                //checkGender();
+                 //alert("PHOENIX in myJsonTexttoObject:  first lessonImage" + theLesson.exerciseArray[0].lessonImage);
+                 //myLoadImage(theLesson.exerciseArray[0].lessonImage);
+                 currentExercise = theLesson.exerciseArray[0];
+                 myLoadLessonImage();
+                 resetLesson();
+                 proceedNextLesson(currentExercise);
+                 //setWordLists(currentExercise);
                  /*
                   //BYR: this code doesn't make sense.
                 var standAlone = 0; // Set this to run in external browser
@@ -210,6 +232,19 @@
                 if (xobj.readyState == 4) {
                     var jsonTexto = xobj.responseText;
                     myJsonTextToObject(jsonTexto); }
+            }
+            xobj.send(null);
+        }
+        
+        function myLoadNextJson(filename) {
+            //alert("in myLoadLocalJson: " + filename);
+            var xobj = new XMLHttpRequest();
+            
+            xobj.open('GET', filename, true);
+            xobj.onreadystatechange = function () {
+                if (xobj.readyState == 4) {
+                    var jsonTexto = xobj.responseText;
+                    myNextJsonTextToObject(jsonTexto); }
             }
             xobj.send(null);
         }
@@ -394,7 +429,6 @@
           
         function updateGender() {
             // Loop through theLesson/exerciseArray/multipleChoice, answers and make text replacements
-            var randomLength = Number(theLesson.exerciseArray.length);
             
             for(i=0; i<theLesson.exerciseArray.length; i++) {
                 
