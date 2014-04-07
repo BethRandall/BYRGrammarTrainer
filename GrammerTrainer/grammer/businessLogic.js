@@ -27,7 +27,7 @@ $(document).ready(function(){
                   // Delete button
                   $("#answerContainer #deleteButton").click(function(){ eraseAnswer(); });
                   
-                  // Menu button
+                  // Menu button labelled "Exit"
                   $("#menuButton").click(function(){ showMenu(); });
                   
                   // Submit button

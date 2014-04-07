@@ -52,7 +52,8 @@
 @property (strong, nonatomic) Level *currentLevel;
 @property (strong, nonatomic) Module *currentModule;
 @property (strong, nonatomic) Lesson *currentLesson;
-@property (strong, nonatomic)NSIndexPath *indexPath;
+@property (strong, nonatomic) NSIndexPath *indexPath;
+@property (nonatomic, assign) NSInteger myLessonIndex;
 
 
 @property (strong, nonatomic) NSArray *modules;
@@ -107,7 +108,7 @@ static NSString *versionNumber = @"1.11";
     CGRect newFrame;
     CGRect newFrame2;
     
-    NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
+    //NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
     
     if (menuVisible) {
         // hide menu
@@ -275,11 +276,8 @@ static NSString *versionNumber = @"1.11";
 
 
 - (void)showMessageBoard {
-    
     signLabel_.hidden = NO;
-    
     [self.rightOverlayView bringSubviewToFront:signLabel_];
-
 }
 
 - (void)addAnimationOverlay {
@@ -373,11 +371,6 @@ static NSString *versionNumber = @"1.11";
     BOOL youreIn = NO;
     NSDictionary *userInfo = [loginInfo_ objectForKey:user];
     
-    
-   // TEMP! delete this line 
-   //userInfo = @{@"key": @""};
-
-    
     if (userInfo != nil) {
         
         NSString *realPassWord = [userInfo objectForKey:@"password"];
@@ -400,7 +393,6 @@ static NSString *versionNumber = @"1.11";
         [self showWrongUserNameAlert:userName_];
         NSLog(@"Hi %@, I don't recognize this username. Try Again or see the teacher for help!", userName_);
     }
-
 }
 
 
@@ -414,7 +406,6 @@ static NSString *versionNumber = @"1.11";
     }
     
     [self checkPassword:passwordTextView_.text forUser:theUserName];
-    
 }
 
 - (IBAction)backButtonPushed:(id)sender {
@@ -441,13 +432,9 @@ static NSString *versionNumber = @"1.11";
     } completion:^(BOOL finished){
         
         [UIView animateWithDuration:0.7 animations:^{
-            
             iconView_.frame = newFrame2;
-            
         }];
     }];
-    
-
 }
 
 
@@ -995,37 +982,20 @@ static NSString *versionNumber = @"1.11";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"ECHIDNA indexPath: %@", indexPath);
-    NSLog(@"ECHIDNA indexPath.row: %d", indexPath.row);
-    NSLog(@"ECHIDNA indexPath.section: %d", indexPath.section);
-    NSLog(@"SOPRANO tableView: %@", tableView);
-
-    Module *theModule = (Module *)[modules_ objectAtIndex:indexPath.section];
-    
+    Module *theModule = (Module *)[modules_ objectAtIndex:indexPath.section]; 
     Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:indexPath.row];
 
     // Save the currently selected module and lesson
     self.currentModule = theModule;
     self.currentLesson = theLesson;
     self.indexPath = indexPath;
+    self.myLessonIndex = indexPath.row;
+    //self.myLessonIndex = [NSNumber numberWithInteger:indexPath.row];
     
     currentModule_.index = @(indexPath.section); //  Keeps track of current selection
     currentLesson_.index = @(indexPath.row); //  Keeps track of current selection
     
-    //switch (indexPath.row) {
-      //  case 0: {
-            [self loadLesson:theLesson];
-        //    break;
-        //}
-        //case 1: {
-          //  [self loadLesson:theLesson];
-            //break;
-        //}
-        //default: {
-          //  [self loadLesson:theLesson];
-           // break;
-        //}
-    //}
+    [self loadLesson:theLesson];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -1034,36 +1004,32 @@ static NSString *versionNumber = @"1.11";
 {
     NSLog(@"MOLTISANTI MOLTISANTI inside goToNextLesson:");
     
-    NSLog(@"ADRIANA ADRIANA currentLesson_.index:  %@", currentLesson_.index);
-    NSLog(@"CHRISTOFUH index_path_.section: %ld", (long)indexPath_.section);
+    //NSLog(@"ADRIANA ADRIANA currentLesson_.index:  %@", currentLesson_.index);
+    //NSLog(@"CHRISTOFUH index_path_.section: %ld", (long)indexPath_.section);
+    NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
 
 
-    NSInteger currdex = [currentLesson_.index integerValue];
-    currdex = currdex + 1;
+    //NSInteger currdex = [currentLesson_.index integerValue];
+    //currdex = currdex + 1;
     
-    Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:currdex];
-    
+    self.myLessonIndex = self.myLessonIndex + 1;
+
+    //Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:currdex];
+    Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
+    self.myLessonIndex = self.myLessonIndex + 1;
+ 
     // Save the currently selected module and lesson
     self.currentModule = theModule;
     self.currentLesson = theLesson;
+   // self.indexPath = indexPath;
+    
+    currentModule_.index = @(indexPath_.section); //  Keeps track of current selection
+    currentLesson_.index = @(indexPath_.row); //  Keeps track of current selection
+
     menuVisible = YES;
-    //switch (indexPath.row) {
-      //  case 0: {
+ 
     [self loadLesson:theLesson];
-          //  break;
-        //}
-        //case 1: {
-          //  [self loadLesson:theLesson];
-            //break;
-        //}
-        //default: {
-          //  [self loadLesson:theLesson];
-            //break;
-        //}
-    //}
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //menuVisible = NO;
 }
 
 
@@ -1192,13 +1158,14 @@ static NSString *versionNumber = @"1.11";
    if ([functionName isEqualToString:@"goToNextLesson"]) {
         [self goToNextLesson];    
     } else if ([functionName isEqualToString:@"lessonLoaded"]) {
-        //NSLog(@"Did call lessonLoaded");
+        NSLog(@"Did call lessonLoaded");
+        menuVisible = YES;
         [self showMenu];
     }  else if ([functionName isEqualToString:@"showMenu"]) { 
         NSLog(@"Did call showMenu");
+        menuVisible = NO;
         [self showMenu];
-        [self.theTableView reloadData];
-        
+        [self.theTableView reloadData];      
     }  else if ([functionName isEqualToString:@"saveState"]) {
         
         NSLog(@"Did call saveState");
@@ -1214,7 +1181,7 @@ static NSString *versionNumber = @"1.11";
         NSString *path = [[self docDir] stringByAppendingPathComponent:uniqueFile];
         [stateDict writeToFile:path atomically:YES];
         // [self updateStateWithDict:stateDict ];
-        NSLog(@"saveState arg: %@", args);    
+        //NSLog(@"saveState arg: %@", args);
     }  else if ([functionName isEqualToString:@"getGender"]) {
         NSLog(@"Javascript: getGender");
 
@@ -1345,10 +1312,9 @@ static NSString *versionNumber = @"1.11";
             [someJavaScript appendFormat:@"currentRedoPromptNumber = %@;", [stateVector objectForKey:@"currentRedoPromptNumber"] ];
 
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"indexArray"] withName:@"indexArray"]];
-            [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"dotMatrix"] withName:@"dotMatrix"]];
-                        
+            [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"dotMatrix"] withName:@"dotMatrix"]];             
+          
             /*
-           
              Making something which should look like this...
              
              currentLessonNumber = 1;
@@ -1366,16 +1332,12 @@ static NSString *versionNumber = @"1.11";
             NSLog(@"The Dict: %@", someJavaScript);
             
             // Instead of calling resetLesson() we pass init using our saved stateVector
-            NSLog(@"ELLIOT about to initUserInterface:  ");
             NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"initUserInterface();" ];
-            //NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"proceedNextLesson();" ];
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 1: ");
 
         } else {
-            NSLog(@"MELFI about to resetLesson and initUserInterface:  ");
             NSString *javascriptString = @"resetLesson();  initUserInterface();";
-            //NSString *javascriptString = @"resetLesson();  proceedNextLesson();";
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 2: ");
         }
