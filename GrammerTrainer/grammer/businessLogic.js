@@ -390,7 +390,7 @@ function saySomething() {
 
 function showMenu()
 {
-	//alert("Coming Soon...");
+	alert("will call showMenu:");
     
     NativeBridge.call("showMenu"); }
 

@@ -108,7 +108,7 @@ static NSString *versionNumber = @"1.11";
     CGRect newFrame;
     CGRect newFrame2;
     
-    //NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
+    NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
     
     if (menuVisible) {
         // hide menu
@@ -1008,21 +1008,12 @@ static NSString *versionNumber = @"1.11";
     //NSLog(@"CHRISTOFUH index_path_.section: %ld", (long)indexPath_.section);
     NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
-
-
-    //NSInteger currdex = [currentLesson_.index integerValue];
-    //currdex = currdex + 1;
-    
     self.myLessonIndex = self.myLessonIndex + 1;
-
-    //Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:currdex];
     Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
-    self.myLessonIndex = self.myLessonIndex + 1;
- 
+   
     // Save the currently selected module and lesson
     self.currentModule = theModule;
     self.currentLesson = theLesson;
-   // self.indexPath = indexPath;
     
     currentModule_.index = @(indexPath_.section); //  Keeps track of current selection
     currentLesson_.index = @(indexPath_.row); //  Keeps track of current selection
@@ -1158,11 +1149,11 @@ static NSString *versionNumber = @"1.11";
    if ([functionName isEqualToString:@"goToNextLesson"]) {
         [self goToNextLesson];    
     } else if ([functionName isEqualToString:@"lessonLoaded"]) {
-        NSLog(@"Did call lessonLoaded");
+        //NSLog(@"Did call lessonLoaded");
         menuVisible = YES;
         [self showMenu];
     }  else if ([functionName isEqualToString:@"showMenu"]) { 
-        NSLog(@"Did call showMenu");
+        //NSLog(@"Did call showMenu");
         menuVisible = NO;
         [self showMenu];
         [self.theTableView reloadData];      
@@ -1354,6 +1345,7 @@ static NSString *versionNumber = @"1.11";
         
         //[self.theWebView stringByEvaluatingJavaScriptFromString:javascriptString];
     } else {
+        menuVisible = NO;
         [self showMenu];
     }
 
@@ -1390,7 +1382,7 @@ static NSString *versionNumber = @"1.11";
     
 	NSString *requestString = [[request URL] absoluteString];
     
-    NSLog(@"request : %@",requestString);
+    //NSLog(@"CORRADO request : %@",requestString);
     
     if ([requestString hasPrefix:@"js-frame:"]) {
         
