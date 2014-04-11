@@ -27,7 +27,7 @@
 		5818616C14AAAF2100DEA945 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5818616A14AAAF2100DEA945 /* ViewController_iPhone.xib */; };
 		5818616F14AAAF2100DEA945 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5818616D14AAAF2100DEA945 /* ViewController_iPad.xib */; };
 		5818617714AAB0B600DEA945 /* grammer in Resources */ = {isa = PBXBuildFile; fileRef = 5818617614AAB0B600DEA945 /* grammer */; };
-		5820DBCB14F0329E003AB52B /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003.jpg */; };
+		5820DBCB14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg */; };
 		5820DBCD14F033BB003AB52B /* Edge.png in Resources */ = {isa = PBXBuildFile; fileRef = 5820DBCC14F033BB003AB52B /* Edge.png */; };
 		5825CBA614E702D200467271 /* QuoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBA514E702D200467271 /* QuoteCell.xib */; };
 		5825CBB114E874CE00467271 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 5825CBB014E874CE00467271 /* Level.m */; };
@@ -450,7 +450,7 @@
 		5818616B14AAAF2100DEA945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		5818616E14AAAF2100DEA945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
 		5818617614AAB0B600DEA945 /* grammer */ = {isa = PBXFileReference; lastKnownFileType = folder; name = grammer; path = GrammerTrainer/grammer; sourceTree = "<group>"; };
-		5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
+		5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003_old_.jpg; sourceTree = "<group>"; };
 		5820DBCC14F033BB003AB52B /* Edge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Edge.png; sourceTree = "<group>"; };
 		5825CBA514E702D200467271 /* QuoteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteCell.xib; sourceTree = "<group>"; };
 		5825CBAF14E874CD00467271 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
@@ -998,7 +998,7 @@
 				5898BCBC150C2A4800A2D2D6 /* SpreadsheetController.m */,
 				58C813D7150445CB00E12B25 /* libxml2.dylib */,
 				5820DBCC14F033BB003AB52B /* Edge.png */,
-				5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003.jpg */,
+				5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg */,
 				5825CBBC14E89F6000467271 /* icon72.png */,
 				5825CBBA14E89F5200467271 /* icon@2x.png */,
 				5825CBB814E89F4200467271 /* icon.png */,
@@ -1243,7 +1243,7 @@
 				58D0937F14EA0065003DA53D /* NotebookPage.png in Resources */,
 				58D0938014EA0065003DA53D /* NotebookPage@2x.png in Resources */,
 				58D0938214EA0FAC003DA53D /* paperPattern.png in Resources */,
-				5820DBCB14F0329E003AB52B /* GrammerTrainerLogin.003.jpg in Resources */,
+				5820DBCB14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg in Resources */,
 				5820DBCD14F033BB003AB52B /* Edge.png in Resources */,
 				5898BE66150CE21B00A2D2D6 /* modules.plist in Resources */,
 				5898BE6A150CF42F00A2D2D6 /* back.png in Resources */,

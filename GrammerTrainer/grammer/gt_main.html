@@ -22,11 +22,11 @@
 </head>
 
 <body id="body" ontouchmove="BlockMove(event);">
-	<!-- Display this loading screen until the web page is fully loaded -->
+	<!-- Display this loading screen until the web page is fully loaded  -->
 	<div id="loadingScreen">
-    	<p>Loading...</p>
+        <p> Loading ... <p>
     </div>
-    
+        
 	<!-- Sound(s) -->
     <audio id="wordDropSound" src="sounds/Drip1.wav" preload="auto"></audio>
 
@@ -55,7 +55,7 @@
                 return lessonNumber;
             }
             
-            var lessonName = queryString("lesson");
+            lessonName = queryString("lesson");
             lessonNumber = toNumber(lessonName);
             document.write(lessonNumber);
             </script></h3>
@@ -171,7 +171,7 @@
     </div>
     	<!-- <div id="multipleChoiceCloseBtn">X</div> -->
     </div>
-     
+    
     <script>
         // This gets a designated query parameter from the query string
         function queryString(search_for) {
@@ -249,7 +249,7 @@
             xobj.send(null);
         }
         
-       var lessonName = queryString("lesson");
+       lessonName = queryString("lesson");
        //alert("lessonName is:  " + lessonName);
         
        if (lessonName.length > 0) {

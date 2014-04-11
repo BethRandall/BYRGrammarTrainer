@@ -390,8 +390,7 @@ function saySomething() {
 
 function showMenu()
 {
-	alert("will call showMenu:");
-    
+	//alert("will call showMenu:");
     NativeBridge.call("showMenu"); }
 
 function sendValues(a, b, c, d)
@@ -418,18 +417,16 @@ function sendDebug(a, b, c, d)
 // Submit answer
 function submitAnswer()
 {
+    //alert("inside submitAnswer:  currentAnswerWords.length:  " + currentAnswerWords.length);
     // if someone hits "submit" on an empty answer, nothing happens.
 	if (currentAnswerWords.length == 0) { return; }
     if (backDoor()) { return; }
-    //var tempSentence = currentAnswerWords.join(" ");
-	//tempSentence += ".";
-	//DetermineFeedback();
-    //alert("about to go to MetaDetermineFeedback: ");
+    //alert("about to call MetaDetermineFeedback: ");
 	MetaDetermineFeedback();
-    //alert("back from MetaDetermineFeedback: ");
-	
+    //alert("about to update dot feedback matrix: ");
 	// Update the dot feedback matrix
 	updateDotFeedback();
+
 }
 
 // "backdoor" method for advancing to particular exercise; repeat an answer word the same number of times

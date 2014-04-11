@@ -1,6 +1,8 @@
 // Dependencies
 // theLesson object needs to be set up before entering
 
+var lessonName;
+
 function posterFilename(wholePath) {
     // "gt_videos/transportation_theme_videos/1_lesson_1.m4v"
     // "gt_videos/transportation_theme_videos/poster/1_lesson_1.bmp"

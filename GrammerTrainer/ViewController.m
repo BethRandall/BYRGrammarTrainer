@@ -108,7 +108,7 @@ static NSString *versionNumber = @"1.11";
     CGRect newFrame;
     CGRect newFrame2;
     
-    NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
+    //NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
     
     if (menuVisible) {
         // hide menu
@@ -117,12 +117,14 @@ static NSString *versionNumber = @"1.11";
         newFrame2 = CGRectOffset(_rightOverlayView.frame, _rightOverlayView.bounds.size.width, 0.0);
 
         menuVisible = NO;
-    } else { 
+    } else {
+        NSLog(@"inShowMenu:  found menu not visible: ");
         signLabel_.text = currentLevel_.levelName;
 
         newFrame = CGRectOffset(_leftOverlayView.frame, _leftOverlayView.bounds.size.width, 0.0);
         newFrame2 = CGRectOffset(_rightOverlayView.frame, -_rightOverlayView.bounds.size.width, 0.0);
         menuVisible = YES;
+        //NSLog(@"in ShowMenu:  just set menuVisible: YES");
     }
 
     [UIView animateWithDuration:1.0 animations:^{
@@ -687,7 +689,7 @@ static NSString *versionNumber = @"1.11";
 
 #pragma mark -
 #pragma KVO Observing
-
+/*
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)operation change:(NSDictionary *)change context:(void *)context {
     
     // BYR:  is the following chunk of code actually used?
@@ -776,7 +778,7 @@ static NSString *versionNumber = @"1.11";
         }
     }
 }
-
+*/
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -1003,12 +1005,19 @@ static NSString *versionNumber = @"1.11";
 - (void)goToNextLesson
 {
     NSLog(@"MOLTISANTI MOLTISANTI inside goToNextLesson:");
-    
-    //NSLog(@"ADRIANA ADRIANA currentLesson_.index:  %@", currentLesson_.index);
-    //NSLog(@"CHRISTOFUH index_path_.section: %ld", (long)indexPath_.section);
     NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
+ 
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
+
     self.myLessonIndex = self.myLessonIndex + 1;
+    NSLog(@"MEADOW theModule.lessons.count: %lu:  myLessonIndex:  %ld", (unsigned long)theModule.lessons.count, (long)self.myLessonIndex);
+    if (self.myLessonIndex >= theModule.lessons.count) {
+        NSLog(@"found myLessonIndex >= theModule.lessons.count:");
+        menuVisible = NO;
+        [self showMenu];
+        return;
+    }
+    
     Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
    
     // Save the currently selected module and lesson
