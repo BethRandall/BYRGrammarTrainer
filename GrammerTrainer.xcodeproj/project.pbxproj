@@ -979,6 +979,7 @@
 				5827491116127E360060DFDE /* HappyFace.png */,
 				589E51D615C816D2006489DB /* CheckMarkUnChecked.png */,
 				589E51D715C816D2006489DB /* CheckMarkChecked.png */,
+				14AA2E2F18F896FA0020FA57 /*  Default-Landscape~ipad.png */,
 				5850ADEF15ADBAE0001B6068 /* TutorialVideo */,
 				58415C6E158E42A300890522 /* Reachability.h */,
 				58415C6F158E42A300890522 /* Reachability.m */,
@@ -1081,7 +1082,6 @@
 		5850ADEF15ADBAE0001B6068 /* TutorialVideo */ = {
 			isa = PBXGroup;
 			children = (
-				14AA2E2F18F896FA0020FA57 /*  Default-Landscape~ipad.png */,
 				5850ADF315ADBB25001B6068 /* playTutorialVideo.html */,
 				5850ADF115ADBAF7001B6068 /* tutorialVideo.mp4 */,
 			);

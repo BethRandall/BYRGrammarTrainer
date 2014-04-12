@@ -118,7 +118,7 @@ static NSString *versionNumber = @"1.11";
 
         menuVisible = NO;
     } else {
-        NSLog(@"inShowMenu:  found menu not visible: ");
+        //NSLog(@"inShowMenu:  found menu not visible: ");
         signLabel_.text = currentLevel_.levelName;
 
         newFrame = CGRectOffset(_leftOverlayView.frame, _leftOverlayView.bounds.size.width, 0.0);
