@@ -28,7 +28,8 @@ $(document).ready(function(){
                   $("#answerContainer #deleteButton").click(function(){ eraseAnswer(); });
                   
                   // Menu button labelled "Exit"
-                  $("#menuButton").click(function(){ showMenu(); });
+                  //$("#menuButton").click(function(){ showMenu(); });
+                  $("#menuButton").click(function(){ exitLesson(); });
                   
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
@@ -387,6 +388,13 @@ function showMenu()
 {
 	//alert("will call showMenu:");
     NativeBridge.call("showMenu"); }
+
+function exitLesson()
+{
+	//alert("will call exitLesson:");
+    NativeBridge.call("exitLesson"); 
+}
+
 
 function sendValues(a, b, c, d)
 {

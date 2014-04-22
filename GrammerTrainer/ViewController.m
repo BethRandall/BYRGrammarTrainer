@@ -133,6 +133,39 @@ static NSString *versionNumber = @"1.12";
     }];
 }
 
+- (void)exitLesson {
+    
+    // This really means toggle menu
+    
+    CGRect newFrame;
+    CGRect newFrame2;
+    
+    //NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
+    
+    //if (menuVisible) {
+        // hide menu
+        // then show Levels
+      //  newFrame = CGRectOffset(_leftOverlayView.frame, -_leftOverlayView.bounds.size.width, 0.0);
+        //newFrame2 = CGRectOffset(_rightOverlayView.frame, _rightOverlayView.bounds.size.width, 0.0);
+        
+        //menuVisible = NO;
+    //} else {
+        NSLog(@"in exitLesson:  found menu not visible: ");
+        signLabel_.text = currentLevel_.levelName;
+        
+        newFrame = CGRectOffset(_leftOverlayView.frame, _leftOverlayView.bounds.size.width, 0.0);
+        newFrame2 = CGRectOffset(_rightOverlayView.frame, -_rightOverlayView.bounds.size.width, 0.0);
+        menuVisible = YES;
+        //NSLog(@"in ShowMenu:  just set menuVisible: YES");
+    //}
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        _leftOverlayView.frame = newFrame;
+        _rightOverlayView.frame = newFrame2;
+    }];
+}
+
+
 - (void)loadInstructionsVideo {
     
     [self showMenu];
@@ -659,126 +692,9 @@ static NSString *versionNumber = @"1.12";
     //[self synchWithServer];
 }
 
-//- (void)synchWithServer {
-    
-    // Create operation queue
-  //  NSOperationQueue *operationQueue = [NSOperationQueue new];
-    // set maximum operations possible
-    //[operationQueue setMaxConcurrentOperationCount:2];
-    
-    // Download a bunch of stuff from server
-    // following is Eric's dropbox copy
-    // NSString *theURL = @"https://dl.dropbox.com/u/26582460/grammerApp/lessonFiles.json";
-    // following address works; BYR's specific link to Public file, NOT Public folder.
-    // BYR: is "lessonFiles.json" actually used by the program?
-    //NSString *theURL = @"https://dl.dropbox.com/s/8nqcd7iut8kswtf/lessonFiles.json";
-        
-    // Were just going to download all the files and replace local copies every time - thing about improving this later
-    
-    // All files when downloaded are simple saved in the same place
-    
-    //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
-    
-    //NSString *filePath = [docsDir stringByAppendingPathComponent:@"lessonFiles.json"];
-    
-    //DownloadUrlToDiskOperation *operation = [[DownloadUrlToDiskOperation alloc] initWithUrl:[NSURL URLWithString:theURL] saveToFilePath:filePath];
-    
-    //[operation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:NULL];
-    //[operationQueue addOperation:operation]; // operation starts as soon as its added
-//}
-
 #pragma mark -
 #pragma KVO Observing
-/*
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)operation change:(NSDictionary *)change context:(void *)context {
-    
-    // BYR:  is the following chunk of code actually used?
-    NSLog(@"AARDVARK AARDVARK AARDVARK!  Inside observeValueForKeyPath:  ");
-    
-    if([operation isKindOfClass:[DownloadUrlToDiskOperation class]]) {
-        
-        DownloadUrlToDiskOperation *downloadOperation = (DownloadUrlToDiskOperation *)operation;
-        
-        NSLog(@"AARDVARK!!!!!!!!!!: %@", [downloadOperation.connectionURL absoluteString]);
 
-        NSString *filePath = downloadOperation.filePath;
-        NSString *lastPathComponent  = [filePath lastPathComponent];
-                    
-        if ([lastPathComponent isEqualToString:@"lessonFiles.json"]) {
-            NSLog(@"**************found lessonFiles.json:  *******************");
-            
-            
-            NSData *myJSONData = [[NSData alloc] initWithContentsOfFile:filePath];
-
-            
-            NSError* error;
-            NSArray* fileNames = [NSJSONSerialization
-                                  JSONObjectWithData:myJSONData //1
-                                  options:kNilOptions
-                                  error:&error];
-            if (!error) {
-      
-                // Create operation queue
-                NSOperationQueue *operationQueue = [NSOperationQueue new];
-                // set maximum operations possible
-                [operationQueue setMaxConcurrentOperationCount:2];
-                            
-               // BYR: To the best of my knowledge, "grammerManifest" and "lessonDict" are never actually used.
-               //  Just in case, here are their addresses in my dropbox:
-               //                     @"https://www.dropbox.com/s/bipi4bfbhu9nkd3/grammerManifest.json",
-               //                     @"https://www.dropbox.com/s/9923oucw0w5v2un/lessonDict.json",
-   
-               for (NSString *fileName in fileNames) {
-        
-                   // NSLog(@"BYR about to access Eric's dropbox:  filename:  %@", fileName);
-                   // NSString *base = @"https://dl.dropbox.com/u/26582460/grammerApp/";
-                   // Download lesson files from server
-                   
-                   //NSString *theURL = @"https://dl.dropbox.com/s/2zpr6hdf9c174ed/pt_lesson_1.json";
-             
-                   //NSString *theURL = [NSString stringWithFormat:@"%@%@",base,fileName];
-                                        
-                  //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
-                    
-                  //NSString *filePath = [docsDir stringByAppendingPathComponent:fileName];
-                    
-                  //DownloadUrlToDiskOperation *operation = [[DownloadUrlToDiskOperation alloc] initWithUrl:[NSURL URLWithString:theURL] saveToFilePath:filePath];
-                    
-                   [operation addObserver:self forKeyPath:@"isFinished" options:NSKeyValueObservingOptionNew context:NULL];
-                   [operationQueue addOperation:operation]; // operation starts as soon as its added  
-            }
-                
-            } else {
-                
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR"
-                                                                message:@"lessonFiles.json not valid"
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Close"
-                                                      otherButtonTitles: nil];
-                [alert show];
-            }
-            
-        } else if ([lastPathComponent hasSuffix:@".json"])  {
-            
-            NSData *myJSONData = [[NSData alloc] initWithContentsOfFile:filePath];
-            NSError* error;
-            NSDictionary* testDict = [NSJSONSerialization
-                                  JSONObjectWithData:myJSONData //1
-                                  
-                                  options:kNilOptions
-                                  error:&error];            
-            if (!testDict) {   
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"ERROR!!!"
-                                                                message:[NSString stringWithFormat:@"%@ is not Valid JSON! Fix before continuing! Could cause crash.", lastPathComponent]
-                                                               delegate:self
-                                                      cancelButtonTitle:@"Close"
-                                                      otherButtonTitles: nil];
-                [alert show];
-            }
-        }
-    }
-}
-*/
 - (void)viewDidUnload
 {
     [super viewDidUnload];
@@ -1004,7 +920,8 @@ static NSString *versionNumber = @"1.12";
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)goToNextLesson
 {
-    NSLog(@"MOLTISANTI MOLTISANTI inside goToNextLesson:");
+    [self exitLesson];
+    NSLog(@"inside goToNextLesson:  after self exitLesson: ");
     NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
  
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
@@ -1165,7 +1082,12 @@ static NSString *versionNumber = @"1.12";
         //NSLog(@"Did call showMenu");
         menuVisible = NO;
         [self showMenu];
-        [self.theTableView reloadData];      
+        [self.theTableView reloadData];
+    }  else if ([functionName isEqualToString:@"exitLesson"]) {
+        NSLog(@"SNAKESSSSSS Did call exitLesson");
+        //menuVisible = NO;
+        [self exitLesson];
+        [self.theTableView reloadData];
     }  else if ([functionName isEqualToString:@"saveState"]) {
         
         NSLog(@"Did call saveState");
