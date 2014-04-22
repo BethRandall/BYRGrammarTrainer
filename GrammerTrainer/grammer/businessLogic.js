@@ -103,6 +103,14 @@ dotImageRed.src = "img/redDot.png";
 var dotImageGreen = new Image(20,20);
 dotImageGreen.src = "img/greenDot.png";
 
+function pushPromptToRedo(tempNum)
+{
+    if( dotMatrix[tempNum] != DOT_WRONG ) {
+        promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
+    dotMatrix[tempNum] = DOT_WRONG;
+}
+
+
 // Add a draggable word to the answer
 function addWordToAnswer(targetWord, wordID)
 {
@@ -358,19 +366,6 @@ function eraseAnswer()
         $("#speechBubble p").html(" "); }
 }
 
-//function initAnswer() {
-  //  if ((typeof currentExercise.prefill != 'undefined') && (currentExercise.prefill.length > 0)) {
-    //    alert("in initAnswer:  found currentExercise defined prefill:  ");
-
-      //  var pre = currentExercise.prefill.trim();
-        //var res = pre.split(" ");
-        //for (var i = 0; i < res.length; i++) {
-          //  alert("will push res[i]: " + res[i]);
-            ///currentAnswerWords.push(res[i]);
-       // }
-        //alert("after initAnswer, length of currentAnswerWords:  " + currentAnswerWords.length);
-    //}
-//}
 
 function saySomething() {
     
@@ -534,31 +529,6 @@ function goToNextExercise()
 		{
             // We know were already in redo mode
             
-//			var lastRedoTrack = promptsToRedo.length - 1;  // Assumption is that you remove items from the promptToRedo array as they are completed. So this would give the index of the last item.
-//			alert("Index of Last Redo: " + lastRedoTrack);
-//			if( currentRedoPromptNumber < lastRedoTrack ) // The currentRedoPromptNumber is the current index into the promptsToRedo array. But I think were just going to use step.
-//			{
-//				if( currentRedoPromptNumber != lastRedoTrack )
-//				{
-//					var currentPromptNumberInRedo = Number(promptsToRedo[currentRedoPromptNumber]);
-//					//alert("Current prompt number in redo: " + currentPromptNumberInRedo);
-//					var nextPromptNumberInRedo = Number(promptsToRedo[currentRedoPromptNumber + 1]);
-//					//alert("Next prompt number in redo: " + nextPromptNumberInRedo);
-//					if( currentPromptNumberInRedo >= nextPromptNumberInRedo )
-//					{
-//						for( var j = 0; j < dotMatrix.length; j++ )
-//						{
-//							if( dotMatrix[j] == DOT_WRONG )
-//							{
-//								dotMatrix[j] = DOT_INCOMPLETE;
-//							}
-//						}
-//					}
-//				}
-//				currentRedoPromptNumber++;
-//			}
-//			currentExerciseNumber = Number(promptsToRedo[currentRedoPromptNumber]) + 1;
-            
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
             
             if( currentExerciseNumber < promptsToRedo.length)
@@ -691,10 +661,10 @@ function updateExercise()
     saveProgramState();
     
     if(redoMode) {
-        // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
-        currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
+        //When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
+            currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
     }else{
-        currentExercise = theLesson.exerciseArray[indexArray[step]]; }
+      currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
     if(typeof currentExercise.lessonImage == "undefined") {
         // Lesson uses video
@@ -910,10 +880,7 @@ function MetaDetermineFeedback()
         //alert("Wrong words.");
         if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType))
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
+            pushPromptToRedo(tempNum); }
         
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
@@ -951,10 +918,7 @@ function MetaDetermineFeedback()
         //alert("Pronoun Antecedent Feedback.");
         if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG; }
-        
+            pushPromptToRedo(tempNum); }
         // Display the feedback
         $("#answerFeedbackBox p").html("Change the word in red to non-pronoun and/or change the word in orange to pronoun.");
         
@@ -1000,11 +964,8 @@ function MetaDetermineFeedback()
         //alert("Morphology Feedback.");
         if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
-        
+            pushPromptToRedo(tempNum); }
+          
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
         if( wrongFormAndEnding.length > 0 )
@@ -1094,11 +1055,7 @@ function MetaDetermineFeedback()
         //alert("articleFeedback");
         if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
-        
+            pushPromptToRedo(tempNum); }
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
         $("#answerFeedbackBox p").html("Remove/change the articles in red / add articles before the words in orange.");
@@ -1144,10 +1101,7 @@ function MetaDetermineFeedback()
         //alert("Stranded Article.");
         if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
+            pushPromptToRedo(tempNum); }
         
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
@@ -1167,10 +1121,7 @@ function MetaDetermineFeedback()
         //alert("Syntax Problem.");
         if( dotMatrix[tempNum] != DOT_CORRECT )
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG;
-        }
+            pushPromptToRedo(tempNum); }
         
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
@@ -1199,10 +1150,8 @@ function MetaDetermineFeedback()
         
         if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            if( dotMatrix[tempNum] != DOT_WRONG )
-                promptsToRedo.push(currentExerciseNumber - 1);
-            dotMatrix[tempNum] = DOT_WRONG; }
-        
+            pushPromptToRedo(tempNum); }
+                    
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
         
@@ -1249,12 +1198,7 @@ function GetExercise(exerciseNumber)
 
     var theCurrentExercise;
     
-    if(redoMode) {
-        // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
-        theCurrentExercise = theLesson.exerciseArray[promptsToRedo[exerciseNumber]];
-    }else{
-        theCurrentExercise = theLesson.exerciseArray[exerciseNumber];
-    }
+    theCurrentExercise = theLesson.exerciseArray[exerciseNumber];
     
     if(typeof theCurrentExercise.multipleChoice != 'undefined') {
         this.choices = theCurrentExercise.multipleChoice; }
