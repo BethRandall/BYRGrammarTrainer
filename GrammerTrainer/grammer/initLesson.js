@@ -256,6 +256,11 @@ function resetLesson() {
         for( var a = 0; a < theLesson.exerciseArray.length; a++ )
         { indexArray.push(a); }
         
+        redoNumArray = new Array();
+        // Create an array of numbers in numerical order
+        for( var a = 0; a < theLesson.exerciseArray.length; a++ )
+        { redoNumArray.push(0); }
+        
         //BYR randomize here.
         // usedDex will contain a list of indices used in the randomized array.
         var usedDex = new Array();

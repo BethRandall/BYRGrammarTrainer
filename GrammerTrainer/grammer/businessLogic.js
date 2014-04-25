@@ -80,7 +80,9 @@ var currentAnswerWords;
 var draggableAnswerWords;
 
 var theLesson;
-var indexArray;        // these get initialized by initDataModel.js
+var indexArray;       // these get initialized by initDataModel.js
+var redoNumArray;     // this array holds info about how many times each exercise needs to be redone.
+var numToRedo = 2;    // each wrong exercise must be done correctly this many times.
 var step;
 var currentExercise;
 var nounWords;
@@ -109,7 +111,37 @@ function pushPromptToRedo(tempNum)
     if( dotMatrix[tempNum] != DOT_WRONG ) {
         promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
     dotMatrix[tempNum] = DOT_WRONG;
+    var index = GetExNum();
+    //alert("will install redoNumArray:  " + numToRedo + "  index:  " + index);
+    redoNumArray[index] = numToRedo;
 }
+
+function randomizeRedo() {
+    alert("inside randomizeRedo: ");
+    //BYR randomize here.
+    // usedDex will contain a list of indices used in the randomized array.
+    var usedDex = new Array();
+    var tempArray = new Array();
+    // initialize usedDex with indices.
+    for(var exerNum = 0; exerNum < promptsToRedo.length; exerNum++) {
+        usedDex[exerNum] = promptsToRedo[exerNum]; }
+
+    // randomizing happens in this for loop.
+    for(var exerNum = 0; exerNum < promptsToRedo.length; exerNum++)
+    {
+        //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>");
+        var randdex =  Math.floor(Math.random()*usedDex.length);
+        var newranddex = usedDex[randdex];
+        // if you don't want to randomize the exercises, comment out the following line:
+        promptsToRedo[exerNum] = newranddex;
+        usedDex.splice(randdex, 1); }
+    var randstr = "";
+    for (exerNum = 0; exerNum < promptsToRedo.length; exerNum++) {
+        randstr += promptstoRedo[exerNum] + ", ";
+        }
+    alert("promptsToRedo after randomize:  " + randstr);
+}
+
 
 
 // Add a draggable word to the answer
@@ -540,13 +572,16 @@ function goToNextExercise()
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
             
             if( currentExerciseNumber < promptsToRedo.length)
+            //if( 1 < 0)
 			{
+                // BYR above if condition doesn't make sense.  Is this ever used?
+                //alert("inside mysterious if loop");
                 // Nope. Were still on the first round. Advance to next question.
 				currentExerciseNumber++;
                 step++; }
 			else
 			{
-                // All redo questions have now been answered once. But all dots are not green so stay in redo mode.
+                // All redo questions have now been answered once [BYR -- should be twice!]. But all dots are not green so stay in redo mode.
 				for( var j = 0; j < dotMatrix.length; j++ )
 				{
                     // take all the wrong answers and move them to incomplete
@@ -561,8 +596,6 @@ function goToNextExercise()
 		else
 		{
 			// Check to see if all questions have been asked.
-//			var tempExerciseTrack = new Number(currentExerciseNumber - 1);
-//			if( tempExerciseTrack < (theLesson.exerciseArray.length - 1) )
             if( currentExerciseNumber < theLesson.exerciseArray.length)
 			{
                 // Nope. Were still on the first round. Advance to next question.
@@ -670,6 +703,7 @@ function updateExercise()
     
     if(redoMode) {
         //When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
+            //randomizeRedo();
             currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
     }else{
       currentExercise = theLesson.exerciseArray[indexArray[step]]; }
@@ -861,10 +895,21 @@ function MetaDetermineFeedback()
     //depending on what sort of feedback this is, different outputs are necessary
 	if (feedbackType == "CorrectAnswer")
     {
+        // must redo the incorrect answer twice.
         if(redoMode) {
             // When were in redo mode and we get one correct we remove that index from the promptsToRedo array
             //removes 1 element from index 'step'
-            removed = promptsToRedo.splice(step, 1);
+            // decrement number of times that ex. needs to be redone
+            
+            var index = GetExNum();
+            // decrement number of times the exercise must be redone.
+            redoNumArray[index] = redoNumArray[index] - 1;
+            var numb = redoNumArray[index];
+             
+            //alert("redoNumArray[currentExerciseNumber - 1]: " + numb + "  index:  " + index);
+            if (redoNumArray[currentExerciseNumber - 1] <= 0) {
+                removed = promptsToRedo.splice(step, 1); }
+            else { return; }
         }
         
 		//if the answer is correct, move on to the next exercise

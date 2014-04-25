@@ -91,7 +91,7 @@
 @synthesize loginInfo = loginInfo_;
 @synthesize versionLabel = versionLabel_;
 @synthesize resultsDict = resultsDict_;
-static NSString *versionNumber = @"1.12";
+static NSString *versionNumber = @"1.13";
 
 - (void)didReceiveMemoryWarning
 {
@@ -921,13 +921,13 @@ static NSString *versionNumber = @"1.12";
 - (void)goToNextLesson
 {
     [self exitLesson];
-    NSLog(@"inside goToNextLesson:  after self exitLesson: ");
-    NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
+    //NSLog(@"inside goToNextLesson:  after self exitLesson: ");
+    //NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
  
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
 
     self.myLessonIndex = self.myLessonIndex + 1;
-    NSLog(@"MEADOW theModule.lessons.count: %lu:  myLessonIndex:  %ld", (unsigned long)theModule.lessons.count, (long)self.myLessonIndex);
+    //NSLog(@"MEADOW theModule.lessons.count: %lu:  myLessonIndex:  %ld", (unsigned long)theModule.lessons.count, (long)self.myLessonIndex);
     if (self.myLessonIndex >= theModule.lessons.count) {
         NSLog(@"found myLessonIndex >= theModule.lessons.count:");
         menuVisible = NO;
@@ -1084,7 +1084,7 @@ static NSString *versionNumber = @"1.12";
         [self showMenu];
         [self.theTableView reloadData];
     }  else if ([functionName isEqualToString:@"exitLesson"]) {
-        NSLog(@"SNAKESSSSSS Did call exitLesson");
+        //NSLog(@"SNAKESSSSSS Did call exitLesson");
         //menuVisible = NO;
         [self exitLesson];
         [self.theTableView reloadData];
