@@ -204,6 +204,43 @@ function setVideo(context) {
     setSpeechBubble(context);
 }
 
+function setCurrentExercise(currEx) {
+    
+    if(typeof currEx.lessonImage == "undefined") {
+        // Lesson uses video
+        setVideo(currEx);
+    } else {
+        //alert("image: " + currEx.lessonImage);
+        // This is a photo
+        myLoadLessonImage();
+    }
+    
+    if (typeof currEx.balloonPrefill == "undefined") {
+        $("#speechBubble p").html(" "); }
+    
+    // if wordlists are defined at the lesson level, use them;
+    // if wordslists are defined at the exercise level, write over the lesson level.
+    setWordLists(theLesson);
+    setWordLists(currEx);
+    
+    setWordTabs();
+    
+    // Clear answer feedback box
+    $("#answerContainer #answerFeedbackBox p").html("  ");
+    // Update multiple choices
+    setMultipleChoiceBox(currEx);
+    
+    // Update dot feedback
+    updateDotFeedback();
+    
+    // Clear the droppable answer box
+    eraseAnswer();
+    
+    // Disable the next button
+    $("#nextButton").html("<a>Next</a>");
+    $("#nextButton a").css({"background":"#08324f","color":"#26527c","-webkit-box-shadow":"0 0 0 transparent"});
+}
+
 function myLoadLessonImage() {
     //alert("in myLoadLessonImage:  currentExercise.lessonImage" + currentExercise.lessonImage);
 

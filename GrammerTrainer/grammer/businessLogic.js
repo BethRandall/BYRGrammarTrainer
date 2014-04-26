@@ -117,7 +117,7 @@ function pushPromptToRedo(tempNum)
 }
 
 function randomizeRedo() {
-    alert("inside randomizeRedo: ");
+    //alert("inside randomizeRedo: ");
     //BYR randomize here.
     // usedDex will contain a list of indices used in the randomized array.
     var usedDex = new Array();
@@ -125,7 +125,7 @@ function randomizeRedo() {
     // initialize usedDex with indices.
     for(var exerNum = 0; exerNum < promptsToRedo.length; exerNum++) {
         usedDex[exerNum] = promptsToRedo[exerNum]; }
-
+    
     // randomizing happens in this for loop.
     for(var exerNum = 0; exerNum < promptsToRedo.length; exerNum++)
     {
@@ -135,11 +135,6 @@ function randomizeRedo() {
         // if you don't want to randomize the exercises, comment out the following line:
         promptsToRedo[exerNum] = newranddex;
         usedDex.splice(randdex, 1); }
-    var randstr = "";
-    for (exerNum = 0; exerNum < promptsToRedo.length; exerNum++) {
-        randstr += promptstoRedo[exerNum] + ", ";
-        }
-    alert("promptsToRedo after randomize:  " + randstr);
 }
 
 
@@ -658,42 +653,9 @@ function backDoorUpdateExercise(newExNum) {
     saveProgramState();
 
     currentExercise = theLesson.exerciseArray[newExNum];
-
-    if(typeof currentExercise.lessonImage == "undefined") {
-        // Lesson uses video
-        setVideo(currentExercise); 
-    } else {  
-        //alert("image: " + currentExercise.lessonImage);
-        // This is a photo
-        myLoadLessonImage();
-    }
-
-    if (typeof currentExercise.balloonPrefill == "undefined") {
-        $("#speechBubble p").html(" "); }
-
-    // if wordlists are defined at the lesson level, use them;
-    // if wordslists are defined at the exercise level, write over the lesson level.
-    setWordLists(theLesson);
-    setWordLists(currentExercise);
-
-    setWordTabs();
     
-    // Clear answer feedback box
-    $("#answerContainer #answerFeedbackBox p").html("  ");
-    // Update multiple choices
-    setMultipleChoiceBox(currentExercise);
-    
-    // Update dot feedback
-    updateDotFeedback();
-    
-    // Clear the droppable answer box
-    eraseAnswer();
-
-    // Disable the next button
-    $("#nextButton").html("<a>Next</a>");
-    $("#nextButton a").css({"background":"#08324f","color":"#26527c","-webkit-box-shadow":"0 0 0 transparent"});
+    setCurrentExercise(currentExercise);
 }
-
 
 function updateExercise()
 {
@@ -703,47 +665,12 @@ function updateExercise()
     
     if(redoMode) {
         //When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
-            //randomizeRedo();
+            randomizeRedo();
             currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
     }else{
       currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
-    if(typeof currentExercise.lessonImage == "undefined") {
-        // Lesson uses video
-        setVideo(currentExercise);
-        
-    } else {
-        //alert("image: " + currentExercise.lessonImage);
-        // This is a photo
-        myLoadLessonImage();
-    }
-    
-    if (typeof currentExercise.balloonPrefill == "undefined") {
-        $("#speechBubble p").html(" "); }
-    
-    // if wordlists are defined at the lesson level, use them;
-    // if wordslists are defined at the exercise level, write over the lesson level.
-    setWordLists(theLesson);
-    setWordLists(currentExercise);
- 
-    setWordTabs();
-    
-	// Clear answer feedback box
-	$("#answerContainer #answerFeedbackBox p").html("  ");
-	//$("#answerContainer #answerFeedbackBox p").html("Your answer has not been submitted yet.");
-	
-	// Update multiple choices
-    setMultipleChoiceBox(currentExercise);
-    
-	// Update dot feedback
-	updateDotFeedback();
-	
-	// Clear the droppable answer box
-	eraseAnswer();
-	
-	// Disable the next button
-	$("#nextButton").html("<a>Next</a>");
-	$("#nextButton a").css({"background":"#08324f","color":"#26527c","-webkit-box-shadow":"0 0 0 transparent"});
+    setCurrentExercise(currentExercise);
 }
 
 // Update the dot feedback matrix
