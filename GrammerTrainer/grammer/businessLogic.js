@@ -70,6 +70,8 @@ var currentWord;
 
 // Redo mode
 var redoMode = false;
+var jitterNext = true;
+var didJitter = false;
 // An array of incorrectly answered prompts to redo
 var promptsToRedo;
 // Current redo prompt track
@@ -83,6 +85,7 @@ var theLesson;
 var indexArray;       // these get initialized by initDataModel.js
 var redoNumArray;     // this array holds info about how many times each exercise needs to be redone.
 var numToRedo = 2;    // each wrong exercise must be done correctly this many times.
+var redoDex;          // index of the current exercise in promptsToRedo.
 var step;
 var currentExercise;
 var nounWords;
@@ -136,8 +139,6 @@ function randomizeRedo() {
         promptsToRedo[exerNum] = newranddex;
         usedDex.splice(randdex, 1); }
 }
-
-
 
 // Add a draggable word to the answer
 function addWordToAnswer(targetWord, wordID)
@@ -407,20 +408,20 @@ function saySomething() {
     
     $("body").append(theElement);
     
-	playSound("prompt_" + step);    
+	playSound("prompt_" + step);
 }
 
-
+/*
 function showMenu()
 {
 	//alert("will call showMenu:");
     NativeBridge.call("showMenu"); }
+ */
 
 function exitLesson()
 {
 	//alert("will call exitLesson:");
-    NativeBridge.call("exitLesson"); 
-}
+    NativeBridge.call("exitLesson"); }
 
 
 function sendValues(a, b, c, d)
@@ -431,8 +432,7 @@ function sendValues(a, b, c, d)
     //    arguments[ i ] ;
     //}
     
-    NativeBridge.call("recordNative", [a,b,c,d]);    
-}
+    NativeBridge.call("recordNative", [a,b,c,d]);    }
 
 function sendDebug(a, b, c, d)
 {
@@ -441,8 +441,7 @@ function sendDebug(a, b, c, d)
     //for( var i = 0; i &lt; arguments.length; i++ ) {
     //    arguments[ i ] ;
     //}
-    NativeBridge.call("printDebug", [a,b,c,d]);  
-}
+    NativeBridge.call("printDebug", [a,b,c,d]);  }
 
 // Submit answer
 function submitAnswer()
@@ -537,6 +536,12 @@ function MajorWords()
     return majorWords;
 }
 
+function toNextLesson() {
+    jitterNext = true;
+    didJitter = false;
+    NativeBridge.call("goToNextLesson");
+}
+
 // Moves to the next exercise when the user clicks the active next button
 function goToNextExercise()
 {
@@ -552,12 +557,13 @@ function goToNextExercise()
 	if( greenDotCounter >= theLesson.exerciseArray.length )
 	{
         // For now we just exit out to the native side, but we should add some congratulatons here!
-        NativeBridge.call("goToNextLesson");
+        //alert("found all green dots:  will go to next lesson: ");
+        toNextLesson();
         return;
     }
 	else
 	{
-        // All the dots are not green. Were either have not been through all the quesions, or we got some wrong. Determine which.
+        // Not all the dots are green. Were either have not been through all the quesions, or we got some wrong. Determine which.
         // determine if we are in redoMode or if we should move to redoMode
 		// If the user is redoing the prompts he/she got wrong
 		if( redoMode )
@@ -565,15 +571,17 @@ function goToNextExercise()
             // We know were already in redo mode
             
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
-            
-            if( currentExerciseNumber < promptsToRedo.length)
-            //if( 1 < 0)
+            //alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
+            //if( currentExerciseNumber < promptsToRedo.length) BYR: nonsense!
+            // advance through promptsToRedo; you may need to cycle back to beginning.  Remember each exercise must be done correctly twice!
+            if (step < promptsToRedo.length) 
 			{
-                // BYR above if condition doesn't make sense.  Is this ever used?
-                //alert("inside mysterious if loop");
                 // Nope. Were still on the first round. Advance to next question.
 				currentExerciseNumber++;
-                step++; }
+                step++;
+                if (step == promptsToRedo.length) {
+                    step = 0;
+                }}
 			else
 			{
                 // All redo questions have now been answered once [BYR -- should be twice!]. But all dots are not green so stay in redo mode.
@@ -595,19 +603,18 @@ function goToNextExercise()
 			{
                 // Nope. Were still on the first round. Advance to next question.
 				currentExerciseNumber++;
-                step++;
-			}
+                step++; }
 			else
 			{
-                // All questions have now been answered once. But all dots are not green so enter redo mode.
+                // All questions have now been answered once. But not all dots are green so enter redo mode.
                 
 				redoMode = true;
+                randomizeRedo();
 				for( var j = 0; j < dotMatrix.length; j++ )
 				{
                     // take all the wrong answers and move them to incomplete
 					if( dotMatrix[j] == DOT_WRONG )
-					{ dotMatrix[j] = DOT_INCOMPLETE; }
-				}
+					{ dotMatrix[j] = DOT_INCOMPLETE; } }
 				currentRedoPromptNumber = 0;
 				currentExerciseNumber = Number(promptsToRedo[0]) + 1;
                 step = 0;
@@ -616,6 +623,7 @@ function goToNextExercise()
 	}
 	
 	// Update the page
+    //alert("about to updateExercise: ");
 	updateExercise();
 }
 
@@ -641,8 +649,24 @@ function saveProgramState() {
     
 }
 
-// Go to next exercise by updating the current question and answer
+function randomExercise(notThisOne) {
+    //alert("in randomExercise:  notThisOne:  " + notThisOne);
+    var randdex =  Math.floor(Math.random()*(theLesson.exerciseArray).length);
+    
+    if ((theLesson.exerciseArray).length > 1) {
+        while (randdex == notThisOne) {
+            randdex =  Math.floor(Math.random()*(theLesson.exerciseArray).length); }}
+    
+    // Update question
+    // First save state
+    saveProgramState();
+    //alert("will set currentExercise:  randdex:  " + randdex);
+    currentExercise = theLesson.exerciseArray[randdex];
+    setCurrentExercise(currentExercise);
+}
 
+
+// Go to next exercise by updating the current question and answer
 function backDoorUpdateExercise(newExNum) {
     // if newExNum is too big for the exercise array, set it to the last index of the array
     if (newExNum >= (theLesson.exerciseArray).length) {
@@ -664,9 +688,18 @@ function updateExercise()
     saveProgramState();
     
     if(redoMode) {
-        //When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
-            randomizeRedo();
-            currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
+        //alert("in updateExercise:  found redoMode: ");
+        // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo
+        // instead of the indexArray indices.
+        // If there's only one item to redo, alternate with random exercises.
+        // need boolean variable to keep track of whether the jitter has happened yet or not.
+        if (promptsToRedo.length == 1 && jitterNext == true) {
+            //alert("AARDVARK will jitter");
+            randomExercise(promptsToRedo[0]);
+            didJitter = true;
+        } else {
+            //alert("in updateExercise: will set currentExercise: step: " + step);
+            currentExercise = theLesson.exerciseArray[promptsToRedo[step]]; }
     }else{
       currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
@@ -757,17 +790,7 @@ function MetaDetermineFeedback()
     //alert("back from GetStatus: " + status);
     //next, get the user's response from the responseBox and clean it up:
 	var tempSentenceArray = currentAnswerWords;
-    //var tempSentenceArray = new Array();
-    //BYR get rid of prefill here.
-    //if ((typeof currentExercise.prefill != 'undefined') && (currentExercise.prefill.length > 0)) {
-      //  var pre = currentExercise.prefill.trim();
-        //var res = pre.split(" ");
-      //  alert("res.length, currentAnswerWords.length:  " + res.length + ", " + currentAnswerWords.length());
-       // for (var i = res.length; i < currentAnswerWords.length(); i++) {
-         //   tempSentenceArray.push(currentAnswerWords[i]);
-        //}
-    //}
-    //else { tempSentenceArray = currentAnswerWords; }
+  
 	if( tempSentenceArray[0] != "I" ) {
 		tempSentenceArray[0] = String(tempSentenceArray[0]).toLowerCase(); }
 	var tempSentence = tempSentenceArray.join(" ");
@@ -822,29 +845,38 @@ function MetaDetermineFeedback()
     //depending on what sort of feedback this is, different outputs are necessary
 	if (feedbackType == "CorrectAnswer")
     {
-        // must redo the incorrect answer twice.
-        if(redoMode) {
-            // When were in redo mode and we get one correct we remove that index from the promptsToRedo array
-            //removes 1 element from index 'step'
-            // decrement number of times that ex. needs to be redone
-            
-            var index = GetExNum();
-            // decrement number of times the exercise must be redone.
-            redoNumArray[index] = redoNumArray[index] - 1;
-            var numb = redoNumArray[index];
-             
-            //alert("redoNumArray[currentExerciseNumber - 1]: " + numb + "  index:  " + index);
-            if (redoNumArray[currentExerciseNumber - 1] <= 0) {
-                removed = promptsToRedo.splice(step, 1); }
-            else { return; }
+        //alert("found correct answer:  redoMode:  " + redoMode + ", promptsToRedo.length: " + promptsToRedo.length + ", jitterNext: " + jitterNext);
+        if (redoMode) {
+            if ((promptsToRedo.length > 1) || ((promptsToRedo.length == 1) && (jitterNext == false))) {
+                if (promptsToRedo.length == 1) { jitterNext = true; }
+                // must redo the incorrect answer twice.
+                // decrement number of times the exercise must be redone.
+                var index = GetExNum();
+                //alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
+                redoNumArray[index] = redoNumArray[index] - 1;
+                if (redoNumArray[index] <= 0) {
+                    removed = promptsToRedo.splice(step, 1);
+                    //alert("tempNum:  " + tempNum);
+                    if( dotMatrix[tempNum] != DOT_WRONG )
+                    {
+                        dotMatrix[tempNum] = DOT_CORRECT; }
+                    if (promptsToRedo.length == 0) {
+                        //alert("found empty promptsToRedo: will goToNextLesson");
+                        toNextLesson();
+                    }}    
+            }
+            if (didJitter) {
+                jitterNext = false;
+                didJitter = false; }
         }
-        
+       
 		//if the answer is correct, move on to the next exercise
 		//####your code for moving on to the next exercise goes here!
         //alert("The answer is correct.");
-        if( dotMatrix[tempNum] != DOT_WRONG )
-        {
-            dotMatrix[tempNum] = DOT_CORRECT; }
+        else {
+            if( dotMatrix[tempNum] != DOT_WRONG )
+            {
+                dotMatrix[tempNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
         $("#answerFeedbackBox p").html("Your answer is correct!");
         // Turn on the next button
