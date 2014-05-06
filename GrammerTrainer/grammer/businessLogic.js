@@ -862,7 +862,9 @@ function MetaDetermineFeedback()
                         dotMatrix[tempNum] = DOT_CORRECT; }
                     if (promptsToRedo.length == 0) {
                         //alert("found empty promptsToRedo: will goToNextLesson");
-                        toNextLesson();
+                        //toNextLesson();
+                        goToNExtExercise();
+                        return;
                     }}    
             }
             if (didJitter) {
@@ -878,11 +880,13 @@ function MetaDetermineFeedback()
             {
                 dotMatrix[tempNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
+        /*
         $("#answerFeedbackBox p").html("Your answer is correct!");
         // Turn on the next button
         $("#nextButton").html("<a href=\"javascript:goToNextExercise()\">Next</a>");
         $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
-        return;
+        */
+         return;
     }
     
     if ((feedbackType == "wrongWords")|| (feedbackType == "wrongWordsPolite"))

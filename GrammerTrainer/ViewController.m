@@ -920,6 +920,7 @@ static NSString *versionNumber = @"1.13";
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)goToNextLesson
 {
+   
     [self exitLesson];
     //NSLog(@"inside goToNextLesson:  after self exitLesson: ");
     //NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
@@ -1156,7 +1157,7 @@ static NSString *versionNumber = @"1.13";
                          cancelButtonTitle:nil 
                          otherButtonTitles:@"Next", nil];
 
-            [alertView show];
+           [alertView show];
             // Further processing in alertView:didDismissWithButtonIndex:
         }
         
@@ -1198,7 +1199,10 @@ static NSString *versionNumber = @"1.13";
     }
 }
 
-#pragma UIWebview Delegate 
+
+
+
+#pragma UIWebview Delegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     
