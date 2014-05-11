@@ -68,7 +68,7 @@ function setWordTabs() {
     } else {
         $("#prepositionTab").hide(); }
 }
-
+/*
 function setWordTabsContext(context) {
     alert("adjectiveWords: " + context.adjectiveWords);
     
@@ -109,8 +109,8 @@ function setWordTabsContext(context) {
     } else {
         $("#prepositionTab").hide(); }
 }
+*/
 
-    
 function setMultipleChoiceBox(context) {
     // context is currentExercise.
     var choiceArray = context.multipleChoice;
@@ -235,10 +235,11 @@ function setCurrentExercise(currEx) {
     
     // Clear the droppable answer box
     eraseAnswer();
-    
+  /*
     // Disable the next button
-    $("#nextButton").html("<a>Next</a>");
+    $("#nextButton").html("<a>AARDVARK Next</a>");
     $("#nextButton a").css({"background":"#08324f","color":"#26527c","-webkit-box-shadow":"0 0 0 transparent"});
+   */
 }
 
 function myLoadLessonImage() {
@@ -262,6 +263,24 @@ function myLoadLessonImage() {
     $("#speechBubble").hide();
 }
 
+function initDots() {
+    // Load the dots (the context needs to be the dotContainer element)
+    $("#dotContainer").empty();
+    for( var d = 0; d < dotMatrix.length; d++ )
+    {
+        if( (d % 6 == 0) && (d != 0) )
+        {
+            $("#dotContainer").append("<br />");
+        }
+        if(dotMatrix[d] == DOT_INCOMPLETE)
+        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
+        else if(dotMatrix[d] == DOT_WRONG)
+        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
+        else
+        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
+    }
+}
+
 function resetLesson() {
     //alert("in resetLesson: ");
     // Lesson Number
@@ -281,6 +300,7 @@ function resetLesson() {
     // An array of incorrectly answered prompts to redo
     promptsToRedo = new Array();
     // Current redo prompt track
+    // BYR -- does this variable do anything?
     currentRedoPromptNumber = 0;
     
     if(typeof theLesson == 'undefined') {
@@ -360,25 +380,8 @@ function initUserInterface() {
     }else {
         // This is a photo
         myLoadLessonImage(); }
-    // <img src="smiley.gif" alt="Smiley face" height="42" width="42" />
-    // Load the dots (the context needs to be the dotContainer element)
-    $("#dotContainer").empty();
-    for( var d = 0; d < dotMatrix.length; d++ )
-    {
-        if( (d % 6 == 0) && (d != 0) )
-        {
-            //document.write("<br />");
-            //document.write("<img class=\"dotImage\" src=\"img/yellowDot.png\" />");
-            // $("#video").attr("src", currentExercise.lessonVideo);
-            $("#dotContainer").append("<br />");
-        }
-        if(dotMatrix[d] == DOT_INCOMPLETE)
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
-        else if(dotMatrix[d] == DOT_WRONG)
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
-        else
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
-    }
+
+    initDots();
     setMultipleChoiceBox(currentExercise);
     
     // word list are initialized in <lesson>.json file

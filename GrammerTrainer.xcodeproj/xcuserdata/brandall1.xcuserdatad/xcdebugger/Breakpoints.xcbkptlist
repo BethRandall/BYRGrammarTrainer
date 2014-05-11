@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/grammer/initLesson.js"
-         timestampString = "420216494.090075"
+         timestampString = "421103920.80571"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "260"
-         endingLineNumber = "260"
+         startingLineNumber = "261"
+         endingLineNumber = "261"
          landmarkName = "myLoadLessonImage"
          landmarkType = "7">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/ViewController.m"
-         timestampString = "419868954.272637"
+         timestampString = "421090826.66484"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "909"
-         endingLineNumber = "909"
+         startingLineNumber = "896"
+         endingLineNumber = "896"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/ViewController.m"
-         timestampString = "421083034.429886"
+         timestampString = "421090826.66484"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "929"
-         endingLineNumber = "929"
+         startingLineNumber = "916"
+         endingLineNumber = "916"
          landmarkName = "-goToNextLesson"
          landmarkType = "5">
       </FileBreakpoint>

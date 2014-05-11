@@ -91,7 +91,7 @@
 @synthesize loginInfo = loginInfo_;
 @synthesize versionLabel = versionLabel_;
 @synthesize resultsDict = resultsDict_;
-static NSString *versionNumber = @"1.13";
+static NSString *versionNumber = @"1.14";
 
 - (void)didReceiveMemoryWarning
 {
@@ -135,29 +135,16 @@ static NSString *versionNumber = @"1.13";
 
 - (void)exitLesson {
     
-    // This really means toggle menu
-    
     CGRect newFrame;
     CGRect newFrame2;
     
-    //NSLog (@"in showMenu:  menuVisible: %d", menuVisible);
-    
-    //if (menuVisible) {
-        // hide menu
-        // then show Levels
-      //  newFrame = CGRectOffset(_leftOverlayView.frame, -_leftOverlayView.bounds.size.width, 0.0);
-        //newFrame2 = CGRectOffset(_rightOverlayView.frame, _rightOverlayView.bounds.size.width, 0.0);
+    //NSLog(@"in exitLesson:  found menu not visible: ");
+    signLabel_.text = currentLevel_.levelName;
         
-        //menuVisible = NO;
-    //} else {
-        NSLog(@"in exitLesson:  found menu not visible: ");
-        signLabel_.text = currentLevel_.levelName;
-        
-        newFrame = CGRectOffset(_leftOverlayView.frame, _leftOverlayView.bounds.size.width, 0.0);
-        newFrame2 = CGRectOffset(_rightOverlayView.frame, -_rightOverlayView.bounds.size.width, 0.0);
-        menuVisible = YES;
-        //NSLog(@"in ShowMenu:  just set menuVisible: YES");
-    //}
+    newFrame = CGRectOffset(_leftOverlayView.frame, _leftOverlayView.bounds.size.width, 0.0);
+    newFrame2 = CGRectOffset(_rightOverlayView.frame, -_rightOverlayView.bounds.size.width, 0.0);
+    menuVisible = YES;
+      
     
     [UIView animateWithDuration:1.0 animations:^{
         _leftOverlayView.frame = newFrame;
@@ -1079,11 +1066,11 @@ static NSString *versionNumber = @"1.13";
         //NSLog(@"Did call lessonLoaded");
         menuVisible = YES;
         [self showMenu];
-    }  else if ([functionName isEqualToString:@"showMenu"]) { 
+   /* }  else if ([functionName isEqualToString:@"showMenu"]) {
         //NSLog(@"Did call showMenu");
         menuVisible = NO;
         [self showMenu];
-        [self.theTableView reloadData];
+        [self.theTableView reloadData];*/
     }  else if ([functionName isEqualToString:@"exitLesson"]) {
         //NSLog(@"SNAKESSSSSS Did call exitLesson");
         //menuVisible = NO;

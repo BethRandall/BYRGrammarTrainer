@@ -85,7 +85,6 @@ var theLesson;
 var indexArray;       // these get initialized by initDataModel.js
 var redoNumArray;     // this array holds info about how many times each exercise needs to be redone.
 var numToRedo = 2;    // each wrong exercise must be done correctly this many times.
-var redoDex;          // index of the current exercise in promptsToRedo.
 var step;
 var currentExercise;
 var nounWords;
@@ -109,11 +108,11 @@ dotImageRed.src = "img/redDot.png";
 var dotImageGreen = new Image(20,20);
 dotImageGreen.src = "img/greenDot.png";
 
-function pushPromptToRedo(tempNum)
+function pushPromptToRedo(exNum)
 {
-    if( dotMatrix[tempNum] != DOT_WRONG ) {
+    if( dotMatrix[exNum] != DOT_WRONG ) {
         promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
-    dotMatrix[tempNum] = DOT_WRONG;
+    dotMatrix[exNum] = DOT_WRONG;
     var index = GetExNum();
     //alert("will install redoNumArray:  " + numToRedo + "  index:  " + index);
     redoNumArray[index] = numToRedo;
@@ -779,9 +778,9 @@ function MetaDetermineFeedback()
     //first, you need to collect your data about the current exercise number, the current exercise, and the current score
     //you can do this using code like this:
     
-	var exnum = GetExNum();
+	var exNum = GetExNum();
     
-	var currentExercise = new GetExercise(exnum); //see function below
+	var currentExercise = new GetExercise(exNum); //see function below
     
 	var score = GetScore(); //see function below
     //alert("back from GetScore: " + score);
@@ -803,7 +802,7 @@ function MetaDetermineFeedback()
 	var tokenizedResponse = TokenizeResponse(response);
     //next, call DetermineFeedback with response and tokenizedResponse as arguments
     //alert("will call DetermineFeedback: ");
-	var feedbackTuple = DetermineFeedback(response, tokenizedResponse, currentExercise, exnum, score, status);
+	var feedbackTuple = DetermineFeedback(response, tokenizedResponse, currentExercise, exNum, score, status);
     //alert("back from DetermineFeedback: ");
     //feedBackTuple consists of the following pieces of information:
 	var feedbackType = feedbackTuple[1];
@@ -813,9 +812,9 @@ function MetaDetermineFeedback()
     //alert("the type of feedback is: " + feedbackType);
     //alert("the feedback message is: " + message);
     
-    sendDebug(feedbackTuple,message,feedbackType,exnum);
+    sendDebug(feedbackTuple,message,feedbackType,exNum);
 	
-	sendValues(feedbackType,response,points,exnum);
+	sendValues(feedbackType,response,points,exNum);
 	
 	//alert("your word button marking info is " + wordButtonMarkingInfo);  //if its undefined there are no words to maark
 	//alert("the number of points the user has is: " + points);
@@ -823,16 +822,18 @@ function MetaDetermineFeedback()
 	// Write the message to the feedback box
 	//$("#answerFeedbackBox p").html(message);
 	
-	var tempNum; // Index of current question
-    
+	//var tempNum; // Index of current question
+    /*
     if(redoMode) {
         // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
         tempNum = promptsToRedo[step];
+
     }else{
         tempNum = indexArray[step];
     }
+     */
     
-    //alert("tempNum:" + tempNum);
+    //alert("tempNum:" + tempNum + ", exNum: " + exNum);
     
 	// Pinpoints the punctuation at the end of the sentence
 	var punctuationPointer = lowerCaseTempSentence.length - 1;
@@ -857,13 +858,13 @@ function MetaDetermineFeedback()
                 if (redoNumArray[index] <= 0) {
                     removed = promptsToRedo.splice(step, 1);
                     //alert("tempNum:  " + tempNum);
-                    if( dotMatrix[tempNum] != DOT_WRONG )
+                    if( dotMatrix[exNum] != DOT_WRONG )
                     {
-                        dotMatrix[tempNum] = DOT_CORRECT; }
+                        dotMatrix[exNum] = DOT_CORRECT; }
                     if (promptsToRedo.length == 0) {
                         //alert("found empty promptsToRedo: will goToNextLesson");
                         //toNextLesson();
-                        goToNExtExercise();
+                        //goToNExtExercise();
                         return;
                     }}    
             }
@@ -876,9 +877,9 @@ function MetaDetermineFeedback()
 		//####your code for moving on to the next exercise goes here!
         //alert("The answer is correct.");
         else {
-            if( dotMatrix[tempNum] != DOT_WRONG )
+            if( dotMatrix[exNum] != DOT_WRONG )
             {
-                dotMatrix[tempNum] = DOT_CORRECT; }}
+                dotMatrix[exNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
         /*
         $("#answerFeedbackBox p").html("Your answer is correct!");
@@ -894,9 +895,9 @@ function MetaDetermineFeedback()
 		//if there are wrong words in the answer, the array wordButtonMarkingInfo tells you which words need to be in red
 		//####your button-changing code goes here!
         //alert("Wrong words.");
-        if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType))
+        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
         
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
@@ -906,13 +907,10 @@ function MetaDetermineFeedback()
         // If there is at least one answer word
         if( currentAnswerWords.length != 0 )
         {
-            for( var i = 0; i < wordButtonMarkingInfo.length; i++ )
-            {
-                for( var j = 0; j < tempAnswersInArray.length; j++ )
-                {
+            for( var i = 0; i < wordButtonMarkingInfo.length; i++ ) {
+                for( var j = 0; j < tempAnswersInArray.length; j++ ) {
                     // If the word in the user's answer and the wrong answer word matches
-                    if( tempAnswersInArray[j] == wordButtonMarkingInfo[i] )
-                    {
+                    if( tempAnswersInArray[j] == wordButtonMarkingInfo[i] ) {
                         // Then add the element number of the user's answer array into the wrongAnswerWords array
                         wrongAnswerNumbers.push(j);
                     }
@@ -932,9 +930,9 @@ function MetaDetermineFeedback()
 		var convertToPronounList = wordButtonMarkingInfo[1]; //convertToPronounList tells you which words need to be in orange
 		//####your button-changing code goes here!
         //alert("Pronoun Antecedent Feedback.");
-        if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
         // Display the feedback
         $("#answerFeedbackBox p").html("Change the word in red to non-pronoun and/or change the word in orange to pronoun.");
         
@@ -978,9 +976,9 @@ function MetaDetermineFeedback()
         //use GetStem(word) again for this
 		//####your button-changing code goes here!
         //alert("Morphology Feedback.");
-        if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
           
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
@@ -1069,9 +1067,9 @@ function MetaDetermineFeedback()
 		var nounMissingAnArticleList = wordButtonMarkingInfo[1]; //nounMissingAnArticleList tells you which buttons need to be in orange
 		//####your button-changing code goes here!
         //alert("articleFeedback");
-        if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
         $("#answerFeedbackBox p").html("Remove/change the articles in red / add articles before the words in orange.");
@@ -1115,9 +1113,9 @@ function MetaDetermineFeedback()
 		var articleIndex = wordButtonMarkingInfo[1]; //tells you which position this word has in the sequence of words that the user inputted (starts at 0)
 		//####your button-changing code goes here!
         //alert("Stranded Article.");
-        if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
         
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
@@ -1135,9 +1133,9 @@ function MetaDetermineFeedback()
         //the lowest index is 0
 		//####your button-changing code goes here!
         //alert("Syntax Problem.");
-        if( dotMatrix[tempNum] != DOT_CORRECT )
+        if( dotMatrix[exNum] != DOT_CORRECT )
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
         
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
@@ -1164,9 +1162,9 @@ function MetaDetermineFeedback()
         var missingWordsList = wordButtonMarkingInfo;
         //alert("Missing words: " + missingWordsList);
         
-        if( dotMatrix[tempNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
         {
-            pushPromptToRedo(tempNum); }
+            pushPromptToRedo(exNum); }
                     
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
