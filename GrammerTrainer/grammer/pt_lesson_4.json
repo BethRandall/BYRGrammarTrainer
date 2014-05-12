@@ -396,7 +396,7 @@
             "timeCaption": ""
         },
         {
-	    "exnum": "6",
+	    "exnum": "5",
             "lessonImage": "OrDm.jpg",
             "pictureA": "OrDm.jpg",
             "pictureB": ".jpg",
@@ -436,8 +436,8 @@
                 "the",
                 "circle",
                 "circles",
-	        "diamond",
-	        "diamonds",
+                "diamond",
+                "diamonds",
                 "rectangle",
                 "rectangles",
                 "square",

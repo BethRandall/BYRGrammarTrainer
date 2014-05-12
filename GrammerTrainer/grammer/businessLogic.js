@@ -777,7 +777,7 @@ function MetaDetermineFeedback()
 {
     //first, you need to collect your data about the current exercise number, the current exercise, and the current score
     //you can do this using code like this:
-    
+    //alert("in MetaDetermineFeedback: ");
 	var exNum = GetExNum();
     
 	var currentExercise = new GetExercise(exNum); //see function below
