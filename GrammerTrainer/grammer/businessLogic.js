@@ -111,11 +111,16 @@ dotImageGreen.src = "img/greenDot.png";
 function pushPromptToRedo(exNum)
 {
     if( dotMatrix[exNum] != DOT_WRONG ) {
-        promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
+        //promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
+        promptsToRedo.push(indexArray[exNum - 1]); }
+    //alert("will set DOT_WRONG:  exNum: " + exNum);
     dotMatrix[exNum] = DOT_WRONG;
     var index = GetExNum();
     //alert("will install redoNumArray:  " + numToRedo + "  index:  " + index);
-    redoNumArray[index] = numToRedo;
+    var minus1 = currentExerciseNumber - 1;
+    //alert("aardvark! exNum: " + exNum + ", currentExerciseNumber - 1:  " + minus1 + ", index: " + index);
+    redoNumArray[index] = redoNumArray[index] + numToRedo;
+    //redoNumArray[exNum] = redoNumArray[exNum] + numToRedo;
 }
 
 function randomizeRedo() {
@@ -778,6 +783,7 @@ function MetaDetermineFeedback()
     //first, you need to collect your data about the current exercise number, the current exercise, and the current score
     //you can do this using code like this:
     //alert("in MetaDetermineFeedback: ");
+    
 	var exNum = GetExNum();
     
 	var currentExercise = new GetExercise(exNum); //see function below
@@ -894,7 +900,7 @@ function MetaDetermineFeedback()
     {
 		//if there are wrong words in the answer, the array wordButtonMarkingInfo tells you which words need to be in red
 		//####your button-changing code goes here!
-        //alert("Wrong words.");
+        alert("Wrong words.");
         if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
         {
             pushPromptToRedo(exNum); }

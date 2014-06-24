@@ -332,7 +332,7 @@ function resetLesson() {
             var randdex =  Math.floor(Math.random()*usedDex.length);
             var newranddex = usedDex[randdex];
             // if you don't want to randomize the exercises, comment out the following line:
-            indexArray[exerNum] = newranddex;
+            //indexArray[exerNum] = newranddex;
             usedDex.splice(randdex, 1); }
         // Dot Array
         dotMatrix = new Array();
