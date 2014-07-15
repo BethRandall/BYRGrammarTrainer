@@ -203,7 +203,7 @@
             "oralprompt": "sounds/prompt_6.m4a",
             "prompt": "The boy said that he will call you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/9_iwillcall_boy_noBalloon_HIM_HER_.m4v",
-            "balloonSpecs": "left, 100, 10"
+            "balloonSpecs": "right, 100, 10"
         },
         {
             "exnum": "10",
@@ -225,7 +225,7 @@
             "oralprompt": "sounds/prompt_7.m4a",
             "prompt": "The boy said that you will call him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/10_willcallme_boy_noBalloon_HE_SHE_.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
             "exnum": "11",
@@ -268,7 +268,7 @@
             ],
             "oralprompt": "sounds/prompt_5.m4a",
             "prompt": "The girl said that you will call her.  What goes in the speech bubble?",
-            "lessonVideo": "gt_videos/transportation_theme_videos/12_willcallme_girl_noBallon_HE_SHE_.m4v",
+            "lessonVideo": "gt_videos/transportation_theme_videos/12_willcallme_girl_noBalloon_HE_SHE_.m4v",
             "balloonSpecs": "left, 100, 10"
         },
         {
@@ -357,7 +357,7 @@
             "oralprompt": "sounds/prompt_13.m4a",
             "prompt": "The girl said that the boy will call her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_youwillcallme_girl_noBalloon.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         }
     ],
     "pronounWords": [

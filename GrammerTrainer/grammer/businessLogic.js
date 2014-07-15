@@ -900,7 +900,7 @@ function MetaDetermineFeedback()
     {
 		//if there are wrong words in the answer, the array wordButtonMarkingInfo tells you which words need to be in red
 		//####your button-changing code goes here!
-        alert("Wrong words.");
+        //alert("Wrong words.");
         if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
         {
             pushPromptToRedo(exNum); }

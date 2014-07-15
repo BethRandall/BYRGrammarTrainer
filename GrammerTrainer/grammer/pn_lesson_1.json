@@ -411,7 +411,7 @@
             "oralprompt": "sounds/prompt_15.m4a",
             "prompt": "The girl said that she will help the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/15_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
             "exnum": "16",
@@ -438,7 +438,7 @@
             "oralprompt": "sounds/prompt_16.m4a",
             "prompt": "The girl said that the boy will help her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         }
     ],
     "pronounWords": [
