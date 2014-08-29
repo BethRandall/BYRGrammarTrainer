@@ -112,8 +112,8 @@ function pushPromptToRedo(exNum)
 {
     if( dotMatrix[exNum] != DOT_WRONG ) {
         //promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
-        promptsToRedo.push(indexArray[exNum - 1]); }
-        //promptsToRedo.push(indexArray[exNum]); }
+        //promptsToRedo.push(indexArray[exNum - 1]); }
+        promptsToRedo.push(indexArray[exNum]); }
     //alert("will set DOT_WRONG:  exNum: " + exNum);
     dotMatrix[exNum] = DOT_WRONG;
     var index = GetExNum();
@@ -577,6 +577,11 @@ function goToNextExercise()
             
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
             alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
+            var promptsString = "";
+            for (var i = 0; i < promptsToRedo.length; i++) {
+                promptsString += promptsToRedo[i] + ", ";
+            }
+            alert("Prompts to Redo:  " + promptsString);
             //if( currentExerciseNumber < promptsToRedo.length) BYR: nonsense!
             // advance through promptsToRedo; you may need to cycle back to beginning.  Remember each exercise must be done correctly twice!
             if (step < promptsToRedo.length) 
