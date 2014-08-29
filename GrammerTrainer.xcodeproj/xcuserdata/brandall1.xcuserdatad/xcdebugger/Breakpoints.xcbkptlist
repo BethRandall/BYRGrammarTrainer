@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/grammer/initLesson.js"
-         timestampString = "421103920.80571"
+         timestampString = "430770541.518022"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "261"
-         endingLineNumber = "261"
+         startingLineNumber = "217"
+         endingLineNumber = "217"
          landmarkName = "myLoadLessonImage"
          landmarkType = "7">
       </FileBreakpoint>
@@ -56,15 +56,15 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/grammer/businessLogic.js"
-         timestampString = "424713067.917619"
+         timestampString = "430848529.564898"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "randomizeRedo"
          landmarkType = "7">
       </FileBreakpoint>

@@ -113,6 +113,7 @@ function pushPromptToRedo(exNum)
     if( dotMatrix[exNum] != DOT_WRONG ) {
         //promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
         promptsToRedo.push(indexArray[exNum - 1]); }
+        //promptsToRedo.push(indexArray[exNum]); }
     //alert("will set DOT_WRONG:  exNum: " + exNum);
     dotMatrix[exNum] = DOT_WRONG;
     var index = GetExNum();
@@ -575,7 +576,7 @@ function goToNextExercise()
             // We know were already in redo mode
             
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
-            //alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
+            alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
             //if( currentExerciseNumber < promptsToRedo.length) BYR: nonsense!
             // advance through promptsToRedo; you may need to cycle back to beginning.  Remember each exercise must be done correctly twice!
             if (step < promptsToRedo.length) 
@@ -785,8 +786,7 @@ function MetaDetermineFeedback()
     //alert("in MetaDetermineFeedback: ");
     
 	var exNum = GetExNum();
-    
-	var currentExercise = new GetExercise(exNum); //see function below
+    var currentExercise = new GetExercise(exNum); //see function below
     
 	var score = GetScore(); //see function below
     //alert("back from GetScore: " + score);
@@ -794,18 +794,12 @@ function MetaDetermineFeedback()
 	var status = GetStatus();  // always returns "freshAnswer". Why? I don't know i didn't write it.
     //alert("back from GetStatus: " + status);
     //next, get the user's response from the responseBox and clean it up:
-	var tempSentenceArray = currentAnswerWords;
+
+    var response = buildResponse(currentAnswerWords);
   
-	if( tempSentenceArray[0] != "I" ) {
-		tempSentenceArray[0] = String(tempSentenceArray[0]).toLowerCase(); }
-	var tempSentence = tempSentenceArray.join(" ");
-	var lowerCaseTempSentence = tempSentence;
-	lowerCaseTempSentence += ".";
-	//var response = document.getElementById("responsebox").value;
-	//alert("Sentence: " + lowerCaseTempSentence);
-	var response = lowerCaseTempSentence;
     //next, turn this response into an array of words, in the order given
 	var tokenizedResponse = TokenizeResponse(response);
+    //alert("back from TokenizedResponse:");
     //next, call DetermineFeedback with response and tokenizedResponse as arguments
     //alert("will call DetermineFeedback: ");
 	var feedbackTuple = DetermineFeedback(response, tokenizedResponse, currentExercise, exNum, score, status);
@@ -821,6 +815,7 @@ function MetaDetermineFeedback()
     sendDebug(feedbackTuple,message,feedbackType,exNum);
 	
 	sendValues(feedbackType,response,points,exNum);
+    //alert("back from sendValues:  ");
 	
 	//alert("your word button marking info is " + wordButtonMarkingInfo);  //if its undefined there are no words to maark
 	//alert("the number of points the user has is: " + points);
@@ -840,14 +835,7 @@ function MetaDetermineFeedback()
      */
     
     //alert("tempNum:" + tempNum + ", exNum: " + exNum);
-    
-	// Pinpoints the punctuation at the end of the sentence
-	var punctuationPointer = lowerCaseTempSentence.length - 1;
-	// Correct answer without the ending punctuation
-	var tempLessonAnswersWithoutPunctuation = lowerCaseTempSentence.slice(0, punctuationPointer);
-	// An array of current answer words
-	var tempAnswersInArray = tempLessonAnswersWithoutPunctuation.split(" ");
-    
+   
     //### using your code, print out the message (which is in html code) and the points
     //depending on what sort of feedback this is, different outputs are necessary
 	if (feedbackType == "CorrectAnswer")
@@ -859,7 +847,7 @@ function MetaDetermineFeedback()
                 // must redo the incorrect answer twice.
                 // decrement number of times the exercise must be redone.
                 var index = GetExNum();
-                //alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
+                alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
                 redoNumArray[index] = redoNumArray[index] - 1;
                 if (redoNumArray[index] <= 0) {
                     removed = promptsToRedo.splice(step, 1);
@@ -900,9 +888,10 @@ function MetaDetermineFeedback()
     {
 		//if there are wrong words in the answer, the array wordButtonMarkingInfo tells you which words need to be in red
 		//####your button-changing code goes here!
-        //alert("Wrong words.");
+        //alert("found wrong words feedback type.");
         if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
         {
+            //alert("about to pushPromptToRedo: exNum:  " + exNum);
             pushPromptToRedo(exNum); }
         
         // Write the message to the feedback box
@@ -911,17 +900,19 @@ function MetaDetermineFeedback()
         var wrongAnswerNumbers = new Array();
         
         // If there is at least one answer word
+        
         if( currentAnswerWords.length != 0 )
         {
             for( var i = 0; i < wordButtonMarkingInfo.length; i++ ) {
-                for( var j = 0; j < tempAnswersInArray.length; j++ ) {
+                for( var j = 0; j < tokenizedResponse.length; j++ ) {
                     // If the word in the user's answer and the wrong answer word matches
-                    if( tempAnswersInArray[j] == wordButtonMarkingInfo[i] ) {
+                    if( tokenizedResponse[j] == wordButtonMarkingInfo[i] ) {
                         // Then add the element number of the user's answer array into the wrongAnswerWords array
                         wrongAnswerNumbers.push(j);
                     }
                 }
             }
+            
             
             // Change the background color of wrong words to red
             for(var k = 0; k < wrongAnswerNumbers.length; k++)
@@ -945,16 +936,16 @@ function MetaDetermineFeedback()
         var fullNPNumbers = new Array();
         var pronounNumbers = new Array();
         
-        for( var i = 0; i < tempAnswersInArray.length; i++ )
+        for( var i = 0; i < tokenizedResponse.length; i++ )
         {
             for( var j = 0; j < convertToFullNPList.length; j++ )
             {
-                if( tempAnswersInArray[i] == convertToFullNPList[j] )
+                if( tokenizedResponse[i] == convertToFullNPList[j] )
                 { fullNPNumbers.push(i); } }
             
             for( var k = 0; k < convertToPronounList.length; k++ )
             {
-                if( tempAnswersInArray[i] == convertToPronounList[k] )
+                if( tokenizedResponse[i] == convertToPronounList[k] )
                 { pronounNumbers.push(i); } }
         }
         
@@ -1010,26 +1001,26 @@ function MetaDetermineFeedback()
         var needEndingNumbers = new Array();
         var wrongFormAndEndingNumbers = new Array();
         
-        for( var i = 0; i < tempAnswersInArray.length; i++ )
+        for( var i = 0; i < tokenizedResponse.length; i++ )
         {
             for( var j = 0; j < wrongForms.length; j++ )
             {
-                if( tempAnswersInArray[i] == wrongForms[j] )
+                if( tokenizedResponse[i] == wrongForms[j] )
                 { wrongFormNumbers.push(i); } }
             
             for( var k = 0; k < wrongEndings.length; k++ )
             {
-                if( tempAnswersInArray[i] == wrongEndings[k] )
+                if( tokenizedResponse[i] == wrongEndings[k] )
                 { wrongEndingNumbers.push(i); } }
             
             for( var l = 0; l < needEndings.length; l++ )
             {
-                if( tempAnswersInArray[i] == needEndings[l] )
+                if( tokenizedResponse[i] == needEndings[l] )
                 { needEndingNumbers.push(i); } }
             
             for( var m = 0; m < needEndings.length; m++ )
             {
-                if( tempAnswersInArray[i] == needEndings[m] )
+                if( tokenizedResponse[i] == needEndings[m] )
                 { needEndingNumbers.push(i); } }
         }
         
@@ -1042,9 +1033,9 @@ function MetaDetermineFeedback()
         // Change the background color of wrong words to red
         for( var b = 0; b < wrongEndingNumbers.length; b++ )
         {
-            var stemWord = GetStem(String(tempAnswersInArray[wrongEndingNumbers[b]]));
+            var stemWord = GetStem(String(tokenizedResponse[wrongEndingNumbers[b]]));
             //alert("Stem word: " + stemWord);
-            var targetEnding = tempAnswersInArray[wrongEndingNumbers[b]].substr(stemWord.length);
+            var targetEnding = tokenizedResponse[wrongEndingNumbers[b]].substr(stemWord.length);
             //alert("Extra ending: " + targetEnding);
             $("#answer_" + wrongEndingNumbers[b]).html(stemWord + "<span style=\"color:#990000\">" + targetEnding + "</span>"); // dark red
             //$("#answer_" + wrongEndingNumbers[b]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
@@ -1053,7 +1044,6 @@ function MetaDetermineFeedback()
         // Change the background color of wrong words to #990099
         for( var c = 0; c < needEndingNumbers.length; c++ )
         {
-            //var mainWord = tempAnswersInArray[needEndingNumber[c]];
             //$("#answer_" + needEndingNumbers[c]).html(mainWord + "<span style=\"color:#990000\">" + _ + "</span>");
             $("#answer_" + needEndingNumbers[c]).append("<span style=\"color:#990000\">_</span>"); // dark red
         }
@@ -1061,8 +1051,8 @@ function MetaDetermineFeedback()
         // Change the background color of wrong words to #22ff00; BYR would be bright green!
         for( var d = 0; d < wrongFormAndEndingNumbers.length; d++ )
         {
-            var stemWord = GetStem(String(tempAnswersInArray[wrongEndingNumbers[d]]));
-            var targetEnding = tempAnswersInArray[wrongEndingNumbers[d]].substr(stemWord.length);
+            var stemWord = GetStem(String(tokenizedResponse[wrongEndingNumbers[d]]));
+            var targetEnding = tokenizedResponse[wrongEndingNumbers[d]].substr(stemWord.length);
             $("#answer_" + wrongFormAndEndingNumbers[d]).html(stemWord + "<span style=\"color:#990000\">" + targetEnding + "</span>"); // dark red
             $("#answer_" + wrongFormAndEndingNumbers[d]).css("background", "#ff9900 url(img/watercolorTextureTransparent.png) repeat"); // orange
         }
@@ -1083,18 +1073,18 @@ function MetaDetermineFeedback()
         var nounWithWrongArticleNumbers = new Array();
         var nounMissingAnArticleNumbers = new Array();
         
-        for( var i = 0; i < tempAnswersInArray.length; i++ )
+        for( var i = 0; i < tokenizedResponse.length; i++ )
         {
             for( var j = 0; j < nounWithWrongArticleList.length; j++ )
             {
-                if( (tempAnswersInArray[i] == nounWithWrongArticleList[j]) && (i != 0) )
+                if( (tokenizedResponse[i] == nounWithWrongArticleList[j]) && (i != 0) )
                 {
-                    if( (tempAnswersInArray[i-1] == "a") || (tempAnswersInArray[i-1] == "an") || (tempAnswersInArray[i-1] == "the") )
+                    if( (tokenizedResponse[i-1] == "a") || (tokenizedResponse[i-1] == "an") || (tokenizedResponse[i-1] == "the") )
                         nounWithWrongArticleNumbers.push(i-1); } }
             
             for( var k = 0; k < nounMissingAnArticleList.length; k++ )
             {
-                if( tempAnswersInArray[i] == nounMissingAnArticleList[k] )
+                if( tokenizedResponse[i] == nounMissingAnArticleList[k] )
                 {
                     nounMissingAnArticleNumbers.push(i); } }
         }
@@ -1191,6 +1181,18 @@ function MetaDetermineFeedback()
     }
 }
 
+function buildResponse(currAnsWor) {
+    var tempSentenceArray = currAnsWor;
+    
+	if( tempSentenceArray[0] != "I" ) {
+		tempSentenceArray[0] = String(tempSentenceArray[0]).toLowerCase(); }
+	var tempSentence = tempSentenceArray.join(" ");
+	var resp = tempSentence;
+	resp += ".";
+    
+    return resp;
+}
+
 function GetExNum() {
     if (typeof currentExercise.exnum != "undefined") {
         // alert("found exnum: " + currentExercise.exnum);
@@ -1201,10 +1203,11 @@ function GetExNum() {
 
 function GetExercise(exerciseNumber)
 {
+    //alert("inside GetExercise: ");
     //you need all these fields for the feedback code to work, exen if you keep them empty
-	this.choices = new Array();
+	//this.choices = new Array();
 	this.untokenizedAnswersList = new Array();
-	this.pronounNounLists = new Array();           //####this field specifies cases where pronouns or nouns are required--you may need to use it
+	this.pronounNounLists = new Array(); //####this field specifies cases where pronouns or nouns are required--you may need to use it
 	this.specialWordsList = new Array();
 	this.specialWordsTriggers = new Array();
 	this.subjectRequest = new Array();
@@ -1215,7 +1218,7 @@ function GetExercise(exerciseNumber)
     
     // indexArray - is used to radomize the exercise
     // exerciseNumber - is a one up index
-
+    
     var theCurrentExercise;
     
     theCurrentExercise = theLesson.exerciseArray[exerciseNumber];
@@ -1231,7 +1234,7 @@ function GetExercise(exerciseNumber)
     
     if(typeof theCurrentExercise.specialWordsList != 'undefined') {
         this.specialWordsList = theCurrentExercise.specialWordsList; }
-     
+    
     if(typeof theCurrentExercise.specialWordsTriggers != 'undefined') {
         this.specialWordsTriggers = theCurrentExercise.specialWordsTriggers; }
     
@@ -1239,6 +1242,7 @@ function GetExercise(exerciseNumber)
         this.subjectRequest = theCurrentExercise.subjectRequest; }
     
     if(typeof theCurrentExercise.unneededWords != 'undefined') {
+        //alert("found unneeded words: " + theCurrentExercise.unneededWords[0]);
         this.unneededWords = theCurrentExercise.unneededWords; }
     
     if(typeof theCurrentExercise.replaceSubject != 'undefined') {
@@ -1248,7 +1252,7 @@ function GetExercise(exerciseNumber)
 	this.allAnswersList = this.answersList;
 	this.wordsLists = GetWordsLists(this.answersList);
 	this.allWordsLists = this.wordsLists;
-	if (this.choices.length > 0) this.type = "multiple_choice";
+	//if (this.choices.length > 0) this.type = "multiple_choice";
 }
 
 function GetScore()

@@ -91,7 +91,7 @@
 @synthesize loginInfo = loginInfo_;
 @synthesize versionLabel = versionLabel_;
 @synthesize resultsDict = resultsDict_;
-static NSString *versionNumber = @"1.14";
+static NSString *versionNumber = @"1.15";
 
 - (void)didReceiveMemoryWarning
 {
