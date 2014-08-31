@@ -110,19 +110,29 @@ dotImageGreen.src = "img/greenDot.png";
 
 function pushPromptToRedo(exNum)
 {
+    // promptsToRedo is a list of the exercises that were answered wrong.
+    // redoNumArray is a list of how many more times each exercise needs to be answered right.
+    var already_recorded = false;
     if( dotMatrix[exNum] != DOT_WRONG ) {
-        //promptsToRedo.push(indexArray[currentExerciseNumber - 1]); }
-        //promptsToRedo.push(indexArray[exNum - 1]); }
-        promptsToRedo.push(indexArray[exNum]); }
+        // first, check whether this exercise is already on the list to redo.
+        // This might happen if we were in redo mode, and got the exercise wrong again.
+        for (var i = 0; i < promptsToRedo.length; i++) {
+            if (promptsToRedo[i] == exNum) { already_recorded = true; break; }
+        }
+        if (!already_recorded) {
+            promptsToRedo.push(indexArray[exNum]); }}
     //alert("will set DOT_WRONG:  exNum: " + exNum);
     dotMatrix[exNum] = DOT_WRONG;
-    var index = GetExNum();
-    //alert("will install redoNumArray:  " + numToRedo + "  index:  " + index);
-    var minus1 = currentExerciseNumber - 1;
-    //alert("aardvark! exNum: " + exNum + ", currentExerciseNumber - 1:  " + minus1 + ", index: " + index);
-    redoNumArray[index] = redoNumArray[index] + numToRedo;
-    //redoNumArray[exNum] = redoNumArray[exNum] + numToRedo;
+    if (!already_recorded) {
+        redoNumArray[exNum] = redoNumArray[exNum] + numToRedo; }
+    // if we were in redo mode, we need to add 1 to the number of times to redo, since it will be immediately decremented when
+    // we get the exercise right.
+    //if (already_recorded) {
+      //  redoNumArray[exNum] = redoNumArray[exNum] + numToRedo + 1; }
+    if (already_recorded) {
+        redoNumArray[exNum] = redoNumArray[exNum] + 1; }
 }
+
 
 function randomizeRedo() {
     //alert("inside randomizeRedo: ");

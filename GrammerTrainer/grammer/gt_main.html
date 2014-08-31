@@ -33,8 +33,7 @@
 	<!-- Container with lesson and exercise descriptions -->
 	<section id="lessonExerciseContainer">
         <!--Set lesson title to Lesson X-->
-    	<h3 id="lessonHeading">Lesson <script type="text/javascript">
-            
+    	<h3 id="lessonHeading">Lesson  <script type="text/javascript">
             function queryString(string){
                 var currentLesson = "";
                 var query = window.location.search.substring(1);
@@ -42,7 +41,7 @@
                 for (var i=0; i<parms.length; i++) {
                     var pos = parms[i].indexOf('=');
                     if (pos > 0  && string == parms[i].substring(0,pos)) {
-                         return currentLesson = parms[i].substring(pos+1);; }
+                        return currentLesson = parms[i].substring(pos + 1); }
                 }
                 return "";
             }
@@ -58,6 +57,7 @@
             lessonName = queryString("lesson");
             lessonNumber = toNumber(lessonName);
             document.write(lessonNumber);
+
             </script></h3>
         <!--<h3 id="exerciseHeading">Exercise #<script type="text/javascript">document.write(currentExerciseNumber);</script></h3>-->
     </section>
