@@ -127,8 +127,6 @@ function pushPromptToRedo(exNum)
         redoNumArray[exNum] = redoNumArray[exNum] + numToRedo; }
     // if we were in redo mode, we need to add 1 to the number of times to redo, since it will be immediately decremented when
     // we get the exercise right.
-    //if (already_recorded) {
-      //  redoNumArray[exNum] = redoNumArray[exNum] + numToRedo + 1; }
     if (already_recorded) {
         redoNumArray[exNum] = redoNumArray[exNum] + 1; }
 }
@@ -586,12 +584,11 @@ function goToNextExercise()
             // We know were already in redo mode
             
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
-            alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
-            var promptsString = "";
-            for (var i = 0; i < promptsToRedo.length; i++) {
-                promptsString += promptsToRedo[i] + ", ";
-            }
-            alert("Prompts to Redo:  " + promptsString);
+            //alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
+            //var promptsString = "";
+            //for (var i = 0; i < promptsToRedo.length; i++) {
+            //  promptsString += promptsToRedo[i] + ", "; }
+            //alert("Prompts to Redo:  " + promptsString);
             //if( currentExerciseNumber < promptsToRedo.length) BYR: nonsense!
             // advance through promptsToRedo; you may need to cycle back to beginning.  Remember each exercise must be done correctly twice!
             if (step < promptsToRedo.length) 
@@ -837,20 +834,7 @@ function MetaDetermineFeedback()
 	
 	// Write the message to the feedback box
 	//$("#answerFeedbackBox p").html(message);
-	
-	//var tempNum; // Index of current question
-    /*
-    if(redoMode) {
-        // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
-        tempNum = promptsToRedo[step];
-
-    }else{
-        tempNum = indexArray[step];
-    }
-     */
-    
-    //alert("tempNum:" + tempNum + ", exNum: " + exNum);
-   
+	   
     //### using your code, print out the message (which is in html code) and the points
     //depending on what sort of feedback this is, different outputs are necessary
 	if (feedbackType == "CorrectAnswer")
@@ -862,7 +846,7 @@ function MetaDetermineFeedback()
                 // must redo the incorrect answer twice.
                 // decrement number of times the exercise must be redone.
                 var index = GetExNum();
-                alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
+                //alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
                 redoNumArray[index] = redoNumArray[index] - 1;
                 if (redoNumArray[index] <= 0) {
                     removed = promptsToRedo.splice(step, 1);
@@ -873,7 +857,7 @@ function MetaDetermineFeedback()
                     if (promptsToRedo.length == 0) {
                         //alert("found empty promptsToRedo: will goToNextLesson");
                         //toNextLesson();
-                        //goToNExtExercise();
+                        //goToNextExercise();
                         return;
                     }}    
             }
@@ -923,11 +907,7 @@ function MetaDetermineFeedback()
                     // If the word in the user's answer and the wrong answer word matches
                     if( tokenizedResponse[j] == wordButtonMarkingInfo[i] ) {
                         // Then add the element number of the user's answer array into the wrongAnswerWords array
-                        wrongAnswerNumbers.push(j);
-                    }
-                }
-            }
-            
+                        wrongAnswerNumbers.push(j); }}}
             
             // Change the background color of wrong words to red
             for(var k = 0; k < wrongAnswerNumbers.length; k++)
