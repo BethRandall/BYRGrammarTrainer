@@ -410,19 +410,7 @@ function eraseAnswer()
 
 
 function saySomething() {
-    
-    if(redoMode) {
-        // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo instead of the indexArray indices.
-        currentExercise = theLesson.exerciseArray[promptsToRedo[step]];
-    }else{
-        currentExercise = theLesson.exerciseArray[indexArray[step]]; }
-    
-    var theElement = "<audio id=\"prompt_" + step + "\" src=\"" + currentExercise.oralprompt + "\"></audio>";
-    
-    $("body").append(theElement);
-    
-	playSound("prompt_" + step);
-}
+    NativeBridge.call("toSpeech", [currentExercise.prompt]); }
 
 /*
 function showMenu()

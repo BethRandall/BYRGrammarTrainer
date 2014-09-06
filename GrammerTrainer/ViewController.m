@@ -91,7 +91,20 @@
 @synthesize loginInfo = loginInfo_;
 @synthesize versionLabel = versionLabel_;
 @synthesize resultsDict = resultsDict_;
+@synthesize fliteController;
+@synthesize slt;
+
+
 static NSString *versionNumber = @"1.15";
+
+- (FliteController *)fliteController { if (fliteController == nil) {
+    fliteController = [[FliteController alloc] init]; }
+    return fliteController; }
+
+- (Slt *)slt {
+    if (slt == nil) {
+        slt = [[Slt alloc] init]; }
+    return slt; }
 
 - (void)didReceiveMemoryWarning
 {
@@ -624,10 +637,15 @@ static NSString *versionNumber = @"1.15";
     [player play];
 }
 
+- (void)toSpeech:(NSString *)toSay {
+    
+    [self.fliteController say:toSay withVoice:self.slt]; }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [self.fliteController say:@"Hello happy world!" withVoice:self.slt];
     
     menuVisible = YES;
     iconsVisible = YES;
@@ -1076,6 +1094,9 @@ static NSString *versionNumber = @"1.15";
         //menuVisible = NO;
         [self exitLesson];
         [self.theTableView reloadData];
+    } else if ([functionName isEqualToString:@"toSpeech"]) {
+        NSString *oneArg = (NSString*)[args objectAtIndex:0];
+        [self toSpeech:oneArg];
     }  else if ([functionName isEqualToString:@"saveState"]) {
         
         NSLog(@"Did call saveState");

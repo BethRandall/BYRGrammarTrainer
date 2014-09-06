@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SBJSON.h"
 #import "SectionHeaderView.h"
+#import <Slt/Slt.h>
+#import <OpenEars/FliteController.h>
 
 @class QuoteCell, Lesson; // SpreadsheetController;
 
@@ -18,6 +20,8 @@
     BOOL menuVisible;
     BOOL iconsVisible;
     BOOL pendingDataModelLoad;
+    FliteController *fliteController;
+    Slt *slt;
     
 }
 
@@ -33,6 +37,8 @@
 @property (strong, nonatomic) IBOutlet UIView *leftOverlayView;
 
 @property (strong, nonatomic) NSString *userName;
+
+@property (strong, nonatomic) FliteController *fliteController; @property (strong, nonatomic) Slt *slt;
 
 
 

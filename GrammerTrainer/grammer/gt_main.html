@@ -37,6 +37,7 @@
             function queryString(string){
                 var currentLesson = "";
                 var query = window.location.search.substring(1);
+                //document.write(query);
                 var parms = query.split('&');
                 for (var i=0; i<parms.length; i++) {
                     var pos = parms[i].indexOf('=');
