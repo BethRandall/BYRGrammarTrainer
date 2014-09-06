@@ -410,7 +410,7 @@ function eraseAnswer()
 
 
 function saySomething() {
-    NativeBridge.call("toSpeech", [currentExercise.prompt]); }
+    NativeBridge.call("toSpeech", [currentExercise.oralprompt]); }
 
 /*
 function showMenu()

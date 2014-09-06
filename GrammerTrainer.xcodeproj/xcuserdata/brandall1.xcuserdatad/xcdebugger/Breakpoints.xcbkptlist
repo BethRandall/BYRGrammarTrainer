@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/ViewController.m"
-         timestampString = "431715809.01987"
+         timestampString = "431717826.217702"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "918"
-         endingLineNumber = "918"
+         startingLineNumber = "914"
+         endingLineNumber = "914"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/ViewController.m"
-         timestampString = "431715809.01987"
+         timestampString = "431717826.217702"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "938"
-         endingLineNumber = "938"
+         startingLineNumber = "934"
+         endingLineNumber = "934"
          landmarkName = "-goToNextLesson"
          landmarkType = "5">
       </FileBreakpoint>
