@@ -645,7 +645,6 @@ static NSString *versionNumber = @"1.15";
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self.fliteController say:@"Hello happy world!" withVoice:self.slt];
     
     menuVisible = YES;
     iconsVisible = YES;
