@@ -19,6 +19,10 @@
     "exerciseArray": [
         {
 	    "exnum": "1",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
@@ -33,6 +37,10 @@
         },
         {
 	    "exnum": "2",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
@@ -47,6 +55,10 @@
         },
         {
 	    "exnum": "3",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
             "oldPrompt": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
@@ -61,6 +73,10 @@
         },
         {
 	    "exnum": "4",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
             "oldPrompt": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
@@ -75,6 +91,10 @@
         },
         {
 	    "exnum": "5",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
@@ -90,6 +110,10 @@
         },
         {
 	    "exnum": "6",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
@@ -105,6 +129,10 @@
         },
         {
             "exnum": "7",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "oldPrompt": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
@@ -120,6 +148,10 @@
         },
         {
 	    "exnum": "8",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "oldPrompt": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
@@ -135,6 +167,10 @@
         },
         {
 	    "exnum": "9",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
@@ -149,6 +185,10 @@
         },
         {
 	    "exnum": "10",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
@@ -163,6 +203,10 @@
         },
         {
             "exnum": "11",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
@@ -177,6 +221,10 @@
         },
         {
 	    "exnum": "12",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
@@ -190,7 +238,11 @@
             ]
         },
         {
-	    "exnum": "13",
+	    "exnum": "13",]
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
@@ -205,6 +257,10 @@
         },
         {
 	    "exnum": "14",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
@@ -219,6 +275,10 @@
         },
         {
 	    "exnum": "15",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
@@ -233,6 +293,10 @@
         },
         {
             "exnum": "16",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
@@ -247,6 +311,10 @@
         },
         {
 	    "exnum": "17",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. He is telling you that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "prompt": "The boy said that he will help you.  What goes in the speech bubble?",
@@ -259,6 +327,10 @@
         },
         {
 	    "exnum": "18",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. He is telling you that you will help him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "prompt": "The boy said that you will help him.  What goes in the speech bubble?",
@@ -271,6 +343,10 @@
         },
         {
 	    "exnum": "19",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boys are talking to you. They are telling you that they will help you. Look at the empty balloon over the boys. What words do the boys use? Type the words that go into the balloon.",
             "answers": [
@@ -283,6 +359,10 @@
         },
         {
 	    "exnum": "20",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boys are talking to you. They are telling you that you will help them. Look at the empty balloon over the boys. What words do the boys use? Type the words that go into the balloon.",
             "answers": [
@@ -295,6 +375,10 @@
         },
         {
 	    "exnum": "21",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. He is telling you that he will help the girl. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "answers": [
@@ -307,6 +391,10 @@
         },
         {
             "exnum": "22",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to you. He is telling you that the girl will help him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "answers": [
@@ -319,6 +407,10 @@
         },
         {
 	    "exnum": "23",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to you. She is telling you that she will help the boy. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon.",
             "answers": [
@@ -331,6 +423,10 @@
         },
         {
             "exnum": "24",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The girl is talking to you. She is telling you that the boy will help her. Look at the empty balloon over the girl. What words does the girl use? Type the words that go into the balloon. ",
             "answers": [
@@ -343,6 +439,10 @@
         },
         {
 	    "exnum": "25",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. He is telling her that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon. ",
             "answers": [
@@ -355,6 +455,10 @@
         },
         {
 	    "exnum": "26",
+            "verbWords": [
+                "will",
+                "help"
+            ],
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. He is telling her that you will help him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "answers": [
@@ -440,7 +544,6 @@
     ],
     "verbWords": [
         "will",
-        "help",
-        "call"
+        "help"
     ]
 }
