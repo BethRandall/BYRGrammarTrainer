@@ -338,7 +338,7 @@
              "answers": [
                 "I will help you."
             ],
-            "oralprompt": "sounds/prompt_1.m4a",
+            "oralprompt": "The boy said that he will help you.",
             "lessonVideo": "gt_videos/transportation_theme_videos/1_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -355,7 +355,7 @@
             "answers": [
                 "you will help me."
             ],
-            "oralprompt": "sounds/prompt_2.m4a",
+            "oralprompt": "The boy said that he will help you.",
             "lessonVideo": "gt_videos/transportation_theme_videos/2_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -371,7 +371,7 @@
             "answers": [
                 "we will help you."
             ],
-            "oralprompt": "sounds/prompt_3.m4a",
+            "oralprompt": "The boys said that they will help you.",
             "prompt": "The boys said that they will help you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/3_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -388,7 +388,7 @@
             "answers": [
                 "you will help us."
             ],
-            "oralprompt": "sounds/prompt_4.m4a",
+            "oralprompt": "The boys said that you will help them.",
             "prompt": "The boys said that you will help them.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/4_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -405,7 +405,7 @@
             "answers": [
                 "I will help her."
             ],
-            "oralprompt": "sounds/prompt_5.m4a",
+            "oralprompt": "The boy said that he will help the girl.",
             "prompt": "The boy said that he will help the girl.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/5_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -422,7 +422,7 @@
             "answers": [
                 "she will help me."
             ],
-            "oralprompt": "sounds/prompt_6.m4a",
+            "oralprompt": "The boy said that the girl will help him.",
             "prompt": "The boy said that the girl will help him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/6_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -439,7 +439,7 @@
             "answers": [
                 "I will help him."
             ],
-            "oralprompt": "sounds/prompt_7.m4a",
+            "oralprompt": "The girl said that she will help the boy.",
             "prompt": "The girl said that she will help the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/7_lesson_1.m4v",
             "balloonSpecs": "right, 100, 10"
@@ -456,7 +456,7 @@
             "answers": [
                 "he will help me."
             ],
-            "oralprompt": "sounds/prompt_8.m4a",
+            "oralprompt": "The girl said that the boy will help her.",
 	    "prompt": "The girl said that the boy will help her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/8_lesson_1.m4v",
             "balloonSpecs": "right, 100, 10"
@@ -473,7 +473,7 @@
             "answers": [
                 "I will help him_her."
             ],
-            "oralprompt": "sounds/prompt_9.m4a",
+            "oralprompt": "The boy said that he will help you.",
 	    "prompt": "The boy said that he will help you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_1.m4v",
             "balloonSpecs": "right, 100, 10"
@@ -490,7 +490,7 @@
             "answers": [
                 "He_She will help me."
             ],
-            "oralprompt": "sounds/prompt_10.m4a",
+            "oralprompt": "The boy said that you will help him.",
             "prompt": "The boy said that you will help him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/10_lesson_1.m4v",
             "balloonSpecs": "right, 100, 10"
@@ -507,7 +507,7 @@
             "answers": [
                 "I will help him_her."
             ],
-            "oralprompt": "sounds/prompt_11.m4a",
+            "oralprompt": "The girl said that she will help you.",
             "prompt": "The girl said that she will help you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/11_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -524,7 +524,7 @@
             "answers": [
                 "He_She will help me."
             ],
-            "oralprompt": "sounds/prompt_12.m4a",
+            "oralprompt": "The girl said that you will help her.",
             "prompt": "The girl said that you will help her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/12_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -541,7 +541,7 @@
             "answers": [
                 "I will help you."
             ],
-            "oralprompt": "sounds/prompt_13.m4a",
+            "oralprompt": "The boy said that he will help the girl.",
             "prompt": "The boy said that he will help the girl.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/13_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -558,7 +558,7 @@
             "answers": [
                 "she will help me."
             ],
-            "oralprompt": "sounds/prompt_14.m4a",
+            "oralprompt": "The boy said that the girl will help him.",
             "prompt": "The boy said that the girl will help him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
@@ -575,7 +575,7 @@
             "answers": [
                 "I will help you."
             ],
-            "oralprompt": "sounds/prompt_15.m4a",
+            "oralprompt": "The girl said that she will help the boy.",
             "prompt": "The girl said that she will help the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/15_lesson_1.m4v",
             "balloonSpecs": "right, 100, 10"
@@ -592,7 +592,7 @@
             "answers": [
                 "you will help me."
             ],
-            "oralprompt": "sounds/prompt_16.m4a",
+            "oralprompt": "The girl said that the boy will help her.",
             "prompt": "The girl said that the boy will help her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_lesson_1.m4v",
             "balloonSpecs": "right, 100, 10"
