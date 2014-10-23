@@ -111,7 +111,8 @@ dotImageGreen.src = "img/greenDot.png";
 function pushPromptToRedo(exNum)
 {
     // promptsToRedo is a list of the exercises that were answered wrong.
-    // redoNumArray is a list of how many more times each exercise needs to be answered right.
+    // redoNumArray is a list of how many more times each exercise needs to be answered right.4
+    alert("inside pushPromptToRedo: ");
     var already_recorded = false;
     if( dotMatrix[exNum] != DOT_WRONG ) {
         // first, check whether this exercise is already on the list to redo.
@@ -123,12 +124,12 @@ function pushPromptToRedo(exNum)
             promptsToRedo.push(indexArray[exNum]); }}
     //alert("will set DOT_WRONG:  exNum: " + exNum);
     dotMatrix[exNum] = DOT_WRONG;
-    if (!already_recorded) {
-        redoNumArray[exNum] = redoNumArray[exNum] + numToRedo; }
+    if (!redoMode) {
+        redoNumArray[exNum] = numToRedo; }
     // if we were in redo mode, we need to add 1 to the number of times to redo, since it will be immediately decremented when
     // we get the exercise right.
-    if (already_recorded) {
-        redoNumArray[exNum] = redoNumArray[exNum] + 1; }
+    if (redoMode) {
+        redoNumArray[exNum] = numToRedo + 1; }
 }
 
 
@@ -552,10 +553,10 @@ function goToNextExercise()
 	{
 		if( dotMatrix[i] == DOT_CORRECT )
 		{ greenDotCounter++; } }
-	
+	alert("greenDotCounter: " + greenDotCounter + ", promptsToRedo.length:  " + promptsToRedo.length);
 	// If all the dots are green, then go to the congratulations page
     // BYR:  If all the dots are green, the lesson is finished.  Go on to the next lesson.
-	if( greenDotCounter >= theLesson.exerciseArray.length )
+	if((greenDotCounter >= theLesson.exerciseArray.length) || (promptsToRedo.length == 0))
 	{
         // For now we just exit out to the native side, but we should add some congratulatons here!
         //alert("found all green dots:  will go to next lesson: ");
@@ -569,14 +570,12 @@ function goToNextExercise()
 		// If the user is redoing the prompts he/she got wrong
 		if( redoMode )
 		{
-            // We know were already in redo mode
-            
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
-            //alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
-            //var promptsString = "";
-            //for (var i = 0; i < promptsToRedo.length; i++) {
-            //  promptsString += promptsToRedo[i] + ", "; }
-            //alert("Prompts to Redo:  " + promptsString);
+            alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
+            var promptsString = "";
+            for (var i = 0; i < promptsToRedo.length; i++) {
+                promptsString += promptsToRedo[i] + ", "; }
+            alert("Prompts to Redo:  " + promptsString);
             //if( currentExerciseNumber < promptsToRedo.length) BYR: nonsense!
             // advance through promptsToRedo; you may need to cycle back to beginning.  Remember each exercise must be done correctly twice!
             if (step < promptsToRedo.length) 
@@ -585,6 +584,7 @@ function goToNextExercise()
 				currentExerciseNumber++;
                 step++;
                 if (step == promptsToRedo.length) {
+                    //alert("about to set step to 0: ");
                     step = 0;
                 }}
 			else
@@ -597,8 +597,9 @@ function goToNextExercise()
 					{ dotMatrix[j] = DOT_INCOMPLETE; }
 				}
 				currentRedoPromptNumber = 0;
-				currentExerciseNumber = Number(promptsToRedo[0]) + 1;
+                currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
+                alert("HERMIT CRABS! currentExerciseNumber should be first to redo: " + currentExerciseNumber);
 			}
 		}
 		else
@@ -621,7 +622,8 @@ function goToNextExercise()
 					if( dotMatrix[j] == DOT_WRONG )
 					{ dotMatrix[j] = DOT_INCOMPLETE; } }
 				currentRedoPromptNumber = 0;
-				currentExerciseNumber = Number(promptsToRedo[0]) + 1;
+				currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
+                alert("current exercise number should be first to redo:  " + currentExerciseNumber);
                 step = 0;
 			}
 		}
@@ -834,14 +836,14 @@ function MetaDetermineFeedback()
                 // must redo the incorrect answer twice.
                 // decrement number of times the exercise must be redone.
                 var index = GetExNum();
-                //alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
+                alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
                 redoNumArray[index] = redoNumArray[index] - 1;
                 if (redoNumArray[index] <= 0) {
                     removed = promptsToRedo.splice(step, 1);
                     //alert("tempNum:  " + tempNum);
-                    if( dotMatrix[exNum] != DOT_WRONG )
-                    {
-                        dotMatrix[exNum] = DOT_CORRECT; }
+                    //if( dotMatrix[exNum] != DOT_WRONG )
+                    //{
+                        dotMatrix[exNum] = DOT_CORRECT; //}
                     if (promptsToRedo.length == 0) {
                         //alert("found empty promptsToRedo: will goToNextLesson");
                         //toNextLesson();
@@ -857,6 +859,7 @@ function MetaDetermineFeedback()
 		//if the answer is correct, move on to the next exercise
 		//####your code for moving on to the next exercise goes here!
         //alert("The answer is correct.");
+        // BYR:  what does this piece of code accomplish?
         else {
             if( dotMatrix[exNum] != DOT_WRONG )
             {
@@ -876,19 +879,22 @@ function MetaDetermineFeedback()
 		//if there are wrong words in the answer, the array wordButtonMarkingInfo tells you which words need to be in red
 		//####your button-changing code goes here!
         //alert("found wrong words feedback type.");
-        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
-        {
+        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
+    
+        //{
+        if (NotPolite(feedbackType)) {
             //alert("about to pushPromptToRedo: exNum:  " + exNum);
             pushPromptToRedo(exNum); }
         
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
+        //setWrongWordsRed(currentAnswerWords, tokenizedResponse);
         
-        var wrongAnswerNumbers = new Array();
+       var wrongAnswerNumbers = new Array();
         
         // If there is at least one answer word
         
-        if( currentAnswerWords.length != 0 )
+       if( currentAnswerWords.length != 0 )
         {
             for( var i = 0; i < wordButtonMarkingInfo.length; i++ ) {
                 for( var j = 0; j < tokenizedResponse.length; j++ ) {
@@ -903,7 +909,7 @@ function MetaDetermineFeedback()
                 $("#answer_" + wrongAnswerNumbers[k]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); // dark red
             }
         }
-    }
+    } 
 	if (feedbackType == "pronounAntecedentFeedback")
     {
 		var convertToFullNPList = wordButtonMarkingInfo[0];  //convertToFullNPList tells you which words need to be in red
@@ -1161,6 +1167,29 @@ function MetaDetermineFeedback()
                 $("#answerFeedbackBox p").append(","); }
         }
         $("#answerFeedbackBox p").append(".");
+    }
+}
+
+function setWrongWordsRed(currentAnswerWords, tokenizedREsponse) {
+
+    var wrongAnswerNumbers = new Array();
+
+    // If there is at least one answer word
+
+    if( currentAnswerWords.length != 0 )
+    {
+    for( var i = 0; i < wordButtonMarkingInfo.length; i++ ) {
+            for( var j = 0; j < tokenizedResponse.length; j++ ) {
+            // If the word in the user's answer and the wrong answer word matches
+            if( tokenizedResponse[j] == wordButtonMarkingInfo[i] ) {
+                // Then add the element number of the user's answer array into the wrongAnswerWords array
+                wrongAnswerNumbers.push(j); }}}
+    
+    // Change the background color of wrong words to red
+    for(var k = 0; k < wrongAnswerNumbers.length; k++)
+    {
+    $("#answer_" + wrongAnswerNumbers[k]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); // dark red
+    }
     }
 }
 

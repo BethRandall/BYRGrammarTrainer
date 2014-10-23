@@ -1404,7 +1404,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1438,6 +1438,55 @@
 			};
 			name = SentenceWeaver1.12;
 		};
+		141E110A19BCE1680033F9F7 /* SentenceWeaver1.16 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = SentenceWeaver1.16;
+		};
+		141E110B19BCE1680033F9F7 /* SentenceWeaver1.16 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F17676ED-19BE-47F2-88E1-AD4AC7ABC7FD";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = SentenceWeaver1.16;
+		};
 		143DE5CC199A6DDA0039D686 /* SentenceWeaver1.15 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1453,7 +1502,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1502,7 +1551,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1551,7 +1600,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1600,7 +1649,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1634,6 +1683,58 @@
 			};
 			name = SentenceWeaver1.10;
 		};
+		1495079719E2FA7D0004E23B /* SentenceWeaver1.18 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
+				"PROVISIONING_PROFILE[sdk=*]" = "a3ff298d-69b0-473e-a206-0c99c6ca51e4";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = SentenceWeaver1.18;
+		};
+		1495079819E2FA7D0004E23B /* SentenceWeaver1.18 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F17676ED-19BE-47F2-88E1-AD4AC7ABC7FD";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = SentenceWeaver1.18;
+		};
 		14AB57941906D6B700C8662A /* SentenceWeaver1.13 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1649,7 +1750,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1698,7 +1799,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1747,7 +1848,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1781,6 +1882,57 @@
 			};
 			name = SentenceWeaver1.9;
 		};
+		14EC641A19D89AB700049FDC /* SentenceWeaver1.17 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
+				"PROVISIONING_PROFILE[sdk=*]" = "a3ff298d-69b0-473e-a206-0c99c6ca51e4";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = SentenceWeaver1.17;
+		};
+		14EC641B19D89AB700049FDC /* SentenceWeaver1.17 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "F17676ED-19BE-47F2-88E1-AD4AC7ABC7FD";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = SentenceWeaver1.17;
+		};
 		5818617014AAAF2100DEA945 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1802,7 +1954,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1823,7 +1975,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "332916bd-5db8-487a-9fc3-224656619deb";
+				PROVISIONING_PROFILE = "383c2e86-7e49-4655-bc92-3fe63515c533";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1900,6 +2052,9 @@
 				14AB57941906D6B700C8662A /* SentenceWeaver1.13 */,
 				14B187EE19193FAD0002B495 /* SentenceWeaver1.14 */,
 				143DE5CC199A6DDA0039D686 /* SentenceWeaver1.15 */,
+				141E110A19BCE1680033F9F7 /* SentenceWeaver1.16 */,
+				14EC641A19D89AB700049FDC /* SentenceWeaver1.17 */,
+				1495079719E2FA7D0004E23B /* SentenceWeaver1.18 */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = SentenceWeaver1.15;
@@ -1917,6 +2072,9 @@
 				14AB57951906D6B700C8662A /* SentenceWeaver1.13 */,
 				14B187EF19193FAD0002B495 /* SentenceWeaver1.14 */,
 				143DE5CD199A6DDA0039D686 /* SentenceWeaver1.15 */,
+				141E110B19BCE1680033F9F7 /* SentenceWeaver1.16 */,
+				14EC641B19D89AB700049FDC /* SentenceWeaver1.17 */,
+				1495079819E2FA7D0004E23B /* SentenceWeaver1.18 */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = SentenceWeaver1.15;
