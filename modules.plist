@@ -262,18 +262,6 @@
 						<key>lessonNumber</key>
 						<integer>3</integer>
 						<key>lessonName</key>
-						<string>Lesson 1: Direct Speech</string>
-						<key>topic</key>
-						<string>New</string>
-						<key>loadFile</key>
-						<string>pn_lesson_1_gen.json</string>
-						<key>showMultipleChoice</key>
-						<string>NO</string>
-					</dict>
-					<dict>
-						<key>lessonNumber</key>
-						<integer>4</integer>
-						<key>lessonName</key>
 						<string>Lesson 2: Indirect Speech</string>
 						<key>topic</key>
 						<string>Multiple Choice</string>
@@ -284,25 +272,13 @@
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
-						<integer>5</integer>
+						<integer>4</integer>
 						<key>lessonName</key>
 						<string>Lesson 2: Indirect Speech</string>
 						<key>topic</key>
 						<string>Open Choice</string>
 						<key>loadFile</key>
 						<string>pn_lesson_2_open.json</string>
-					</dict>
-					<dict>
-						<key>lessonNumber</key>
-						<integer>6</integer>
-						<key>lessonName</key>
-						<string>Lesson 2: Indirect Speech</string>
-						<key>topic</key>
-						<string>New</string>
-						<key>loadFile</key>
-						<string>pn_lesson_2_gen.json</string>
-						<key>showMultipleChoice</key>
-						<string>NO</string>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
@@ -318,25 +294,13 @@
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
-						<integer>5</integer>
+						<integer>6</integer>
 						<key>lessonName</key>
 						<string>Lesson 3:Mixed</string>
 						<key>topic</key>
 						<string>Open Choice</string>
 						<key>loadFile</key>
 						<string>pn_lesson_3_open.json</string>
-						<key>showMultipleChoice</key>
-						<string>NO</string>
-					</dict>
-					<dict>
-						<key>lessonNumber</key>
-						<integer>6</integer>
-						<key>lessonName</key>
-						<string>Lesson 3:Mixed</string>
-						<key>topic</key>
-						<string>New</string>
-						<key>loadFile</key>
-						<string>pn_lesson_3.json</string>
 						<key>showMultipleChoice</key>
 						<string>NO</string>
 					</dict>

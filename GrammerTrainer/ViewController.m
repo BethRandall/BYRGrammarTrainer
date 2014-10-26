@@ -638,7 +638,7 @@ static NSString *versionNumber = @"1.18";
 }
 
 - (void)toSpeech:(NSString *)toSay {
-    
+    self.fliteController.duration_stretch = 1.8;
     [self.fliteController say:toSay withVoice:self.slt]; }
 
 - (void)viewDidLoad
