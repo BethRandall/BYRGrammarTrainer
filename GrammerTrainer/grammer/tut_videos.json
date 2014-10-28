@@ -1,0 +1,161 @@
+{
+    "lessonNumber": "0",
+    "lessonTopic": "Tutorial.",
+    "lessonType": "multiple_choice",
+        "exerciseArray": [
+        {
+            "exnum": "1",
+            "question": "What is this?",
+            "multipleChoice": [
+                "An arrow.",
+                "A square.",
+                "A triangle.",
+                "A rectangle."
+            ],
+            "answers": [
+                "it is an arrow.",
+                "it's an arrow.",
+                "this is an arrow.",
+                "that is an arrow.",
+                "that's an arrow.",
+                "an arrow."
+            ],
+            "morphemesList": [
+                [
+                    "arrow",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "an",
+                    "arrow"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "anNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": "",
+ 	    "lessonVideo": "gt_videos/transportation_theme_videos/instructions1-iPhone.m4v"
+        },
+        {
+            "exnum": "2",
+            "question": "What is this?",
+            "multipleChoice": [
+                "An oval.",
+                "A square.",
+                "A circle.",
+                "A rectangle."
+            ],
+            "answers": [
+                "it is an oval.",
+                "it's an oval.",
+                "this is an oval.",
+                "that is an oval.",
+                "that's an oval.",
+                "an oval."
+            ],
+            "morphemesList": [
+                [
+                    "oval",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "an",
+                    "oval"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [],
+            "functionButtons": [],
+            "subject": "anNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": "",
+            "lessonVideo": "gt_videos/transportation_theme_videos/instructions2-iPhone.m4v"
+        }
+    ]
+}
