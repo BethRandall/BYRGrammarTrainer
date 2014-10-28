@@ -297,6 +297,29 @@ function resetLesson() {
     }
 }
 
+function doesFileExist(urlToFile)
+{
+    try {
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', urlToFile, false);
+        xhr.send();
+        //alert("xhr status:  " + xhr.status);
+    }
+    catch(err) {
+        //alert("in doesFileExist: err:  will return false:  " + xhr.status + ", " + urlToFile);
+        return false;
+    }
+    if (xhr.status != 0) {
+        //alert("AARDVARK! in doesFileExist:  will return false:  " + xhr.status + ", " + urlToFile);
+        return false; }
+    else {
+        //alert("AARDVARK! in doesFileExist:  will return true:  " + xhr.status + ", " + urlToFile);
+        return true;
+    }
+    //return true;
+}
+
+
 function initUserInterface() {
     // NOTE: Must call resetLesson() or something else to init vars before calling this
     
@@ -326,12 +349,16 @@ function initUserInterface() {
     // NativeBridge.call("recordNative", ["initDataModel:",firstExercise.lessonVideo,"three"]);
     
     if(typeof currentExercise.lessonImage == "undefined") {
-        // Were talking videos...
+        // We're talking videos...
         var lessonFilePath = currentExercise.lessonVideo;
+        
         var posterFilePath = posterFilename(lessonFilePath);
+        
         //var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
         //document.getElementById('video').pause();
+        //alert("will get poster:  " + posterFilePath);
         $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
+        //alert("back from poster:");
         setVideo(currentExercise);
     }else {
         // This is a photo

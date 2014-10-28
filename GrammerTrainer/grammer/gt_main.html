@@ -255,7 +255,10 @@
 		    var pathArray = wholePath.split( '/' );
 		    var filename = pathArray.pop();
 		    var output = pathArray.join('/') + "/posters/" + filename.split('.')[0] + '.bmp';
-
+            if (!doesFileExist(output)) {
+                output = "gt_videos/transportation_theme_videos/posters/commingsoon.bmp";
+            }
+            alert("in posterFilename:  will return:  " + output);
 		    return output;
 		}
 
