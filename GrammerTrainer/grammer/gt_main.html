@@ -194,21 +194,7 @@
           
                 } else { document.write("error in myJsonTextToObject"); };
         }
-        
-        function myNextJsonTextToObject(myJSONtext) {
-            
-             if (myJSONtext.length > 0) {
-                theLesson = eval('(' + myJSONtext + ')');
-                //checkGender();
-                 //alert("PHOENIX in myJsonTexttoObject:  first lessonImage" + theLesson.exerciseArray[0].lessonImage);
-                 //myLoadImage(theLesson.exerciseArray[0].lessonImage);
-                 currentExercise = theLesson.exerciseArray[0];
-                 myLoadLessonImage();
-                 resetLesson();
-                 proceedNextLesson(currentExercise);
-               } else { document.write("error in myJsonTextToObject"); };
-        }
-        
+    
         function myLoadLocalJson(filename) {
             //alert("in myLoadLocalJson: " + filename);
             var xobj = new XMLHttpRequest();
@@ -221,20 +207,7 @@
             }
             xobj.send(null);
         }
-        
-        function myLoadNextJson(filename) {
-            //alert("in myLoadLocalJson: " + filename);
-            var xobj = new XMLHttpRequest();
-            
-            xobj.open('GET', filename, true);
-            xobj.onreadystatechange = function () {
-                if (xobj.readyState == 4) {
-                    var jsonTexto = xobj.responseText;
-                    myNextJsonTextToObject(jsonTexto); }
-            }
-            xobj.send(null);
-        }
-        
+               
        lessonName = queryString("lesson");
        //alert("lessonName is:  " + lessonName);
         
@@ -254,12 +227,10 @@
 		    // "gt_videos/transportation_theme_videos/poster/1_lesson_1.bmp"
 		    var pathArray = wholePath.split( '/' );
 		    var filename = pathArray.pop();
-		    var output = pathArray.join('/') + "/posters/" + filename.split('.')[0] + '.bmp';
+            var output = pathArray.join('/') + "/posters/" + filename.split('.')[0] + '.bmp';
             if (!doesFileExist(output)) {
-                output = "gt_videos/transportation_theme_videos/posters/commingsoon.bmp";
-            }
-            alert("in posterFilename:  will return:  " + output);
-		    return output;
+                output = "gt_videos/transportation_theme_videos/posters/commingsoon.bmp"; }
+            return output;
 		}
 
 		// 1. layoutDraggableWords(container, wordList, partOfSpeech) 

@@ -1124,13 +1124,6 @@ static NSString *versionNumber = @"1.18";
         }
         [self returnResult:callbackId args:gender,nil];
         
-    //}  else if ([functionName isEqualToString:@"doShowMultipleChoice"]) {
-        
-        //NSLog(@"Javascript: doShowMultipleChoice");
-        // Should return YES or NO to web side
-        
-        //[self returnResult:callbackId args:currentLesson_.showMultipleChoice,nil];
-      
     } else if ([functionName isEqualToString:@"printDebug"]) {
         
         NSString *oneArg = (NSString*)[args objectAtIndex:0];

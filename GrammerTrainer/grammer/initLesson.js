@@ -3,16 +3,6 @@
 
 var lessonName;
 
-function posterFilename(wholePath) {
-    // "gt_videos/transportation_theme_videos/1_lesson_1.m4v"
-    // "gt_videos/transportation_theme_videos/poster/1_lesson_1.bmp"
-    var pathArray = wholePath.split( '/' );
-    var filename = pathArray.pop();
-    var output = pathArray.join('/') + "/posters/" + filename.split('.')[0] + '.bmp';
-    
-    return output;
-}
-
 // For each exercise, first set wordlists at the lesson level.  Then override with wordlists from the exercise level
 // as given in the .json files.
 
@@ -351,9 +341,7 @@ function initUserInterface() {
     if(typeof currentExercise.lessonImage == "undefined") {
         // We're talking videos...
         var lessonFilePath = currentExercise.lessonVideo;
-        
         var posterFilePath = posterFilename(lessonFilePath);
-        
         //var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
         //document.getElementById('video').pause();
         //alert("will get poster:  " + posterFilePath);

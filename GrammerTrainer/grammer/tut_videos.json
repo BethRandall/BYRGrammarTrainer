@@ -1,117 +1,58 @@
 {
-    "lessonNumber": "0",
-    "lessonTopic": "Tutorial Videos",
-    "lessonType": "multiple_choice",
-    "subjectMasteryLimit": "2",
     "exerciseArray": [
-            {
+                      {
                       "exnum": "1",
-                    
-                      "question": "What is this?",
-                      "prompt": "Drag and drop 'next' to continue.",
-                     "answers": [
-                                 "next.",
-                    ],
-                      "morphemesList": [
-                                        [
-                                         "arrow",
-                                         ""
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "an",
-                                           "arrow"
-                                           ]
-                                          ],
-                      "unneededWords": [
-                                        "one"
-                                        ],
-                      "nounWords": [
+                      "timeCaption": "Now",
+                      "question": "The boy is talking to you. He is telling you that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
+                        "answers": [
                                     "next"
-                                    ],
-                      "adjectiveWords": [],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "it",
-                                       "this",
-                                       "that",
-                                       "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "anNSg",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": "",
-                     "lessonVideo": "gt_videos/transportation_theme_videos/instructions1_iPhone.m4v"
-                     
+                                  ],
+                      "multipleChoice": [
+                                         
+                                         ],
+                      "unneededWords": [
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that"
+                                        ],
+                      "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/instructions1_iPhone.m4v",
+                      
                       },
                       {
                       "exnum": "2",
-                     
-                      "question": "What is this?",
-                      "prompt": "Drag and drop 'next' to continue",
+                      "timeCaption": "Now",
+                      "question": "The boy is talking to you. He is telling you that he will help the girl. Look at the empty balloon over the boy. What words does the boy use?Type the words that go into the balloon.",
+                      "multipleChoice": [
+                                         ],
                       "answers": [
-                                  "next."
+                                  "next"
                                   ],
-                      "morphemesList": [
-                                        [
-                                         "oval",
-                                         ""
-                                         ]
-                                        ],
-                      "articleNounList": [
-                                          [
-                                           "an",
-                                           "oval"
-                                           ]
-                                          ],
                       "unneededWords": [
-                                        "one"
+                                        "use",
+                                        "uses",
+                                        "word",
+                                        "words",
+                                        "saying",
+                                        "telling",
+                                        "that",
+                                        "girl"
                                         ],
-                      "nounWords": [
-                                   "next"
-                                    ],
-                      "adjectiveWords": [],
-                      "verbWords": [
-                                    "is",
-                                    "are"
-                                    ],
-                      "pronounWords": [
-                                       "it",
-                                       "this",
-                                       "that",
-                                       "they",
-                                       "these",
-                                       "those"
-                                       ],
-                      "prepositionWords": [],
-                      "functionButtons": [],
-                      "subject": "anNSg",
-                      "pronounNounLists": [],
-                      "specialWordsList": [],
-                      "specialWordsTriggers": [],
-                      "subjectRequest": [],
-                      "replaceSubject": [],
-                      "startWords": [],
-                      "untokenizedAnswersList": [],
-                      "saidFrame": "",
-                      "quote": "",
-                      "timeCaption": "",
-                       "lessonVideo": "gt_videos/transportation_theme_videos/instructions2_iPhone.m4v"
+                      "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/instructions2_iPhone.m4v",
+                      
                       }
-                      ]
+                 
+                       ],
+    "pronounWords": [
+                     "next"
+                    ],
+    "verbWords": [
+                  "will",
+                  "help"
+                  ]
 }
