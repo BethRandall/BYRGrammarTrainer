@@ -865,9 +865,9 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "pronounAntecedentFeedback")
     {
-        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        {
-            pushPromptToRedo(exNum); }
+        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if (NotPolite(feedbackType))
+            { pushPromptToRedo(exNum); }
 		var convertToFullNPList = wordButtonMarkingInfo[0];  //convertToFullNPList tells you which words need to be in red
 		var convertToPronounList = wordButtonMarkingInfo[1]; //convertToPronounList tells you which words need to be in orange
 		//####your button-changing code goes here!
@@ -904,9 +904,10 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "morphologyFeedback")
     {
-        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        {
-            pushPromptToRedo(exNum); }
+        //alert("morphologyFeedback:");
+        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if(NotPolite(feedbackType))
+            { pushPromptToRedo(exNum); }
         
 		var wrongForms = wordButtonMarkingInfo[0];  //wrongForms tell you which buttons need to be in orange ("is" instead of "are")
 		var wrongEndings = wordButtonMarkingInfo[1]; //wrongEndings tells you which buttons need the ending to be in red (for example girl<red>s</red>)
@@ -1002,9 +1003,9 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "articleFeedback")
     {
-        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        {
-            pushPromptToRedo(exNum); }
+        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if (NotPolite(feedbackType))
+            { pushPromptToRedo(exNum); }
 		var nounWithWrongArticleList = wordButtonMarkingInfo[0];  //nounWithWrongArticleList tells you which buttons need to be in red
 		var nounMissingAnArticleList = wordButtonMarkingInfo[1]; //nounMissingAnArticleList tells you which buttons need to be in orange
 		//####your button-changing code goes here!
@@ -1049,9 +1050,9 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "strandedArticle")
     {
-        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        {
-            pushPromptToRedo(exNum); }
+        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if (NotPolite(feedbackType) )
+            { pushPromptToRedo(exNum); }
 		var strandedArticle = wordButtonMarkingInfo[0];  //tells you which word needs to be in red
 		var articleIndex = wordButtonMarkingInfo[1]; //tells you which position this word has in the sequence of words that the user inputted (starts at 0)
 		//####your button-changing code goes here!
@@ -1070,9 +1071,9 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "syntaxFeedback")
     {
-        if( dotMatrix[exNum] != DOT_CORRECT )
-        {
-            pushPromptToRedo(exNum); }
+        //if( dotMatrix[exNum] != DOT_CORRECT )
+        //{
+            pushPromptToRedo(exNum); //}
 
 		var orderIndeces = wordButtonMarkingInfo; //orderIndeces gives you pairs of starting and ending points for word sequences that need to be in red
         //the lowest index is 0
@@ -1104,9 +1105,9 @@ function MetaDetermineFeedback()
         var missingWordsList = wordButtonMarkingInfo;
         //alert("Missing words: " + missingWordsList);
         
-        if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        {
-            pushPromptToRedo(exNum); }
+        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
+        if( NotPolite(feedbackType) )
+        { pushPromptToRedo(exNum); }
                     
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
