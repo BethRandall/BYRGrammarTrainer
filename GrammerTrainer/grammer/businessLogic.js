@@ -818,7 +818,9 @@ function MetaDetermineFeedback()
                 redoNumArray[index] = redoNumArray[index] - 1;
                 if (redoNumArray[index] <= 0) {
                     removed = promptsToRedo.splice(step, 1);
-                    dotMatrix[exNum] = DOT_CORRECT; 
+                    //dotMatrix[exNum] = DOT_CORRECT;
+                    dotMatrix[index] = DOT_CORRECT;
+                    saveProgramState();
                     if (promptsToRedo.length == 0) {
                         //alert("found empty promptsToRedo: will goToNextLesson");
                         //toNextLesson();

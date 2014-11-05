@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "SentenceWeaver1.21"
+      buildConfiguration = "SentenceWeaver1.22"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
@@ -80,8 +80,8 @@
       buildConfiguration = "SentenceWeaver1.20">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "SentenceWeaver1.21"
-      customArchiveName = "SentenceWeaver1.21"
+      buildConfiguration = "SentenceWeaver1.22"
+      customArchiveName = "SentenceWeaver1.22"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
