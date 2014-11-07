@@ -457,7 +457,7 @@ function backDoor() {
     backDoorUpdateExercise(currentExerciseNumber);
     return true;
 }
-
+/*
 // This function is used by encrypted code INTENGINEAP_NEW_E.js
 function Noun(word)
 {
@@ -465,9 +465,10 @@ function Noun(word)
     if (Member(GetRoot(word), nounArray)) return true;
     else return false;
 }
+ */
 
 // This function is used by encrypted code INTENGINEAP_NEW_E.js
-function SuppletiveSets()
+/*function SuppletiveSets()
 {
     var suppletiveSets = new Array();
     suppletiveSets[0] = new Array("be", "is", "are", "am", "was", "were");
@@ -475,12 +476,13 @@ function SuppletiveSets()
     suppletiveSets[2] = new Array("she", "her", "hers");
     suppletiveSets[3] = new Array("they", "them", "their");
     suppletiveSets[4] = new Array("have", "has");
+    suppletiveSets[5] = new Array("I", "me");
     return suppletiveSets;
     // …
     // for irregular verbs (including those only irregular in their spelling), comparative adjectives and pronouns (nominative, accusative, possessive,
     // absolute possessive).  The first member should always be the default root form (nominative/simple present/singular/absolutive)
-}
-
+}*/
+/*
 // This function is used by encrypted code INTENGINEAP_NEW_E.js
 function ParaphraseSets()
 {
@@ -510,13 +512,16 @@ function ParaphraseSets()
     // …
     // A list of paraphraseSets for synonymous stems like may/might or alternative spellings (e.g. of British or American English)
 }
+ */
 
+/*
 // This function is used by encrypted code INTENGINEAP_NEW_E.js
 function MajorWords()
 {
     var majorWords = new Array("it", "they", "them", "this", "that", "these", "those", "have", "has", "is", "are", "point", "one", "circle", "square", "triangle", "rectangle", "oval", "elipse", "diamond", "shape", "dot", "spot", "stripe", "top", "bottom", "high", "low", "up", "down", "right", "left", "middle", "inside", "outside", "front", "behind", "corner", "edge", "blue", "red", "green", "yellow", "orange", "purple", "color", "colour", "dark", "light", "black", "gray", "grey", "small", "little", "big", "large", "long", "short", "tall", "thin", "narrow", "medium", "medium-size", "medium-sized", "mid-size", "mid-sized",  "medium size", "medium sized", "mid size", "mid sized", "close", "near", "farther", "further", "all", "except", "except for", "beside", "besides", "save", "but", "only", "just", "each", "every", "some", "none", "no", "neither", "both", "by", "girl", "boy", "call", "help");
     return majorWords;
 }
+ */
 
 function toNextLesson() {
     jitterNext = true;
@@ -766,7 +771,9 @@ function MetaDetermineFeedback()
     //alert("in MetaDetermineFeedback: ");
     
 	var exNum = GetExNum();
+    //alert("back from GetExNum:  " + exNum);
     var currentExercise = new GetExercise(exNum); //see function below
+    //alert("about to GetScore:");
     
 	var score = GetScore(); //see function below
     //alert("back from GetScore: " + score);
