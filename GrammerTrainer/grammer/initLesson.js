@@ -338,6 +338,7 @@ function initUserInterface() {
     // Load the video
     // NativeBridge.call("recordNative", ["initDataModel:",firstExercise.lessonVideo,"three"]);
     
+    $("#nextButton").hide();
     if(typeof currentExercise.lessonImage == "undefined") {
         // We're talking videos...
         var lessonFilePath = currentExercise.lessonVideo;
@@ -345,7 +346,22 @@ function initUserInterface() {
         //var testStr = "<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>";
         //document.getElementById('video').pause();
         //alert("will get poster:  " + posterFilePath);
-        $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
+        if ((currentExercise.videoFormat != "undefined") && (currentExercise.videoFormat == "large"))
+        {
+           /* $("#big_video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"1028\" height=\"768\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>"); */
+             $("#big_video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"936\" height=\"699\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
+            $("#questionContainer").hide();
+            $("#answerContainer").hide();
+            $("#selectedAnswerList").hide();
+            $("#answerCategoryTabContainer").hide();
+            $("#progressContainer").hide();
+            $("#nextButton").html("<a href=\"javascript:goToNextVideo()\">Next</a>");
+            $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
+            $("#nextButton").show();
+            
+        }
+        else {
+            $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>"); }
         //alert("back from poster:");
         setVideo(currentExercise);
     }else {

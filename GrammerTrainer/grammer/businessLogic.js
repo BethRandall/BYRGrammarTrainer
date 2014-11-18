@@ -529,6 +529,18 @@ function toNextLesson() {
     NativeBridge.call("goToNextLesson");
 }
 
+function goToNextVideo() {
+    currentExerciseNumber++;
+    step++;
+    //alert("currentExerciseNumber:  " + currentExerciseNumber + ", exerciseArray.length:  " + theLesson.currentExerciseArray.length);
+    if(currentExerciseNumber > theLesson.exerciseArray.length) {
+        toNextLesson(); }
+    else {
+        updateExercise();
+    }
+
+}
+
 // Moves to the next exercise when the user clicks the active next button
 function goToNextExercise()
 {
@@ -846,9 +858,11 @@ function MetaDetermineFeedback()
         //alert("The answer is correct.");
         else { if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
-        /*
+        
         $("#answerFeedbackBox p").html("Your answer is correct!");
         // Turn on the next button
+        /*
+        alert("will turn on next button");
         $("#nextButton").html("<a href=\"javascript:goToNextExercise()\">Next</a>");
         $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
         */

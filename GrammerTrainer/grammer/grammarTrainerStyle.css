@@ -282,6 +282,13 @@ p.speechRight:after
 	left: 240px;
 }
 
+#bigVideoContainer
+{
+    position: fixed;
+    top: 0px;
+    left: 60px;
+}
+
 #multipleChoiceContainer
 {
 	position: fixed;
@@ -553,7 +560,8 @@ p.speechRight:after
 }
 
 #answerCategoryTabContainer ul li.active {
-	background:#7f3b1b url(img/canvasTextureTransparent.png) repeat; /* medium brown */
+	background:#7f3b1b url(img/canvasTextureTransparent.png) repeat; 
+    /* medium brown */
 	color:#ffffff;
 	z-index:3;
 	position:relative;
@@ -562,6 +570,8 @@ p.speechRight:after
 	-webkit-box-shadow:0 3px 2px rgba(0,0,0,0.4), inset -3px -3px 3px rgba(0,0,0,0.2);
 }
 
+
+/* This holds the list of draggable words. */
 #selectedAnswerList
 {
 	background:#7f3b1b url(img/canvasTextureTransparent.png) repeat;
@@ -618,15 +628,27 @@ p.speechRight:after
 }
 
 /* Next Button */
+/*
+#nextButton{
+	float:right;
+	width:55px;
+	height:100px;
+	position:fixed;
+	left:914px;
+	top:25px;
+}
+*/
 
 #nextButton{
 	float:right;
 	width:55px;
 	height:25px;
 	position:fixed;
-	left:912px;
+	left:20px;
 	top:25px;
 }
+
+
 
 /* Menu Button */
 
@@ -709,6 +731,13 @@ For when exercise is completed, next button is active
     left: 50px;
     top: 100 px;
 	}
+    
+#big_video_box{
+    position: absolute;
+    left: 70px;
+    top: 0px;
+}
+
 #video {
 	background-color: #000;
 }

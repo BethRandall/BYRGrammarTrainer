@@ -20,6 +20,7 @@
                                         "that"
                                         ],
                       "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
+                      "videoFormat": "large",
                       "lessonVideo": "gt_videos/transportation_theme_videos/instructions1_iPhone.m4v",
                       
                       },
@@ -43,6 +44,7 @@
                                         "girl"
                                         ],
                       "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
+                      "videoFormat": "large",
                       "lessonVideo": "gt_videos/transportation_theme_videos/instructions2_iPhone.m4v",
                       
                       }
