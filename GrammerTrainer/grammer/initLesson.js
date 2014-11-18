@@ -339,6 +339,7 @@ function initUserInterface() {
     // NativeBridge.call("recordNative", ["initDataModel:",firstExercise.lessonVideo,"three"]);
     
     $("#nextButton").hide();
+    $("#leftExitButton").hide();
     if(typeof currentExercise.lessonImage == "undefined") {
         // We're talking videos...
         var lessonFilePath = currentExercise.lessonVideo;
@@ -358,7 +359,9 @@ function initUserInterface() {
             $("#nextButton").html("<a href=\"javascript:goToNextVideo()\">Next</a>");
             $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
             $("#nextButton").show();
-            
+            $("#leftExitButton").html("<a href=\"javascript:showMenu()\">Exit</a>");
+            $("#leftExitButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
+            $("#leftExitButton").show();
         }
         else {
             $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>"); }

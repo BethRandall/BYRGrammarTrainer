@@ -661,6 +661,18 @@ p.speechRight:after
 	top:260px;
 }
 
+/* Exit Button located on left of screen*/
+
+#leftExitButton{
+	float:right;
+	width:55px;
+	height:25px;
+	position:fixed;
+	left:20px;
+	top:80px;
+}
+
+
 /*
 Note that a and a:hover are placeholders.
 
@@ -705,6 +717,26 @@ For when exercise is completed, next button is active
 	
 	-webkit-box-shadow: 0 0 0 transparent;
 }
+
+#leftExitButton a
+{
+	display:block;
+	background:#08324f;
+	border-radius: 10px;
+	color: #26527c;
+	position: relative;
+	padding:12px 10px 8px;
+	height: 25px;
+	width: 55px;
+	text-align:center;
+	font-size: 16px;
+	font-stretch: condensed;
+	font-weight: bold;
+	text-decoration: none;
+	
+	-webkit-box-shadow: 0 0 0 transparent;
+}
+
 
 #menuButton a
 {

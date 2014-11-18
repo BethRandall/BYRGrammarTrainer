@@ -28,8 +28,10 @@ $(document).ready(function(){
                   $("#answerContainer #deleteButton").click(function(){ eraseAnswer(); });
                   
                   // Menu button labelled "Exit"
-                  //$("#menuButton").click(function(){ showMenu(); });
                   $("#menuButton").click(function(){ exitLesson(); });
+                  
+                  // button labelled "Exit" on left-hand side
+                  $("#leftExitButton").click(function(){ exitLesson(); });
                   
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
@@ -393,12 +395,12 @@ function eraseAnswer()
 function saySomething() {
     NativeBridge.call("toSpeech", [currentExercise.oralprompt]); }
 
-/*
+
 function showMenu()
 {
 	//alert("will call showMenu:");
     NativeBridge.call("showMenu"); }
- */
+
 
 function exitLesson()
 {
@@ -859,14 +861,8 @@ function MetaDetermineFeedback()
         else { if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
         
-        $("#answerFeedbackBox p").html("Your answer is correct!");
-        // Turn on the next button
-        /*
-        alert("will turn on next button");
-        $("#nextButton").html("<a href=\"javascript:goToNextExercise()\">Next</a>");
-        $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
-        */
-         return;
+        //$("#answerFeedbackBox p").html("Your answer is correct!");
+        return;
     }
     
     if ((feedbackType == "wrongWords")|| (feedbackType == "wrongWordsPolite"))
