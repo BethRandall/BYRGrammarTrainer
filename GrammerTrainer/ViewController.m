@@ -924,8 +924,7 @@ static NSString *versionNumber = @"1.23";
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)goToNextLesson
 {
-   
-    [self exitLesson];
+    //[self exitLesson];
     //NSLog(@"inside goToNextLesson:  after self exitLesson: ");
     //NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
  

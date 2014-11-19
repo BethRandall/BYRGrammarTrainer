@@ -4,6 +4,7 @@ function BlockMove(event)
 	event.preventDefault();
 }
 
+
 $(document).ready(function(){
                   // Grammar tab functionality: shows one category and hides others
                   // if there is no noun list, show pronoun list.  Code is in initLesson.js.
@@ -31,12 +32,13 @@ $(document).ready(function(){
                   $("#menuButton").click(function(){ exitLesson(); });
                   
                   // button labelled "Exit" on left-hand side
-                  $("#leftExitButton").click(function(){ exitLesson(); });
+                  $("#leftExitButton").click(function(){ showMenu(); });
                   
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
                   
 });
+ 
 
 
 // Lesson Number
@@ -405,6 +407,7 @@ function showMenu()
 function exitLesson()
 {
 	//alert("will call exitLesson:");
+    saveProgramState();
     NativeBridge.call("exitLesson"); }
 
 
@@ -459,75 +462,14 @@ function backDoor() {
     backDoorUpdateExercise(currentExerciseNumber);
     return true;
 }
-/*
-// This function is used by encrypted code INTENGINEAP_NEW_E.js
-function Noun(word)
-{
-    var nounArray = new Array("one", "circle", "square", "triangle", "rectangle", "oval", "elipse", "diamond", "shape", "dot", "spot", "stripe", "top", "bottom", "right", "left", "middle", "inside", "outside", "front", "corner", "edge", "arrow", "girl", "boy");
-    if (Member(GetRoot(word), nounArray)) return true;
-    else return false;
-}
- */
-
-// This function is used by encrypted code INTENGINEAP_NEW_E.js
-/*function SuppletiveSets()
-{
-    var suppletiveSets = new Array();
-    suppletiveSets[0] = new Array("be", "is", "are", "am", "was", "were");
-    suppletiveSets[1] = new Array("he", "him", "his");
-    suppletiveSets[2] = new Array("she", "her", "hers");
-    suppletiveSets[3] = new Array("they", "them", "their");
-    suppletiveSets[4] = new Array("have", "has");
-    suppletiveSets[5] = new Array("I", "me");
-    return suppletiveSets;
-    // …
-    // for irregular verbs (including those only irregular in their spelling), comparative adjectives and pronouns (nominative, accusative, possessive,
-    // absolute possessive).  The first member should always be the default root form (nominative/simple present/singular/absolutive)
-}*/
-/*
-// This function is used by encrypted code INTENGINEAP_NEW_E.js
-function ParaphraseSets()
-{
-    var paraphraseSets = new Array();
-    paraphraseSets[0] = new Array("under", "underneath", "beneath", "below");
-    paraphraseSets[1] = new Array("above", "over");
-    paraphraseSets[2] = new Array("in", "inside");
-    paraphraseSets[3] = new Array("small", "little");
-    paraphraseSets[4] = new Array("smaller", "littler");
-    paraphraseSets[5] = new Array("smallest", "littlest");
-    paraphraseSets[6] = new Array("big", "large");
-    paraphraseSets[7] = new Array("bigger", "larger");
-    paraphraseSets[8] = new Array("biggest", "largest");
-    paraphraseSets[9] = new Array(".", "!");
-    paraphraseSets[10] = new Array("medium", "medium-sized", "medium-size", "mid-size", "mid-sized", "medium sized", "medium size", "mid size", "mid sized");
-    paraphraseSets[11] = new Array("oval", "elipse");
-    paraphraseSets[12] = new Array("except", "except for", "but", "besides", "save");
-    paraphraseSets[13] = new Array("between", "in between");
-    paraphraseSets[14] = new Array("close", "near");
-    paraphraseSets[15] = new Array("farther", "further");
-    paraphraseSets[16] = new Array("gray", "grey");
-    paraphraseSets[17] = new Array("color", "colour");
-    paraphraseSets[18] = new Array("dot", "spot");
-    paraphraseSets[19] = new Array("thin", "narrow");
-    paraphraseSets[20] = new Array("beside", "by");
-    return paraphraseSets;
-    // …
-    // A list of paraphraseSets for synonymous stems like may/might or alternative spellings (e.g. of British or American English)
-}
- */
-
-/*
-// This function is used by encrypted code INTENGINEAP_NEW_E.js
-function MajorWords()
-{
-    var majorWords = new Array("it", "they", "them", "this", "that", "these", "those", "have", "has", "is", "are", "point", "one", "circle", "square", "triangle", "rectangle", "oval", "elipse", "diamond", "shape", "dot", "spot", "stripe", "top", "bottom", "high", "low", "up", "down", "right", "left", "middle", "inside", "outside", "front", "behind", "corner", "edge", "blue", "red", "green", "yellow", "orange", "purple", "color", "colour", "dark", "light", "black", "gray", "grey", "small", "little", "big", "large", "long", "short", "tall", "thin", "narrow", "medium", "medium-size", "medium-sized", "mid-size", "mid-sized",  "medium size", "medium sized", "mid size", "mid sized", "close", "near", "farther", "further", "all", "except", "except for", "beside", "besides", "save", "but", "only", "just", "each", "every", "some", "none", "no", "neither", "both", "by", "girl", "boy", "call", "help");
-    return majorWords;
-}
- */
 
 function toNextLesson() {
     jitterNext = true;
     didJitter = false;
+    saveProgramState();
+    // You must call "exitLesson" from inside businessLogic to get the happyFace to show up between lessons.
+    // You won't see the happyFace if you call "exitLesson" from inside "goToNextLesson".
+    NativeBridge.call("exitLesson");
     NativeBridge.call("goToNextLesson");
 }
 
@@ -858,7 +800,10 @@ function MetaDetermineFeedback()
 		//if the answer is correct, move on to the next exercise
 		//####your code for moving on to the next exercise goes here!
         //alert("The answer is correct.");
-        else { if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }}
+        else { // not in redo mode.
+            dotMatrix[exNum] = DOT_CORRECT;
+            saveProgramState(); }
+       // else { if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
         
         //$("#answerFeedbackBox p").html("Your answer is correct!");
