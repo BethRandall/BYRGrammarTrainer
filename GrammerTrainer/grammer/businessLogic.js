@@ -32,7 +32,7 @@ $(document).ready(function(){
                   $("#menuButton").click(function(){ exitLesson(); });
                   
                   // button labelled "Exit" on left-hand side
-                  $("#leftExitButton").click(function(){ showMenu(); });
+                  $("#leftExitButton").click(function(){ exitLesson(); });
                   
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
@@ -119,7 +119,7 @@ function pushPromptToRedo(exNum)
 
 function randomizeRedo() {
     //alert("inside randomizeRedo: ");
-    //BYR randomize here.
+    //BYR randomize redo list here.
     // usedDex will contain a list of indices used in the randomized array.
     var usedDex = new Array();
     var tempArray = new Array();
@@ -413,7 +413,7 @@ function exitLesson()
 
 function sendValues(a, b, c, d)
 {
-	// Send some values to the navtive side
+	// Send some values to the native side
 	// The send arg is an array of arguments
 	//for( var i = 0; i &lt; arguments.length; i++ ) {
     //    arguments[ i ] ;
@@ -442,7 +442,6 @@ function submitAnswer()
     //alert("about to update dot feedback matrix: ");
 	// Update the dot feedback matrix
 	updateDotFeedback();
-
 }
 
 // "backdoor" method for advancing to particular exercise; repeat an answer word the same number of times
@@ -459,7 +458,7 @@ function backDoor() {
         else { return false; } }
     //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
     currentExerciseNumber = currentAnswerWords.length - 1;
-    backDoorUpdateExercise(currentExerciseNumber);
+    backDoorUpdateExercise(currentAnswerWords.length - 1);
     return true;
 }
 
@@ -476,18 +475,17 @@ function toNextLesson() {
 function goToNextVideo() {
     currentExerciseNumber++;
     step++;
-    //alert("currentExerciseNumber:  " + currentExerciseNumber + ", exerciseArray.length:  " + theLesson.currentExerciseArray.length);
-    if(currentExerciseNumber > theLesson.exerciseArray.length) {
+    if((step + 1) > theLesson.exerciseArray.length) {
         toNextLesson(); }
     else {
         updateExercise();
     }
-
 }
 
 // Moves to the next exercise when the user clicks the active next button
 function goToNextExercise()
 {
+    //alert("inside goToNextExercise: ");
 	// Count all the green dots
 	var greenDotCounter = 0;
 	for( var i = 0; i < dotMatrix.length; i++ )
@@ -497,6 +495,7 @@ function goToNextExercise()
 	//alert("greenDotCounter: " + greenDotCounter + ", promptsToRedo.length:  " + promptsToRedo.length);
 	// If all the dots are green, then go to the congratulations page
     // BYR:  If all the dots are green, the lesson is finished.  Go on to the next lesson.
+    //alert("greenDotCounter:  " + greenDotCounter + ", redoMode: " + redoMode + ", theLesson.exerciseArray.length: " + theLesson.exerciseArray.length);
 	if(greenDotCounter >= theLesson.exerciseArray.length)
 	{
         // For now we just exit out to the native side, but we should add some congratulations here!
@@ -509,10 +508,10 @@ function goToNextExercise()
         // Not all the dots are green. Were either have not been through all the quesions, or we got some wrong. Determine which.
         // determine if we are in redoMode or if we should move to redoMode
 		// If the user is redoing the prompts he/she got wrong
+        //alert("about to check for redoMode: ");
 		if( redoMode )
 		{
             //Note: once your in the redoMode, we should be working off the promptsToRedo array instead of indexArray.
-            //alert("currentExerciseNumber: " + currentExerciseNumber + ", step:  " + step + ", promptsToRedo.length:  " + promptsToRedo.length);
             //var promptsString = "";
             //for (var i = 0; i < promptsToRedo.length; i++) {
               //  promptsString += promptsToRedo[i] + ", "; }
@@ -531,21 +530,18 @@ function goToNextExercise()
 			else
 			{
                 // All redo questions have now been answered once [BYR -- should be twice!]. But all dots are not green so stay in redo mode.
-				for( var j = 0; j < dotMatrix.length; j++ )
-				{
-                    // take all the wrong answers and move them to incomplete
-					if( dotMatrix[j] == DOT_WRONG )
-					{ dotMatrix[j] = DOT_INCOMPLETE; }
-				}
+                setDotWrongToIncomplete();
 				currentRedoPromptNumber = 0;
-                currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
+                currentExerciseNumber = Number(promptsToRedo[0]) + 1;
+                // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
 		}
 		else
 		{
 			// Check to see if all questions have been asked.
-            if( currentExerciseNumber < theLesson.exerciseArray.length)
+            //if( currentExerciseNumber < theLesson.exerciseArray.length)
+            if( (step + 1) < theLesson.exerciseArray.length)
 			{
                 // Nope. Were still on the first round. Advance to next question.
 				currentExerciseNumber++;
@@ -553,15 +549,10 @@ function goToNextExercise()
 			else
 			{
                 // All questions have now been answered once. But not all dots are green so enter redo mode.
-                
 				redoMode = true;
                 randomizeRedo();
-				for( var j = 0; j < dotMatrix.length; j++ )
-				{
-                    // take all the wrong answers and move them to incomplete
-					if( dotMatrix[j] == DOT_WRONG )
-					{ dotMatrix[j] = DOT_INCOMPLETE; } }
-				currentRedoPromptNumber = 0;
+                setDotWrongToIncomplete();
+                currentRedoPromptNumber = 0;
 				currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
@@ -571,6 +562,15 @@ function goToNextExercise()
 	// Update the page
     //alert("about to updateExercise: ");
 	updateExercise();
+}
+
+// take all the wrong answers and move them to incomplete
+function setDotWrongToIncomplete() {
+    for( var j = 0; j < dotMatrix.length; j++ )
+    {
+        if( dotMatrix[j] == DOT_WRONG )
+        { dotMatrix[j] = DOT_INCOMPLETE; } }
+    
 }
 
 function saveProgramState() {
@@ -607,6 +607,10 @@ function randomExercise(notThisOne) {
     // First save state
     saveProgramState();
     //alert("will set currentExercise:  randdex:  " + randdex);
+    if ((randdex >= theLesson.exerciseArray.length) || (randdex < 0)) {
+        alert("BONOBO cannot load exerciseNumber:  " + randdex + ", theLesson.length:  " + theLesson.exerciseArray.length);
+    }
+    //alert("BONOBO will load: randdex:  " + randdex);
     currentExercise = theLesson.exerciseArray[randdex];
     setCurrentExercise(currentExercise);
 }
@@ -621,6 +625,10 @@ function backDoorUpdateExercise(newExNum) {
     // First save state
     alert("backdoor to exercise " + (newExNum + 1));
     saveProgramState();
+    if ((newExNum >= theLesson.exerciseArray.length) || (exerciseNumber < 0)) {
+        alert("CANTALOUPE cannot load exerciseNumber:  " + newExNum + ", theLesson.length:  " + theLesson.exerciseArray.length);
+    }
+    
 
     currentExercise = theLesson.exerciseArray[newExNum];
     
@@ -645,8 +653,18 @@ function updateExercise()
             didJitter = true;
         } else {
             //alert("in updateExercise: will set currentExercise: step: " + step);
+            if ((promptsToRedo[step] >= theLesson.exerciseArray.length) || (promptsToRedo[step] < 0)) {
+                alert("DAFFODIL cannot load exerciseNumber:  " + promptsToRedo[step] + ", theLesson.length:  " + theLesson.exerciseArray.length);
+            }
             currentExercise = theLesson.exerciseArray[promptsToRedo[step]]; }
     }else{
+        if ((indexArray[step] >= theLesson.exerciseArray.length) || (indexArray[step] < 0)) {
+            alert("ELEPHANT cannot load exerciseNumber:  " + indexArray[step] + ", theLesson.length:  " + theLesson.exerciseArray.length);
+        }
+        if (step >= indexArray.length) {
+            alert("ELEPHANT step:  " + step);
+            alert("ELEPHANT will load: indexArray[step]:  " + indexArray[step]); }
+       
       currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
     setCurrentExercise(currentExercise);
@@ -655,36 +673,26 @@ function updateExercise()
 // Update the dot feedback matrix
 function updateDotFeedback()
 {
-	$("#dotContainer").html("");
-    
+	$("#dotContainer").html(""); 
     //alert("dotContainer: " + dotMatrix);
-	
 	for( var d = 0; d < dotMatrix.length; d++ )
-	{
-		if( (d % 6 == 0) && (d != 0) )
+	{ if( (d % 6 == 0) && (d != 0) )
 		{
 			$("#dotContainer").append("<br />");
 			if(dotMatrix[d] == DOT_INCOMPLETE)
-			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
 			else if(dotMatrix[d] == DOT_WRONG)
-			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
 			else
-			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
 		}
 		else
-		{
-			if(dotMatrix[d] == DOT_INCOMPLETE)
-			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
+		{ if(dotMatrix[d] == DOT_INCOMPLETE)
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
 			else if(dotMatrix[d] == DOT_WRONG)
-			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
 			else
-			{
-				$("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
 		}
 	}
 }
@@ -712,8 +720,7 @@ function NotPolite(theFeedbackType)
     //if(theFeedbackType.indexOf("polite") !== -1 && theFeedbackType.indexOf("Polite") !== -1)
     if (theFeedbackType == "subjectRequest") { return false; }
     if(theFeedbackType.indexOf("polite") == -1 && theFeedbackType.indexOf("Polite") == -1)
-    {
-        //alert("not polite: ");
+    { //alert("not polite: ");
         return true; }
     //alert("polite: ");
     return false;
@@ -771,6 +778,7 @@ function MetaDetermineFeedback()
 	if (feedbackType == "CorrectAnswer")
     {
         //alert("found correct answer:  redoMode:  " + redoMode + ", promptsToRedo.length: " + promptsToRedo.length + ", jitterNext: " + jitterNext);
+        //alert("found correct answer: ");
         if (redoMode) {
             if ((promptsToRedo.length > 1) || ((promptsToRedo.length == 1) && (jitterNext == false))) {
                 if (promptsToRedo.length == 1) { jitterNext = true; }
@@ -801,11 +809,11 @@ function MetaDetermineFeedback()
 		//####your code for moving on to the next exercise goes here!
         //alert("The answer is correct.");
         else { // not in redo mode.
+            //alert("will set DOT_CORRECT");
             dotMatrix[exNum] = DOT_CORRECT;
             saveProgramState(); }
        // else { if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
-        
         //$("#answerFeedbackBox p").html("Your answer is correct!");
         return;
     }
@@ -1154,6 +1162,10 @@ function GetExercise(exerciseNumber)
     
     var theCurrentExercise;
     
+    if ((exerciseNumber >= theLesson.exerciseArray.length) || (exerciseNumber < 0)) {
+        alert("AARDVARK cannot load exerciseNumber:  " + exerciseNumber + ", theLesson.length:  " + theLesson.exerciseArray.length);
+    }
+    //alert("AARDVARK will load:  exerciseNumber:  " + exerciseNumber);
     theCurrentExercise = theLesson.exerciseArray[exerciseNumber];
     
     if(typeof theCurrentExercise.multipleChoice != 'undefined') {

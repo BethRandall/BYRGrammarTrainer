@@ -71,7 +71,7 @@ function setMultipleChoiceBox(context) {
     $("#multipleChoiceBox").show();     
     $("#multipleChoiceBox #presentedChoices").html("");
     
-    //BYR randomize here.
+    //BYR randomize multiple choices here.
     var usedDex = new Array(); 
     // initialize usedDex with indices.
     for(var answerChoice = 0; answerChoice < choiceArray.length; answerChoice++) {
@@ -210,6 +210,7 @@ function myLoadLessonImage() {
 }
 
 function initDots() {
+    //alert("about to initDots: ");
     // Load the dots (the context needs to be the dotContainer element)
     $("#dotContainer").empty();
     for( var d = 0; d < dotMatrix.length; d++ )
@@ -227,11 +228,53 @@ function initDots() {
     }
 }
 
+function setIndexArray() {
+    
+    indexArray = new Array();
+    // Create an array of numbers in numerical order
+    for( var a = 0; a < theLesson.exerciseArray.length; a++ )
+    { indexArray.push(a); }
+
+    //BYR randomize here.
+    //alert("about to randomize: ");
+    // usedDex will contain a list of indices used in the randomized array.
+    var usedDex = new Array();
+    // initialize usedDex with indices.
+    for(var exerNum = 0; exerNum < theLesson.exerciseArray.length; exerNum++) {
+        usedDex[exerNum] = exerNum; }
+
+    // randomizing happens in this for loop.
+    for(var exerNum = 0; exerNum < theLesson.exerciseArray.length; exerNum++)
+    {
+        //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>");
+        var randdex =  Math.floor(Math.random()*usedDex.length);
+        var newranddex = usedDex[randdex];
+        // if you don't want to randomize the exercises, comment out the following line:
+        //indexArray[exerNum] = newranddex;
+        usedDex.splice(randdex, 1); }
+}
+
+function setDotArray() {
+    dotMatrix = new Array();
+    for( var c = 0; c < theLesson.exerciseArray.length; c++ )
+    { dotMatrix[c] = DOT_INCOMPLETE; }
+}
+
+function setRedoNumArray() {
+    redoNumArray = new Array();
+    // Create an array of numbers in numerical order
+    for( var a = 0; a < theLesson.exerciseArray.length; a++ )
+    { redoNumArray.push(0); }
+}
+
+
 function resetLesson() {
     //alert("in resetLesson: ");
     // Lesson Number
+    // BYR -- this variable is never used and should probably be deleted.
     currentLessonNumber = 1;
     // Exercise Number
+    // BYR -- I would like to get rid of this variable.
     currentExerciseNumber = 1;
     
     step = 0; // one-up for next exercise
@@ -243,6 +286,7 @@ function resetLesson() {
     
     // Redo mode
     redoMode = false;
+    //alert("in initLesson, resetLesson: ");
     // An array of incorrectly answered prompts to redo
     promptsToRedo = new Array();
     // Current redo prompt track
@@ -252,38 +296,9 @@ function resetLesson() {
     if(typeof theLesson == 'undefined') {
         alert("trouble downloading:  please try again");
     } else {
-        // NOTE: theLesson variables is populated by our <lesson>.json file
-      
-        indexArray = new Array();
-        // Create an array of numbers in numerical order
-        for( var a = 0; a < theLesson.exerciseArray.length; a++ )
-        { indexArray.push(a); }
-        
-        redoNumArray = new Array();
-        // Create an array of numbers in numerical order
-        for( var a = 0; a < theLesson.exerciseArray.length; a++ )
-        { redoNumArray.push(0); }
-        
-        //BYR randomize here.
-        // usedDex will contain a list of indices used in the randomized array.
-        var usedDex = new Array();
-        // initialize usedDex with indices.
-        for(var exerNum = 0; exerNum < theLesson.exerciseArray.length; exerNum++) {
-            usedDex[exerNum] = exerNum; }
-       
-        // randomizing happens in this for loop.
-        for(var exerNum = 0; exerNum < theLesson.exerciseArray.length; exerNum++)
-        {
-            //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>");
-            var randdex =  Math.floor(Math.random()*usedDex.length);
-            var newranddex = usedDex[randdex];
-            // if you don't want to randomize the exercises, comment out the following line:
-            //indexArray[exerNum] = newranddex;
-            usedDex.splice(randdex, 1); }
-        // Dot Array
-        dotMatrix = new Array();
-        for( var c = 0; c < theLesson.exerciseArray.length; c++ )
-        { dotMatrix[c] = DOT_INCOMPLETE; }
+        setRedoNumArray();
+        setIndexArray();
+        setDotArray();
     }
 }
 
@@ -309,6 +324,26 @@ function doesFileExist(urlToFile)
     //return true;
 }
 
+function removeGreenDotExercises() {
+    for (var i = 0; i < indexArray.length; i++) {
+        if (dotMatrix[indexArray[i]] == DOT_CORRECT) {
+            indexArray.splice(i, 1);
+            i -= 1;
+        }
+    }
+    // if indexArray is now empty, reset to full indexArray, with dotMatrix also reset.
+    if (indexArray.length == 0) {
+        setIndexArray();
+        setDotArray();
+        redoMode = false;
+    }
+    //var indexArrayString = "";
+    //for (i = 0; i < indexArray.length; i++) {
+      //  indexArrayString += ", " + indexArray[i];
+    //}
+    //alert("after removeGreenDotExercises:  indexArray:  " + indexArrayString);
+}
+
 
 function initUserInterface() {
     // NOTE: Must call resetLesson() or something else to init vars before calling this
@@ -324,7 +359,13 @@ function initUserInterface() {
     checkGender();
     
     //currentExercise = theLesson.exerciseArray[indexArray[step]];
-    currentExercise = theLesson.exerciseArray[indexArray[0]];
+    if ((indexArray[0] >= theLesson.exerciseArray.length) || (indexArray[0] < 0)) {
+        alert("FRANKENSTEIN cannot load exerciseNumber:  " + indexArray[0] + ", theLesson.length:  " + theLesson.exerciseArray.length);
+    }
+    //alert("FRANKENSTEIN will load:  indexArray[0]:  " + indexArray[0]);
+    removeGreenDotExercises();
+    step = 0;
+    currentExercise = theLesson.exerciseArray[indexArray[step]];
     //alert("in proceedNextLesson: currentExercise.lessonImage:  " + currentExercise.lessonImage);
     eraseAnswer();
     //initAnswer();

@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.23";
+static NSString *versionNumber = @"1.24";
 
 - (FliteController *)fliteController { if (fliteController == nil) {
     fliteController = [[FliteController alloc] init]; }
