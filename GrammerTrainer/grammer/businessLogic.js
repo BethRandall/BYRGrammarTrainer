@@ -91,6 +91,47 @@ dotImageRed.src = "img/redDot.png";
 var dotImageGreen = new Image(20,20);
 dotImageGreen.src = "img/greenDot.png";
 
+function countRedDots() {
+    var red_counter = 0;
+    for (var i = 0; i < dotMatrix.length; i++) {
+        if (dotMatrix[i] == DOT_WRONG) {
+            red_counter ++;
+        }
+    }
+    return red_counter;
+}
+
+function countGreenDots() {
+    var green_counter = 0;
+    for (var i = 0; i < dotMatrix.length; i++) {
+        if (dotMatrix[i] == DOT_CORRECT) {
+            green_counter ++;
+        }
+    }
+    return green_counter;
+}
+
+function countOrangeDots() {
+    var orange_counter = 0;
+    for (var i = 0; i < dotMatrix.length; i++) {
+        if (dotMatrix[i] == DOT_INCOMPLETE) {
+            orange_counter ++;
+        }
+    }
+    return orange_counter;
+}
+
+function buildRedoNumArray() {
+    setRedoNumArray();
+    for (var i = 0; i < dotMatrix.length; i++) {
+        if (dotMatrix[i] == DOT_WRONG) {
+            //alert("will set redoNumArray at: " + i + ", to numToRedo: " + numToRedo);
+            redoNumArray[i] = numToRedo;
+        }
+    }
+}
+
+
 function pushPromptToRedo(exNum)
 {
     // promptsToRedo is a list of the exercises that were answered wrong.
@@ -486,16 +527,10 @@ function goToNextVideo() {
 function goToNextExercise()
 {
     //alert("inside goToNextExercise: ");
-	// Count all the green dots
-	var greenDotCounter = 0;
-	for( var i = 0; i < dotMatrix.length; i++ )
-	{
-		if( dotMatrix[i] == DOT_CORRECT )
-		{ greenDotCounter++; } }
-	//alert("greenDotCounter: " + greenDotCounter + ", promptsToRedo.length:  " + promptsToRedo.length);
-	// If all the dots are green, then go to the congratulations page
+    var greenDotCounter = countGreenDots();
+    //alert("greenDotCounter: " + greenDotCounter + ", promptsToRedo.length:  " + promptsToRedo.length);
     // BYR:  If all the dots are green, the lesson is finished.  Go on to the next lesson.
-    //alert("greenDotCounter:  " + greenDotCounter + ", redoMode: " + redoMode + ", theLesson.exerciseArray.length: " + theLesson.exerciseArray.length);
+    //alert("greenDotCounter:  " + greenDotCounter + ", redoMode: " + redoMode + ", theLesson.exerciseArray.length: " + theLesson.exerciseArray.length); 
 	if(greenDotCounter >= theLesson.exerciseArray.length)
 	{
         // For now we just exit out to the native side, but we should add some congratulations here!
@@ -545,7 +580,15 @@ function goToNextExercise()
 			{
                 // Nope. Were still on the first round. Advance to next question.
 				currentExerciseNumber++;
-                step++; }
+                step++;
+                while(dotMatrix[step] != DOT_INCOMPLETE) {
+                    step++;
+                    if (step >= dotMatrix.length) { break; }
+                }
+                if (step >= dotMatrix.length) {
+                    alert("step >= dotMatrix.length:  " + step);
+                }
+            }
 			else
 			{
                 // All questions have now been answered once. But not all dots are green so enter redo mode.
@@ -583,6 +626,7 @@ function saveProgramState() {
     saveState.currentWord = currentWord;
     saveState.redoMode = redoMode;
     saveState.promptsToRedo = promptsToRedo;
+    saveState.redoNumArray = redoNumArray;
     saveState.currentRedoPromptNumber = currentRedoPromptNumber;
     saveState.indexArray = indexArray;
     saveState.dotMatrix = dotMatrix;
@@ -640,7 +684,7 @@ function updateExercise()
  	// Update question
     // First save state
     saveProgramState();
-    
+    //alert("in updateExercise: redoMode: " + redoMode);
     if(redoMode) {
         //alert("in updateExercise:  found redoMode: ");
         // When were in redoMode we work off the promptsToRedo which has the indices of the prompts we need to redo
@@ -664,10 +708,10 @@ function updateExercise()
         if (step >= indexArray.length) {
             alert("ELEPHANT step:  " + step);
             alert("ELEPHANT will load: indexArray[step]:  " + indexArray[step]); }
-       
       currentExercise = theLesson.exerciseArray[indexArray[step]]; }
     
     setCurrentExercise(currentExercise);
+    //alert("leaving updateExercise: ");
 }
 
 // Update the dot feedback matrix
@@ -780,12 +824,15 @@ function MetaDetermineFeedback()
         //alert("found correct answer:  redoMode:  " + redoMode + ", promptsToRedo.length: " + promptsToRedo.length + ", jitterNext: " + jitterNext);
         //alert("found correct answer: ");
         if (redoMode) {
+            //alert("in redoMode: redoNum at index:  " + redoNumArray[index]);
             if ((promptsToRedo.length > 1) || ((promptsToRedo.length == 1) && (jitterNext == false))) {
                 if (promptsToRedo.length == 1) { jitterNext = true; }
+                var index = GetExNum();
+                //alert("about to get index to decrement: index:  " + index + ", length of redoNumArray: " + redoNumArray.length);
+                //alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
                 // must redo the incorrect answer twice.
                 // decrement number of times the exercise must be redone.
-                var index = GetExNum();
-                //alert("will decrement redoNum at index:  " + index + " from: " + redoNumArray[index]);
+                
                 redoNumArray[index] = redoNumArray[index] - 1;
                 if (redoNumArray[index] <= 0) {
                     removed = promptsToRedo.splice(step, 1);
@@ -810,9 +857,8 @@ function MetaDetermineFeedback()
         //alert("The answer is correct.");
         else { // not in redo mode.
             //alert("will set DOT_CORRECT");
-            dotMatrix[exNum] = DOT_CORRECT;
+            if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }
             saveProgramState(); }
-       // else { if (dotMatrix[exNum] != DOT_WRONG) { dotMatrix[exNum] = DOT_CORRECT; }}
         // Display the correct answer feedback
         //$("#answerFeedbackBox p").html("Your answer is correct!");
         return;

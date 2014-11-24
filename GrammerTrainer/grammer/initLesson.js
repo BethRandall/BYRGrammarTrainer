@@ -324,19 +324,53 @@ function doesFileExist(urlToFile)
     //return true;
 }
 
-function removeGreenDotExercises() {
+function returnToLesson() {
+    var num_green = 0;
+    var num_red = 0;
+    var num_orange = 0;
+    num_green = countGreenDots();
+    num_red = countRedDots();
+    num_orange = countOrangeDots();
+    //alert("num_green:  " + num_green + ", num_red: " + num_red + ", num_orange: " + num_orange);
+    // if all dots are orange, lesson hasn't been done before.
+    if (num_orange == indexArray.length) { return; }
+    // Special case:  all green dots.  Return to blank slate.
+    if (num_green == indexArray.length) {
+        setIndexArray();
+        setDotArray();
+        redoMode = false;
+        return;
+    }
+    // Special case: all red dots.
+    if (num_red == indexArray.length) {
+        setDotWrongToIncomplete();
+        jitterNext = false;
+        redoMode = true;
+        buildRedoNumArray();
+        return;
+    }
+    num_orange = countOrangeDots();
+    if (promptsToRedo.length <= 0) { return; }
+    buildRedoNumArray();
+    // Special case: all dots either orange or green.  Ready for redo mode.
+    if (((num_green + num_red) == indexArray.length) ||
+        ((num_green + num_orange) == indexArray.length)){
+        setDotWrongToIncomplete();
+        jitterNext = false;
+        redoMode = true;
+        buildRedoNumArray();
+        return;
+    }
+    // Otherwise, remove exercises that have been correctly completed (green dots) and
+    // also exercises that were completed wrong (red dots).
+    /*
     for (var i = 0; i < indexArray.length; i++) {
-        if (dotMatrix[indexArray[i]] == DOT_CORRECT) {
+        if ((dotMatrix[indexArray[i]] == DOT_CORRECT) || (dotMatrix[indexArray[i]] == DOT_WRONG)){
             indexArray.splice(i, 1);
             i -= 1;
         }
     }
-    // if indexArray is now empty, reset to full indexArray, with dotMatrix also reset.
-    if (indexArray.length == 0) {
-        setIndexArray();
-        setDotArray();
-        redoMode = false;
-    }
+     */
     //var indexArrayString = "";
     //for (i = 0; i < indexArray.length; i++) {
       //  indexArrayString += ", " + indexArray[i];
@@ -349,6 +383,7 @@ function initUserInterface() {
     // NOTE: Must call resetLesson() or something else to init vars before calling this
     
     jitterNext = true;
+    didJitter = false;
     // Array of answer words
     
     currentAnswerWords = new Array();   // the state of this is not saved
@@ -363,8 +398,16 @@ function initUserInterface() {
         alert("FRANKENSTEIN cannot load exerciseNumber:  " + indexArray[0] + ", theLesson.length:  " + theLesson.exerciseArray.length);
     }
     //alert("FRANKENSTEIN will load:  indexArray[0]:  " + indexArray[0]);
-    removeGreenDotExercises();
+    //alert("about to removeGreenDotExercises: ");
+    returnToLesson();
     step = 0;
+    while(dotMatrix[step] != DOT_INCOMPLETE) {
+        step++;
+        if  (step >= dotMatrix.length) {break;}}
+    if (step >= indexArray.length) {
+        alert("step >= indexArray.length: " + step);
+        step = 0;
+    }
     currentExercise = theLesson.exerciseArray[indexArray[step]];
     //alert("in proceedNextLesson: currentExercise.lessonImage:  " + currentExercise.lessonImage);
     eraseAnswer();
