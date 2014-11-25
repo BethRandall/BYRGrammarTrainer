@@ -438,6 +438,12 @@ function eraseAnswer()
 function saySomething() {
     NativeBridge.call("toSpeech", [currentExercise.oralprompt]); }
 
+function myLeftExit() {
+    //alert("step:  " + step);
+    //dotMatrix[step] = DOT_CORRECT;
+   exitLesson();
+}
+
 
 function showMenu()
 {
@@ -514,6 +520,7 @@ function toNextLesson() {
 }
 
 function goToNextVideo() {
+    dotMatrix[step] = DOT_CORRECT;
     currentExerciseNumber++;
     step++;
     if((step + 1) > theLesson.exerciseArray.length) {

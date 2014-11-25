@@ -446,6 +446,7 @@ function initUserInterface() {
             $("#leftExitButton").html("<a href=\"javascript:showMenu()\">Exit</a>");
             $("#leftExitButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
             $("#leftExitButton").show();
+            //dotMatrix[step] = DOT_CORRECT;
         }
         else {
             $("#video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"533\" height=\"300\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>"); }
