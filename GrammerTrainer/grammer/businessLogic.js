@@ -97,16 +97,6 @@ var dotImageBlue = new Image(20, 20);
 dotImageBlue.src = "img/blueDot.png";
  */
 
-function firstUntried() {
-    first_un = -1;
-    for (var i = 0; i < dotMatrix.length; i++) {
-        if (dotMatrix[i] == DOT_UNTRIED) {
-            return (i);
-        }
-    }
-    return first_un;
-}
-
 function countRedDots() {
     var red_counter = 0;
     for (var i = 0; i < dotMatrix.length; i++) {
