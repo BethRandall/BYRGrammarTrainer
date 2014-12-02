@@ -42,9 +42,9 @@ $(document).ready(function(){
 
 
 // Lesson Number
-var currentLessonNumber;
+//var currentLessonNumber;
 // Exercise Number
-var currentExerciseNumber;
+//var currentExerciseNumber;
 
 // Words for the current answer
 var currentAnswer = "";
@@ -79,17 +79,33 @@ var pronounWords;
 var dotMatrix;
 
 // Constants for the dots
-const DOT_INCOMPLETE = 0;
-const DOT_WRONG = 1;
-const DOT_CORRECT = 2;
+const DOT_UNTRIED = 0;
+const DOT_INCOMPLETE = 1;
+const DOT_WRONG = 2;
+const DOT_CORRECT = 3;
+
 
 // Preload the dot images
+/*
 var dotImageYellow = new Image(20,20);
 dotImageYellow.src = "img/yellowDot.png";
 var dotImageRed = new Image(20,20);
 dotImageRed.src = "img/redDot.png";
 var dotImageGreen = new Image(20,20);
 dotImageGreen.src = "img/greenDot.png";
+var dotImageBlue = new Image(20, 20);
+dotImageBlue.src = "img/blueDot.png";
+ */
+
+function firstUntried() {
+    first_un = -1;
+    for (var i = 0; i < dotMatrix.length; i++) {
+        if (dotMatrix[i] == DOT_UNTRIED) {
+            return (i);
+        }
+    }
+    return first_un;
+}
 
 function countRedDots() {
     var red_counter = 0;
@@ -488,7 +504,8 @@ function submitAnswer()
 	MetaDetermineFeedback();
     //alert("about to update dot feedback matrix: ");
 	// Update the dot feedback matrix
-	updateDotFeedback();
+	//updateDotFeedback();
+    initDots();
 }
 
 // "backdoor" method for advancing to particular exercise; repeat an answer word the same number of times
@@ -504,7 +521,7 @@ function backDoor() {
            continue; }
         else { return false; } }
     //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
-    currentExerciseNumber = currentAnswerWords.length - 1;
+    //currentExerciseNumber = currentAnswerWords.length - 1;
     backDoorUpdateExercise(currentAnswerWords.length - 1);
     return true;
 }
@@ -521,7 +538,7 @@ function toNextLesson() {
 
 function goToNextVideo() {
     dotMatrix[step] = DOT_CORRECT;
-    currentExerciseNumber++;
+    //currentExerciseNumber++;
     step++;
     if((step + 1) > theLesson.exerciseArray.length) {
         toNextLesson(); }
@@ -563,7 +580,7 @@ function goToNextExercise()
             if (step < promptsToRedo.length) 
 			{
                 // Nope. Were still on the first round. Advance to next question.
-				currentExerciseNumber++;
+				//currentExerciseNumber++;
                 step++;
                 if (step == promptsToRedo.length) {
                     //alert("about to set step to 0: ");
@@ -574,7 +591,7 @@ function goToNextExercise()
                 // All redo questions have now been answered once [BYR -- should be twice!]. But all dots are not green so stay in redo mode.
                 setDotWrongToIncomplete();
 				currentRedoPromptNumber = 0;
-                currentExerciseNumber = Number(promptsToRedo[0]) + 1;
+                //currentExerciseNumber = Number(promptsToRedo[0]) + 1;
                 // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
@@ -586,14 +603,14 @@ function goToNextExercise()
             if( (step + 1) < theLesson.exerciseArray.length)
 			{
                 // Nope. Were still on the first round. Advance to next question.
-				currentExerciseNumber++;
+				//currentExerciseNumber++;
                 step++;
                 while(dotMatrix[step] != DOT_INCOMPLETE) {
                     step++;
                     if (step >= dotMatrix.length) { break; }
                 }
                 if (step >= dotMatrix.length) {
-                    alert("step >= dotMatrix.length:  " + step);
+                    alert("GARGANTUA step >= dotMatrix.length:  " + step);
                 }
             }
 			else
@@ -603,7 +620,7 @@ function goToNextExercise()
                 randomizeRedo();
                 setDotWrongToIncomplete();
                 currentRedoPromptNumber = 0;
-				currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
+				//currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
 		}
@@ -626,8 +643,8 @@ function setDotWrongToIncomplete() {
 function saveProgramState() {
     
     var saveState = new Object();
-    saveState.currentLessonNumber = currentLessonNumber;
-    saveState.currentExerciseNumber = currentExerciseNumber;
+    //saveState.currentLessonNumber = currentLessonNumber;
+    //saveState.currentExerciseNumber = currentExerciseNumber;
     saveState.step = step;
     saveState.currentAnswer = currentAnswer;
     saveState.currentWord = currentWord;
@@ -720,7 +737,7 @@ function updateExercise()
     setCurrentExercise(currentExercise);
     //alert("leaving updateExercise: ");
 }
-
+/*
 // Update the dot feedback matrix
 function updateDotFeedback()
 {
@@ -730,6 +747,8 @@ function updateDotFeedback()
 	{ if( (d % 6 == 0) && (d != 0) )
 		{
 			$("#dotContainer").append("<br />");
+            if(dotMatrix[d] == DOT_UNTRIED)
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
 			if(dotMatrix[d] == DOT_INCOMPLETE)
 			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
 			else if(dotMatrix[d] == DOT_WRONG)
@@ -738,7 +757,10 @@ function updateDotFeedback()
 			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
 		}
 		else
-		{ if(dotMatrix[d] == DOT_INCOMPLETE)
+		{
+            if(dotMatrix[d] == DOT_UNTRIED)
+			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
+            if(dotMatrix[d] == DOT_INCOMPLETE)
 			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
 			else if(dotMatrix[d] == DOT_WRONG)
 			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
@@ -747,6 +769,7 @@ function updateDotFeedback()
 		}
 	}
 }
+ */
 
 // Plays sound
 function playSound(soundID)

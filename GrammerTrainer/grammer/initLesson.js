@@ -219,7 +219,9 @@ function initDots() {
         {
             $("#dotContainer").append("<br />");
         }
-        if(dotMatrix[d] == DOT_INCOMPLETE)
+        if(dotMatrix[d] == DOT_UNTRIED)
+        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
+        else if(dotMatrix[d] == DOT_INCOMPLETE)
         { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
         else if(dotMatrix[d] == DOT_WRONG)
         { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
@@ -257,7 +259,8 @@ function setIndexArray() {
 function setDotArray() {
     dotMatrix = new Array();
     for( var c = 0; c < theLesson.exerciseArray.length; c++ )
-    { dotMatrix[c] = DOT_INCOMPLETE; }
+   // { dotMatrix[c] = DOT_INCOMPLETE; }
+    { dotMatrix[c] = DOT_UNTRIED; }
 }
 
 function setRedoNumArray() {
@@ -272,10 +275,10 @@ function resetLesson() {
     //alert("in resetLesson: ");
     // Lesson Number
     // BYR -- this variable is never used and should probably be deleted.
-    currentLessonNumber = 1;
+    //currentLessonNumber = 1;
     // Exercise Number
     // BYR -- I would like to get rid of this variable.
-    currentExerciseNumber = 1;
+    //currentExerciseNumber = 1;
     
     step = 0; // one-up for next exercise
     
@@ -405,7 +408,7 @@ function initUserInterface() {
         step++;
         if  (step >= dotMatrix.length) {break;}}
     if (step >= indexArray.length) {
-        alert("step >= indexArray.length: " + step);
+        alert("HILDEGARDE step >= indexArray.length: " + step);
         step = 0;
     }
     currentExercise = theLesson.exerciseArray[indexArray[step]];

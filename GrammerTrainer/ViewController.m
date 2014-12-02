@@ -1226,8 +1226,8 @@ static NSString *versionNumber = @"1.26";
             NSDictionary *stateVector = [stateVectorDict objectForKey:@"jsonStateVector"];
             
             NSMutableString *someJavaScript = [NSMutableString new];
-            [someJavaScript appendFormat:@"currentLessonNumber = %@;", [stateVector objectForKey:@"currentLessonNumber"] ];
-            [someJavaScript appendFormat:@"currentExerciseNumber = %@;", [stateVector objectForKey:@"currentExerciseNumber"] ];
+            //[someJavaScript appendFormat:@"currentLessonNumber = %@;", [stateVector objectForKey:@"currentLessonNumber"] ];
+            //[someJavaScript appendFormat:@"currentExerciseNumber = %@;", [stateVector objectForKey:@"currentExerciseNumber"] ];
             [someJavaScript appendFormat:@"step = %@;", [stateVector objectForKey:@"step"] ];
             [someJavaScript appendFormat:@"currentAnswer = \"%@\";", [stateVector objectForKey:@"currentAnswer"] ];
             [someJavaScript appendFormat:@"currentWord = \"%@\";", [stateVector objectForKey:@"currentWord"] ];
@@ -1242,8 +1242,6 @@ static NSString *versionNumber = @"1.26";
             /*
              Making something which should look like this...
              
-             currentLessonNumber = 1;
-             currentExerciseNumber = 3;
              step = 2;
              currentAnswer = "";
              currentWord = "you";
