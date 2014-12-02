@@ -175,7 +175,8 @@ function setCurrentExercise(currEx) {
     setMultipleChoiceBox(currEx);
     
     // Update dot feedback
-    updateDotFeedback();
+    //updateDotFeedback();
+    initDots();
     
     //alert("will erase Answer: ");
     // Clear the droppable answer box
@@ -334,9 +335,10 @@ function returnToLesson() {
     num_green = countGreenDots();
     num_red = countRedDots();
     num_orange = countOrangeDots();
-    //alert("num_green:  " + num_green + ", num_red: " + num_red + ", num_orange: " + num_orange);
-    // if all dots are orange, lesson hasn't been done before.
-    if (num_orange == indexArray.length) { return; }
+    num_blue = countBlueDots();
+    //alert("num_blue: " + num_blue + ", " +"num_green:  " + num_green + ", num_red: " + num_red + ", num_orange: " + num_orange);
+    // if all dots are blue, lesson hasn't been done before.
+    if (num_blue == indexArray.length) { return; }
     // Special case:  all green dots.  Return to blank slate.
     if (num_green == indexArray.length) {
         setIndexArray();
@@ -355,6 +357,7 @@ function returnToLesson() {
     num_orange = countOrangeDots();
     if (promptsToRedo.length <= 0) { return; }
     buildRedoNumArray();
+    randomizeRedo();
     // Special case: all dots either orange or green.  Ready for redo mode.
     if (((num_green + num_red) == indexArray.length) ||
         ((num_green + num_orange) == indexArray.length)){
@@ -364,21 +367,6 @@ function returnToLesson() {
         buildRedoNumArray();
         return;
     }
-    // Otherwise, remove exercises that have been correctly completed (green dots) and
-    // also exercises that were completed wrong (red dots).
-    /*
-    for (var i = 0; i < indexArray.length; i++) {
-        if ((dotMatrix[indexArray[i]] == DOT_CORRECT) || (dotMatrix[indexArray[i]] == DOT_WRONG)){
-            indexArray.splice(i, 1);
-            i -= 1;
-        }
-    }
-     */
-    //var indexArrayString = "";
-    //for (i = 0; i < indexArray.length; i++) {
-      //  indexArrayString += ", " + indexArray[i];
-    //}
-    //alert("after removeGreenDotExercises:  indexArray:  " + indexArrayString);
 }
 
 
@@ -404,7 +392,7 @@ function initUserInterface() {
     //alert("about to removeGreenDotExercises: ");
     returnToLesson();
     step = 0;
-    while(dotMatrix[step] != DOT_INCOMPLETE) {
+    while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
         step++;
         if  (step >= dotMatrix.length) {break;}}
     if (step >= indexArray.length) {

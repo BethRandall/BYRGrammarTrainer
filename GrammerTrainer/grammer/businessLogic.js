@@ -137,10 +137,20 @@ function countOrangeDots() {
     return orange_counter;
 }
 
+function countBlueDots() {
+    var blue_counter = 0;
+    for (var i = 0; i < dotMatrix.length; i++) {
+        if (dotMatrix[i] == DOT_UNTRIED) {
+            blue_counter ++;
+        }
+    }
+    return blue_counter;
+}
+
 function buildRedoNumArray() {
     setRedoNumArray();
     for (var i = 0; i < dotMatrix.length; i++) {
-        if (dotMatrix[i] == DOT_WRONG) {
+        if ((dotMatrix[i] == DOT_WRONG) || (dotMatrix[i] == DOT_INCOMPLETE)) {
             //alert("will set redoNumArray at: " + i + ", to numToRedo: " + numToRedo);
             redoNumArray[i] = numToRedo;
         }
@@ -603,15 +613,12 @@ function goToNextExercise()
             if( (step + 1) < theLesson.exerciseArray.length)
 			{
                 // Nope. Were still on the first round. Advance to next question.
-				//currentExerciseNumber++;
                 step++;
-                while(dotMatrix[step] != DOT_INCOMPLETE) {
+                while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
                     step++;
                     if (step >= dotMatrix.length) { break; }
                 }
-                if (step >= dotMatrix.length) {
-                    alert("GARGANTUA step >= dotMatrix.length:  " + step);
-                }
+                if (step >= dotMatrix.length) { alert("GARGANTUA step >= dotMatrix.length:  " + step);}
             }
 			else
 			{
@@ -635,9 +642,8 @@ function goToNextExercise()
 function setDotWrongToIncomplete() {
     for( var j = 0; j < dotMatrix.length; j++ )
     {
-        if( dotMatrix[j] == DOT_WRONG )
+        if((dotMatrix[j] == DOT_WRONG) || (dotMatrix[j] == DOT_INCOMPLETE))
         { dotMatrix[j] = DOT_INCOMPLETE; } }
-    
 }
 
 function saveProgramState() {

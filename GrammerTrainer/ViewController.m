@@ -853,7 +853,7 @@ static NSString *versionNumber = @"1.26";
     
     NSInteger i = 0;
     for (NSNumber *num in dotStateArray) {
-        if(num.integerValue == 2)
+        if(num.integerValue == 3) // DOT_CORRECT was set to value 3 in businessLogic.js.
             i++;
     }
     return  i;
