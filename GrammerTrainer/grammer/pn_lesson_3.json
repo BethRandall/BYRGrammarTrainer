@@ -318,7 +318,7 @@
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
 	    "prefill":  "The girl says that ",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_lesson_2.m4v",
             "answers": [
@@ -442,7 +442,7 @@
             "oralprompt": "The girl said that she will help the boy.",
             "prompt": "The girl said that she will help the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/7_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
             "exnum": "24",
@@ -459,7 +459,7 @@
             "oralprompt": "The girl said that the boy will help her.",
 	    "prompt": "The girl said that the boy will help her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/8_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
 	    "exnum": "25",
@@ -476,7 +476,7 @@
             "oralprompt": "The boy said that he will help you.",
 	    "prompt": "The boy said that he will help you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
 	    "exnum": "26",
@@ -493,7 +493,7 @@
             "oralprompt": "The boy said that you will help him.",
             "prompt": "The boy said that you will help him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/10_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
             "exnum": "27",
@@ -578,7 +578,7 @@
             "oralprompt": "The girl said that she will help the boy.",
             "prompt": "The girl said that she will help the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/15_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         },
         {
 	    "exnum": "32",
@@ -595,7 +595,7 @@
             "oralprompt": "The girl said that the boy will help her.",
             "prompt": "The girl said that the boy will help her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_lesson_1.m4v",
-            "balloonSpecs": "right, 100, 10"
+            "balloonSpecs": "left, 100, 10"
         }
     ],
     "verbWords": [

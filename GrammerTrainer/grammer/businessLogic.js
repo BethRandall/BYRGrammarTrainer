@@ -521,8 +521,8 @@ function backDoor() {
            // alert("currentAnswerWords[i] == currentAnswerWords[i+1]: i = " + i); }
            continue; }
         else { return false; } }
+    alert("back door to exercise number " + currentAnswerWords.length);
     //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
-    //currentExerciseNumber = currentAnswerWords.length - 1;
     backDoorUpdateExercise(currentAnswerWords.length - 1);
     return true;
 }
@@ -695,6 +695,7 @@ function backDoorUpdateExercise(newExNum) {
     if ((newExNum >= theLesson.exerciseArray.length) || (newExNum < 0)) {
         alert("CANTALOUPE cannot load exerciseNumber:  " + newExNum + ", theLesson.length:  " + theLesson.exerciseArray.length);
     }
+    alert("backdoor to exercise number: " + newExNum);
     currentExercise = theLesson.exerciseArray[newExNum];
     setCurrentExercise(currentExercise);
 }
