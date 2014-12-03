@@ -695,7 +695,6 @@ function backDoorUpdateExercise(newExNum) {
     if ((newExNum >= theLesson.exerciseArray.length) || (newExNum < 0)) {
         alert("CANTALOUPE cannot load exerciseNumber:  " + newExNum + ", theLesson.length:  " + theLesson.exerciseArray.length);
     }
-    alert("backdoor to exercise number: " + newExNum);
     currentExercise = theLesson.exerciseArray[newExNum];
     setCurrentExercise(currentExercise);
 }
