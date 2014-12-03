@@ -154,23 +154,24 @@ function pushPromptToRedo(exNum)
     // redoNumArray is a list of how many more times each exercise needs to be answered right.
     //alert("inside pushPromptToRedo: ");
     var already_recorded = false;
-    //if( dotMatrix[exNum] != DOT_WRONG ) {
-        // first, check whether this exercise is already on the list to redo.
-        // This might happen if we were in redo mode, and got the exercise wrong again.
+    // first, check whether this exercise is already on the list to redo.
+    // This might happen if we were in redo mode, and got the exercise wrong again.
     for (var i = 0; i < promptsToRedo.length; i++) {
         if (promptsToRedo[i] == exNum) { already_recorded = true; break; }
     }
     if (!already_recorded) {
         if (redoMode) { promptsToRedo.unshift(indexArray[exNum]); } // unshift adds to the beginning of the array.
         else { promptsToRedo.push(indexArray[exNum]); } }
-    //alert("will set DOT_WRONG:  exNum: " + exNum);
     dotMatrix[exNum] = DOT_WRONG;
-    if (!redoMode) {
-        redoNumArray[exNum] = numToRedo; }
-    // if we were in redo mode, we need to add 1 to the number of times to redo, since it will be immediately decremented when
-    // we get the exercise right.
-    if (redoMode) {
-        redoNumArray[exNum] = numToRedo + 1; }
+    try {
+        if (!redoMode) {
+            redoNumArray[exNum] = numToRedo; }
+        // if we were in redo mode, we need to add 1 to the number of times to redo, since it will be immediately decremented when
+        // we get the exercise right.
+        if (redoMode) {
+            redoNumArray[exNum] = numToRedo + 1; } }
+    catch (err) {
+        alert("ISAMBARD unable to access redoNumArray at exNum:  " + exNum); }
 }
 
 
@@ -685,17 +686,16 @@ function backDoorUpdateExercise(newExNum) {
     // if newExNum is too big for the exercise array, set it to the last index of the array
     if (newExNum >= (theLesson.exerciseArray).length) {
         newExNum = theLesson.exerciseArray.length - 1; }
+    // proceed from the new exercise onward.
+    step = newExNum;
+    unRandomizeExes();
     // Update question
     // First save state
-    alert("backdoor to exercise " + (newExNum + 1));
     saveProgramState();
-    if ((newExNum >= theLesson.exerciseArray.length) || (exerciseNumber < 0)) {
+    if ((newExNum >= theLesson.exerciseArray.length) || (newExNum < 0)) {
         alert("CANTALOUPE cannot load exerciseNumber:  " + newExNum + ", theLesson.length:  " + theLesson.exerciseArray.length);
     }
-    
-
     currentExercise = theLesson.exerciseArray[newExNum];
-    
     setCurrentExercise(currentExercise);
 }
 
@@ -948,11 +948,11 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "morphologyFeedback")
     {
-        //alert("morphologyFeedback:");
+        //alert("morphologyFeedback: step:  " + step + ", notPolite:  " + NotPolite(feedbackType));
         //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
         if(NotPolite(feedbackType))
             { pushPromptToRedo(exNum); }
-        
+        //alert("back from pushPromptToRedo: ");
 		var wrongForms = wordButtonMarkingInfo[0];  //wrongForms tell you which buttons need to be in orange ("is" instead of "are")
 		var wrongEndings = wordButtonMarkingInfo[1]; //wrongEndings tells you which buttons need the ending to be in red (for example girl<red>s</red>)
         //Use the GetStem(word) to figure out which part of the word button NOT to be in red:

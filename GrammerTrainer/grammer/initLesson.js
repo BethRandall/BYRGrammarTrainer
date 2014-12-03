@@ -148,7 +148,7 @@ function setVideo(context) {
 }
 
 function setCurrentExercise(currEx) {
-    //alert("inside setCurrentExercise: ");
+    //alert("inside setCurrentExercise: currEx:  " + currEx);
     
     if(typeof currEx.lessonImage == "undefined") {
         // Lesson uses video
@@ -257,6 +257,13 @@ function setIndexArray() {
         usedDex.splice(randdex, 1); }
 }
 
+function unRandomizeExes () {
+    for (var i = 0; i < indexArray.length; i++) {
+        indexArray[i] = i;
+    }
+    
+}
+
 function setDotArray() {
     dotMatrix = new Array();
     for( var c = 0; c < theLesson.exerciseArray.length; c++ )
@@ -336,6 +343,8 @@ function returnToLesson() {
     num_red = countRedDots();
     num_orange = countOrangeDots();
     num_blue = countBlueDots();
+    buildRedoNumArray();
+    randomizeRedo();
     //alert("num_blue: " + num_blue + ", " +"num_green:  " + num_green + ", num_red: " + num_red + ", num_orange: " + num_orange);
     // if all dots are blue, lesson hasn't been done before.
     if (num_blue == indexArray.length) { return; }
@@ -351,20 +360,15 @@ function returnToLesson() {
         setDotWrongToIncomplete();
         jitterNext = false;
         redoMode = true;
-        buildRedoNumArray();
         return;
     }
-    num_orange = countOrangeDots();
     if (promptsToRedo.length <= 0) { return; }
-    buildRedoNumArray();
-    randomizeRedo();
     // Special case: all dots either orange or green.  Ready for redo mode.
     if (((num_green + num_red) == indexArray.length) ||
         ((num_green + num_orange) == indexArray.length)){
         setDotWrongToIncomplete();
         jitterNext = false;
         redoMode = true;
-        buildRedoNumArray();
         return;
     }
 }
