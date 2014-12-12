@@ -508,7 +508,7 @@
             "multipleChoice": [ ],
             "question": "The boy is talking to the girl. He is telling her that she will help him. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "answers": [
-                "she will help me."
+                "you will help me."
             ],
             "oralprompt": "The boy said that the girl will help him.",
             "prompt": "The boy said that the girl will help him.  What goes in the speech bubble?",
