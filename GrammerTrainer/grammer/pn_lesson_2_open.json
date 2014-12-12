@@ -167,7 +167,7 @@
             "prompt": "Complete this sentence.  The girl says that …",
             "quote": "I will help him.",
             "balloonSpecs": "left, 100, 10",
-	    "balloonPrefill": "I will help him.",
+            "balloonPrefill": "I will help him.",
             "lessonVideo": "gt_videos/transportation_theme_videos/7_lesson_2.m4v"
         },
         {
@@ -322,7 +322,7 @@
             "quote": "You will help me.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
-            "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_2.m4v"
+            "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_1.m4v"
         },
         {
             "exnum": "15",

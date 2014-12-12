@@ -37,6 +37,9 @@ $(document).ready(function(){
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
                   
+                  // backdoor to exercise.
+                  //$("#dotContainer #submitButton").click(function(){ backDoorUpdateExercise(); });
+                  
 });
  
 
@@ -83,19 +86,6 @@ const DOT_UNTRIED = 0;
 const DOT_INCOMPLETE = 1;
 const DOT_WRONG = 2;
 const DOT_CORRECT = 3;
-
-
-// Preload the dot images
-/*
-var dotImageYellow = new Image(20,20);
-dotImageYellow.src = "img/yellowDot.png";
-var dotImageRed = new Image(20,20);
-dotImageRed.src = "img/redDot.png";
-var dotImageGreen = new Image(20,20);
-dotImageGreen.src = "img/greenDot.png";
-var dotImageBlue = new Image(20, 20);
-dotImageBlue.src = "img/blueDot.png";
- */
 
 function countRedDots() {
     var red_counter = 0;
@@ -548,7 +538,6 @@ function goToNextVideo() {
     }
 }
 
-// Moves to the next exercise when the user clicks the active next button
 function goToNextExercise()
 {
     //alert("inside goToNextExercise: ");

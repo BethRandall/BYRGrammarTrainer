@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/ViewController.m"
-         timestampString = "436058712.359116"
+         timestampString = "440097612.810624"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "913"
-         endingLineNumber = "913"
+         startingLineNumber = "912"
+         endingLineNumber = "912"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -46,26 +46,13 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "GrammerTrainer/ViewController.m"
-         timestampString = "438115918.302157"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "932"
-         endingLineNumber = "932"
-         landmarkName = "-goToNextLesson"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/grammer/businessLogic.js"
-         timestampString = "439325393.646762"
+         timestampString = "440089053.736579"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "193"
-         endingLineNumber = "193"
-         landmarkName = "randomizeRedo"
+         startingLineNumber = "196"
+         endingLineNumber = "196"
+         landmarkName = "addWordToAnswer"
          landmarkType = "7">
       </FileBreakpoint>
       <FileBreakpoint
@@ -73,12 +60,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "GrammerTrainer/grammer/businessLogic.js"
-         timestampString = "439340709.79325"
+         timestampString = "440089053.736579"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "547"
-         endingLineNumber = "547"
-         landmarkName = "goToNextVideo"
+         startingLineNumber = "549"
+         endingLineNumber = "549"
+         landmarkName = "goToNextExercise"
          landmarkType = "7">
       </FileBreakpoint>
    </FileBreakpoints>

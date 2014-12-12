@@ -1,21 +1,18 @@
 {
-    "nounWords": [
-        "girl",
-        "boy",
-        "the",
-        "I",
-        "you",
-        "we",
-        "she",
-        "he",
-        "they",
-        "me",
-        "us",
-        "her",
-        "him",
-        "them"
-          
-    ],
+
+    "pronounWords": [
+                     "I",
+                     "you",
+                     "he",
+                     "she",
+                     "him",
+                     "her",
+                     "them",
+                     "they",
+                     "me",
+                     "we",
+                     "us"
+                     ],
     "exerciseArray": [
         {
 	    "exnum": "1",
@@ -299,7 +296,7 @@
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
 	    "prefill":  "The girl says that ",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help you.",
             "lessonVideo": "gt_videos/transportation_theme_videos/15_lesson_2.m4v",
             "answers": [

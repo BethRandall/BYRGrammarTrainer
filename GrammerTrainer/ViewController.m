@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.27";
+static NSString *versionNumber = @"1.28";
 
 - (FliteController *)fliteController { if (fliteController == nil) {
     fliteController = [[FliteController alloc] init]; }
@@ -165,7 +165,7 @@ static NSString *versionNumber = @"1.27";
     }];
 }
 
-
+/*
 - (void)loadInstructionsVideo {
     
     [self showMenu];
@@ -177,7 +177,8 @@ static NSString *versionNumber = @"1.27";
     [_theWebView loadRequest:theRequest];
 
 }
-
+ */
+/*
 - (void)copyOverLesson:(NSString *)lessonFileName {
     
     
@@ -203,6 +204,7 @@ static NSString *versionNumber = @"1.27";
 
     
 }
+*/
 
 -(NSString*)urlEscapeString:(NSString *)unencodedString 
 {
@@ -242,7 +244,6 @@ static NSString *versionNumber = @"1.27";
     
     if (docsDir) {
         
-        //[self showMenu]; // 
         // This copies selected lesson into initDataModel.js, this will be inserted once page finishes loading
         //[self copyOverLesson:lessonFileName];
         
@@ -924,18 +925,17 @@ static NSString *versionNumber = @"1.27";
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)goToNextLesson
 {
-    //[self exitLesson];
-    //NSLog(@"inside goToNextLesson:  after self exitLesson: ");
-    //NSLog(@"MELFI MELFI myLessonIndex: %ld", (long)self.myLessonIndex);
- 
+    
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
 
     self.myLessonIndex = self.myLessonIndex + 1;
     //NSLog(@"MEADOW theModule.lessons.count: %lu:  myLessonIndex:  %ld", (unsigned long)theModule.lessons.count, (long)self.myLessonIndex);
     if (self.myLessonIndex >= theModule.lessons.count) {
         NSLog(@"found myLessonIndex >= theModule.lessons.count:");
-        menuVisible = NO;
-        [self showMenu];
+        //self.myLessonIndex = self.myLessonIndex - 1;
+        Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
+        [self loadLesson:theLesson];
+        [self exitLesson];
         return;
     }
     
@@ -1077,7 +1077,8 @@ static NSString *versionNumber = @"1.27";
 {
          
    if ([functionName isEqualToString:@"goToNextLesson"]) {
-        [self goToNextLesson];    
+       [self goToNextLesson];
+       //[self.theTableView reloadData];
     } else if ([functionName isEqualToString:@"lessonLoaded"]) {
         //NSLog(@"Did call lessonLoaded");
         menuVisible = YES;

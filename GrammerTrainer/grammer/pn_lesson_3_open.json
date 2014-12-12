@@ -1,21 +1,19 @@
 {
-    "nounWords": [
-        "girl",
-        "boy",
-        "the",
-        "I",
-        "you",
-        "we",
-        "she",
-        "he",
-        "they",
-        "me",
-        "us",
-        "her",
-        "him",
-        "them"
-          
-    ],
+   
+    "pronounWords": [
+                     "I",
+                     "you",
+                     "he",
+                     "she",
+                     "him",
+                     "her",
+                     "them",
+                     "they",
+                     "me",
+                     "we",
+                     "us"
+                     ],
+
     "exerciseArray": [
         {
 	    "exnum": "1",
