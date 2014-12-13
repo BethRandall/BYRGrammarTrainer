@@ -1,0 +1,795 @@
+{
+    "lessonNumber": "8",
+    "lessonTopic": "Lesson 3: Even More Shapes.",
+    "lessonType": "open_choice_2",
+    "subjects": [
+        "aNSg",
+        "anNSg",
+        "NPl"
+    ],
+    "exerciseList": [
+        [
+            "aNSg",
+            "0"
+        ],
+        [
+            "aNSg",
+            "1"
+        ],
+        [
+            "aNSg",
+            "2"
+        ],
+        [
+            "aNSg",
+            "3"
+        ],
+        [
+            "anNSg",
+            "0"
+        ],
+        [
+            "anNSg",
+            "1"
+        ],
+        [
+            "NPl",
+            "0"
+        ],
+        [
+            "NPl",
+            "1"
+        ],
+        [
+            "NPl",
+            "2"
+        ],
+        [
+            "NPl",
+            "3"
+        ]
+    ],
+    "subjectMasteryLimit": "2",
+    "exerciseArray": [
+        {
+	    "exnum": "1",
+            "pictureA": "Cc.jpg",
+            "pictureB": ".jpg",
+            "question": "What is this?",
+            "choices": [
+                           ],
+            "answers": [
+                "it is a circle.",
+                "it's a circle.",
+                "this is a circle.",
+                "that is a circle.",
+                "that's a circle.",
+                "a circle."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "a",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounButtons": [
+                "a",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "this",
+                "that",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "aNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "2",
+            "pictureA": "Sq.jpg",
+            "pictureB": ".jpg",
+            "question": "What is this?",
+            "choices": [
+                ],
+            "answers": [
+                "it is a square.",
+                "it's a square.",
+                "this is a square.",
+                "that is a square.",
+                "that's a square.",
+                "a square."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "a",
+                    "square"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "aNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "3",
+            "pictureA": "Tg.jpg",
+            "pictureB": ".jpg",
+            "question": "What is this?",
+            "choices": [
+                 ],
+            "answers": [
+                "it is a triangle.",
+                "it's a triangle.",
+                "this is a triangle.",
+                "that is a triangle.",
+                "that's a triangle.",
+                "a triangle."
+            ],
+            "morphemesList": [
+                [
+                    "triangle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "a",
+                    "triangle"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "aNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "4",
+            "pictureA": "Rt.jpg",
+            "pictureB": ".jpg",
+            "question": "What is this?",
+            "choices": [
+    
+            ],
+            "answers": [
+                "it is a rectangle.",
+                "it's a rectangle.",
+                "this is a rectangle.",
+                "that is a rectangle.",
+                "that's a rectangle.",
+                "a rectangle."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "a",
+                    "rectangle"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "aNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "5",
+            "pictureA": "arrow.jpg",
+            "pictureB": ".jpg",
+            "question": "What is this?",
+            "choices": [
+   
+            ],
+            "answers": [
+                "it is an arrow.",
+                "it's an arrow.",
+                "this is an arrow.",
+                "that is an arrow.",
+                "that's an arrow.",
+                "an arrow."
+            ],
+            "morphemesList": [
+                [
+                    "arrow",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "an",
+                    "arrow"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "anNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "6",
+            "pictureA": "Ov.jpg",
+            "pictureB": ".jpg",
+            "question": "What is this?",
+            "choices": [
+      
+            ],
+            "answers": [
+                "it is an oval.",
+                "it's an oval.",
+                "this is an oval.",
+                "that is an oval.",
+                "that's an oval.",
+                "an oval."
+            ],
+            "morphemesList": [
+                [
+                    "oval",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "an",
+                    "oval"
+                ]
+            ],
+            "unneededWords": [
+                "one"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "anNSg",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "7",
+            "pictureA": "Ccs.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+    
+            ],
+            "answers": [
+                "these are circles.",
+                "those are circles.",
+                "they are circles.",
+                "they're circles.",
+                "circles."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "circles"
+                ]
+            ],
+            "unneededWords": [
+                "three"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "NPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "8",
+            "pictureA": "Sqs.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+    
+            ],
+            "answers": [
+                "these are squares.",
+                "those are squares.",
+                "they are squares.",
+                "they're squares.",
+                "squares."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "squares"
+                ]
+            ],
+            "unneededWords": [
+                "four"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "NPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "9",
+            "pictureA": "Tgs.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+    
+            ],
+            "answers": [
+                "these are triangles.",
+                "those are triangles.",
+                "they are triangles.",
+                "they're triangles.",
+                "triangles."
+            ],
+            "morphemesList": [
+                [
+                    "triangle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "triangles"
+                ]
+            ],
+            "unneededWords": [
+                "three"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "NPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "10",
+            "pictureA": "Rts.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+         
+            ],
+            "answers": [
+                "these are rectangles.",
+                "those are rectangles.",
+                "they are rectangles.",
+                "they're rectangles.",
+                "rectangles."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "rectangles"
+                ]
+            ],
+            "unneededWords": [
+                "four"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "NPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        }
+    ]
+}

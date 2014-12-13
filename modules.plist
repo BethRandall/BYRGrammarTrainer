@@ -108,6 +108,16 @@
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
+						<integer>2</integer>
+						<key>lessonName</key>
+						<string>Lesson 2: open choice 2</string>
+						<key>topic</key>
+						<string>Open Choice 2</string>
+						<key>loadFile</key>
+						<string>pt_lesson_2_more.json</string>
+					</dict>
+					<dict>
+						<key>lessonNumber</key>
 						<integer>3</integer>
 						<key>lessonName</key>
 						<string>Lesson 3:  Even More Shapes</string>
@@ -125,6 +135,26 @@
 						<string>Open Choice</string>
 						<key>loadFile</key>
 						<string>pt_lesson_3_open.json</string>
+					</dict>
+					<dict>
+						<key>loadFile</key>
+						<string>pt_lesson_3_more.json</string>
+						<key>topic</key>
+						<string>Open Choice 2</string>
+						<key>lessonNumber</key>
+						<string>3</string>
+						<key>lessonName</key>
+						<string>Lesson 3: open choice 2</string>
+					</dict>
+					<dict>
+						<key>lessonName</key>
+						<string>Lesson 3: open choice 3</string>
+						<key>lessonNumber</key>
+						<integer>3</integer>
+						<key>topic</key>
+						<string>Open Choice 3</string>
+						<key>loadFile</key>
+						<string>pt_lesson_3_more_2.json</string>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
@@ -145,6 +175,16 @@
 						<string>Open Choice</string>
 						<key>loadFile</key>
 						<string>pt_lesson_4_open.json</string>
+					</dict>
+					<dict>
+						<key>lessonNumber</key>
+						<integer>4</integer>
+						<key>topic</key>
+						<string>Open Choice 2</string>
+						<key>loadFile</key>
+						<string>pt_lesson_4_more.json</string>
+						<key>lessonName</key>
+						<string>Lesson 4: Open Choice 2</string>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
