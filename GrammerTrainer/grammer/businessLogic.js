@@ -511,15 +511,17 @@ function backDoor() {
            // alert("currentAnswerWords[i] == currentAnswerWords[i+1]: i = " + i); }
            continue; }
         else { return false; } }
-    alert("back door to exercise number " + currentAnswerWords.length);
+    //alert("back door to exercise number " + currentAnswerWords.length);
+    //var backNumStr = window.prompt("Enter the number of the exercise you'd like to go to", "")
     //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
-    backDoorUpdateExercise(currentAnswerWords.length - 1);
+    var backNum = parseInt(prompt("Enter the number of the exercise you'd like to go to: ", ""), 10); 
+    backDoorUpdateExercise(backNum - 1);
     return true;
 }
 
 function toNextLesson() {
     jitterNext = true;
-    didJitter = false;
+    didJitter = false
     saveProgramState();
     // You must call "exitLesson" from inside businessLogic to get the happyFace to show up between lessons.
     // You won't see the happyFace if you call "exitLesson" from inside "goToNextLesson".
@@ -682,8 +684,7 @@ function backDoorUpdateExercise(newExNum) {
     // First save state
     saveProgramState();
     if ((newExNum >= theLesson.exerciseArray.length) || (newExNum < 0)) {
-        alert("CANTALOUPE cannot load exerciseNumber:  " + newExNum + ", theLesson.length:  " + theLesson.exerciseArray.length);
-    }
+        alert("CANTALOUPE cannot load exerciseNumber:  " + newExNum + ", theLesson.length:  " + theLesson.exerciseArray.length); }
     currentExercise = theLesson.exerciseArray[newExNum];
     setCurrentExercise(currentExercise);
 }
