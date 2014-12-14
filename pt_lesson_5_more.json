@@ -1,0 +1,348 @@
+{
+    "lessonNumber": "14",
+    "lessonTopic": "Lesson 5: More Colored Shapes.",
+    "lessonType": "open_choice_2",
+    "subjects": [
+        "detAdjNPl"
+    ],
+    "exerciseList": [
+        [
+            "detAdjNPl",
+            "4"
+        ],
+        [
+            "detAdjNPl",
+            "5"
+        ],
+        [
+            "detAdjNPl",
+            "6"
+        ],
+        [
+            "detAdjNPl",
+            "7"
+        ]
+    ],
+    "subjectMasteryLimit": "4",
+    "exerciseArray": [
+        {
+            "exnum": "1",
+            "pictureA": "BlSqs.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+   
+            ],
+            "answers": [
+                "these are blue squares.",
+                "those are blue squares.",
+                "they are blue squares.",
+                "they're blue squares.",
+                "blue squares."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "squares"
+                ]
+            ],
+            "unneededWords": [
+                "three"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "detAdjNPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+            "exnum": "2",
+            "pictureA": "RdSqs.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+              ],
+            "answers": [
+                "these are red squares.",
+                "those are red squares.",
+                "they are red squares.",
+                "they're red squares.",
+                "red squares."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "squares"
+                ]
+            ],
+            "unneededWords": [
+                "three"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "detAdjNPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+            "exnum": "3",
+            "pictureA": "YlRts.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+   
+            ],
+            "answers": [
+                "these are yellow rectangles.",
+                "those are yellow rectangles.",
+                "they are yellow rectangles.",
+                "they're yellow rectangles.",
+                "yellow rectangles."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "rectangles"
+                ]
+            ],
+            "unneededWords": [
+                "two"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "detAdjNPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+            "exnum": "4",
+            "pictureA": "GnRts.jpg",
+            "pictureB": ".jpg",
+            "question": "What are these?",
+            "choices": [
+   
+            ],
+            "answers": [
+                "these are green rectangles.",
+                "those are green rectangles.",
+                "they are green rectangles.",
+                "they're green rectangles.",
+                "green rectangles."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "",
+                    "rectangles"
+                ]
+            ],
+            "unneededWords": [
+                "two"
+            ],
+            "nounButtons": [
+                "a",
+                "an",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveButtons": [
+                "blue",
+                "green",
+                "orange",
+                "red",
+                "yellow"
+            ],
+            "verbButtons": [
+                "is",
+                "are"
+            ],
+            "pronounButtons": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionButtons": [],
+            "functionButtons": [],
+            "subject": "detAdjNPl",
+            "pronounNounLists": [],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        }
+    ]
+}

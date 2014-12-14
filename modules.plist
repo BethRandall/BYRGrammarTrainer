@@ -207,6 +207,16 @@
 						<string>pt_lesson_5_open.json</string>
 					</dict>
 					<dict>
+						<key>topic</key>
+						<string>Open Choice 2</string>
+						<key>lessonNumber</key>
+						<integer>5</integer>
+						<key>lessonName</key>
+						<string>Lesson 5: Open Choice 2</string>
+						<key>loadFile</key>
+						<string>pt_lesson_5_more.json</string>
+					</dict>
+					<dict>
 						<key>lessonNumber</key>
 						<integer>6</integer>
 						<key>lessonName</key>
