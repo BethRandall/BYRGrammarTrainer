@@ -52,7 +52,7 @@
     "subjectMasteryLimit": "2",
     "exerciseArray": [
         {
-	    "exnum": "1",
+            "exnum": "1",
             "lessonImage": "Cc.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
@@ -123,7 +123,7 @@
             "timeCaption": ""
         },
         {
-	    "exnum": "2",
+            "exnum": "2",
             "lessonImage": "Sq.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
@@ -201,7 +201,7 @@
             "lessonImage": "Tg.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "mu.tipleChoice": [
+            "multipleChoice": [
                  ],
             "answers": [
                 "it is a triangle.",

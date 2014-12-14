@@ -119,7 +119,7 @@
             "lessonImage": "RdCc.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
                ],
             "answers": [
                 "it is a red circle.",
@@ -359,7 +359,7 @@
             "lessonImage": "OrOv.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
              ],
             "answers": [
                 "it is an orange oval.",
