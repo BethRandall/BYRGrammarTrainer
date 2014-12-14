@@ -222,7 +222,7 @@
 						<key>topic</key>
 						<string>Open Choice 3</string>
 						<key>lessonNumber</key>
-						<string>5</string>
+						<integer>5</integer>
 						<key>lessonName</key>
 						<string>Lesson 5: Open Choice 3</string>
 					</dict>
@@ -255,6 +255,16 @@
 						<string>Open Choice</string>
 						<key>loadFile</key>
 						<string>pt_lesson_7_open.json</string>
+					</dict>
+					<dict>
+						<key>lessonName</key>
+						<string>Lesson 7: Open Choice 2</string>
+						<key>topic</key>
+						<string>Open Choice 2</string>
+						<key>loadFile</key>
+						<string>pt_lesson_7_more.json</string>
+						<key>lessonNumber</key>
+						<integer>7</integer>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
