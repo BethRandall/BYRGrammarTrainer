@@ -53,10 +53,10 @@
     "exerciseArray": [
         {
 	    "exnum": "1",
-            "pictureA": "Cc.jpg",
+            "lessonImage": "Cc.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
                            ],
             "answers": [
                 "it is a circle.",
@@ -81,7 +81,7 @@
             "unneededWords": [
                 "one"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "the",
                 "arrow",
@@ -97,18 +97,18 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "this",
                 "that",
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "aNSg",
             "pronounNounLists": [],
@@ -124,10 +124,10 @@
         },
         {
 	    "exnum": "2",
-            "pictureA": "Sq.jpg",
+            "lessonImage": "Sq.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
                 ],
             "answers": [
                 "it is a square.",
@@ -152,7 +152,7 @@
             "unneededWords": [
                 "one"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -169,12 +169,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -182,7 +182,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "aNSg",
             "pronounNounLists": [],
@@ -198,10 +198,10 @@
         },
         {
 	    "exnum": "3",
-            "pictureA": "Tg.jpg",
+            "lessonImage": "Tg.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "mu.tipleChoice": [
                  ],
             "answers": [
                 "it is a triangle.",
@@ -226,7 +226,7 @@
             "unneededWords": [
                 "one"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -243,12 +243,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -256,7 +256,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "aNSg",
             "pronounNounLists": [],
@@ -272,10 +272,10 @@
         },
         {
 	    "exnum": "4",
-            "pictureA": "Rt.jpg",
+            "lessonImage": "Rt.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
     
             ],
             "answers": [
@@ -301,7 +301,7 @@
             "unneededWords": [
                 "one"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -318,12 +318,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -331,7 +331,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "aNSg",
             "pronounNounLists": [],
@@ -347,10 +347,10 @@
         },
         {
 	    "exnum": "5",
-            "pictureA": "arrow.jpg",
+            "lessonImage": "arrow.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
    
             ],
             "answers": [
@@ -376,7 +376,7 @@
             "unneededWords": [
                 "one"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -393,12 +393,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -406,7 +406,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "anNSg",
             "pronounNounLists": [],
@@ -422,10 +422,10 @@
         },
         {
 	    "exnum": "6",
-            "pictureA": "Ov.jpg",
+            "lessonImage": "Ov.jpg",
             "pictureB": ".jpg",
             "question": "What is this?",
-            "choices": [
+            "multipleChoice": [
       
             ],
             "answers": [
@@ -451,7 +451,7 @@
             "unneededWords": [
                 "one"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -468,12 +468,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -481,7 +481,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "anNSg",
             "pronounNounLists": [],
@@ -497,10 +497,10 @@
         },
         {
 	    "exnum": "7",
-            "pictureA": "Ccs.jpg",
+            "lessonImage": "Ccs.jpg",
             "pictureB": ".jpg",
             "question": "What are these?",
-            "choices": [
+            "multipleChoice": [
     
             ],
             "answers": [
@@ -525,7 +525,7 @@
             "unneededWords": [
                 "three"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -542,12 +542,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -555,7 +555,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "NPl",
             "pronounNounLists": [],
@@ -571,10 +571,10 @@
         },
         {
 	    "exnum": "8",
-            "pictureA": "Sqs.jpg",
+            "lessonImage": "Sqs.jpg",
             "pictureB": ".jpg",
             "question": "What are these?",
-            "choices": [
+            "multipleChoice": [
     
             ],
             "answers": [
@@ -599,7 +599,7 @@
             "unneededWords": [
                 "four"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -616,12 +616,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -629,7 +629,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "NPl",
             "pronounNounLists": [],
@@ -645,10 +645,10 @@
         },
         {
 	    "exnum": "9",
-            "pictureA": "Tgs.jpg",
+            "lessonImage": "Tgs.jpg",
             "pictureB": ".jpg",
             "question": "What are these?",
-            "choices": [
+            "multipleChoice": [
     
             ],
             "answers": [
@@ -673,7 +673,7 @@
             "unneededWords": [
                 "three"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -690,12 +690,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -703,7 +703,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "NPl",
             "pronounNounLists": [],
@@ -719,10 +719,10 @@
         },
         {
 	    "exnum": "10",
-            "pictureA": "Rts.jpg",
+            "lessonImage": "Rts.jpg",
             "pictureB": ".jpg",
             "question": "What are these?",
-            "choices": [
+            "multipleChoice": [
          
             ],
             "answers": [
@@ -747,7 +747,7 @@
             "unneededWords": [
                 "four"
             ],
-            "nounButtons": [
+            "nounWords": [
                 "a",
                 "an",
                 "the",
@@ -764,12 +764,12 @@
                 "triangle",
                 "triangles"
             ],
-            "adjectiveButtons": [],
-            "verbButtons": [
+            "adjectiveWords": [],
+            "verbWords": [
                 "is",
                 "are"
             ],
-            "pronounButtons": [
+            "pronounWords": [
                 "it",
                 "this",
                 "that",
@@ -777,7 +777,7 @@
                 "these",
                 "those"
             ],
-            "prepositionButtons": [],
+            "prepositionWords": [],
             "functionButtons": [],
             "subject": "NPl",
             "pronounNounLists": [],
