@@ -1,0 +1,1907 @@
+{
+    "lessonNumber": "23",
+    "lessonTopic": "Lesson 8: Where is the shape?",
+    "lessonType": "open_choice_2",
+    "subjects": [
+        "be_pp"
+    ],
+    "exerciseList": [
+        [
+            "be_pp",
+            "8"
+        ],
+        [
+            "be_pp",
+            "9"
+        ],
+        [
+            "be_pp",
+            "10"
+        ],
+        [
+            "be_pp",
+            "11"
+        ],
+        [
+            "be_pp",
+            "12"
+        ],
+        [
+            "be_pp",
+            "13"
+        ],
+        [
+            "be_pp",
+            "14"
+        ],
+        [
+            "be_pp",
+            "15"
+        ],
+        [
+            "be_pp",
+            "16"
+        ],
+        [
+            "be_pp",
+            "21"
+        ],
+        [
+            "be_pp",
+            "22"
+        ],
+        [
+            "be_pp",
+            "23"
+        ],
+        [
+            "be_pp",
+            "24"
+        ],
+        [
+            "be_pp",
+            "27"
+        ],
+        [
+            "be_pp",
+            "28"
+        ]
+    ],
+    "subjectMasteryLimit": "15",
+    "exerciseArray": [
+        {
+	    "exnum": "1",
+            "lessonImage": "SqInCc.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the square?",
+            "multipleChoice": [
+             ],
+            "answers": [
+                "the square is in aorthe circle.",
+                "the square's in aorthe circle.",
+                "it is in aorthe circle.",
+                "it's in aorthe circle."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ],
+                [
+                    "aorthe",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ],
+                [
+                    "it",
+                    "circle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "in",
+                    "inside"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "on",
+                    "front"
+                ]
+            ],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                "The circle",
+                "The square"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "2",
+            "lessonImage": "TgBwCcSq.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the triangle?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the triangle is between aorthe square and anya circle.",
+                "the triangle is between aorthe square and anya circle.",
+                "the triangle is between aorthe circle and anya square.",
+                "the triangle is between aorthe square and anya circle.",
+                "the triangle's between aorthe circle and anya square.",
+                "the triangle's between aorthe square and anya circle.",
+                "the triangle is in between aorthe circle and anya square.",
+                "the triangle is in between aorthe square and anya circle.",
+                "the triangle's in between aorthe circle and anya square.",
+                "the triangle's in between aorthe square and anya circle.",
+                "it is between aorthe circle and anya square.",
+                "it is between aorthe square and anya circle.",
+                "it's between aorthe circle and anya square.",
+                "it's between aorthe square and anya circle.",
+                "it is in between aorthe circle and anya square.",
+                "it is in between aorthe square and anya circle.",
+                "it's in between aorthe circle and anya square.",
+                "it's in between aorthe square and anya circle."
+            ],
+            "morphemesList": [
+                [
+                    "triangle",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ],
+                [
+                    "square",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "triangle"
+                ],
+                [
+                    "aorthe",
+                    "circle"
+                ],
+                [
+                    "aorthe",
+                    "square"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+	        "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "triangle",
+                    ""
+                ],
+                [
+                    "it",
+                    "circle",
+                    "mandatory_NP"
+                ],
+                [
+                    "it",
+                    "square",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "between"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "middle"
+                ]
+            ],
+            "subjectRequest": [
+                "triangle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "3",
+            "lessonImage": "CcOnSq.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the square?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the square is under aorthe circle.",
+                "the square's under aorthe circle.",
+                "it is under aorthe circle.",
+                "it's under aorthe circle."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ],
+                [
+                    "aorthe",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ],
+                [
+                    "it",
+                    "circle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "it",
+                "square"
+            ],
+            "replaceSubject": [
+                "The circle",
+                "The square"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "4",
+            "lessonImage": "CcsInSq.jpg",
+            "pictureB": ".jpg",
+            "question": "Where are the circles?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the circles are in aorthe square.",
+                "they are in aorthe square.",
+                "they're in aorthe square."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    "s"
+                ],
+                [
+                    "square",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "circles"
+                ],
+                [
+                    "aorthe",
+                    "square"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "circles",
+                    ""
+                ],
+                [
+                    "it",
+                    "square",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "in",
+                    "inside"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "on",
+                    "front"
+                ]
+            ],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                [
+                    "The square",
+                    "It"
+                ],
+                [
+                    "The circles",
+                    "They"
+                ]
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+            "exnum": "5",
+            "lessonImage": "CcsOvRt.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the rectangle?",
+            "multipleChoice": [
+             ],
+            "answers": [
+                "the rectangle is under the circles.",
+                "the rectangle's under the circles.",
+                "it is under the circles.",
+                "it's under the circles."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "rectangle"
+                ],
+                [
+                    "the",
+                    "circles"
+                ]
+            ],
+            "unneededWords": [
+                "four"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "rectangle",
+                    ""
+                ],
+                [
+                    "them",
+                    "circles",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "rectangle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                [
+                    "The circles",
+                    "They"
+                ],
+                [
+                    "The rectangle",
+                    "It"
+                ]
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "6",
+            "lessonImage": "RtNxSq.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the square?",
+            "multipleChoice": [
+             ],
+            "answers": [
+                "the square is next to aorthe rectangle.",
+                "the square is beside aorthe rectangle.",
+                "the square's next to aorthe rectangle.",
+                "the square's beside aorthe rectangle.",
+                "it is next to aorthe rectangle.",
+                "it is beside aorthe rectangle.",
+                "it's next to aorthe rectangle.",
+                "it's beside aorthe rectangle."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "rectangle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ],
+                [
+                    "aorthe",
+                    "rectangle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ],
+                [
+                    "it",
+                    "rectangle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "it",
+                "square"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "7",
+            "lessonImage": "SqsOnTgs.jpg",
+            "pictureB": ".jpg",
+            "question": "Where are the squares?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the squares are on the triangles.",
+                "they are on the triangles.",
+                "they're on the triangles.",
+                "the squares are on top of the triangles.",
+                "they are on top of the triangles.",
+                "they're on top of the triangles."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    "s"
+                ],
+                [
+                    "triangle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "squares"
+                ],
+                [
+                    "the",
+                    "triangles"
+                ]
+            ],
+            "unneededWords": [
+                "two"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "squares",
+                    ""
+                ],
+                [
+                    "them",
+                    "triangles",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "on"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "over"
+                ]
+            ],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                "The triangles",
+                "The squares"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+            "exnum": "8",
+            "lessonImage": "SqsOnTgs.jpg",
+            "pictureB": ".jpg",
+            "question": "Where are the triangles?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the triangles are under the squares.",
+                "they are under the squares.",
+                "they're under the squares."
+            ],
+            "morphemesList": [
+                [
+                    "triangle",
+                    "s"
+                ],
+                [
+                    "square",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "triangles"
+                ],
+                [
+                    "the",
+                    "squares"
+                ]
+            ],
+            "unneededWords": [
+                "two"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "triangles",
+                    ""
+                ],
+                [
+                    "them",
+                    "squares",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [],
+            "specialWordsTriggers": [],
+            "subjectRequest": [
+                "triangles",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                "The squares",
+                "The triangles"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "9",
+            "lessonImage": "SqBwTgCc.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the square?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the square is between aorthe triangle and anya circle.",
+                "the square's between aorthe triangle and anya circle.",
+                "it is between aorthe triangle and anya circle.",
+                "it's between aorthe triangle and anya circle.",
+                "the square is between aorthe circle and anya triangle.",
+                "the square's between aorthe circle and anya triangle.",
+                "it is between aorthe circle and anya triangle.",
+                "it's between aorthe circle and anya triangle.",
+                "the square is in between aorthe triangle and anya circle.",
+                "the square's in between aorthe triangle and anya circle.",
+                "it is in between aorthe triangle and anya circle.",
+                "it's in between aorthe triangle and anya circle.",
+                "the square is in between aorthe circle and anya triangle.",
+                "the square's in between aorthe circle and anya triangle.",
+                "it is in between aorthe circle and anya triangle.",
+                "it's in between aorthe circle and anya triangle."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "triangle",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ],
+                [
+                    "aorthe",
+                    "triangle"
+                ],
+                [
+                    "aorthe",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ],
+                [
+                    "it",
+                    "triangle",
+                    "mandatory_NP"
+                ],
+                [
+                    "it",
+                    "circle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "between"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "middle"
+                ]
+            ],
+            "subjectRequest": [
+                "square",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "10",
+            "lessonImage": "CcBhRt.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the circle?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the circle is behind aorthe rectangle.",
+                "the circle's behind aorthe rectangle.",
+                "it is behind aorthe rectangle.",
+                "it's behind aorthe rectangle."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    ""
+                ],
+                [
+                    "rectangle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "circle"
+                ],
+                [
+                    "aorthe",
+                    "rectangle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+	        "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "circle",
+                    ""
+                ],
+                [
+                    "it",
+                    "rectangle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "front",
+                    "behind"
+                ],
+                [
+                    "behind"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "under",
+                    "underneath"
+                ],
+                [
+                    "back"
+                ]
+            ],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                "The rectangle",
+                "The circle"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "11",
+            "lessonImage": "CcBhRt.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the rectangle?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the rectangle is in front of aorthe circle.",
+                "the rectangle's in front of aorthe circle.",
+                "it is in front of aorthe circle.",
+                "it's in front of aorthe circle."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "rectangle"
+                ],
+                [
+                    "aorthe",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "rectangle",
+                    ""
+                ],
+                [
+                    "it",
+                    "circle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "front",
+                    "behind"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "on",
+                    "over"
+                ]
+            ],
+            "subjectRequest": [
+                "rectangle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                "The circle",
+                "The rectangle"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "12",
+            "lessonImage": "TgBhRts.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the triangle?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the triangle is behind the rectangles.",
+                "the triangle's behind the rectangles.",
+                "it is behind the rectangles.",
+                "it's behind the rectangles."
+            ],
+            "morphemesList": [
+                [
+                    "triangle",
+                    ""
+                ],
+                [
+                    "rectangle",
+                    "s"
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "triangle"
+                ],
+                [
+                    "the",
+                    "rectangles"
+                ]
+            ],
+            "unneededWords": [
+                "two"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "triangle",
+                    ""
+                ],
+                [
+                    "them",
+                    "rectangles",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "front",
+                    "behind"
+                ],
+                [
+                    "behind"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "under",
+                    "underneath"
+                ],
+                [
+                    "back"
+                ]
+            ],
+            "subjectRequest": [
+                "triangle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                [
+                    "The rectangles",
+                    "They"
+                ],
+                [
+                    "The triangle",
+                    "It"
+                ]
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "13",
+            "lessonImage": "TgBhRts.jpg",
+            "pictureB": ".jpg",
+            "question": "Where are the rectangles?",
+            "multipleChoice": [
+             ],
+            "answers": [
+                "the rectangles are in front of aorthe triangle.",
+                "they are in front of aorthe triangle.",
+                "they're in front of aorthe triangle."
+            ],
+            "morphemesList": [
+                [
+                    "rectangle",
+                    "s"
+                ],
+                [
+                    "triangle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "rectangles"
+                ],
+                [
+                    "aorthe",
+                    "triangle"
+                ]
+            ],
+            "unneededWords": [
+                "two"
+            ],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "they",
+                    "rectangles",
+                    ""
+                ],
+                [
+                    "it",
+                    "triangle",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "front",
+                    "behind"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "on",
+                    "over"
+                ]
+            ],
+            "subjectRequest": [
+                "rectangles",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                [
+                    "The triangle",
+                    "It"
+                ],
+                [
+                    "The rectangles",
+                    "They"
+                ]
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "14",
+            "lessonImage": "SqInCc.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the circle?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the circle is around aorthe square.",
+                "the circle's around aorthe square.",
+                "it is around aorthe square.",
+                "it's around aorthe square."
+            ],
+            "morphemesList": [
+                [
+                    "square",
+                    ""
+                ],
+                [
+                    "circle",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "aorthe",
+                    "square"
+                ],
+                [
+                    "the",
+                    "circle"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    "mandatory_NP"
+                ],
+                [
+                    "it",
+                    "circle",
+                    ""
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "around"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "under",
+                    "underneath",
+                    "back"
+                ]
+            ],
+            "subjectRequest": [
+                "circle",
+                "it",
+                "they"
+            ],
+            "replaceSubject": [
+                "The square",
+                "The circle"
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        },
+        {
+	    "exnum": "15",
+            "lessonImage": "CcsInSq.jpg",
+            "pictureB": ".jpg",
+            "question": "Where is the square?",
+            "multipleChoice": [
+            ],
+            "answers": [
+                "the square is around the circles.",
+                "the square's around the circles.",
+                "it is around the circles.",
+                "it's around the circles."
+            ],
+            "morphemesList": [
+                [
+                    "circle",
+                    "s"
+                ],
+                [
+                    "square",
+                    ""
+                ]
+            ],
+            "articleNounList": [
+                [
+                    "the",
+                    "square"
+                ],
+                [
+                    "the",
+                    "circles"
+                ]
+            ],
+            "unneededWords": [],
+            "nounWords": [
+                "a",
+                "an",
+                "and",
+                "the",
+                "arrow",
+                "arrows",
+                "circle",
+                "circles",
+                "oval",
+                "ovals",
+                "rectangle",
+                "rectangles",
+                "square",
+                "squares",
+                "triangle",
+                "triangles"
+            ],
+            "adjectiveWords": [],
+            "verbWords": [
+                "is",
+                "are"
+            ],
+            "pronounWords": [
+                "it",
+                "this",
+                "that",
+                "they",
+                "these",
+                "those"
+            ],
+            "prepositionWords": [
+                "around",
+                "behind",
+                "between",
+                "front",
+                "in",
+                "next",
+                "of",
+                "on",
+                "over",
+                "to",
+                "under"
+            ],
+            "functionButtons": [],
+            "subject": "be_pp",
+            "pronounNounLists": [
+                [
+                    "it",
+                    "square",
+                    ""
+                ],
+                [
+                    "them",
+                    "circles",
+                    "mandatory_NP"
+                ]
+            ],
+            "specialWordsList": [
+                [
+                    "around"
+                ]
+            ],
+            "specialWordsTriggers": [
+                [
+                    "under",
+                    "underneath",
+                    "back"
+                ]
+            ],
+            "subjectRequest": [
+                "it",
+                "square"
+            ],
+            "replaceSubject": [
+                [
+                    "The circles",
+                    "They"
+                ],
+                [
+                    "The square",
+                    "It"
+                ]
+            ],
+            "startWords": [],
+            "untokenizedAnswersList": [],
+            "saidFrame": "",
+            "quote": "",
+            "timeCaption": ""
+        }
+    ]
+}
