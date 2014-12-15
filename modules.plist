@@ -80,7 +80,7 @@
 						<key>lessonName</key>
 						<string>Lesson 1:  Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>lessonNumber</key>
 						<integer>1</integer>
 						<key>loadFile</key>
@@ -102,7 +102,7 @@
 						<key>lessonName</key>
 						<string>Lesson 2:  More Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_2_open.json</string>
 					</dict>
@@ -110,7 +110,7 @@
 						<key>lessonNumber</key>
 						<integer>2</integer>
 						<key>lessonName</key>
-						<string>Lesson 2: open choice 2</string>
+						<string>Lesson 2:  More Shapes</string>
 						<key>topic</key>
 						<string>Open Choice 2</string>
 						<key>loadFile</key>
@@ -132,7 +132,7 @@
 						<key>lessonName</key>
 						<string>Lesson 3:  Even More Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_3_open.json</string>
 					</dict>
@@ -144,11 +144,11 @@
 						<key>lessonNumber</key>
 						<string>3</string>
 						<key>lessonName</key>
-						<string>Lesson 3: open choice 2</string>
+						<string>Lesson 3: Even More Shapes</string>
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 3: open choice 3</string>
+						<string>Lesson 3: Even More Shapes</string>
 						<key>lessonNumber</key>
 						<integer>3</integer>
 						<key>topic</key>
@@ -172,7 +172,7 @@
 						<key>lessonName</key>
 						<string>Lesson 4:  Colored Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_4_open.json</string>
 					</dict>
@@ -184,7 +184,7 @@
 						<key>loadFile</key>
 						<string>pt_lesson_4_more.json</string>
 						<key>lessonName</key>
-						<string>Lesson 4: Open Choice 2</string>
+						<string>Lesson 4: Colored Shapes</string>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
@@ -202,7 +202,7 @@
 						<key>lessonName</key>
 						<string>Lesson 5:  More Colored Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_5_open.json</string>
 					</dict>
@@ -212,7 +212,7 @@
 						<key>lessonNumber</key>
 						<integer>5</integer>
 						<key>lessonName</key>
-						<string>Lesson 5: Open Choice 2</string>
+						<string>Lesson 5: More Colored Shapes</string>
 						<key>loadFile</key>
 						<string>pt_lesson_5_more.json</string>
 					</dict>
@@ -224,7 +224,7 @@
 						<key>lessonNumber</key>
 						<integer>5</integer>
 						<key>lessonName</key>
-						<string>Lesson 5: Open Choice 3</string>
+						<string>Lesson 5: More Colored Shapes</string>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>
@@ -232,7 +232,7 @@
 						<key>lessonName</key>
 						<string>Lesson 6:  What Color is the Shape?</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_6_open.json</string>
 					</dict>
@@ -252,13 +252,13 @@
 						<key>lessonName</key>
 						<string>Lesson 7:  What Color are the Shapes?</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_7_open.json</string>
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 7: Open Choice 2</string>
+						<string>Lesson 7: What Color are the Shapes?</string>
 						<key>topic</key>
 						<string>Open Choice 2</string>
 						<key>loadFile</key>
@@ -282,7 +282,7 @@
 						<key>lessonName</key>
 						<string>Lesson 8:  Where is the Shape?</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>Open Choice 1</string>
 						<key>loadFile</key>
 						<string>pt_lesson_8_open.json</string>
 					</dict>
@@ -290,7 +290,7 @@
 						<key>topic</key>
 						<string>Open Choice 2</string>
 						<key>lessonName</key>
-						<string>Lesson 8: Open Choice 2</string>
+						<string>Lesson 8:  Where is the Shape?</string>
 						<key>loadFile</key>
 						<string>pt_lesson_8_more.json</string>
 						<key>lessonNumber</key>
