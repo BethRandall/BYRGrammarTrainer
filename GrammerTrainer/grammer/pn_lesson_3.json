@@ -279,7 +279,7 @@
 	    "prefill":  "The boy says that ",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
-            "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_2.m4v",
+            "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_1.m4v",
             "answers": [
                 "she will help him."
             ]

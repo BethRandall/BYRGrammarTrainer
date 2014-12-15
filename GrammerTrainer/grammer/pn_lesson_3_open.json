@@ -266,7 +266,7 @@
 	    "prefill":  "The boy says that ",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
-            "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_2.m4v",
+            "lessonVideo": "gt_videos/transportation_theme_videos/14_lesson_1.m4v",
             "answers": [
                 "she will help him."
             ]
@@ -300,7 +300,7 @@
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
 	    "prefill":  "The girl says that ",
-            "balloonSpecs": "right, 100, 10",
+            "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help me.",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_lesson_2.m4v",
             "answers": [
