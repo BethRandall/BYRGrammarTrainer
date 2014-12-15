@@ -191,6 +191,7 @@
         {
 	    "exnum": "2",
             "lessonImage": "TgBwCcSq.jpg",
+            "imageType": "xlong",
             "pictureB": ".jpg",
             "question": "Where is the triangle?",
             "multipleChoice": [
@@ -681,6 +682,7 @@
         {
 	    "exnum": "6",
             "lessonImage": "RtNxSq.jpg",
+            "imageType": "xlong",
             "pictureB": ".jpg",
             "question": "Where is the square?",
             "multipleChoice": [
@@ -1021,6 +1023,7 @@
         {
 	    "exnum": "9",
             "lessonImage": "SqBwTgCc.jpg",
+            "imageType": "xlong",
             "pictureB": ".jpg",
             "question": "Where is the square?",
             "multipleChoice": [
