@@ -957,6 +957,7 @@ function MetaDetermineFeedback()
           
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
+        
         if( wrongFormAndEnding.length > 0 )
         {
             $("#answerFeedbackBox p").html("One or more words have wrong forms and endings. Change the word in orange");
@@ -973,6 +974,7 @@ function MetaDetermineFeedback()
         {
             $("#answerFeedbackBox p").html("One or more words have wrong forms. Change the words in orange.");
         }
+       
         
         var wrongFormNumbers = new Array();
         var wrongEndingNumbers = new Array();
@@ -1046,8 +1048,8 @@ function MetaDetermineFeedback()
         //alert("articleFeedback");
         
         // Write the message to the feedback box
-        //$("#answerFeedbackBox p").html(message);
-        $("#answerFeedbackBox p").html("Remove/change the articles in red / add articles before the words in orange.");
+        $("#answerFeedbackBox p").html(message);
+        //$("#answerFeedbackBox p").html("Remove/change the articles in red / add articles before the words in orange.");
         
         var nounWithWrongArticleNumbers = new Array();
         var nounMissingAnArticleNumbers = new Array();
@@ -1074,13 +1076,21 @@ function MetaDetermineFeedback()
             $("#answer_" + nounWithWrongArticleNumbers[l]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
             // dark red
         }
-        
+       /*
         // Change the background color of wrong words to yellow
         for( var m = 0; m < nounMissingAnArticleNumbers.length; m++ )
         {
             $("#answer_" + nounMissingAnArticleNumbers[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat");
             // raw sienna
         }
+        */
+        // Change the background color of words missing articles to blue
+        for( var m = 0; m < nounMissingAnArticleNumbers.length; m++ )
+        {
+            $("#answer_" + nounMissingAnArticleNumbers[m]).css("background", "#0aaaf5 url(img/watercolorTextureTransparent.png) repeat");
+            // raw sienna
+        }
+        
     }
 	if (feedbackType == "strandedArticle")
     {
@@ -1090,18 +1100,22 @@ function MetaDetermineFeedback()
 		var strandedArticle = wordButtonMarkingInfo[0];  //tells you which word needs to be in red
 		var articleIndex = wordButtonMarkingInfo[1]; //tells you which position this word has in the sequence of words that the user inputted (starts at 0)
 		//####your button-changing code goes here!
-        //alert("Stranded Article.");
+        //alert("strandedArticle: " + strandedArticle + ", articleIndex:  " + articleIndex);
        
         
         // Write the message to the feedback box
-        //$("#answerFeedbackBox p").html(message);
-        $("#answerFeedbackBox p").html("You have one or more unnecessary articles. Remove them.");
+        $("#answerFeedbackBox p").html(message);
+        //$("#answerFeedbackBox p").html("You have one or more unnecessary articles. Remove them.");
         
         // Change the background color of wrong words to red
+        /*
         for(var i = 0; i < articleIndex.length; i++)
         {
             $("#answer_" + articleIndex[i]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
         }
+         */
+        $("#answer_" + articleIndex).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+        
     }
 	if (feedbackType == "syntaxFeedback")
     {
