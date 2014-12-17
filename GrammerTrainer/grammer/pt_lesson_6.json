@@ -123,11 +123,7 @@
             ],
             "pronounWords": [
                 "it",
-                "this",
-                "that",
-                "they",
-                "these",
-                "those"
+                "they"
             ],
             "prepositionWords": [],
             "functionButtons": [],
@@ -214,11 +210,7 @@
             ],
             "pronounWords": [
                 "it",
-                "this",
-                "that",
-                "they",
-                "these",
-                "those"
+                "they"
             ],
             "prepositionWords": [],
             "functionButtons": [],
@@ -305,12 +297,8 @@
             ],
             "pronounWords": [
                 "it",
-                "this",
-                "that",
-                "they",
-                "these",
-                "those"
-            ],
+                "they"
+                             ],
             "prepositionWords": [],
             "functionButtons": [],
             "subject": "beSg_adj",
@@ -396,12 +384,7 @@
             ],
             "pronounWords": [
                 "it",
-                "this",
-                "that",
-                "they",
-                "these",
-                "those"
-            ],
+                "they"            ],
             "prepositionWords": [],
             "functionButtons": [],
             "subject": "beSg_adj",
@@ -487,11 +470,7 @@
             ],
             "pronounWords": [
                 "it",
-                "this",
-                "that",
-                "they",
-                "these",
-                "those"
+                "they"
             ],
             "prepositionWords": [],
             "functionButtons": [],
