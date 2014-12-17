@@ -253,7 +253,7 @@ function setIndexArray() {
         var randdex =  Math.floor(Math.random()*usedDex.length);
         var newranddex = usedDex[randdex];
         // if you don't want to randomize the exercises, comment out the following line:
-        //indexArray[exerNum] = newranddex;
+        indexArray[exerNum] = newranddex;
         usedDex.splice(randdex, 1); }
 }
 
@@ -396,7 +396,8 @@ function initUserInterface() {
     //alert("about to removeGreenDotExercises: ");
     returnToLesson();
     step = 0;
-    while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
+    //while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
+    while((dotMatrix[indexArray[step]] != DOT_INCOMPLETE) && (dotMatrix[indexArray[step]] != DOT_UNTRIED)) {
         step++;
         if  (step >= dotMatrix.length) {break;}}
     if (step >= indexArray.length) {

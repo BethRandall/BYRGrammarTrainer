@@ -149,9 +149,15 @@ function pushPromptToRedo(exNum)
     for (var i = 0; i < promptsToRedo.length; i++) {
         if (promptsToRedo[i] == exNum) { already_recorded = true; break; }
     }
+    /*
     if (!already_recorded) {
         if (redoMode) { promptsToRedo.unshift(indexArray[exNum]); } // unshift adds to the beginning of the array.
         else { promptsToRedo.push(indexArray[exNum]); } }
+     */
+    if (!already_recorded) {
+        if (redoMode) { promptsToRedo.unshift(exNum); } // unshift adds to the beginning of the array.
+        else { promptsToRedo.push(exNum); } }
+
     dotMatrix[exNum] = DOT_WRONG;
     try {
         if (!redoMode) {
@@ -596,7 +602,8 @@ function goToNextExercise()
 			{
                 // Nope. Were still on the first round. Advance to next question.
                 step++;
-                while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
+                //while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
+                while((dotMatrix[indexArray[step]] != DOT_INCOMPLETE) && (dotMatrix[indexArray[step]] != DOT_UNTRIED)) {
                     step++;
                     if (step >= dotMatrix.length) { break; }
                 }
