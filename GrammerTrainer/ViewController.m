@@ -247,7 +247,17 @@ static NSString *versionNumber = @"1.30";
         // This copies selected lesson into initDataModel.js, this will be inserted once page finishes loading
         //[self copyOverLesson:lessonFileName];
         
-        signLabel_.text = [NSString stringWithFormat:@"Loading %@...", theLesson.lessonName];
+        signLabel_.numberOfLines = 3;
+        //signLabel_.font = UIFont(name: "HelveticaNeue-UltraLight",
+                                // size: 20.0);
+        
+        //[[self signLabel_] setFont:[UIFont systemFontOfSize:36]];
+        //signLabel_ = [[UILabel alloc]initWithFrame:CGRectMake(91, 15, 0, 0)];
+        
+        [signLabel_ setFont:[UIFont fontWithName:@"American Typewriter" size:30]];
+        
+        signLabel_.text = [NSString stringWithFormat:@"Loading %@ \n %@", theLesson.lessonName, theLesson.topic];
+        [signLabel_ sizeToFit];
         NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"]; 
         NSURL *url;
         

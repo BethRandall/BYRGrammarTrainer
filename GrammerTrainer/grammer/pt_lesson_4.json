@@ -1,7 +1,10 @@
 {
     "lessonNumber": "9",
     "lessonTopic": "Lesson 4: Colored Shapes.",
-    "lessonType": "multiple_choice",
+    "lessonType": "Multiple Choice",
+    "name1": "Lesson 4",
+    "name2": "Colored Shapes",
+    "name3": "Multiple Choice",
     "nounWords": [
         "a",
         "an",

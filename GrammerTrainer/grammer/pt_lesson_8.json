@@ -1,7 +1,10 @@
 {
     "lessonNumber": "21",
     "lessonTopic": "Lesson 8: Where is the shape?",
-    "lessonType": "multiple_choice",
+    "lessonType": "Multiple Choice",
+    "name1": "Lesson 8",
+    "name2": "Where is the Shape?",
+    "name3": "Multiple Choice",
     "nounWords": [
         "a",
         "an",

@@ -78,7 +78,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 1:  Shapes</string>
+						<string> Lesson 1: Shapes</string>
 						<key>topic</key>
 						<string>Open Choice 1</string>
 						<key>lessonNumber</key>
@@ -100,7 +100,7 @@
 						<key>lessonNumber</key>
 						<integer>2</integer>
 						<key>lessonName</key>
-						<string>Lesson 2:  More Shapes</string>
+						<string> Lesson 2: More Shapes</string>
 						<key>topic</key>
 						<string>Open Choice 1</string>
 						<key>loadFile</key>

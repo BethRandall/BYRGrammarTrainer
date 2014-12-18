@@ -210,6 +210,24 @@ function myLoadLessonImage() {
     $("#speechBubble").hide();
 }
 
+function initLessonNameContainer() {
+   
+    $("#lessonNameContainer").empty();
+    if (typeof theLesson.name1 != 'undefined') {
+        $("#lessonNameContainer").append(theLesson.name1); }
+    else {  $("#lessonNameContainer").append("name1"); }
+    $("#lessonNameContainer").append("<br />");
+    if (typeof theLesson.name2 != 'undefined') {
+        $("#lessonNameContainer").append(theLesson.name2); }
+    else {  $("#lessonNameContainer").append("name2"); }
+    //$("#lessonNameContainer").append(theLesson.name2);
+    $("#lessonNameContainer").append("<br />");
+    //$("#lessonNameContainer").append(theLesson.name3);
+    if (typeof theLesson.name2 != 'undefined') {
+        $("#lessonNameContainer").append(theLesson.name3); }
+    else {  $("#lessonNameContainer").append("name3"); }
+}
+
 function initDots() {
     //alert("about to initDots: ");
     // Load the dots (the context needs to be the dotContainer element)
@@ -453,6 +471,7 @@ function initUserInterface() {
         myLoadLessonImage(); }
 
     initDots();
+    initLessonNameContainer();
     setMultipleChoiceBox(currentExercise);
     
     // word list are initialized in <lesson>.json file
