@@ -22,7 +22,7 @@
 						<key>lessonName</key>
 						<string>Tutorial Videos</string>
 						<key>topic</key>
-						<string>tutorial videos</string>
+						<string></string>
 						<key>loadFile</key>
 						<string>tut_videos.json</string>
 					</dict>
@@ -32,9 +32,9 @@
 						<key>lessonName</key>
 						<string>Getting Started</string>
 						<key>topic</key>
-						<string>with Phrase Trainer</string>
+						<string>with Phrase Lessons</string>
 						<key>loadFile</key>
-						<string>pt_lesson_1.json</string>
+						<string>pt_tutorial.json</string>
 					</dict>
 					<dict>
 						<key>lessonNumber</key>

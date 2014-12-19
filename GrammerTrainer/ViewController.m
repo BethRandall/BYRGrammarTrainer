@@ -255,9 +255,16 @@ static NSString *versionNumber = @"1.30";
         //signLabel_ = [[UILabel alloc]initWithFrame:CGRectMake(91, 15, 0, 0)];
         
         [signLabel_ setFont:[UIFont fontWithName:@"American Typewriter" size:30]];
+        if ([theLesson.lessonName rangeOfString:[NSString stringWithFormat:@"%c",':']].location != NSNotFound) {
         
-        signLabel_.text = [NSString stringWithFormat:@"Loading %@ \n %@", theLesson.lessonName, theLesson.topic];
-        [signLabel_ sizeToFit];
+            NSArray *lines = [theLesson.lessonName componentsSeparatedByString:@":"];
+            NSString *line2 = [lines[1] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+            signLabel_.text = [NSString stringWithFormat:@"Loading %@:\n%@\n%@", lines[0], line2, theLesson.topic]; }
+        else {
+            signLabel_.text = [NSString stringWithFormat:@"Loading %@:\n%@", theLesson.lessonName, theLesson.topic]; 
+        }
+        //[signLabel_ sizeToFit];
         NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"]; 
         NSURL *url;
         

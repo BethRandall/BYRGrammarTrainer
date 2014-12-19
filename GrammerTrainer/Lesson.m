@@ -18,7 +18,7 @@
 
 - (NSString *)description {
     
-    NSLog([NSString stringWithFormat:@"lessonName: %@\n topic:%@\n loadFile: %@\n lessonNumber: %@\n", lessonName, topic, loadFile, lessonNumber]);
+    //NSLog([NSString stringWithFormat:@"lessonName: %@\n topic:%@\n loadFile: %@\n lessonNumber: %@\n", lessonName, topic, loadFile, lessonNumber]);
     return [NSString stringWithFormat:@"lessonName: %@\n topic:%@\n loadFile: %@\n lessonNumber: %@\n", lessonName, topic, loadFile, lessonNumber];
 }
 

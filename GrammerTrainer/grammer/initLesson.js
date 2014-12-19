@@ -213,6 +213,9 @@ function myLoadLessonImage() {
 function initLessonNameContainer() {
    
     $("#lessonNameContainer").empty();
+    if (typeof theLesson.name1 == 'undefined') {
+        $("#lessonNameContainer").hide();
+        return; }
     if (typeof theLesson.name1 != 'undefined') {
         $("#lessonNameContainer").append(theLesson.name1); }
     else {  $("#lessonNameContainer").append("name1"); }
@@ -220,9 +223,7 @@ function initLessonNameContainer() {
     if (typeof theLesson.name2 != 'undefined') {
         $("#lessonNameContainer").append(theLesson.name2); }
     else {  $("#lessonNameContainer").append("name2"); }
-    //$("#lessonNameContainer").append(theLesson.name2);
     $("#lessonNameContainer").append("<br />");
-    //$("#lessonNameContainer").append(theLesson.name3);
     if (typeof theLesson.name2 != 'undefined') {
         $("#lessonNameContainer").append(theLesson.name3); }
     else {  $("#lessonNameContainer").append("name3"); }
