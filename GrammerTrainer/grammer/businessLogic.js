@@ -71,7 +71,8 @@ var theLesson;
 var indexArray;       // these get initialized by initDataModel.js
 var redoNumArray;     // this array holds info about how many times each exercise needs to be redone.
 var numToRedo = 2;    // each wrong exercise must be done correctly this many times.
-var step;
+var step;             // index to move through indexArray, randomized list of exercises.
+var prevExNum;        // number of previous exercise.
 var currentExercise;
 var nounWords;
 var verbWords;
@@ -505,8 +506,7 @@ function submitAnswer()
     initDots();
 }
 
-// "backdoor" method for advancing to particular exercise; repeat an answer word the same number of times
-// as the number of the desired exercise.
+// "backdoor" method for advancing to particular exercise; repeat an answer word at beginning of sentence ("I I").
 function backDoor() {
     //for (var j = 0; j < currentAnswerWords.length; j++) {
       //  alert("currentAnswerWords[" + j + "]:  " + currentAnswerWords[j]); }
@@ -518,9 +518,8 @@ function backDoor() {
            continue; }
         else { return false; } }
     //alert("back door to exercise number " + currentAnswerWords.length);
-    //var backNumStr = window.prompt("Enter the number of the exercise you'd like to go to", "")
+    var backNum = parseInt(prompt("Enter the number of the exercise you'd like to go to: ", ""), 10);
     //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
-    var backNum = parseInt(prompt("Enter the number of the exercise you'd like to go to: ", ""), 10); 
     backDoorUpdateExercise(backNum - 1);
     return true;
 }
@@ -578,7 +577,6 @@ function goToNextExercise()
             if (step < promptsToRedo.length) 
 			{
                 // Nope. Were still on the first round. Advance to next question.
-				//currentExerciseNumber++;
                 step++;
                 if (step == promptsToRedo.length) {
                     //alert("about to set step to 0: ");
@@ -624,6 +622,7 @@ function goToNextExercise()
 	
 	// Update the page
     //alert("about to updateExercise: ");
+    prevExNum = GetExNum();
 	updateExercise();
 }
 
@@ -658,14 +657,14 @@ function saveProgramState() {
     
 }
 
-function randomExercise(notThisOne) {
-    //alert("in randomExercise:  notThisOne:  " + notThisOne);
+function randomExercise(notThisOne, prevExNum) {
+    //alert("in randomExercise:  notThisOne:  " + notThisOne + ", prevExNum: " + prevExNum);
     var randdex =  Math.floor(Math.random()*(theLesson.exerciseArray).length);
     
-    if ((theLesson.exerciseArray).length > 1) {
-        while (randdex == notThisOne) {
+    if ((theLesson.exerciseArray).length > 2) {
+        while (randdex == notThisOne || randdex == prevExNum) {
+            //alert("randdex: " + randdex);
             randdex =  Math.floor(Math.random()*(theLesson.exerciseArray).length); }}
-    
     // Update question
     // First save state
     saveProgramState();
@@ -674,6 +673,7 @@ function randomExercise(notThisOne) {
         alert("BONOBO cannot load exerciseNumber:  " + randdex + ", theLesson.length:  " + theLesson.exerciseArray.length);
     }
     //alert("BONOBO will load: randdex:  " + randdex);
+    prevExNum = GetExNum();
     currentExercise = theLesson.exerciseArray[randdex];
     setCurrentExercise(currentExercise);
 }
@@ -710,7 +710,7 @@ function updateExercise()
         // need boolean variable to keep track of whether the jitter has happened yet or not.
         if (promptsToRedo.length == 1 && jitterNext == true) {
             //alert("AARDVARK will jitter");
-            randomExercise(promptsToRedo[0]);
+            randomExercise(promptsToRedo[0], prevExNum);
             didJitter = true;
         } else {
             //alert("in updateExercise: will set currentExercise: step: " + step);
@@ -1223,6 +1223,7 @@ function GetExNum() {
         // subtract 1 because array indices begin at 0 but exnums begin at 1.
         return (currentExercise.exnum - 1);
     }
+    alert("missing exnum field in .json file:");
     return step; }
 
 function GetExercise(exerciseNumber)
