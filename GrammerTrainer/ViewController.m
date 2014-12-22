@@ -970,6 +970,37 @@ static NSString *versionNumber = @"1.31";
     [self loadLesson:theLesson];
 }
 
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)goToPreviousLesson
+{
+    
+    Module *theModule = (Module *)[modules_ objectAtIndex:indexPath_.section];
+    
+    self.myLessonIndex = self.myLessonIndex - 1;
+    //NSLog(@"MEADOW theModule.lessons.count: %lu:  myLessonIndex:  %ld", (unsigned long)theModule.lessons.count, (long)self.myLessonIndex);
+    if (self.myLessonIndex < 0) {
+        NSLog(@"found myLessonIndex < 0:");
+        //self.myLessonIndex = self.myLessonIndex - 1;
+        Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
+        [self loadLesson:theLesson];
+        [self exitLesson];
+        return;
+    }
+    
+    Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
+    
+    // Save the currently selected module and lesson
+    self.currentModule = theModule;
+    self.currentLesson = theLesson;
+    
+    currentModule_.index = @(indexPath_.section); //  Keeps track of current selection
+    currentLesson_.index = @(indexPath_.row); //  Keeps track of current selection
+    
+    menuVisible = YES;
+    
+    [self loadLesson:theLesson];
+}
+
 
 #pragma Native Web Interface
 
@@ -1094,8 +1125,9 @@ static NSString *versionNumber = @"1.31";
 {
          
    if ([functionName isEqualToString:@"goToNextLesson"]) {
-       [self goToNextLesson];
-       //[self.theTableView reloadData];
+        [self goToNextLesson];
+    }else if ([functionName isEqualToString:@"goToPreviousLesson"]) {
+        [self goToPreviousLesson];
     } else if ([functionName isEqualToString:@"lessonLoaded"]) {
         //NSLog(@"Did call lessonLoaded");
         menuVisible = YES;
@@ -1252,7 +1284,7 @@ static NSString *versionNumber = @"1.31";
             [someJavaScript appendFormat:@"redoMode = %@;", [stateVector objectForKey:@"redoMode"] ];
             
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"promptsToRedo"] withName:@"promptsToRedo"]];
-            [someJavaScript appendFormat:@"currentRedoPromptNumber = %@;", [stateVector objectForKey:@"currentRedoPromptNumber"] ];
+            //[someJavaScript appendFormat:@"currentRedoPromptNumber = %@;", [stateVector objectForKey:@"currentRedoPromptNumber"] ];
 
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"indexArray"] withName:@"indexArray"]];
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"dotMatrix"] withName:@"dotMatrix"]];             

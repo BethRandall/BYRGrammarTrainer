@@ -41,13 +41,6 @@ $(document).ready(function(){
                   //$("#dotContainer #submitButton").click(function(){ backDoorUpdateExercise(); });
                   
 });
- 
-
-
-// Lesson Number
-//var currentLessonNumber;
-// Exercise Number
-//var currentExerciseNumber;
 
 // Words for the current answer
 var currentAnswer = "";
@@ -61,7 +54,7 @@ var didJitter = false;
 // An array of incorrectly answered prompts to redo
 var promptsToRedo;
 // Current redo prompt track
-var currentRedoPromptNumber;
+//var currentRedoPromptNumber;
 
 // Array of answer words
 var currentAnswerWords;
@@ -73,6 +66,8 @@ var redoNumArray;     // this array holds info about how many times each exercis
 var numToRedo = 2;    // each wrong exercise must be done correctly this many times.
 var step;             // index to move through indexArray, randomized list of exercises.
 var prevExNum;        // number of previous exercise.
+var numWrong;         // number of exercises that have been done wrong in the current lesson.
+var maxWrong = 3;     // maximum number of ex's the user is allowed to get wrong before being sent back to the previous lesson.
 var currentExercise;
 var nounWords;
 var verbWords;
@@ -502,7 +497,6 @@ function submitAnswer()
 	MetaDetermineFeedback();
     //alert("about to update dot feedback matrix: ");
 	// Update the dot feedback matrix
-	//updateDotFeedback();
     initDots();
 }
 
@@ -526,13 +520,26 @@ function backDoor() {
 
 function toNextLesson() {
     jitterNext = true;
-    didJitter = false
+    didJitter = false;
+    numWrong = 0;
     saveProgramState();
     // You must call "exitLesson" from inside businessLogic to get the happyFace to show up between lessons.
     // You won't see the happyFace if you call "exitLesson" from inside "goToNextLesson".
     NativeBridge.call("exitLesson");
     NativeBridge.call("goToNextLesson");
 }
+
+function toPreviousLesson() {
+    jitterNext = true;
+    didJitter = false;
+    numWrong = 0;
+    saveProgramState();
+    // You must call "exitLesson" from inside businessLogic to get the happyFace to show up between lessons.
+    // You won't see the happyFace if you call "exitLesson" from inside "goToPreviousLesson".
+    NativeBridge.call("exitLesson");
+    NativeBridge.call("goToPreviousLesson");
+}
+
 
 function goToNextVideo() {
     dotMatrix[step] = DOT_CORRECT;
@@ -586,7 +593,7 @@ function goToNextExercise()
 			{
                 // All redo questions have now been answered once [BYR -- should be twice!]. But all dots are not green so stay in redo mode.
                 setDotWrongToIncomplete();
-				currentRedoPromptNumber = 0;
+				//currentRedoPromptNumber = 0;
                 //currentExerciseNumber = Number(promptsToRedo[0]) + 1;
                 // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
@@ -613,7 +620,7 @@ function goToNextExercise()
 				redoMode = true;
                 randomizeRedo();
                 setDotWrongToIncomplete();
-                currentRedoPromptNumber = 0;
+                //currentRedoPromptNumber = 0;
 				//currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
@@ -645,7 +652,7 @@ function saveProgramState() {
     saveState.redoMode = redoMode;
     saveState.promptsToRedo = promptsToRedo;
     saveState.redoNumArray = redoNumArray;
-    saveState.currentRedoPromptNumber = currentRedoPromptNumber;
+    //saveState.currentRedoPromptNumber = currentRedoPromptNumber;
     saveState.indexArray = indexArray;
     saveState.dotMatrix = dotMatrix;
     
@@ -658,7 +665,7 @@ function saveProgramState() {
 }
 
 function randomExercise(notThisOne, prevExNum) {
-    //alert("in randomExercise:  notThisOne:  " + notThisOne + ", prevExNum: " + prevExNum);
+    //salert("in randomExercise:  notThisOne:  " + notThisOne + ", prevExNum: " + prevExNum);
     var randdex =  Math.floor(Math.random()*(theLesson.exerciseArray).length);
     
     if ((theLesson.exerciseArray).length > 2) {
@@ -863,9 +870,6 @@ function MetaDetermineFeedback()
                     dotMatrix[index] = DOT_CORRECT;
                     saveProgramState();
                     if (promptsToRedo.length == 0) {
-                        //alert("found empty promptsToRedo: will goToNextLesson");
-                        //toNextLesson();
-                        //goToNextExercise();
                         return;
                     }}
                 else { dotMatrix[exNum] = DOT_INCOMPLETE; }
@@ -1181,6 +1185,11 @@ function MetaDetermineFeedback()
         }
         $("#answerFeedbackBox p").append(".");
     }
+    // if we're here, the answer was wrong.
+    numWrong = countRedDots();
+    if (numWrong >= maxWrong) {
+        alert("number of wrong exercises greater than " + maxWrong + ": will return to previous lesson:");
+        toPreviousLesson(); }
 }
 
 function setWrongWordsRed(currentAnswerWords, tokenizedResponse, wordButtonMarkingInfo) {

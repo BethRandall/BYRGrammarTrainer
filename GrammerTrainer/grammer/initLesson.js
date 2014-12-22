@@ -300,12 +300,6 @@ function setRedoNumArray() {
 
 function resetLesson() {
     //alert("in resetLesson: ");
-    // Lesson Number
-    // BYR -- this variable is never used and should probably be deleted.
-    //currentLessonNumber = 1;
-    // Exercise Number
-    // BYR -- I would like to get rid of this variable.
-    //currentExerciseNumber = 1;
     
     step = 0; // one-up for next exercise
     
@@ -321,7 +315,8 @@ function resetLesson() {
     promptsToRedo = new Array();
     // Current redo prompt track
     // BYR -- does this variable do anything?
-    currentRedoPromptNumber = 0;
+    //currentRedoPromptNumber = 0;
+    numWrong = 0;
     
     if(typeof theLesson == 'undefined') {
         alert("trouble downloading:  please try again");
