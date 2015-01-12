@@ -969,6 +969,15 @@ static NSString *versionNumber = @"1.31";
  
     [self loadLesson:theLesson];
 }
+/*
+- (int)getLessonIndex
+{
+    int lessonIndex_int = self.myLessonIndex;
+    NSLog(@"in getLessonIndex: myLessonIndex: %i", lessonIndex_int);
+    return lessonIndex_int;
+}
+ */
+
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)goToPreviousLesson
@@ -980,10 +989,10 @@ static NSString *versionNumber = @"1.31";
     //NSLog(@"MEADOW theModule.lessons.count: %lu:  myLessonIndex:  %ld", (unsigned long)theModule.lessons.count, (long)self.myLessonIndex);
     if (self.myLessonIndex < 0) {
         NSLog(@"found myLessonIndex < 0:");
-        //self.myLessonIndex = self.myLessonIndex - 1;
+        self.myLessonIndex = self.myLessonIndex - 1;
         Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
         [self loadLesson:theLesson];
-        [self exitLesson];
+        //[self exitLesson];
         return;
     }
     
@@ -1128,6 +1137,9 @@ static NSString *versionNumber = @"1.31";
         [self goToNextLesson];
     }else if ([functionName isEqualToString:@"goToPreviousLesson"]) {
         [self goToPreviousLesson];
+    //}else if ([functionName isEqualToString:@"getLessonIndex"]) {
+      //  [self returnResult:callbackId args:nil,self.myLessonIndex];
+        //[self getLessonIndex];
     } else if ([functionName isEqualToString:@"lessonLoaded"]) {
         //NSLog(@"Did call lessonLoaded");
         menuVisible = YES;
@@ -1276,15 +1288,13 @@ static NSString *versionNumber = @"1.31";
             NSDictionary *stateVector = [stateVectorDict objectForKey:@"jsonStateVector"];
             
             NSMutableString *someJavaScript = [NSMutableString new];
-            //[someJavaScript appendFormat:@"currentLessonNumber = %@;", [stateVector objectForKey:@"currentLessonNumber"] ];
-            //[someJavaScript appendFormat:@"currentExerciseNumber = %@;", [stateVector objectForKey:@"currentExerciseNumber"] ];
+
             [someJavaScript appendFormat:@"step = %@;", [stateVector objectForKey:@"step"] ];
             [someJavaScript appendFormat:@"currentAnswer = \"%@\";", [stateVector objectForKey:@"currentAnswer"] ];
             [someJavaScript appendFormat:@"currentWord = \"%@\";", [stateVector objectForKey:@"currentWord"] ];
             [someJavaScript appendFormat:@"redoMode = %@;", [stateVector objectForKey:@"redoMode"] ];
             
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"promptsToRedo"] withName:@"promptsToRedo"]];
-            //[someJavaScript appendFormat:@"currentRedoPromptNumber = %@;", [stateVector objectForKey:@"currentRedoPromptNumber"] ];
 
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"indexArray"] withName:@"indexArray"]];
             [someJavaScript appendString:[self makeJavaArrayFromArray:[stateVector objectForKey:@"dotMatrix"] withName:@"dotMatrix"]];             
@@ -1297,7 +1307,6 @@ static NSString *versionNumber = @"1.31";
              currentWord = "you";
              redoMode = 0;
              promptsToRedo = [1];
-             currentRedoPromptNumber = 0;
              indexArray = [8,3,7,0,14,5,6,2,11,9,1,10,12,4,15,13];
              dotMatrix = [0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,0];
             */

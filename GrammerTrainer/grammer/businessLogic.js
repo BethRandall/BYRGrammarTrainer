@@ -53,13 +53,12 @@ var jitterNext = true;
 var didJitter = false;
 // An array of incorrectly answered prompts to redo
 var promptsToRedo;
-// Current redo prompt track
-//var currentRedoPromptNumber;
 
 // Array of answer words
 var currentAnswerWords;
 var draggableAnswerWords;
 
+var lessonIndex;
 var theLesson;
 var indexArray;       // these get initialized by initDataModel.js
 var redoNumArray;     // this array holds info about how many times each exercise needs to be redone.
@@ -518,6 +517,23 @@ function backDoor() {
     return true;
 }
 
+// gets index of lesson in LessonArray (see modules.plist.)
+// For the moment, I only care if it's the first lesson in the array,
+// so I've marked those as lessonIndex: 0 in the .json file.
+function getLessonIndex() {
+    //NativeBridge.call("getLessonIndex", "", function (response){
+                      //lessonIndex = response; }
+    //lessonIndex = NativeBridge.call("getLessonIndex");
+    //alert("back from NativeBridge call:  lessonIndex: " + lessonIndex);
+    if (typeof theLesson.lessonIndex != "undefined") {
+        // alert("found exnum: " + currentExercise.exnum);
+        // subtract 1 because array indices begin at 0 but exnums begin at 1.
+        return (theLesson.lessonIndex);
+    }
+    lessonIndex = 100;
+    return lessonIndex;
+}
+
 function toNextLesson() {
     jitterNext = true;
     didJitter = false;
@@ -593,9 +609,6 @@ function goToNextExercise()
 			{
                 // All redo questions have now been answered once [BYR -- should be twice!]. But all dots are not green so stay in redo mode.
                 setDotWrongToIncomplete();
-				//currentRedoPromptNumber = 0;
-                //currentExerciseNumber = Number(promptsToRedo[0]) + 1;
-                // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
 		}
@@ -620,8 +633,6 @@ function goToNextExercise()
 				redoMode = true;
                 randomizeRedo();
                 setDotWrongToIncomplete();
-                //currentRedoPromptNumber = 0;
-				//currentExerciseNumber = Number(promptsToRedo[0]) + 1; // add 1 because of indexing starting at 1 vs. 0.
                 step = 0;
 			}
 		}
@@ -644,15 +655,12 @@ function setDotWrongToIncomplete() {
 function saveProgramState() {
     
     var saveState = new Object();
-    //saveState.currentLessonNumber = currentLessonNumber;
-    //saveState.currentExerciseNumber = currentExerciseNumber;
     saveState.step = step;
     saveState.currentAnswer = currentAnswer;
     saveState.currentWord = currentWord;
     saveState.redoMode = redoMode;
     saveState.promptsToRedo = promptsToRedo;
     saveState.redoNumArray = redoNumArray;
-    //saveState.currentRedoPromptNumber = currentRedoPromptNumber;
     saveState.indexArray = indexArray;
     saveState.dotMatrix = dotMatrix;
     
@@ -737,39 +745,6 @@ function updateExercise()
     setCurrentExercise(currentExercise);
     //alert("leaving updateExercise: ");
 }
-/*
-// Update the dot feedback matrix
-function updateDotFeedback()
-{
-	$("#dotContainer").html(""); 
-    //alert("dotContainer: " + dotMatrix);
-	for( var d = 0; d < dotMatrix.length; d++ )
-	{ if( (d % 6 == 0) && (d != 0) )
-		{
-			$("#dotContainer").append("<br />");
-            if(dotMatrix[d] == DOT_UNTRIED)
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
-			if(dotMatrix[d] == DOT_INCOMPLETE)
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
-			else if(dotMatrix[d] == DOT_WRONG)
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
-			else
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
-		}
-		else
-		{
-            if(dotMatrix[d] == DOT_UNTRIED)
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
-            if(dotMatrix[d] == DOT_INCOMPLETE)
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
-			else if(dotMatrix[d] == DOT_WRONG)
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
-			else
-			{ $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
-		}
-	}
-}
- */
 
 // Plays sound
 function playSound(soundID)
@@ -1187,7 +1162,10 @@ function MetaDetermineFeedback()
     }
     // if we're here, the answer was wrong.
     numWrong = countRedDots();
-    if (numWrong >= maxWrong) {
+    lessonIndex = getLessonIndex();
+    //alert("lessonIndex: " + lessonIndex);
+    if ((numWrong >= maxWrong) && (lessonIndex > 0)) {
+        lessonIndex = getLessonIndex();
         alert("number of wrong exercises greater than " + maxWrong + ": will return to previous lesson:");
         toPreviousLesson(); }
 }

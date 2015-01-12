@@ -377,7 +377,8 @@ p.speechRight:after
 #lessonNameContainer
 {
     position: fixed;
-	font-size: 18px;
+	font-size: 20px;
+    font-weight: bold;
 	color: #ffffff;
 	top: 10px;
 	left: 20px;

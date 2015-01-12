@@ -313,9 +313,6 @@ function resetLesson() {
     //alert("in initLesson, resetLesson: ");
     // An array of incorrectly answered prompts to redo
     promptsToRedo = new Array();
-    // Current redo prompt track
-    // BYR -- does this variable do anything?
-    //currentRedoPromptNumber = 0;
     numWrong = 0;
     
     if(typeof theLesson == 'undefined') {
@@ -400,7 +397,7 @@ function initUserInterface() {
     
     // Call Native to find out gender of user
     // checkGender() inits the following variables; him_her,he_she,Him_Her,He_She
-    checkGender();
+    //checkGender();
     
     //currentExercise = theLesson.exerciseArray[indexArray[step]];
     if ((indexArray[0] >= theLesson.exerciseArray.length) || (indexArray[0] < 0)) {
