@@ -144,8 +144,8 @@
         {
 	    "exnum": "6",
             "multipleChoice": [
-                "He will help the girl.",
-                "The girl will help him.",
+                "he will help the girl.",
+                "the girl will help him.",
                 "I will help the girl.",
                 "I will help her."
             ],
@@ -165,9 +165,9 @@
          {
 	    "exnum": "7",
             "multipleChoice": [
-                "He will help me.",
-                "He will help him_her.",
-                "She will help him.",
+                "he will help me.",
+                "he will help him_her.",
+                "she will help him.",
                 "I will help him."
             ],
             "capFirstWord": "no",
@@ -188,9 +188,9 @@
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
+                "he will help her.",
+                "she will help him.",
+                "he will help me.",
                 "I will help him."
             ],
             "capFirstWord": "no",

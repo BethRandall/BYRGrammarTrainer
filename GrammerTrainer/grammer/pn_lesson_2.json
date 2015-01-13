@@ -28,9 +28,9 @@
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help me.",
+                "he will help me.",
                 "I will help him.",
-                "You will help me.",
+                "you will help me.",
                 "I will help you."
             ],
             "answers": [
@@ -54,9 +54,9 @@
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prefill":  "The boy says that ",
             "multipleChoice": [
-                "He will help me.",
+                "he will help me.",
                 "I will help him.",
-                "You will help me.",
+                "you will help me.",
                 "I will help you."
             ],
             "answers": [
@@ -80,10 +80,10 @@
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
    	    "prefill": "The boys say that ",
             "multipleChoice": [
-                "They will help me.",
+                "they will help me.",
                 "I will help them.",
-                "You will help us.",
-                "We will help you."
+                "you will help us.",
+                "we will help you."
             ],
             "answers": [
                 "they will help me."
@@ -106,10 +106,10 @@
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
 	    "prefill":  "The boys say that ",
             "multipleChoice": [
-                "They will help me.",
+                "they will help me.",
                 "I will help them.",
-                "You will help us.",
-                "We will help you."
+                "you will help us.",
+                "we will help you."
             ],
             "answers": [
                 "I will help them."
@@ -132,8 +132,8 @@
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
+                "he will help her.",
+                "she will help him.",
                 "I will help him.",
                 "I will help her."
             ],
@@ -159,8 +159,8 @@
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
+                "he will help her.",
+                "she will help him.",
                 "I will help him.",
                 "I will help her."
             ],
@@ -186,8 +186,8 @@
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
+                "she will help him.",
+                "he will help her.",
                 "I will help her.",
                 "I will help him."
             ],
@@ -213,8 +213,8 @@
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
 	    "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
+                "she will help him.",
+                "he will help her.",
                 "I will help her.",
                 "I will help him."
             ],
@@ -240,9 +240,9 @@
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help me.",
-                "He will help her.",
-                "She will help him.",
+                "he will help me.",
+                "he will help her.",
+                "she will help him.",
                 "I will help him."
             ],
             "answers": [
@@ -266,9 +266,9 @@
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help me.",
-                "He will help her.",
-                "She will help him.",
+                "he will help me.",
+                "he will help her.",
+                "she will help him.",
                 "I will help him."
             ],
             "answers": [
@@ -292,9 +292,9 @@
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help me.",
-                "She will help him.",
-                "He will help her.",
+                "she will help me.",
+                "she will help him.",
+                "he will help her.",
                 "I will help her."
             ],
             "answers": [
@@ -318,9 +318,9 @@
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help me.",
-                "She will help him.",
-                "He will help her.",
+                "she will help me.",
+                "she will help him.",
+                "he will help her.",
                 "I will help her."
             ],
             "answers": [
@@ -344,9 +344,9 @@
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
+                "he will help her.",
+                "she will help him.",
+                "he will help me.",
                 "I will help him."
             ],
             "answers": [
@@ -371,9 +371,9 @@
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "prefill": "The boy says that ",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
+                "he will help her.",
+                "she will help him.",
+                "he will help me.",
                 "I will help him."
             ],
             "answers": [
@@ -398,9 +398,9 @@
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "She will help me.",
+                "she will help him.",
+                "he will help her.",
+                "she will help me.",
                 "I will help her."
             ],
             "answers": [
@@ -425,9 +425,9 @@
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prefill": "The girl says that ",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "She will help me.",
+                "she will help him.",
+                "he will help her.",
+                "she will help me.",
                 "I will help her."
             ],
             "answers": [

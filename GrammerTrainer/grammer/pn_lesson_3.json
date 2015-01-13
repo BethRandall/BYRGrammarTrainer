@@ -20,9 +20,9 @@
 	    "exnum": "1",
             "capFirstWord": "no",
             "multipleChoice": [
-                "He will help me.",
+                "he will help me.",
                 "I will help him.",
-                "You will help me.",
+                "you will help me.",
                 "I will help you."
             ],
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
@@ -39,9 +39,9 @@
         {
 	    "exnum": "2",
             "multipleChoice": [
-                "He will help me.",
+                "he will help me.",
                 "I will help him.",
-                "You will help me.",
+                "you will help me.",
                 "I will help you."
             ],
             "capFirstWord": "no",
@@ -60,10 +60,10 @@
 	    "exnum": "3",
                       
             "multipleChoice": [
-                "They will help me.",
+                "they will help me.",
                 "I will help them.",
-                "You will help us.",
-                "We will help you."
+                "you will help us.",
+                "we will help you."
             ],
             "capFirstWord": "no",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
@@ -80,10 +80,10 @@
         {
 	    "exnum": "4",
             "multipleChoice": [
-                "They will help me.",
+                "they will help me.",
                 "I will help them.",
-                "You will help us.",
-                "We will help you."
+                "you will help us.",
+                "we will help you."
             ],
         "capFirstWord": "no",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
@@ -100,8 +100,8 @@
         {
 	    "exnum": "5",
             "multipleChoice": [
-                "He will help the girl.",
-                "The girl will help him.",
+                "he will help the girl.",
+                "the girl will help him.",
                 "I will help the girl.",
                 "I will help her."
             ],
@@ -121,8 +121,8 @@
         {
 	    "exnum": "6",
             "multipleChoice": [
-                "He will help the girl.",
-                "The girl will help him.",
+                "he will help the girl.",
+                "the girl will help him.",
                 "I will help the girl.",
                 "I will help her."
             ],
@@ -142,8 +142,8 @@
         {
             "exnum": "7",
             "multipleChoice": [
-                "She will help the boy.",
-                "The boy will help her.",
+                "she will help the boy.",
+                "the boy will help her.",
                 "I will help the boy.",
                 "I will help him."
             ],
@@ -163,8 +163,8 @@
         {
 	    "exnum": "8",
             "multipleChoice": [
-                "She will help the boy.",
-                "The boy will help her.",
+                "she will help the boy.",
+                "the boy will help her.",
                 "I will help the boy.",
                 "I will help him."
             ],
@@ -184,9 +184,9 @@
         {
 	    "exnum": "9",
             "multipleChoice": [
-                "He will help me.",
-                "He will help him_her.",
-                "She will help him.",
+                "he will help me.",
+                "he will help him_her.",
+                "she will help him.",
                 "I will help him."
             ],
             "capFirstWord": "no",
@@ -204,9 +204,9 @@
         {
 	    "exnum": "10",
             "multipleChoice": [
-                "He will help me.",
-                "He will help her.",
-                "Him_Her will help him.",
+                "he will help me.",
+                "he will help her.",
+                "him_her will help him.",
                 "I will help him."
             ],
             "capFirstWord": "no",
@@ -224,9 +224,9 @@
         {
             "exnum": "11",
             "multipleChoice": [
-                "She will help me.",
-                "She will help him_her.",
-                "He_She will help her.",
+                "she will help me.",
+                "she will help him_her.",
+                "he_she will help her.",
                 "I will help her."
             ],
             "capFirstWord": "no",
@@ -244,9 +244,9 @@
         {
 	    "exnum": "12",
             "multipleChoice": [
-                "She will help me.",
-                "She will help him.",
-                "He_She will help her.",
+                "she will help me.",
+                "she will help him.",
+                "he_she will help her.",
                 "I will help her."
             ],
             "capFirstWord": "no",
@@ -264,9 +264,9 @@
         {
 	    "exnum": "13",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
+                "he will help her.",
+                "she will help him.",
+                "he will help me.",
                 "I will help him."
             ],
             "capFirstWord": "no",
@@ -284,9 +284,9 @@
         {
 	    "exnum": "14",
             "multipleChoice": [
-                "He will help her.",
-                "She will help him.",
-                "He will help me.",
+                "he will help her.",
+                "she will help him.",
+                "he will help me.",
                 "I will help him."
             ],
             "capFirstWord": "no",
@@ -304,9 +304,9 @@
         {
 	    "exnum": "15",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "She will help me.",
+                "she will help him.",
+                "he will help her.",
+                "she will help me.",
                 "I will help her."
             ],
             "capFirstWord": "no",
@@ -324,9 +324,9 @@
         {
             "exnum": "16",
             "multipleChoice": [
-                "She will help him.",
-                "He will help her.",
-                "She will help me.",
+                "she will help him.",
+                "he will help her.",
+                "she will help me.",
                 "I will help her."
             ],
             "capFirstWord": "no",
