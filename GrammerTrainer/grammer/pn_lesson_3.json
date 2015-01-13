@@ -18,6 +18,7 @@
     "exerciseArray": [
         {
 	    "exnum": "1",
+            "capFirstWord": "no",
             "multipleChoice": [
                 "He will help me.",
                 "I will help him.",
@@ -43,6 +44,7 @@
                 "You will help me.",
                 "I will help you."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -56,12 +58,14 @@
         },
         {
 	    "exnum": "3",
+                      
             "multipleChoice": [
                 "They will help me.",
                 "I will help them.",
                 "You will help us.",
                 "We will help you."
             ],
+            "capFirstWord": "no",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
             "oldPrompt": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -81,6 +85,7 @@
                 "You will help us.",
                 "We will help you."
             ],
+        "capFirstWord": "no",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
             "oldPrompt": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
 	    "prompt": "Complete this sentence.  The boys say that …",
@@ -100,6 +105,7 @@
                 "I will help the girl.",
                 "I will help her."
             ],
+        "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -120,6 +126,7 @@
                 "I will help the girl.",
                 "I will help her."
             ],
+        "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "prompt": "Complete this sentence.  The boy says that …",
@@ -140,6 +147,7 @@
                 "I will help the boy.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "oldPrompt": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "prompt": "Complete this sentence.  The girl says that …",
@@ -160,6 +168,7 @@
                 "I will help the boy.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "oldPrompt": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -180,6 +189,7 @@
                 "She will help him.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -199,6 +209,7 @@
                 "Him_Her will help him.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -218,6 +229,7 @@
                 "He_She will help her.",
                 "I will help her."
             ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -237,6 +249,7 @@
                 "He_She will help her.",
                 "I will help her."
             ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "prompt": "Complete this sentence.  The girl says that …",
@@ -256,6 +269,7 @@
                 "He will help me.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -275,6 +289,7 @@
                 "He will help me.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -294,6 +309,7 @@
                 "She will help me.",
                 "I will help her."
             ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -313,6 +329,7 @@
                 "She will help me.",
                 "I will help her."
             ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",

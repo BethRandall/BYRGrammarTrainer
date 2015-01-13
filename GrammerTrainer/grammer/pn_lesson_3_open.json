@@ -24,6 +24,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -42,6 +43,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -60,6 +62,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
             "oldPrompt": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -78,6 +81,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
             "oldPrompt": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
 	    "prompt": "Complete this sentence.  The boys say that …",
@@ -96,6 +100,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -115,6 +120,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -134,6 +140,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "oldPrompt": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -153,6 +160,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
             "oldPrompt": "The girl is talking to you. Look at the words in the balloon over her head. What is she saying to you?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -172,6 +180,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -190,6 +199,8 @@
                 "help"
             ],
             "multipleChoice": [ ],
+                      
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -208,6 +219,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -226,6 +238,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -244,6 +257,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -262,6 +276,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -280,6 +295,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",
@@ -298,6 +314,7 @@
                 "help"
             ],
             "multipleChoice": [ ],
+            "capFirstWord": "no",
             "question": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
             "oldPrompt": "The girl is talking to the boy. Look at the words in the balloon over her head. What is she saying to him?",
 	    "prompt": "Complete this sentence.  The girl says that …",

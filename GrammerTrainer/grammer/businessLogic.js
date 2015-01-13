@@ -66,7 +66,7 @@ var numToRedo = 2;    // each wrong exercise must be done correctly this many ti
 var step;             // index to move through indexArray, randomized list of exercises.
 var prevExNum;        // number of previous exercise.
 var numWrong;         // number of exercises that have been done wrong in the current lesson.
-var maxWrong = 3;     // maximum number of ex's the user is allowed to get wrong before being sent back to the previous lesson.
+var maxWrong = 10;     // maximum number of ex's the user is allowed to get wrong before being sent back to the previous lesson.
 var currentExercise;
 var nounWords;
 var verbWords;
@@ -266,7 +266,7 @@ function addWordToAnswer(targetWord, wordID)
 		// Clear the draggable answer array
 		draggableAnswerWords = new Array();
 		
-		// Make all words in the answer array lower case
+		/*// Make all words in the answer array lower case
 		for( var i = 0; i < currentAnswerWords.length; i++ )
 		{
 			// Except these following words
@@ -277,16 +277,19 @@ function addWordToAnswer(targetWord, wordID)
 				currentAnswerWords[i] = targetWordForLowerCase;
 			}
 		}
+         */
 		
 		// The first letter of the word must be capital
-		if( currentAnswerWords.length > 0 )
+		/*if( currentAnswerWords.length > 0 )
 		{
 			//alert("Constructor: " + currentAnswerWords[0].constructor);
 			var capitalLetter = currentAnswerWords[0].substring(0,1).toUpperCase();
 			//alert("Capital letter: " + capitalLetter);
 			var firstAnswerWord = capitalLetter + currentAnswerWords[0].substring(1);
 			currentAnswerWords[0] = firstAnswerWord;
-		}
+		}*/
+        answerWordsLowerCase();
+        capFirstAnswerWord();
 		
 		// Add the first removable answer word
 		$("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
@@ -382,7 +385,8 @@ function moveAnswer(answerNumber)
 	
 	// Clear the draggable answer array
 	draggableAnswerWords = new Array();
-   	
+    answerWordsLowerCase();
+   	/*
 	// Make all words in the answer array lower case
 	for( var i = 0; i < currentAnswerWords.length; i++ )
 	{
@@ -392,14 +396,17 @@ function moveAnswer(answerNumber)
 			var targetWordForLowerCase = currentAnswerWords[i].toLowerCase();
 			currentAnswerWords[i] = targetWordForLowerCase; }
 	}
+     */
 	
 	// The first letter of the word must be capital
-	if( currentAnswerWords.length > 0 )
+	/*if((currentAnswerWords.length > 0) && (theLesson.capFirstWord == 'undefined') && (currentExercise.capFirstWord == 'undefined'))
 	{
+        alert("will capitalize first word");
 		var capitalLetter = currentAnswerWords[0].substring(0,1).toUpperCase();
 		var firstAnswerWord = capitalLetter + currentAnswerWords[0].substring(1);
 		currentAnswerWords[0] = firstAnswerWord;
-	}
+	}*/
+    capFirstAnswerWord();
 	
 	// Add the first removable answer word
 	$("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_0\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
@@ -426,6 +433,31 @@ function moveAnswer(answerNumber)
 	// If there are no words in the answer array, then clear the answer box
 	if( currentAnswerWords.length == 0 )
 	{ eraseAnswer(); }
+}
+
+function answerWordsLowerCase() {
+    // Make all words in the answer array lower case
+    for( var i = 0; i < currentAnswerWords.length; i++ )
+    {
+        // Except these following words
+        if( (currentAnswerWords[i] !== "I") )
+        {
+            var targetWordForLowerCase = currentAnswerWords[i].toLowerCase();
+            currentAnswerWords[i] = targetWordForLowerCase; }
+    }
+}
+
+function capFirstAnswerWord() {
+    // The first letter of the first word must be capital
+    //alert("inside capFirstAnswerword: length of currentAnswerWords: " + currentAnswerWords.length);
+	if((currentAnswerWords.length > 0) && (typeof theLesson.capFirstWord == "undefined")
+       && (typeof currentExercise.capFirstWord == "undefined"))
+	{
+        //alert("will capitalize first word");
+		var capitalLetter = currentAnswerWords[0].substring(0,1).toUpperCase();
+		var firstAnswerWord = capitalLetter + currentAnswerWords[0].substring(1);
+		currentAnswerWords[0] = firstAnswerWord;
+	}
 }
 
 // Erase the whole answer
