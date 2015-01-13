@@ -266,31 +266,10 @@ function addWordToAnswer(targetWord, wordID)
 		// Clear the draggable answer array
 		draggableAnswerWords = new Array();
 		
-		/*// Make all words in the answer array lower case
-		for( var i = 0; i < currentAnswerWords.length; i++ )
-		{
-			// Except these following words
-			if( (currentAnswerWords[i] !== "I") )
-			{
-				//alert("Current word in check: " + currentAnswerWords[i]);
-				var targetWordForLowerCase = currentAnswerWords[i].toLowerCase();
-				currentAnswerWords[i] = targetWordForLowerCase;
-			}
-		}
-         */
-		
-		// The first letter of the word must be capital
-		/*if( currentAnswerWords.length > 0 )
-		{
-			//alert("Constructor: " + currentAnswerWords[0].constructor);
-			var capitalLetter = currentAnswerWords[0].substring(0,1).toUpperCase();
-			//alert("Capital letter: " + capitalLetter);
-			var firstAnswerWord = capitalLetter + currentAnswerWords[0].substring(1);
-			currentAnswerWords[0] = firstAnswerWord;
-		}*/
         answerWordsLowerCase();
         capFirstAnswerWord();
-		
+        displayAnswerWords();
+		/*
 		// Add the first removable answer word
 		$("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
 		draggableAnswerWords[0] = new webkit_draggable('answer_0', {revert : false, onStart : function(){currentWord = currentAnswerWords[0];}, onEnd : function(){moveAnswer(0);}});
@@ -316,6 +295,7 @@ function addWordToAnswer(targetWord, wordID)
 		// Add period
 		tempAnswerID++;
 		$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + "." + "</div>");
+         */
 	}
 }
 
@@ -386,28 +366,10 @@ function moveAnswer(answerNumber)
 	// Clear the draggable answer array
 	draggableAnswerWords = new Array();
     answerWordsLowerCase();
-   	/*
-	// Make all words in the answer array lower case
-	for( var i = 0; i < currentAnswerWords.length; i++ )
-	{
-		// Except these following words
-		if( (currentAnswerWords[i] !== "I") )
-		{
-			var targetWordForLowerCase = currentAnswerWords[i].toLowerCase();
-			currentAnswerWords[i] = targetWordForLowerCase; }
-	}
-     */
-	
-	// The first letter of the word must be capital
-	/*if((currentAnswerWords.length > 0) && (theLesson.capFirstWord == 'undefined') && (currentExercise.capFirstWord == 'undefined'))
-	{
-        alert("will capitalize first word");
-		var capitalLetter = currentAnswerWords[0].substring(0,1).toUpperCase();
-		var firstAnswerWord = capitalLetter + currentAnswerWords[0].substring(1);
-		currentAnswerWords[0] = firstAnswerWord;
-	}*/
     capFirstAnswerWord();
+    displayAnswerWords();
 	
+    /*
 	// Add the first removable answer word
 	$("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_0\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
 	draggableAnswerWords[0] = new webkit_draggable('answer_0', {revert : false, onStart : function(){currentWord = currentAnswerWords[0];}, onEnd : function(){moveAnswer(0);}});
@@ -429,10 +391,38 @@ function moveAnswer(answerNumber)
 	// Add period
 	tempAnswerID++;
 	$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + "." + "</div>");
-	
+	*/
 	// If there are no words in the answer array, then clear the answer box
 	if( currentAnswerWords.length == 0 )
 	{ eraseAnswer(); }
+}
+
+function displayAnswerWords() {
+    var tempAnswerID = 0;
+	var tempWord;
+	var tempLeftPosition = 4;
+    var shift = 0;
+    // Add the first removable answer word
+    $("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_0\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
+    draggableAnswerWords[0] = new webkit_draggable('answer_0', {revert : false, onStart : function(){currentWord = currentAnswerWords[0];},onEnd : function(){moveAnswer(0);}});
+
+    tempLeftPosition += document.getElementById("answer_0").offsetWidth + 2;
+
+    // Add more removable answer words
+    for( var i = 1; i < currentAnswerWords.length; i++ )
+    {
+        tempAnswerID = i;
+        $("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + i + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[i] + "</div>");
+        var tempAnswerString = "answer_" + i;
+        draggableAnswerWords[i] = new webkit_draggable(tempAnswerString, {revert : false, onStart : function(){currentWord = currentAnswerWords[i];}, onEnd : function(i){return function() {moveAnswer(i);}} (i)});
+        tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2; }
+
+    if (typeof currentExercise.balloonPrefill == "undefined") {
+        $("#speechBubble p").html(currentAnswerWords.join(" ") + "."); }
+
+    // Add period
+    tempAnswerID++;
+    $("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + "." + "</div>");
 }
 
 function answerWordsLowerCase() {
@@ -453,7 +443,6 @@ function capFirstAnswerWord() {
 	if((currentAnswerWords.length > 0) && (typeof theLesson.capFirstWord == "undefined")
        && (typeof currentExercise.capFirstWord == "undefined"))
 	{
-        //alert("will capitalize first word");
 		var capitalLetter = currentAnswerWords[0].substring(0,1).toUpperCase();
 		var firstAnswerWord = capitalLetter + currentAnswerWords[0].substring(1);
 		currentAnswerWords[0] = firstAnswerWord;

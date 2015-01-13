@@ -32,7 +32,7 @@
             "balloonSpecs": "left, 100, 10"
         },
              {
-            "exnum": "5",
+            "exnum": "2",
             "timeCaption": "Now",
             "question": "The boy is talking to you. He is telling you that he will help the girl. Look at the empty balloon over the boy. What words does the boy use?Type the words that go into the balloon.",
             "multipleChoice": [
@@ -61,7 +61,7 @@
             "balloonSpecs": "left, 100, 10"
         },
           {
-            "exnum": "9",
+            "exnum": "3",
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. He is telling her that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "multipleChoice": [
@@ -88,7 +88,7 @@
             "balloonSpecs": "right, 100, 10"
         },
            {
-            "exnum": "13",
+            "exnum": "4",
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. He is telling her that he will help her. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
             "multipleChoice": [
@@ -115,10 +115,11 @@
             "balloonSpecs": "left, 100, 10"
         },
        {
-            "exnum": "1",
+            "exnum": "5",
             "timeCaption": "Now",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prefill": "The boy says that ",
+            "capFirstWord": "no",
             "multipleChoice": [
                 "He will help me.",
                 "I will help him.",
@@ -141,13 +142,14 @@
             "lessonVideo": "gt_videos/transportation_theme_videos/1_lesson_2.m4v"
         },
         {
-	    "exnum": "5",
+	    "exnum": "6",
             "multipleChoice": [
                 "He will help the girl.",
                 "The girl will help him.",
                 "I will help the girl.",
                 "I will help her."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -161,13 +163,14 @@
             ]
         },
          {
-	    "exnum": "9",
+	    "exnum": "7",
             "multipleChoice": [
                 "He will help me.",
                 "He will help him_her.",
                 "She will help him.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prompt": "Complete this sentence.  The boy says that …",
@@ -180,7 +183,7 @@
             ]
         },
         {
-            "exnum": "13",
+            "exnum": "8",
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
 	    "prefill": "The boy says that ",
@@ -190,6 +193,7 @@
                 "He will help me.",
                 "I will help him."
             ],
+            "capFirstWord": "no",
             "answers": [
                 "he will help her.",
                 "he will help the girl."
