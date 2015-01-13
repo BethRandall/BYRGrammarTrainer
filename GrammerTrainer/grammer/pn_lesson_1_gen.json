@@ -22,8 +22,8 @@
             "multipleChoice": [
                
             ],
-            "oralprompt": "The girl said that she will call you.",
-            "prompt": "The girl said that she will call you.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that she will call you.",
+            "prompt": "The girl says that she will call you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/1_iwillcallyou_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -45,8 +45,8 @@
             "multipleChoice": [
          
             ],
-            "oralprompt": "The girl said that you will call her.",
-            "prompt": "The girl said that you will call her.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that you will call her.",
+            "prompt": "The girl says that you will call her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/2_youwillcallme_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -68,8 +68,8 @@
             "multipleChoice": [
       
             ],
-            "oralprompt": "The girls said that they will call you.",
-            "prompt": "The girls said that they will call you.  What goes in the speech bubble?",
+            "oralprompt": "The girls says that they will call you.",
+            "prompt": "The girls says that they will call you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/3_wewillcallyou_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -90,8 +90,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girls said that you will call them.",
-            "prompt": "The girls said that you will call them.  What goes in the speech bubble?",
+            "oralprompt": "The girls says that you will call them.",
+            "prompt": "The girls says that you will call them.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/4_youwillcallus_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -113,8 +113,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The boy said that he will call the girl.",
-            "prompt": "The boy said that he will call the girl.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that he will call the girl.",
+            "prompt": "The boy says that he will call the girl.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/5_iwillcallher_boy_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -136,8 +136,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The boy said that the girl will call him.",
-            "prompt": "The boy said that the girl will call him.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that the girl will call him.",
+            "prompt": "The boy says that the girl will call him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/6_shewillcallme_boy_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -159,8 +159,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girl said that she will call the boy",
-            "prompt": "The girl said that she will call the boy.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that she will call the boy",
+            "prompt": "The girl says that she will call the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/7_iwillcallhim_girl_noBalloon.m4v",
             "balloonSpecs": "right, 100, 10"
         },
@@ -182,8 +182,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girl said that the boy will call her.",
-            "prompt": "The girl said that the boy will call her.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that the boy will call her.",
+            "prompt": "The girl says that the boy will call her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/8_hewillcallme_girl_noBalloon.m4v",
             "balloonSpecs": "right, 100, 10"
         },
@@ -204,8 +204,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The boy said that he will call you.",
-            "prompt": "The boy said that he will call you.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that he will call you.",
+            "prompt": "The boy says that he will call you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/9_iwillcall_boy_noBalloon_HIM_HER_.m4v",
             "balloonSpecs": "right, 100, 10"
         },
@@ -226,8 +226,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The boy said that you will call him.",
-            "prompt": "The boy said that you will call him.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that you will call him.",
+            "prompt": "The boy says that you will call him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/10_willcallme_boy_noBalloon_HE_SHE_.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -248,8 +248,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girl said that she will call you.",
-            "prompt": "The girl said that she will call you.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that she will call you.",
+            "prompt": "The girl says that she will call you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/11_iwillcallher_girl_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -270,8 +270,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girl said that you will call her.",
-            "prompt": "The girl said that you will call her.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that you will call her.",
+            "prompt": "The girl says that you will call her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/12_willcallme_girl_noBalloon_HE_SHE_.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -292,8 +292,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The boy said that he will call the girl.",
-            "prompt": "The boy said that he will call the girl.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that he will call the girl.",
+            "prompt": "The boy says that he will call the girl.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/13_iwillcallyou_boy_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -314,8 +314,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The boy said that the girl will call him.",
-            "prompt": "The boy said that the girl will call him.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that the girl will call him.",
+            "prompt": "The boy says that the girl will call him.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/14_youwillcallme_boy_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -336,8 +336,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girl said that she will call the boy.",
-            "prompt": "The girl said that she will call the boy.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that she will call the boy.",
+            "prompt": "The girl says that she will call the boy.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/15_iwillcallyou_girl_noBalloon.m4v",
             "balloonSpecs": "right, 100, 10"
         },
@@ -358,8 +358,8 @@
             ],
             "multipleChoice": [
             ],
-            "oralprompt": "The girl said that the boy will call her.",
-            "prompt": "The girl said that the boy will call her.  What goes in the speech bubble?",
+            "oralprompt": "The girl says that the boy will call her.",
+            "prompt": "The girl says that the boy will call her.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/16_youwillcallme_girl_noBalloon.m4v",
             "balloonSpecs": "left, 100, 10"
         }
