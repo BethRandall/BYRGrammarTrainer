@@ -78,7 +78,7 @@
             "exnum": "3",
             "timeCaption": "Now",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
-   	    "prefill": "The boys say that ",
+   	    "prefill": "The boy says that ",
             "multipleChoice": [
                 "they will help me.",
                 "I will help them.",
@@ -94,7 +94,7 @@
                 "that"
             ],
             "oldPrompt": "The boys said that ",
-	    "prompt": "Complete this sentence.  The boys say that …",
+	    "prompt": "Complete this sentence.  The boy says that …",
             "quote": "We will help you.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "We will help you.",
@@ -104,7 +104,7 @@
             "exnum": "4",
             "timeCaption": "Now",
             "question": "The boys are talking to you. Look at the words in the balloon over the boys. What are they saying to you?",
-	    "prefill":  "The boys say that ",
+	    "prefill":  "The boy says that ",
             "multipleChoice": [
                 "they will help me.",
                 "I will help them.",
@@ -120,7 +120,7 @@
                 "that"
             ],
             "oldPrompt": "The boys said that ",
-	    "prompt": "Complete this sentence:  The boys say that …",
+	    "prompt": "Complete this sentence:  The boy says that …",
             "quote": "You will help us.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "You will help us.",
