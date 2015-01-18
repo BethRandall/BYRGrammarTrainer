@@ -570,9 +570,13 @@ p.speechRight:after
 }
 
 #answerCategoryTabContainer ul li.active {
-	background:#7f3b1b url(img/canvasTextureTransparent.png) repeat; 
+	/*background:#7f3b1b url(img/canvasTextureTransparent.png) repeat; */
     /* medium brown */
-	color:#ffffff;
+	/* color:#ffffff; */
+    /* light blue */
+    background:#b0d1f0 url(img/watercolorTextureTransparent.png) repeat;
+    /* text color: black */
+    color: #000000;
 	z-index:3;
 	position:relative;
 	top:-1px;
