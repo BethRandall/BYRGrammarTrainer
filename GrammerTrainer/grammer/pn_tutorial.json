@@ -118,7 +118,7 @@
             "exnum": "5",
             "timeCaption": "Now",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
-	    "prefill": "The boy says that ",
+	    "prefill": "He says that ",
             "capFirstWord": "no",
             "multipleChoice": [
                 "He will help me.",
@@ -135,7 +135,7 @@
                 "that"
             ],
             "oldPrompt": "The boy says that ",
-	    "prompt": "Complete this sentence.  The boy says that …",
+	    "prompt": "Complete this sentence.  He says that …",
             "quote": "I will help you.",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help you.",
@@ -152,8 +152,8 @@
             "capFirstWord": "no",
             "question": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
             "oldPrompt": "The boy is talking to you. Look at the words in the balloon over his head. What is he saying to you?",
-	    "prompt": "Complete this sentence.  The boy says that …",
-	    "prefill":  "The boy says that ",
+	    "prompt": "Complete this sentence.  He says that …",
+	    "prefill":  "He says that ",
 	    "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help her.",
             "lessonVideo": "gt_videos/transportation_theme_videos/5_lesson_2.m4v",
@@ -173,8 +173,8 @@
             "capFirstWord": "no",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
             "oldPrompt": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-	    "prompt": "Complete this sentence.  The boy says that …",
-	    "prefill":  "The boy says that ",
+	    "prompt": "Complete this sentence.  He says that …",
+	    "prefill":  "He says that ",
             "balloonSpecs": "left, 100, 10",
 	    "balloonPrefill": "I will help him_her.",
             "lessonVideo": "gt_videos/transportation_theme_videos/9_lesson_2_HIM_HER_.m4v",
@@ -186,7 +186,7 @@
             "exnum": "8",
             "timeCaption": "Now",
             "question": "The boy is talking to the girl. Look at the words in the balloon over his head. What is he saying to her?",
-	    "prefill": "The boy says that ",
+	    "prefill": "He says that ",
             "multipleChoice": [
                 "he will help her.",
                 "she will help him.",
@@ -204,7 +204,7 @@
                 "that"
             ],
             "oldPrompt": "The boy says that ",
-	    "prompt": "Complete this sentence.  The boy says that …",
+	    "prompt": "Complete this sentence.  He says that …",
             "quote": "I will help you.",
             "lessonVideo": "gt_videos/transportation_theme_videos/13_lesson_2.m4v"
         } 
