@@ -36,10 +36,6 @@ $(document).ready(function(){
                   
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
-                  
-                  // backdoor to exercise.
-                  //$("#dotContainer #submitButton").click(function(){ backDoorUpdateExercise(); });
-                  
 });
 
 // Words for the current answer
@@ -66,7 +62,8 @@ var numToRedo = 2;    // each wrong exercise must be done correctly this many ti
 var step;             // index to move through indexArray, randomized list of exercises.
 var prevExNum;        // number of previous exercise.
 var numWrong;         // number of exercises that have been done wrong in the current lesson.
-var maxWrong = 10;     // maximum number of ex's the user is allowed to get wrong before being sent back to the previous lesson.
+var maxWrong = 10;    // maximum number of answers the user is allowed to get wrong before being sent back to previous phase.
+var numWrong = 0;
 var currentExercise;
 var nounWords;
 var verbWords;
@@ -269,34 +266,7 @@ function addWordToAnswer(targetWord, wordID)
         answerWordsLowerCase();
         capFirstAnswerWord();
         displayAnswerWords();
-		/*
-		// Add the first removable answer word
-		$("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
-		draggableAnswerWords[0] = new webkit_draggable('answer_0', {revert : false, onStart : function(){currentWord = currentAnswerWords[0];}, onEnd : function(){moveAnswer(0);}});
-		
-		tempLeftPosition += document.getElementById("answer_0").offsetWidth + 2;
-		
-		// Add more removable answer words
-		for( var i = 1; i < currentAnswerWords.length; i++ )
-		{
-			//$("#droppableAnswerBox").css("display", "inline");
-			tempAnswerID = i;
-			//var tempNumberForDrag = i;
-			$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[i] + "</div>");
-			var tempAnswerString = "answer_" + tempAnswerID;
-			draggableAnswerWords[i] = new webkit_draggable('answer_' + i, {revert : false, onStart : function(){currentWord = currentAnswerWords[i];}, onEnd : function(i){return function() {moveAnswer(i);}} (i)});
-			tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2;
-			//alert("Current left position of answer_" + i + " is " + tempLeftPosition + "!");
-		}
-        
-        if (typeof currentExercise.balloonPrefill == "undefined") {
-            $("#speechBubble p").html(currentAnswerWords.join(" ") + "."); }
-        
-		// Add period
-		tempAnswerID++;
-		$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + "." + "</div>");
-         */
-	}
+    }
 }
 
 // Used to move or delete answer words
@@ -368,33 +338,9 @@ function moveAnswer(answerNumber)
     answerWordsLowerCase();
     capFirstAnswerWord();
     displayAnswerWords();
-	
-    /*
-	// Add the first removable answer word
-	$("#droppableAnswerBox p").html("<div class=\"draggableWord\" id=\"answer_0\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[0] + "</div>");
-	draggableAnswerWords[0] = new webkit_draggable('answer_0', {revert : false, onStart : function(){currentWord = currentAnswerWords[0];}, onEnd : function(){moveAnswer(0);}});
-	
-	tempLeftPosition += document.getElementById("answer_0").offsetWidth + 2;
-	
-	// Add more removable answer words
-	for( var i = 1; i < currentAnswerWords.length; i++ )
-	{
-		tempAnswerID = i;
-		$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + i + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + currentAnswerWords[i] + "</div>");
-		var tempAnswerString = "answer_" + i;
-		draggableAnswerWords[i] = new webkit_draggable(tempAnswerString, {revert : false, onStart : function(){currentWord = currentAnswerWords[i];}, onEnd : function(i){return function() {moveAnswer(i);}} (i)});
-		tempLeftPosition += document.getElementById(tempAnswerString).offsetWidth + 2; }
-   
-    if (typeof currentExercise.balloonPrefill == "undefined") {
-        $("#speechBubble p").html(currentAnswerWords.join(" ") + "."); }
-	
-	// Add period
-	tempAnswerID++;
-	$("#droppableAnswerBox p").append("<div class=\"draggableWord\" id=\"answer_" + tempAnswerID + "\" style=\"position:absolute; padding:6px; left:" + tempLeftPosition + "px\">" + "." + "</div>");
-	*/
 	// If there are no words in the answer array, then clear the answer box
 	if( currentAnswerWords.length == 0 )
-	{ eraseAnswer(); }
+        { eraseAnswer(); }
 }
 
 function displayAnswerWords() {
@@ -555,10 +501,14 @@ function getLessonIndex() {
     return lessonIndex;
 }
 
-function toNextLesson() {
+function setLessonConstants() {
     jitterNext = true;
     didJitter = false;
-    numWrong = 0;
+    numWrong = 0;    
+}
+
+function toNextLesson() {
+    setLessonConstants();
     saveProgramState();
     // You must call "exitLesson" from inside businessLogic to get the happyFace to show up between lessons.
     // You won't see the happyFace if you call "exitLesson" from inside "goToNextLesson".
@@ -567,9 +517,7 @@ function toNextLesson() {
 }
 
 function toPreviousLesson() {
-    jitterNext = true;
-    didJitter = false;
-    numWrong = 0;
+    setLessonConstants();
     saveProgramState();
     // You must call "exitLesson" from inside businessLogic to get the happyFace to show up between lessons.
     // You won't see the happyFace if you call "exitLesson" from inside "goToPreviousLesson".
@@ -845,6 +793,10 @@ function MetaDetermineFeedback()
 	   
     //### using your code, print out the message (which is in html code) and the points
     //depending on what sort of feedback this is, different outputs are necessary
+    if ((feedbackType != "CorrectAnswer") && NotPolite(feedbackType)) {
+        numWrong += 1;
+        //alert("numWrong: " + numWrong);
+    }
 	if (feedbackType == "CorrectAnswer")
     {
         //alert("found correct answer:  redoMode:  " + redoMode + ", promptsToRedo.length: " + promptsToRedo.length + ", jitterNext: " + jitterNext);
@@ -1182,12 +1134,11 @@ function MetaDetermineFeedback()
         $("#answerFeedbackBox p").append(".");
     }
     // if we're here, the answer was wrong.
-    numWrong = countRedDots();
     lessonIndex = getLessonIndex();
     //alert("lessonIndex: " + lessonIndex);
-    if ((numWrong >= maxWrong) && (lessonIndex > 0)) {
-        lessonIndex = getLessonIndex();
-        alert("number of wrong exercises greater than " + maxWrong + ": will return to previous lesson:");
+    //alert("theLesson.name3:  " + theLesson.name3);
+    if ((numWrong >= maxWrong) && (lessonIndex > 0) && (theLesson.name3 != "Multiple Choice")) {
+        alert("number of wrong answers is " + numWrong + ": will return to previous phase:");
         toPreviousLesson(); }
 }
 

@@ -80,8 +80,8 @@
       buildConfiguration = "SentenceWeaver1.20">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "SentenceWeaver1.31"
-      customArchiveName = "SentenceWeaver1.31"
+      buildConfiguration = "SentenceWeaver1.32"
+      customArchiveName = "SentenceWeaver1.32"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

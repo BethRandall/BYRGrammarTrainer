@@ -388,8 +388,7 @@ function returnToLesson() {
 function initUserInterface() {
     // NOTE: Must call resetLesson() or something else to init vars before calling this
     
-    jitterNext = true;
-    didJitter = false;
+    setLessonConstants();
     // Array of answer words
     
     currentAnswerWords = new Array();   // the state of this is not saved
