@@ -387,8 +387,8 @@
             "answers": [
                 "we will help you."
             ],
-            "oralprompt": "The boys says that they will help you.",
-            "prompt": "The boys says that they will help you.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that they will help you.",
+            "prompt": "The boy says that they will help you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/3_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
         },
@@ -404,8 +404,8 @@
             "answers": [
                 "you will help us."
             ],
-            "oralprompt": "The boys says that you will help them.",
-            "prompt": "The boys says that you will help them.  What goes in the speech bubble?",
+            "oralprompt": "The boy says that you will help them.",
+            "prompt": "The boy says that you will help them.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/4_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
         },
