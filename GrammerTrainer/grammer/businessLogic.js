@@ -793,10 +793,9 @@ function MetaDetermineFeedback()
 	   
     //### using your code, print out the message (which is in html code) and the points
     //depending on what sort of feedback this is, different outputs are necessary
-    if ((feedbackType != "CorrectAnswer") && NotPolite(feedbackType)) {
-        numWrong += 1;
-        //alert("numWrong: " + numWrong);
-    }
+    if ((feedbackType != "CorrectAnswer") && NotPolite(feedbackType)) { numWrong += 1; }
+    if (feedbackType == "CorrectAnswer" || !(NotPolite(feedbackType))) { numWrong = 0; }
+    //alert("numWrong:  " + numWrong);
 	if (feedbackType == "CorrectAnswer")
     {
         //alert("found correct answer:  redoMode:  " + redoMode + ", promptsToRedo.length: " + promptsToRedo.length + ", jitterNext: " + jitterNext);
