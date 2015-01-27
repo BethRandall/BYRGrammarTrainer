@@ -1389,6 +1389,56 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1409EDD31A6D84B100C69528 /* SentenceWeaver1.35 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = SentenceWeaver1.35;
+		};
+		1409EDD41A6D84B100C69528 /* SentenceWeaver1.35 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
+				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
+				WRAPPER_EXTENSION = app;
+			};
+			name = SentenceWeaver1.35;
+		};
 		1423D1601A64D3E500758739 /* SentenceWeaver1.32 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1406,7 +1456,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1456,7 +1506,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1506,7 +1556,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1556,7 +1606,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1606,7 +1656,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1660,7 +1710,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1681,7 +1731,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "c914cbbd-3eeb-43dc-8c6b-05aa98d8cd1f";
+				PROVISIONING_PROFILE = "077b9531-3e13-4fec-8abb-1251c3c8f8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1754,6 +1804,7 @@
 				1423D1601A64D3E500758739 /* SentenceWeaver1.32 */,
 				1473A0AD1A6C5B3B003D2A78 /* SentenceWeaver1.33 */,
 				147C246F1A6C6B3000857DA1 /* SentenceWeaver1.34 */,
+				1409EDD31A6D84B100C69528 /* SentenceWeaver1.35 */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1768,6 +1819,7 @@
 				1423D1611A64D3E500758739 /* SentenceWeaver1.32 */,
 				1473A0AE1A6C5B3B003D2A78 /* SentenceWeaver1.33 */,
 				147C24701A6C6B3000857DA1 /* SentenceWeaver1.34 */,
+				1409EDD41A6D84B100C69528 /* SentenceWeaver1.35 */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

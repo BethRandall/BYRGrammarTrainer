@@ -1136,7 +1136,7 @@ function MetaDetermineFeedback()
     lessonIndex = getLessonIndex();
     //alert("lessonIndex: " + lessonIndex);
     //alert("theLesson.name3:  " + theLesson.name3);
-    if ((numWrong >= maxWrong) && (lessonIndex > 0) && (theLesson.name3 != "Multiple Choice")) {
+    if ((numWrong >= maxWrong) && (lessonIndex > 0) && (theLesson.name3 != "Hints")) {
         alert("number of wrong answers is " + numWrong + ": will return to previous phase:");
         toPreviousLesson(); }
 }

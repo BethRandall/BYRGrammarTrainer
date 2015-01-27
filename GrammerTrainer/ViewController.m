@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.34";
+static NSString *versionNumber = @"1.35";
 
 - (FliteController *)fliteController { if (fliteController == nil) {
     fliteController = [[FliteController alloc] init]; }
@@ -656,7 +656,7 @@ static NSString *versionNumber = @"1.34";
 }
 
 - (void)toSpeech:(NSString *)toSay {
-    self.fliteController.duration_stretch = 1.8;
+    self.fliteController.duration_stretch = 1.4;
     [self.fliteController say:toSay withVoice:self.slt]; }
 
 - (void)viewDidLoad

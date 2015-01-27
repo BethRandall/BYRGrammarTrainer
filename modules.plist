@@ -70,7 +70,7 @@
 						<key>lessonName</key>
 						<string>Lesson 1:  Shapes</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_1.json</string>
 					</dict>
@@ -78,7 +78,7 @@
 						<key>lessonName</key>
 						<string> Lesson 1: Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_1_open.json</string>
 					</dict>
@@ -86,7 +86,7 @@
 						<key>lessonName</key>
 						<string>Lesson 2:  More Shapes</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_2.json</string>
 					</dict>
@@ -94,7 +94,7 @@
 						<key>lessonName</key>
 						<string> Lesson 2: More Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_2_open.json</string>
 					</dict>
@@ -110,7 +110,7 @@
 						<key>lessonName</key>
 						<string>Lesson 3:  Even More Shapes</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_3.json</string>
 					</dict>
@@ -118,7 +118,7 @@
 						<key>lessonName</key>
 						<string>Lesson 3:  Even More Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_3_open.json</string>
 					</dict>
@@ -142,7 +142,7 @@
 						<key>lessonName</key>
 						<string>Lesson 4:  Colored Shapes</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_4.json</string>
 					</dict>
@@ -150,7 +150,7 @@
 						<key>lessonName</key>
 						<string>Lesson 4:  Colored Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_4_open.json</string>
 					</dict>
@@ -166,7 +166,7 @@
 						<key>LessonName</key>
 						<string>Lesson 5:  More Colored Shapes</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_5.json</string>
 					</dict>
@@ -174,7 +174,7 @@
 						<key>lessonName</key>
 						<string>Lesson 5:  More Colored Shapes</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_5_open.json</string>
 					</dict>
@@ -196,7 +196,7 @@
 					</dict>
 					<dict>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>lessonName</key>
 						<string>Lesson 6: What Color is the Shape?</string>
 						<key>loadFile</key>
@@ -206,7 +206,7 @@
 						<key>lessonName</key>
 						<string>Lesson 6:  What Color is the Shape?</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no HInts</string>
 						<key>loadFile</key>
 						<string>pt_lesson_6_open.json</string>
 					</dict>
@@ -214,7 +214,7 @@
 						<key>lessonName</key>
 						<string>Lesson 7:  What Color are the Shapes?</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_7.json</string>
 					</dict>
@@ -222,7 +222,7 @@
 						<key>lessonName</key>
 						<string>Lesson 7:  What Color are the Shapes?</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_7_open.json</string>
 					</dict>
@@ -238,7 +238,7 @@
 						<key>lessonName</key>
 						<string>Lesson 8:  Where is the Shape?</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_8.json</string>
 					</dict>
@@ -246,7 +246,7 @@
 						<key>lessonName</key>
 						<string>Lesson 8:  Where is the Shape?</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pt_lesson_8_open.json</string>
 					</dict>
@@ -282,7 +282,7 @@
 						<key>lessonName</key>
 						<string>Lesson 1: Direct Speech</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pn_lesson_1.json</string>
 						<key>showMultipleChoice</key>
@@ -294,7 +294,7 @@
 						<key>lessonName</key>
 						<string>Lesson 1: Direct Speech</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pn_lesson_1_open.json</string>
 						<key>showMultipleChoice</key>
@@ -306,7 +306,7 @@
 						<key>lessonName</key>
 						<string>Lesson 2: Indirect Speech</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pn_lesson_2.json</string>
 						<key>showMultipleChoice</key>
@@ -318,7 +318,7 @@
 						<key>lessonName</key>
 						<string>Lesson 2: Indirect Speech</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pn_lesson_2_open.json</string>
 					</dict>
@@ -328,7 +328,7 @@
 						<key>lessonName</key>
 						<string>Lesson 3: Mixed</string>
 						<key>topic</key>
-						<string>Multiple Choice</string>
+						<string>Hints</string>
 						<key>loadFile</key>
 						<string>pn_lesson_3.json</string>
 						<key>showMultipleChoice</key>
@@ -340,7 +340,7 @@
 						<key>lessonName</key>
 						<string>Lesson 3:Mixed</string>
 						<key>topic</key>
-						<string>Open Choice</string>
+						<string>no Hints</string>
 						<key>loadFile</key>
 						<string>pn_lesson_3_open.json</string>
 						<key>showMultipleChoice</key>
