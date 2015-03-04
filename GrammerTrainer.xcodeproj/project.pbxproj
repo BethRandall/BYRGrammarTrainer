@@ -15,6 +15,7 @@
 		1429073119B64A6F00255328 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072D19B64A6F00255328 /* Slt.framework */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
 		146179081AA792AF00921CAA /* Icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1461790A1AA792AF00921CAA /* Icon72.png */; };
+		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
 		14AA2E3018F896FA0020FA57 /*  Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2F18F896FA0020FA57 /*  Default-Landscape~ipad.png */; };
 		29D714B416C84E0A0054A400 /* DownloadUrlToDiskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D714B316C84E0A0054A400 /* DownloadUrlToDiskOperation.m */; };
@@ -112,6 +113,7 @@
 		1429072C19B64A6F00255328 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		1429072D19B64A6F00255328 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		146179091AA792AF00921CAA /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/Icon72.png; sourceTree = "<group>"; };
+		148B96641AA7A0CA001B9AA3 /* icon72 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72 copy.png"; sourceTree = "<group>"; };
 		14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
 		14AA2E2F18F896FA0020FA57 /*  Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = " Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		29D714B216C84E0A0054A400 /* DownloadUrlToDiskOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadUrlToDiskOperation.h; sourceTree = "<group>"; };
@@ -1039,6 +1041,7 @@
 				5820DBCC14F033BB003AB52B /* Edge.png */,
 				5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg */,
 				5825CBBC14E89F6000467271 /* icon72.png */,
+				148B96641AA7A0CA001B9AA3 /* icon72 copy.png */,
 				1461790A1AA792AF00921CAA /* Icon72.png */,
 				5825CBBA14E89F5200467271 /* icon@2x.png */,
 				5825CBB814E89F4200467271 /* icon.png */,
@@ -1272,6 +1275,7 @@
 				5818616F14AAAF2100DEA945 /* ViewController_iPad.xib in Resources */,
 				5818617714AAB0B600DEA945 /* grammer in Resources */,
 				58E69CA714DB95C600D3FB8D /* WelcomeToGM.png in Resources */,
+				148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */,
 				5809533A14E6D01300740756 /* carat.png in Resources */,
 				5809533B14E6D01300740756 /* carat-open.png in Resources */,
 				5825CBA614E702D200467271 /* QuoteCell.xib in Resources */,
