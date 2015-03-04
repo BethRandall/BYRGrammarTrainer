@@ -24,8 +24,8 @@
 			<array>
 				<string>icon.png</string>
 				<string>icon@2x.png</string>
-				<string>Icon72.png</string>
 				<string>Default-Landscape~ipad.png</string>
+				<string>icon72.png</string>
 				<string>icon72@2x.png</string>
 			</array>
 		</dict>
