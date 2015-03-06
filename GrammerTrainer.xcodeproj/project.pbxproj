@@ -13,6 +13,8 @@
 		1429072F19B64A6F00255328 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1429072B19B64A6F00255328 /* AcousticModelSpanish.bundle */; };
 		1429073019B64A6F00255328 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072C19B64A6F00255328 /* OpenEars.framework */; };
 		1429073119B64A6F00255328 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072D19B64A6F00255328 /* Slt.framework */; };
+		143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */; };
+		143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838CA1AAA5317001D7128 /* icon76x76~ipad.png */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
@@ -111,6 +113,8 @@
 		1429072B19B64A6F00255328 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		1429072C19B64A6F00255328 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		1429072D19B64A6F00255328 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76@2x~ipad.png"; sourceTree = "<group>"; };
+		143838CA1AAA5317001D7128 /* icon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76~ipad.png"; sourceTree = "<group>"; };
 		148B96641AA7A0CA001B9AA3 /* icon72 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72 copy.png"; sourceTree = "<group>"; };
 		14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
 		14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -1010,6 +1014,8 @@
 				14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */,
 				5827491116127E360060DFDE /* HappyFace.png */,
 				589E51D615C816D2006489DB /* CheckMarkUnChecked.png */,
+				143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */,
+				143838CA1AAA5317001D7128 /* icon76x76~ipad.png */,
 				589E51D715C816D2006489DB /* CheckMarkChecked.png */,
 				5850ADEF15ADBAE0001B6068 /* TutorialVideo */,
 				58415C6E158E42A300890522 /* Reachability.h */,
@@ -1278,6 +1284,7 @@
 				5825CBA614E702D200467271 /* QuoteCell.xib in Resources */,
 				5825CBB714E89DFA00467271 /* GT_Logo.png in Resources */,
 				5825CBB914E89F4200467271 /* icon.png in Resources */,
+				143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */,
 				5825CBBB14E89F5200467271 /* icon@2x.png in Resources */,
 				58D0937C14E9FFC0003DA53D /* ResultsTableCell.xib in Resources */,
 				58D0937F14EA0065003DA53D /* NotebookPage.png in Resources */,
@@ -1299,6 +1306,7 @@
 				5829C30415694ABF00AAD38D /* Default-Landscape~ipad_old_.png in Resources */,
 				58415C41158AFF6F00890522 /* icon72@2x.png in Resources */,
 				5850ADF215ADBAF7001B6068 /* tutorialVideo.mp4 in Resources */,
+				143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */,
 				5850ADF415ADBB25001B6068 /* playTutorialVideo.html in Resources */,
 				589E51D815C816D2006489DB /* CheckMarkUnChecked.png in Resources */,
 				589E51D915C816D2006489DB /* CheckMarkChecked.png in Resources */,
