@@ -16,6 +16,7 @@
 		143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */; };
 		143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838CA1AAA5317001D7128 /* icon76x76~ipad.png */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
+		146D50931AB2025100E103D9 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D50921AB2025100E103D9 /* icon152.png */; };
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
 		14AA2E3018F896FA0020FA57 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */; };
@@ -115,6 +116,7 @@
 		1429072D19B64A6F00255328 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76@2x~ipad.png"; sourceTree = "<group>"; };
 		143838CA1AAA5317001D7128 /* icon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76~ipad.png"; sourceTree = "<group>"; };
+		146D50921AB2025100E103D9 /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152.png; sourceTree = "<group>"; };
 		148B96641AA7A0CA001B9AA3 /* icon72 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72 copy.png"; sourceTree = "<group>"; };
 		14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
 		14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -1005,6 +1007,7 @@
 		5818614614AAAF2100DEA945 = {
 			isa = PBXGroup;
 			children = (
+				146D50921AB2025100E103D9 /* icon152.png */,
 				1429072719B6492200255328 /* AVFoundation.framework */,
 				1429072519B648F700255328 /* AudioToolbox.framework */,
 				58BB017F154DECEE00C4BBC4 /* DesignNotes.txt */,
@@ -1296,6 +1299,7 @@
 				5898BE6A150CF42F00A2D2D6 /* back.png in Resources */,
 				583058BC1511983E0030C8D5 /* canvasTexture.jpg in Resources */,
 				58D00A8F151CBE790044897C /* grammarTrainer2.mov in Resources */,
+				146D50931AB2025100E103D9 /* icon152.png in Resources */,
 				58594FFA1529213D0097A820 /* clouds in Resources */,
 				58BB0180154DECEE00C4BBC4 /* DesignNotes.txt in Resources */,
 				588947D3155E9D0600B1B13A /* Presentation-easel.jpg in Resources */,
