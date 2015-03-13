@@ -432,7 +432,8 @@ static NSString *versionNumber = @"1.37";
         }
         
         // TEMP!
-        youreIn = YES;
+        if (youreIn != YES) {
+            youreIn = YES; }
         
         if (youreIn) {
             NSLog(@"You're in!");

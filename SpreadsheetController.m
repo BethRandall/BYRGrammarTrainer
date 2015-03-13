@@ -25,6 +25,7 @@
 - (void)fetchWorksheetsForSpreadsheetAtIndex: (NSUInteger)index;
 - (void)fetchCellsForWorksheet:(NSUInteger)cellListSelector;
 - (void)printWorksheetEntries;
+- (void)fetchEntriesForWorksheet:(NSString *)name;
 
 - (NSUInteger)indexOfSpreadSheetNamed:(NSString *)name;
 
@@ -92,6 +93,22 @@
   
   [self fetchFeedOfSpreadsheets];
     
+}
+
+- (void)fetchEntriesForWorksheet:(NSString *)username {
+    
+    NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    
+    username = [username stringByTrimmingCharactersInSet:whitespace];
+    
+    if ([username rangeOfString:@"@"].location == NSNotFound) {
+        // if no domain was supplied, add @gmail.com
+        username = [username stringByAppendingString:@"@gmail.com"];
+    }
+    
+    self.userName = username;
+    
+    [self fetchFeedOfSpreadsheets];
 }
 
 - (void)feedSegmentClicked:(id)sender {
@@ -227,7 +244,7 @@
 
     }
     
-  if (spreadsheet) {
+ if (spreadsheet) {
     
     NSURL *feedURL = [spreadsheet worksheetsFeedURL];  // GDataEntryBase
     if (feedURL) {
