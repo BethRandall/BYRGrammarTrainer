@@ -497,7 +497,7 @@ static NSString *versionNumber = @"1.37";
     
     UIButton *theButton = (UIButton *)sender;
     
-    NSLog(@"The button is: %d", theButton.tag);
+    NSLog(@"The button is: %ld", (long)theButton.tag);
     
     currentLevel_ = [_levels objectAtIndex:theButton.tag];
     currentLevel_.index = @(theButton.tag); //  Keeps track of current selection
@@ -834,9 +834,9 @@ static NSString *versionNumber = @"1.37";
     
     NSArray *redoMatrix = [stateDict objectForKey:@"promptsToRedo"];
 
-    NSString *pctCmp = [NSString stringWithFormat:@"%d of %d", currentStep, [dotMatrix count]];
-    NSString *correctCnt = [NSString stringWithFormat:@"%d", currentStep];
-    NSString *wrongCnt = [NSString stringWithFormat:@"%d", [redoMatrix count]];
+    NSString *pctCmp = [NSString stringWithFormat:@"%ld of %lu", (long)currentStep, (unsigned long)[dotMatrix count]];
+    NSString *correctCnt = [NSString stringWithFormat:@"%ld", (long)currentStep];
+    NSString *wrongCnt = [NSString stringWithFormat:@"%lu", (unsigned long)[redoMatrix count]];
     
     NSString *partComplete = ([pctCmp isEqualToString:@"0 of 0"])?nil:pctCmp;
 
@@ -884,7 +884,7 @@ static NSString *versionNumber = @"1.37";
     NSArray *indexArray = [stateDict objectForKey:@"indexArray"];
     NSInteger currentStep = [[stateDict objectForKey:@"step"] integerValue];
     
-    NSString *pctCmp = [NSString stringWithFormat:@"%d of %d", currentStep, [indexArray count]];
+    NSString *pctCmp = [NSString stringWithFormat:@"%ld of %lu", (long)currentStep, (unsigned long)[indexArray count]];
     
     return ([pctCmp isEqualToString:@"0 of 0"])?nil:pctCmp;
 }

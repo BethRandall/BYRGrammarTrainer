@@ -113,7 +113,7 @@
             
             for (NSString *theURL in cacheArray) {
                 
-                NSLog(@"Sending offline cache to server with %d entries", [cacheArray count]);
+                NSLog(@"Sending offline cache to server with %lu entries", (unsigned long)[cacheArray count]);
 
                 // create the request
                 NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:theURL]
@@ -218,7 +218,7 @@
 
 - (NSDictionary *)readResultsFileForUser:(NSString *)user level:(NSUInteger)level module:(NSUInteger)module lesson:(NSUInteger)lesson  {
     
-    NSString *uniqueFile = [NSString stringWithFormat:@"%@_%d_%d_%d.plist",user,level,module,lesson];
+    NSString *uniqueFile = [NSString stringWithFormat:@"%@_%lu_%lu_%lu.plist",user,(unsigned long)level,(unsigned long)module,(unsigned long)lesson];
     
     NSString *path = [[self docDir] stringByAppendingPathComponent:uniqueFile];
     
