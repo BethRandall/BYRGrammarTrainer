@@ -20,8 +20,8 @@
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
 		14AA2E3018F896FA0020FA57 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */; };
+		14FF94C11AB4A24000D33280 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C8A4B1774A3AA00C445BE /* libGDataTouchStaticLib.a */; };
 		29D714B416C84E0A0054A400 /* DownloadUrlToDiskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D714B316C84E0A0054A400 /* DownloadUrlToDiskOperation.m */; };
-		3B3C8A4C1774A3AA00C445BE /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C8A4B1774A3AA00C445BE /* libGDataTouchStaticLib.a */; };
 		5809532814E6CFA400740756 /* SectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809532514E6CFA400740756 /* SectionInfo.m */; };
 		5809532914E6CFA400740756 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809532714E6CFA400740756 /* SectionHeaderView.m */; };
 		5809532F14E6CFC400740756 /* QuoteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809532C14E6CFC400740756 /* QuoteCell.m */; };
@@ -598,6 +598,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14FF94C11AB4A24000D33280 /* libGDataTouchStaticLib.a in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,
@@ -607,7 +608,6 @@
 				5818615614AAAF2100DEA945 /* UIKit.framework in Frameworks */,
 				5818615814AAAF2100DEA945 /* Foundation.framework in Frameworks */,
 				5818615A14AAAF2100DEA945 /* CoreGraphics.framework in Frameworks */,
-				3B3C8A4C1774A3AA00C445BE /* libGDataTouchStaticLib.a in Frameworks */,
 				1429073019B64A6F00255328 /* OpenEars.framework in Frameworks */,
 				1429073119B64A6F00255328 /* Slt.framework in Frameworks */,
 			);
@@ -1455,7 +1455,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1516,7 +1517,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1614,7 +1616,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1640,7 +1643,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
