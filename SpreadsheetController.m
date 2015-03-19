@@ -238,11 +238,11 @@
     
     GDataEntrySpreadsheet *spreadsheet;
 
-    if ([spreadsheets count] > 0) {
+   // if ([spreadsheets count] > 0) {
         
         spreadsheet = (GDataEntrySpreadsheet *)[spreadsheets objectAtIndex:index];
 
-    }
+    //}
     
  if (spreadsheet) {
     
