@@ -335,8 +335,21 @@
 		        }
 		    }
 		}
+    
+        function askGender() {
+            //alert("inside askGender: ");
+            var myGender = 'female';
         
-        function checkGender() { 
+            myGender = prompt("Are you male or female?  Please enter M or F: ", "");
+            if ((myGender.indexOf('m') === 0) || (myGender.indexOf('M') === 0))
+            { myGender = 'male'; }
+            else { myGender = 'female'; }
+        
+            alert("will set your gender to " + myGender);
+            return myGender;
+        }
+    
+        function checkGender() {
             console.log("checkGender");
             if (typeof NativeBridge != 'undefined') {
                 NativeBridge.call("getGender", "", function (response) {

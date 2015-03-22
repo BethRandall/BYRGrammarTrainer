@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1421DA871ABF551B00824B7B /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1421DA861ABF551A00824B7B /* libGDataTouchStaticLib.a */; };
 		1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072519B648F700255328 /* AudioToolbox.framework */; };
 		1429072819B6492300255328 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072719B6492200255328 /* AVFoundation.framework */; };
 		1429072E19B64A6F00255328 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */; };
@@ -20,7 +21,6 @@
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
 		14AA2E3018F896FA0020FA57 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */; };
-		14FF94C11AB4A24000D33280 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C8A4B1774A3AA00C445BE /* libGDataTouchStaticLib.a */; };
 		29D714B416C84E0A0054A400 /* DownloadUrlToDiskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D714B316C84E0A0054A400 /* DownloadUrlToDiskOperation.m */; };
 		5809532814E6CFA400740756 /* SectionInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809532514E6CFA400740756 /* SectionInfo.m */; };
 		5809532914E6CFA400740756 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5809532714E6CFA400740756 /* SectionHeaderView.m */; };
@@ -108,6 +108,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1421DA861ABF551A00824B7B /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-21-good/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		1429072519B648F700255328 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1429072719B6492200255328 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
@@ -598,7 +599,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14FF94C11AB4A24000D33280 /* libGDataTouchStaticLib.a in Frameworks */,
+				1421DA871ABF551B00824B7B /* libGDataTouchStaticLib.a in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,
@@ -1072,6 +1073,7 @@
 		5818615414AAAF2100DEA945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1421DA861ABF551A00824B7B /* libGDataTouchStaticLib.a */,
 				5809533C14E6D06000740756 /* QuartzCore.framework */,
 				5818615514AAAF2100DEA945 /* UIKit.framework */,
 				5818615714AAAF2100DEA945 /* Foundation.framework */,
@@ -1457,12 +1459,13 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = SentenceWeaver1.36;
@@ -1519,12 +1522,13 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = SentenceWeaver1.35;
@@ -1618,12 +1622,13 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1645,13 +1650,14 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = armv7;
+				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
