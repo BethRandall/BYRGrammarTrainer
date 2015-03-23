@@ -68,7 +68,7 @@
 				<array>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 1:  Shapes</string>
+						<string>Lesson 1.1:  Shapes</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -76,7 +76,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string> Lesson 1: Shapes</string>
+						<string> Lesson 1.2: Shapes</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -84,7 +84,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 2:  More Shapes</string>
+						<string>Lesson 2.1:  More Shapes</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -92,7 +92,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string> Lesson 2: More Shapes</string>
+						<string> Lesson 2.2: More Shapes</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -100,7 +100,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 2:  More Shapes</string>
+						<string>Lesson 2.3:  More Shapes</string>
 						<key>topic</key>
 						<string>New</string>
 						<key>loadFile</key>
@@ -108,7 +108,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 3:  Even More Shapes</string>
+						<string>Lesson 3.1:  Even More Shapes</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -116,7 +116,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 3:  Even More Shapes</string>
+						<string>Lesson 3.2:  Even More Shapes</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -128,11 +128,11 @@
 						<key>topic</key>
 						<string>New</string>
 						<key>lessonName</key>
-						<string>Lesson 3: Even More Shapes</string>
+						<string>Lesson 3.3: Even More Shapes</string>
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 3: Even More Shapes</string>
+						<string>Lesson 3.4: Even More Shapes</string>
 						<key>topic</key>
 						<string>New 2</string>
 						<key>loadFile</key>
@@ -140,7 +140,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 4:  Colored Shapes</string>
+						<string>Lesson 4.1:  Colored Shapes</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -148,7 +148,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 4:  Colored Shapes</string>
+						<string>Lesson 4.2:  Colored Shapes</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -160,11 +160,11 @@
 						<key>loadFile</key>
 						<string>pt_lesson_4_more.json</string>
 						<key>lessonName</key>
-						<string>Lesson 4: Colored Shapes</string>
+						<string>Lesson 4.3: Colored Shapes</string>
 					</dict>
 					<dict>
-						<key>LessonName</key>
-						<string>Lesson 5:  More Colored Shapes</string>
+						<key>lessonName</key>
+						<string>Lesson 5.1:  More Colored Shapes</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -172,7 +172,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 5:  More Colored Shapes</string>
+						<string>Lesson 5.2:  More Colored Shapes</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -182,7 +182,7 @@
 						<key>topic</key>
 						<string>New</string>
 						<key>lessonName</key>
-						<string>Lesson 5: More Colored Shapes</string>
+						<string>Lesson 5.3: More Colored Shapes</string>
 						<key>loadFile</key>
 						<string>pt_lesson_5_more.json</string>
 					</dict>
@@ -192,19 +192,19 @@
 						<key>topic</key>
 						<string>New 2</string>
 						<key>lessonName</key>
-						<string>Lesson 5: More Colored Shapes</string>
+						<string>Lesson 5.4: More Colored Shapes</string>
 					</dict>
 					<dict>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>lessonName</key>
-						<string>Lesson 6: What Color is the Shape?</string>
+						<string>Lesson 6.1: What Color is the Shape?</string>
 						<key>loadFile</key>
 						<string>pt_lesson_6.json</string>
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 6:  What Color is the Shape?</string>
+						<string>Lesson 6.2:  What Color is the Shape?</string>
 						<key>topic</key>
 						<string>no HInts</string>
 						<key>loadFile</key>
@@ -212,7 +212,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 7:  What Color are the Shapes?</string>
+						<string>Lesson 7.1:  What Color are the Shapes?</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -220,7 +220,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 7:  What Color are the Shapes?</string>
+						<string>Lesson 7.2:  What Color are the Shapes?</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -228,7 +228,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 7: What Color are the Shapes?</string>
+						<string>Lesson 7.3: What Color are the Shapes?</string>
 						<key>topic</key>
 						<string>New</string>
 						<key>loadFile</key>
@@ -236,7 +236,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 8:  Where is the Shape?</string>
+						<string>Lesson 8.1:  Where is the Shape?</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -244,7 +244,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string>Lesson 8:  Where is the Shape?</string>
+						<string>Lesson 8.2:  Where is the Shape?</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -254,7 +254,7 @@
 						<key>topic</key>
 						<string>New</string>
 						<key>lessonName</key>
-						<string>Lesson 8:  Where is the Shape?</string>
+						<string>Lesson 8.3:  Where is the Shape?</string>
 						<key>loadFile</key>
 						<string>pt_lesson_8_more.json</string>
 					</dict>
@@ -280,7 +280,7 @@
 						<key>lessonNumber</key>
 						<integer>1</integer>
 						<key>lessonName</key>
-						<string>Lesson 1: Direct Speech</string>
+						<string>Lesson 1.1: Direct Speech</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -292,7 +292,7 @@
 						<key>lessonNumber</key>
 						<integer>2</integer>
 						<key>lessonName</key>
-						<string>Lesson 1: Direct Speech</string>
+						<string>Lesson 1.2: Direct Speech</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -304,7 +304,7 @@
 						<key>lessonNumber</key>
 						<integer>3</integer>
 						<key>lessonName</key>
-						<string>Lesson 2: Indirect Speech</string>
+						<string>Lesson 2.1: Indirect Speech</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -316,7 +316,7 @@
 						<key>lessonNumber</key>
 						<integer>4</integer>
 						<key>lessonName</key>
-						<string>Lesson 2: Indirect Speech</string>
+						<string>Lesson 2.2: Indirect Speech</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -326,7 +326,7 @@
 						<key>lessonNumber</key>
 						<integer>5</integer>
 						<key>lessonName</key>
-						<string>Lesson 3: Mixed</string>
+						<string>Lesson 3.1: Mixed</string>
 						<key>topic</key>
 						<string>Hints</string>
 						<key>loadFile</key>
@@ -338,7 +338,7 @@
 						<key>lessonNumber</key>
 						<integer>6</integer>
 						<key>lessonName</key>
-						<string>Lesson 3:Mixed</string>
+						<string>Lesson 3.2:Mixed</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>

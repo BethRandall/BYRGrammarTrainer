@@ -433,7 +433,7 @@ function exitLesson()
     NativeBridge.call("exitLesson"); }
 
 
-function sendValues(a, b, c, d)
+function sendValues(a, b, c, d, e)
 {
 	// Send some values to the native side
 	// The send arg is an array of arguments
@@ -441,7 +441,7 @@ function sendValues(a, b, c, d)
     //    arguments[ i ] ;
     //}
     
-    NativeBridge.call("recordNative", [a,b,c,d]);    }
+    NativeBridge.call("recordNative", [a,b,c,d,e]);    }
 
 function sendDebug(a, b, c, d)
 {
@@ -752,7 +752,9 @@ function MetaDetermineFeedback()
     //alert("in MetaDetermineFeedback: ");
     
 	var exNum = GetExNum();
-    //alert("back from GetExNum:  " + exNum);
+    //alert("in MetaDetermineFeedback:  about to getLessonNumber: ");
+    var lessonNumber = getLessonNumber();
+    //alert("back from getLessonNumber:  " + lessonNumber);
     var currentExercise = new GetExercise(exNum); //see function below
     //alert("about to GetScore:");
     
@@ -780,9 +782,10 @@ function MetaDetermineFeedback()
     //alert("the type of feedback is: " + feedbackType);
     //alert("the feedback message is: " + message);
     
-    sendDebug(feedbackTuple,message,feedbackType,exNum);
-	
-	sendValues(feedbackType,response,points,exNum);
+    sendDebug(feedbackTuple, message, feedbackType, exNum);
+    
+    //alert("about to send values:  ");
+	sendValues(feedbackType, response, points, exNum, lessonNumber);
     //alert("back from sendValues:  ");
 	
 	//alert("your word button marking info is " + wordButtonMarkingInfo);  //if its undefined there are no words to maark
@@ -1182,6 +1185,15 @@ function GetExNum() {
         return (currentExercise.exnum - 1);
     }
     alert("missing exnum field in .json file:");
+    return step; }
+
+function getLessonNumber() {
+    if (typeof theLesson.lessonNumber != "undefined") {
+        // alert("found exnum: " + currentExercise.exnum);
+        // subtract 1 because array indices begin at 0 but exnums begin at 1.
+        return (theLesson.lessonNumber);
+    }
+    alert("missing lessonNumber field in .json file:");
     return step; }
 
 function GetExercise(exerciseNumber)

@@ -1057,7 +1057,7 @@ static NSString *versionNumber = @"1.37";
 
 - (void)sendEntryToServer:(NSDictionary *)entry {
 	
-    // userID, entryDate,responseText,lesson,module, questionNumber,feedbackType
+    // userID, entryDate,responseText,lesson, module, questionNumber,feedbackType
     
     NSMutableString *theQuery = [[NSMutableString alloc] init];
     [theQuery appendFormat:@"?userID=%@", [entry objectForKey:@"userID"]];
@@ -1197,8 +1197,8 @@ static NSString *versionNumber = @"1.37";
     }  else if ([functionName isEqualToString:@"recordNative"]) {
         NSLog(@"Did call recordNative");
         
-        if ([args count]!=4) {
-            NSLog(@"recordNative exactly 4 arguments!");
+        if ([args count]!=5) {
+            NSLog(@"recordNative exactly 5 arguments!");
             return;
         }
         
@@ -1206,6 +1206,7 @@ static NSString *versionNumber = @"1.37";
         NSString *responseText = (NSString*)[args objectAtIndex:1];
         NSString *points = (NSString*)[args objectAtIndex:2];
         NSString *exNum = (NSString*)[args objectAtIndex:3];
+        NSString *lessonNumber = (NSString*)[args objectAtIndex:4];
         
         // if feedback is equal to "correct"
         // put up an alert or fireworks or something,
@@ -1238,7 +1239,7 @@ static NSString *versionNumber = @"1.37";
         NSDictionary *theEntry = @{@"userID": userName_,
                                   @"entryDate": formattedDateString,
                                   @"responseText": responseText,
-                                  @"lesson": self.currentLesson.lessonNumber,
+                                  @"lesson": lessonNumber,
                                   @"module": self.currentModule.moduleNumber,
                                   @"questionNumber": exNum,
                                   @"feedbackType": feedback};
