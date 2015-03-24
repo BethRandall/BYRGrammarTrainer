@@ -1175,6 +1175,15 @@ function buildResponse(currAnsWor) {
     return resp;
 }
 
+function getLessonNumber() {
+    if (typeof theLesson.lessonNumber != "undefined") {
+        // alert("found exnum: " + currentExercise.exnum);
+        return (theLesson.lessonNumber);
+    }
+    alert("missing lessonNumber field in .json file:");
+    return step; }
+}
+
 function GetExNum() {
     if (typeof currentExercise.exnum != "undefined") {
         // alert("found exnum: " + currentExercise.exnum);
