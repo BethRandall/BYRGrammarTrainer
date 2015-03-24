@@ -1858,7 +1858,7 @@
 		14864F191ABF3E4900AA047E /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
 		14864F1A1ABF3E4900AA047E /* icon72@2x copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72@2x copy.png"; sourceTree = "<group>"; };
 		14864F1B1ABF3E4900AA047E /* icon72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72@2x.png"; sourceTree = "<group>"; };
-		14864F1C1ABF3E4900AA047E /* icon72@png */ = {isa = PBXFileReference; lastKnownFileType = file; path = "icon72@png"; sourceTree = "<group>"; };
+		14864F1C1ABF3E4900AA047E /* icon72@png */ = {isa = PBXFileReference; lastKnownFileType = text; path = "icon72@png"; sourceTree = "<group>"; };
 		14864F1D1ABF3E4900AA047E /* icon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76@2x~ipad.png"; sourceTree = "<group>"; };
 		14864F1E1ABF3E4900AA047E /* icon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76~ipad.png"; sourceTree = "<group>"; };
 		14864F1F1ABF3E4900AA047E /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -2301,7 +2301,7 @@
 		5818616114AAAF2100DEA945 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5818616314AAAF2100DEA945 /* GrammerTrainer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GrammerTrainer-Prefix.pch"; sourceTree = "<group>"; };
 		5818616414AAAF2100DEA945 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5818616514AAAF2100DEA945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		5818616514AAAF2100DEA945 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; };
 		5818616714AAAF2100DEA945 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		5818616814AAAF2100DEA945 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5818616B14AAAF2100DEA945 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
