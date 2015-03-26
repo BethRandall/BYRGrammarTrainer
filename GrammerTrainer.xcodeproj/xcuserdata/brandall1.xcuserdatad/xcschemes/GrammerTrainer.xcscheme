@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5818615014AAAF2100DEA945"
-               BuildableName = "GrammerTrainer.app"
+               BuildableName = "SentenceWeaver.app"
                BlueprintName = "GrammerTrainer"
                ReferencedContainer = "container:GrammerTrainer.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5818615014AAAF2100DEA945"
-            BuildableName = "GrammerTrainer.app"
+            BuildableName = "SentenceWeaver.app"
             BlueprintName = "GrammerTrainer"
             ReferencedContainer = "container:GrammerTrainer.xcodeproj">
          </BuildableReference>
@@ -48,11 +48,12 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5818615014AAAF2100DEA945"
-            BuildableName = "GrammerTrainer.app"
+            BuildableName = "SentenceWeaver.app"
             BlueprintName = "GrammerTrainer"
             ReferencedContainer = "container:GrammerTrainer.xcodeproj">
          </BuildableReference>
@@ -66,11 +67,12 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "SentenceWeaver1.20"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5818615014AAAF2100DEA945"
-            BuildableName = "GrammerTrainer.app"
+            BuildableName = "SentenceWeaver.app"
             BlueprintName = "GrammerTrainer"
             ReferencedContainer = "container:GrammerTrainer.xcodeproj">
          </BuildableReference>

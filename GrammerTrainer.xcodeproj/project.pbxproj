@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1421DA871ABF551B00824B7B /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1421DA861ABF551A00824B7B /* libGDataTouchStaticLib.a */; };
 		1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072519B648F700255328 /* AudioToolbox.framework */; };
 		1429072819B6492300255328 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072719B6492200255328 /* AVFoundation.framework */; };
 		1429072E19B64A6F00255328 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */; };
@@ -17,6 +16,7 @@
 		143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */; };
 		143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838CA1AAA5317001D7128 /* icon76x76~ipad.png */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
+		144F1CB61AC4AB6C00E86624 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */; };
 		146D50931AB2025100E103D9 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D50921AB2025100E103D9 /* icon152.png */; };
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
@@ -108,7 +108,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1421DA861ABF551A00824B7B /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-21-good/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		1429072519B648F700255328 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1429072719B6492200255328 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
@@ -117,6 +116,8 @@
 		1429072D19B64A6F00255328 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 		143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76@2x~ipad.png"; sourceTree = "<group>"; };
 		143838CA1AAA5317001D7128 /* icon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76~ipad.png"; sourceTree = "<group>"; };
+		144F1CB31AC4AB1800E86624 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = GrammerTrainer.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
+		144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-good/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		146D50921AB2025100E103D9 /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152.png; sourceTree = "<group>"; };
 		148B96641AA7A0CA001B9AA3 /* icon72 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72 copy.png"; sourceTree = "<group>"; };
 		14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
@@ -460,7 +461,7 @@
 		5809533914E6D01300740756 /* carat-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "carat-open.png"; sourceTree = "<group>"; };
 		5809533C14E6D06000740756 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		5809533E14E6D35B00740756 /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
-		5818615114AAAF2100DEA945 /* GrammerTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrammerTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5818615114AAAF2100DEA945 /* SentenceWeaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SentenceWeaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5818615514AAAF2100DEA945 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5818615714AAAF2100DEA945 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5818615914AAAF2100DEA945 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -599,7 +600,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1421DA871ABF551B00824B7B /* libGDataTouchStaticLib.a in Frameworks */,
+				144F1CB61AC4AB6C00E86624 /* libGDataTouchStaticLib.a in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,
@@ -1065,7 +1066,7 @@
 		5818615214AAAF2100DEA945 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5818615114AAAF2100DEA945 /* GrammerTrainer.app */,
+				5818615114AAAF2100DEA945 /* SentenceWeaver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1073,7 +1074,8 @@
 		5818615414AAAF2100DEA945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1421DA861ABF551A00824B7B /* libGDataTouchStaticLib.a */,
+				144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */,
+				144F1CB31AC4AB1800E86624 /* project.xcworkspace */,
 				5809533C14E6D06000740756 /* QuartzCore.framework */,
 				5818615514AAAF2100DEA945 /* UIKit.framework */,
 				5818615714AAAF2100DEA945 /* Foundation.framework */,
@@ -1245,7 +1247,7 @@
 			);
 			name = GrammerTrainer;
 			productName = GrammerTrainer;
-			productReference = 5818615114AAAF2100DEA945 /* GrammerTrainer.app */;
+			productReference = 5818615114AAAF2100DEA945 /* SentenceWeaver.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1451,7 +1453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMPRESS_PNG_FILES = NO;
+				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
@@ -1460,16 +1462,17 @@
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
@@ -1515,7 +1518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMPRESS_PNG_FILES = NO;
+				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
@@ -1524,16 +1527,17 @@
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
@@ -1616,7 +1620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMPRESS_PNG_FILES = NO;
+				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
@@ -1625,16 +1629,17 @@
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALID_ARCHS = "armv7 arm 64";
 				WRAPPER_EXTENSION = app;
@@ -1645,7 +1650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMPRESS_PNG_FILES = NO;
+				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
@@ -1654,16 +1659,17 @@
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2/**";
 				INFOPLIST_FILE = "GrammerTrainer/GrammerTrainer-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 arm 64";
