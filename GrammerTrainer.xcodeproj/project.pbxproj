@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141576311AC5C51D00F6BFA4 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 141576301AC5C51C00F6BFA4 /* libGDataTouchStaticLib.a */; };
 		1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072519B648F700255328 /* AudioToolbox.framework */; };
 		1429072819B6492300255328 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072719B6492200255328 /* AVFoundation.framework */; };
 		1429072E19B64A6F00255328 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */; };
@@ -16,7 +17,6 @@
 		143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */; };
 		143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838CA1AAA5317001D7128 /* icon76x76~ipad.png */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
-		144F1CB61AC4AB6C00E86624 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */; };
 		146D50931AB2025100E103D9 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D50921AB2025100E103D9 /* icon152.png */; };
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
@@ -108,6 +108,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141576301AC5C51C00F6BFA4 /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-22/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		1429072519B648F700255328 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1429072719B6492200255328 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
@@ -600,7 +601,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				144F1CB61AC4AB6C00E86624 /* libGDataTouchStaticLib.a in Frameworks */,
+				141576311AC5C51D00F6BFA4 /* libGDataTouchStaticLib.a in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,
@@ -1074,6 +1075,7 @@
 		5818615414AAAF2100DEA945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				141576301AC5C51C00F6BFA4 /* libGDataTouchStaticLib.a */,
 				144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */,
 				144F1CB31AC4AB1800E86624 /* project.xcworkspace */,
 				5809533C14E6D06000740756 /* QuartzCore.framework */,
@@ -1269,6 +1271,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 5818614614AAAF2100DEA945;
 			productRefGroup = 5818615214AAAF2100DEA945 /* Products */;
@@ -1452,7 +1455,7 @@
 		14004E8B1A782D28006A1B35 /* SentenceWeaver1.36 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1469,6 +1472,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1517,7 +1521,7 @@
 		1409EDD41A6D84B100C69528 /* SentenceWeaver1.35 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1534,6 +1538,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1619,7 +1624,7 @@
 		5818617314AAAF2100DEA945 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1636,6 +1641,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1649,7 +1655,8 @@
 		5818617414AAAF2100DEA945 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beth Randall (8P3F37878M)";
 				COMPRESS_PNG_FILES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1666,6 +1673,7 @@
 					"$(PROJECT_DIR)",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
 					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
+					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";

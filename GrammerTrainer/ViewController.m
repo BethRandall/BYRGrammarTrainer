@@ -1208,6 +1208,8 @@ static NSString *versionNumber = @"1.37";
         NSString *exNum = (NSString*)[args objectAtIndex:3];
         NSString *lessonNumber = (NSString*)[args objectAtIndex:4];
         
+        NSLog(@"lessonNumber: %@", lessonNumber);
+        
         // if feedback is equal to "correct"
         // put up an alert or fireworks or something,
         
