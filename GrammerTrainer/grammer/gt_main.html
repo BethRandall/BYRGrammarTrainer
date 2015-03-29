@@ -174,7 +174,8 @@
             
             if (myJSONtext.length > 0) {
                 theLesson = eval('(' + myJSONtext + ')');
-                checkGender();
+                //checkGender();
+                askGender();
           
                 } else { document.write("error in myJsonTextToObject"); };
         }
@@ -346,32 +347,38 @@
             else { myGender = 'female'; }
         
             alert("will set your gender to " + myGender);
-            return myGender;
+            setGEnder(myGender);
         }
     
+        function setGender(myGender) {
+            console.log("setGender");
+    
+            if(myGender == 'female') {
+                him_her = 'her';
+                he_she = 'she';
+                Him_Her = 'Her';
+                He_She = 'She';
+                HE_SHE = 'SHE';
+                HIM_HER = 'HER';
+            } else {
+                him_her = 'him';
+                he_she = 'he';
+                Him_Her = 'Him';
+                He_She = 'He';
+                HE_SHE = 'HE';
+                HIM_HER = 'HIM';
+            }
+            updateGender();
+        }
+
         function checkGender() {
             console.log("checkGender");
             if (typeof NativeBridge != 'undefined') {
                 NativeBridge.call("getGender", "", function (response) {
-                                  if(response != null) {
-                                      if(response == 'female') {
-                                          him_her = 'her';
-                                          he_she = 'she';
-                                          Him_Her = 'Her';
-                                          He_She = 'She';
-                                          HE_SHE = 'SHE';
-                                          HIM_HER = 'HER';
-                                      } else {
-                                          him_her = 'him';
-                                          he_she = 'he';
-                                          Him_Her = 'Him';
-                                          He_She = 'He';
-                                          HE_SHE = 'HE';
-                                          HIM_HER = 'HIM';
-                                      }
-                                        updateGender();
-                                  } else { alert("No Response"); }
-                                  });
+                    if(response != null) {
+                        setGender(response);
+                    } else { alert("No Response"); }
+            });
             } else { alert("NativeBridge is NOT defined!"); }
         }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		141576311AC5C51D00F6BFA4 /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 141576301AC5C51C00F6BFA4 /* libGDataTouchStaticLib.a */; };
 		1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072519B648F700255328 /* AudioToolbox.framework */; };
 		1429072819B6492300255328 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072719B6492200255328 /* AVFoundation.framework */; };
 		1429072E19B64A6F00255328 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */; };
@@ -108,7 +107,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		141576301AC5C51C00F6BFA4 /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-22/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		1429072519B648F700255328 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		1429072719B6492200255328 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1429072A19B64A6F00255328 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 		143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76@2x~ipad.png"; sourceTree = "<group>"; };
 		143838CA1AAA5317001D7128 /* icon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76~ipad.png"; sourceTree = "<group>"; };
 		144F1CB31AC4AB1800E86624 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = GrammerTrainer.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
-		144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-good/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		146D50921AB2025100E103D9 /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152.png; sourceTree = "<group>"; };
 		148B96641AA7A0CA001B9AA3 /* icon72 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72 copy.png"; sourceTree = "<group>"; };
 		14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
@@ -601,7 +598,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				141576311AC5C51D00F6BFA4 /* libGDataTouchStaticLib.a in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,
@@ -1075,8 +1071,6 @@
 		5818615414AAAF2100DEA945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				141576301AC5C51C00F6BFA4 /* libGDataTouchStaticLib.a */,
-				144F1CB51AC4AB6C00E86624 /* libGDataTouchStaticLib.a */,
 				144F1CB31AC4AB1800E86624 /* project.xcworkspace */,
 				5809533C14E6D06000740756 /* QuartzCore.framework */,
 				5818615514AAAF2100DEA945 /* UIKit.framework */,
@@ -1470,9 +1464,6 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1536,9 +1527,6 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1639,9 +1627,6 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";
@@ -1671,9 +1656,6 @@
 					"$(inherited)",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-21-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-good",
-					"/Users/brandall1/Desktop/BYRGrammarTrainer-22",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-lxml2";

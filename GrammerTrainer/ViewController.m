@@ -13,7 +13,7 @@
 #import "SectionInfo.h"
 #import "QuoteCell.h"
 #import "ResultsTableViewCell.h"
-#import "SpreadsheetController.h"
+//#import "SpreadsheetController.h"
 #import "AppDelegate.h"
 #import "NSString+HTML.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -41,7 +41,7 @@
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) IBOutlet UITextView *loginTextView;
 @property (strong, nonatomic) IBOutlet UITextView *passwordTextView;
-@property (strong, nonatomic) SpreadsheetController *theSpreadsheetController;
+//@property (strong, nonatomic) SpreadsheetController *theSpreadsheetController;
 
 @property (strong, nonatomic) NSMutableDictionary *loginInfo;
 
@@ -83,7 +83,7 @@
 @synthesize loginTextView = loginTextView_;
 @synthesize passwordTextView = passwordTextView_;
 @synthesize userName = userName_;
-@synthesize theSpreadsheetController = theSpreadsheetController_;
+//@synthesize theSpreadsheetController = theSpreadsheetController_;
 @synthesize currentModule = currentModule_;
 @synthesize currentLevel = currentLevel_;
 @synthesize currentLesson = currentLesson_;
@@ -449,6 +449,31 @@ static NSString *versionNumber = @"1.37";
     }
 }
 
+- (void)blindPassword:(NSString *)password forUser:(NSString *)user {
+    
+    user = [user stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    self.userName = user;
+    
+    NSLog(@"BYR UserName: +%@+", userName_);
+    
+    NSString *moduleName;
+    
+    moduleName = @"modules";  // modules.plist file
+    AppDelegate *theDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [theDelegate readInDataModel:moduleName forUser:userName_];
+    
+    [self layoutIcons:self.levels];
+    
+   // BOOL youreIn = YES;
+   // NSDictionary *userInfo = [loginInfo_ objectForKey:user];
+    
+    
+    NSLog(@"You're in, %@!", userName_);
+    [self handleCorrectPassword];
+    
+}
+
+
 
 - (IBAction)userPushedLogin:(id)sender {
     
@@ -459,7 +484,8 @@ static NSString *versionNumber = @"1.37";
         theUserName = loginTextView_.text;
     }
     
-    [self checkPassword:passwordTextView_.text forUser:theUserName];
+    //[self checkPassword:passwordTextView_.text forUser:theUserName];
+    [self blindPassword:passwordTextView_.text forUser:theUserName];
 }
 
 - (IBAction)backButtonPushed:(id)sender {
@@ -693,10 +719,10 @@ static NSString *versionNumber = @"1.37";
     
     self.versionLabel.text = sUserAgentString;
     
-    // Going to post results to a goole spreadsheet
-    theSpreadsheetController_ = [[SpreadsheetController alloc] init];
-    theSpreadsheetController_.delegate = self;    
-    [theSpreadsheetController_ fetchSpreadSheetsForUserName:@"grammer.trainer" andPassWord:@"Grammer@Trainer"];
+    // Going to post results to a google spreadsheet
+  //  theSpreadsheetController_ = [[SpreadsheetController alloc] init];
+    //theSpreadsheetController_.delegate = self;
+    //[theSpreadsheetController_ fetchSpreadSheetsForUserName:@"grammer.trainer" andPassWord:@"Grammer@Trainer"];
 
 
     /*
@@ -1396,6 +1422,7 @@ static NSString *versionNumber = @"1.37";
 
 
 #pragma mark - Spreadsheet Delegate
+/*
 
 - (void)spreadsheetController:(SpreadsheetController *)controller didFetchSpreadSheets:(NSArray *)entries {
     
@@ -1408,17 +1435,15 @@ static NSString *versionNumber = @"1.37";
         
         for (customElements in entries) {
             
-            /* customElements look like this...
-             Row: {
-             firstname = "GDataSpreadsheetCustomElement 0x2c5cf0: {name:firstname stringValue:Obinna}";
-             gender = "GDataSpreadsheetCustomElement 0x2c61f0: {name:gender stringValue:M}";
-             lastname = "GDataSpreadsheetCustomElement 0x2c5f40: {name:lastname stringValue:Otti}";
-             login = "GDataSpreadsheetCustomElement 0x2c5a50: {name:login stringValue:obinna}";
-             password = "GDataSpreadsheetCustomElement 0x2c60b0: {name:password stringValue:pass}";
-             }
-
-             */
-            
+            //customElements look like this...
+            //Row: {
+            //firstname = "GDataSpreadsheetCustomElement 0x2c5cf0: {name:firstname stringValue:Obinna}";
+            //gender = "GDataSpreadsheetCustomElement 0x2c61f0: {name:gender stringValue:M}";
+            //lastname = "GDataSpreadsheetCustomElement 0x2c5f40: {name:lastname stringValue:Otti}";
+            //login = "GDataSpreadsheetCustomElement 0x2c5a50: {name:login stringValue:obinna}";
+            //password = "GDataSpreadsheetCustomElement 0x2c60b0: {name:password stringValue:pass}";
+            //}
+ 
             GDataSpreadsheetCustomElement *element;
             element = [customElements objectForKey:@"firstname"];
             NSString *firstname = [element stringValue];
@@ -1457,6 +1482,7 @@ static NSString *versionNumber = @"1.37";
         [loginInfo_ writeToFile:loginPlist atomically:YES];      
     }
 }
+*/
 
 - (NSString *)docDir {
     
