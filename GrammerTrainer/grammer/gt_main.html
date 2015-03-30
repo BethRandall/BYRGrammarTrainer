@@ -174,8 +174,9 @@
             
             if (myJSONtext.length > 0) {
                 theLesson = eval('(' + myJSONtext + ')');
+                // askGender is now called from businessLogic function setLessonConstants.
                 //checkGender();
-                askGender();
+                //askGender();
           
                 } else { document.write("error in myJsonTextToObject"); };
         }
@@ -346,8 +347,8 @@
             { myGender = 'male'; }
             else { myGender = 'female'; }
         
-            alert("will set your gender to " + myGender);
-            setGEnder(myGender);
+            //alert("will set your gender to " + myGender);
+            setGender(myGender);
         }
     
         function setGender(myGender) {

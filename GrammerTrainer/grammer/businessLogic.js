@@ -69,6 +69,7 @@ var nounWords;
 var verbWords;
 var adjectiveWords;
 var pronounWords;
+var genderChecked = false;
 
 // Dot Array
 var dotMatrix;
@@ -502,6 +503,11 @@ function getLessonIndex() {
 }
 
 function setLessonConstants() {
+    //alert("will check Gender: genderChecked: " + genderChecked);
+    if (genderChecked == false && (typeof theLesson.needGender != "undefined")) {
+        askGender();
+        genderChecked = true;
+    }
     jitterNext = true;
     didJitter = false;
     numWrong = 0;    

@@ -3,6 +3,7 @@
     "name2": "Direct Speech",
     "name3": "no Hints",
     "lessonNumber": "1.2",
+    "needGender": "true",
 
     "exerciseArray": [
         {

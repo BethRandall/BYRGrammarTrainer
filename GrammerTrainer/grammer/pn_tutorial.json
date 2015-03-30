@@ -3,6 +3,7 @@
     "name2": "with Pronoun Lessons",
     "name3": "",
     "lessonNumber": "0.2",
+    "needGender": "true",
 
     "exerciseArray": [
         {

@@ -66,29 +66,6 @@
 		588947E4155EFD8B00B1B13A /* levelIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 588947E3155EFD8B00B1B13A /* levelIcon.png */; };
 		588947E7155F002E00B1B13A /* StealEasel.png in Resources */ = {isa = PBXBuildFile; fileRef = 588947E5155F002E00B1B13A /* StealEasel.png */; };
 		588947E8155F002E00B1B13A /* StealEasel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 588947E6155F002E00B1B13A /* StealEasel@2x.png */; };
-		5898BCBD150C2A4800A2D2D6 /* SpreadsheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BCBC150C2A4800A2D2D6 /* SpreadsheetController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE30150C2EAE00A2D2D6 /* GDataEntrySpreadsheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE04150C2EAE00A2D2D6 /* GDataEntrySpreadsheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE31150C2EAE00A2D2D6 /* GDataEntrySpreadsheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE06150C2EAE00A2D2D6 /* GDataEntrySpreadsheetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE32150C2EAE00A2D2D6 /* GDataEntrySpreadsheetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE08150C2EAE00A2D2D6 /* GDataEntrySpreadsheetList.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE33150C2EAE00A2D2D6 /* GDataEntrySpreadsheetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE0A150C2EAE00A2D2D6 /* GDataEntrySpreadsheetRecord.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE34150C2EAE00A2D2D6 /* GDataEntrySpreadsheetTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE0C150C2EAE00A2D2D6 /* GDataEntrySpreadsheetTable.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE35150C2EAE00A2D2D6 /* GDataEntryWorksheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE0E150C2EAE00A2D2D6 /* GDataEntryWorksheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE36150C2EAE00A2D2D6 /* GDataFeedSpreadsheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE10150C2EAE00A2D2D6 /* GDataFeedSpreadsheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE37150C2EAE00A2D2D6 /* GDataFeedSpreadsheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE12150C2EAE00A2D2D6 /* GDataFeedSpreadsheetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE38150C2EAE00A2D2D6 /* GDataFeedSpreadsheetList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE14150C2EAE00A2D2D6 /* GDataFeedSpreadsheetList.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE39150C2EAE00A2D2D6 /* GDataFeedSpreadsheetRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE16150C2EAE00A2D2D6 /* GDataFeedSpreadsheetRecord.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE3A150C2EAE00A2D2D6 /* GDataFeedSpreadsheetTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE18150C2EAE00A2D2D6 /* GDataFeedSpreadsheetTable.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE3B150C2EAE00A2D2D6 /* GDataFeedWorksheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE1A150C2EAE00A2D2D6 /* GDataFeedWorksheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE3C150C2EAE00A2D2D6 /* GDataQuerySpreadsheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE1C150C2EAE00A2D2D6 /* GDataQuerySpreadsheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE3D150C2EAE00A2D2D6 /* GDataRowColumnCount.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE1E150C2EAE00A2D2D6 /* GDataRowColumnCount.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE3E150C2EAE00A2D2D6 /* GDataServiceGoogleSpreadsheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE20150C2EAE00A2D2D6 /* GDataServiceGoogleSpreadsheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE3F150C2EAE00A2D2D6 /* GDataSpreadsheetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE23150C2EAE00A2D2D6 /* GDataSpreadsheetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE40150C2EAE00A2D2D6 /* GDataSpreadsheetColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE25150C2EAE00A2D2D6 /* GDataSpreadsheetColumn.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE41150C2EAE00A2D2D6 /* GDataSpreadsheetConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE27150C2EAE00A2D2D6 /* GDataSpreadsheetConstants.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE42150C2EAE00A2D2D6 /* GDataSpreadsheetCustomElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE29150C2EAE00A2D2D6 /* GDataSpreadsheetCustomElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE43150C2EAE00A2D2D6 /* GDataSpreadsheetData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE2B150C2EAE00A2D2D6 /* GDataSpreadsheetData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE44150C2EAE00A2D2D6 /* GDataSpreadsheetField.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE2D150C2EAE00A2D2D6 /* GDataSpreadsheetField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		5898BE45150C2EAE00A2D2D6 /* GDataSpreadsheetHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5898BE2F150C2EAE00A2D2D6 /* GDataSpreadsheetHeader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5898BE66150CE21B00A2D2D6 /* modules.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5898BE65150CE21A00A2D2D6 /* modules.plist */; };
 		5898BE6A150CF42F00A2D2D6 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5898BE69150CF42F00A2D2D6 /* back.png */; };
 		589E51D815C816D2006489DB /* CheckMarkUnChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 589E51D615C816D2006489DB /* CheckMarkUnChecked.png */; };
@@ -405,7 +382,6 @@
 		3B3C8A201774A3A400C445BE /* GDataSitemapNews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSitemapNews.h; sourceTree = "<group>"; };
 		3B3C8A211774A3A400C445BE /* GDataSiteVerificationMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSiteVerificationMethod.h; sourceTree = "<group>"; };
 		3B3C8A221774A3A400C445BE /* GDataSpreadsheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSpreadsheet.h; sourceTree = "<group>"; };
-		3B3C8A231774A3A400C445BE /* GDataSpreadsheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSpreadsheetCell.h; sourceTree = "<group>"; };
 		3B3C8A241774A3A400C445BE /* GDataSpreadsheetColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSpreadsheetColumn.h; sourceTree = "<group>"; };
 		3B3C8A251774A3A400C445BE /* GDataSpreadsheetConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSpreadsheetConstants.h; sourceTree = "<group>"; };
 		3B3C8A261774A3A400C445BE /* GDataSpreadsheetCustomElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataSpreadsheetCustomElement.h; sourceTree = "<group>"; };
@@ -527,8 +503,6 @@
 		588947E3155EFD8B00B1B13A /* levelIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = levelIcon.png; sourceTree = "<group>"; };
 		588947E5155F002E00B1B13A /* StealEasel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StealEasel.png; sourceTree = "<group>"; };
 		588947E6155F002E00B1B13A /* StealEasel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StealEasel@2x.png"; sourceTree = "<group>"; };
-		5898BCBB150C2A4800A2D2D6 /* SpreadsheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpreadsheetController.h; sourceTree = "<group>"; };
-		5898BCBC150C2A4800A2D2D6 /* SpreadsheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpreadsheetController.m; sourceTree = "<group>"; };
 		5898BE03150C2EAE00A2D2D6 /* GDataEntrySpreadsheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataEntrySpreadsheet.h; sourceTree = "<group>"; };
 		5898BE04150C2EAE00A2D2D6 /* GDataEntrySpreadsheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataEntrySpreadsheet.m; sourceTree = "<group>"; };
 		5898BE05150C2EAE00A2D2D6 /* GDataEntrySpreadsheetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataEntrySpreadsheetCell.h; sourceTree = "<group>"; };
@@ -913,7 +887,6 @@
 				3B3C8A201774A3A400C445BE /* GDataSitemapNews.h */,
 				3B3C8A211774A3A400C445BE /* GDataSiteVerificationMethod.h */,
 				3B3C8A221774A3A400C445BE /* GDataSpreadsheet.h */,
-				3B3C8A231774A3A400C445BE /* GDataSpreadsheetCell.h */,
 				3B3C8A241774A3A400C445BE /* GDataSpreadsheetColumn.h */,
 				3B3C8A251774A3A400C445BE /* GDataSpreadsheetConstants.h */,
 				3B3C8A261774A3A400C445BE /* GDataSpreadsheetCustomElement.h */,
@@ -1041,8 +1014,6 @@
 				5898BE69150CF42F00A2D2D6 /* back.png */,
 				3B3C89071774A3A300C445BE /* Headers */,
 				5898BE02150C2EAE00A2D2D6 /* Spreadsheets */,
-				5898BCBB150C2A4800A2D2D6 /* SpreadsheetController.h */,
-				5898BCBC150C2A4800A2D2D6 /* SpreadsheetController.m */,
 				58C813D7150445CB00E12B25 /* libxml2.dylib */,
 				5820DBCC14F033BB003AB52B /* Edge.png */,
 				5820DBCA14F0329E003AB52B /* GrammerTrainerLogin.003_old_.jpg */,
@@ -1353,29 +1324,6 @@
 				5825CBB114E874CE00467271 /* Level.m in Sources */,
 				58D0937A14E9FFC0003DA53D /* UACellBackgroundView.m in Sources */,
 				58D0937B14E9FFC0003DA53D /* ResultsTableViewCell.m in Sources */,
-				5898BCBD150C2A4800A2D2D6 /* SpreadsheetController.m in Sources */,
-				5898BE30150C2EAE00A2D2D6 /* GDataEntrySpreadsheet.m in Sources */,
-				5898BE31150C2EAE00A2D2D6 /* GDataEntrySpreadsheetCell.m in Sources */,
-				5898BE32150C2EAE00A2D2D6 /* GDataEntrySpreadsheetList.m in Sources */,
-				5898BE33150C2EAE00A2D2D6 /* GDataEntrySpreadsheetRecord.m in Sources */,
-				5898BE34150C2EAE00A2D2D6 /* GDataEntrySpreadsheetTable.m in Sources */,
-				5898BE35150C2EAE00A2D2D6 /* GDataEntryWorksheet.m in Sources */,
-				5898BE36150C2EAE00A2D2D6 /* GDataFeedSpreadsheet.m in Sources */,
-				5898BE37150C2EAE00A2D2D6 /* GDataFeedSpreadsheetCell.m in Sources */,
-				5898BE38150C2EAE00A2D2D6 /* GDataFeedSpreadsheetList.m in Sources */,
-				5898BE39150C2EAE00A2D2D6 /* GDataFeedSpreadsheetRecord.m in Sources */,
-				5898BE3A150C2EAE00A2D2D6 /* GDataFeedSpreadsheetTable.m in Sources */,
-				5898BE3B150C2EAE00A2D2D6 /* GDataFeedWorksheet.m in Sources */,
-				5898BE3C150C2EAE00A2D2D6 /* GDataQuerySpreadsheet.m in Sources */,
-				5898BE3D150C2EAE00A2D2D6 /* GDataRowColumnCount.m in Sources */,
-				5898BE3E150C2EAE00A2D2D6 /* GDataServiceGoogleSpreadsheet.m in Sources */,
-				5898BE3F150C2EAE00A2D2D6 /* GDataSpreadsheetCell.m in Sources */,
-				5898BE40150C2EAE00A2D2D6 /* GDataSpreadsheetColumn.m in Sources */,
-				5898BE41150C2EAE00A2D2D6 /* GDataSpreadsheetConstants.m in Sources */,
-				5898BE42150C2EAE00A2D2D6 /* GDataSpreadsheetCustomElement.m in Sources */,
-				5898BE43150C2EAE00A2D2D6 /* GDataSpreadsheetData.m in Sources */,
-				5898BE44150C2EAE00A2D2D6 /* GDataSpreadsheetField.m in Sources */,
-				5898BE45150C2EAE00A2D2D6 /* GDataSpreadsheetHeader.m in Sources */,
 				58415C70158E42A300890522 /* Reachability.m in Sources */,
 				29D714B416C84E0A0054A400 /* DownloadUrlToDiskOperation.m in Sources */,
 			);
@@ -1469,7 +1417,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = "armv7 arm 64";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = SentenceWeaver1.36;
@@ -1532,7 +1480,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = "armv7 arm 64";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = SentenceWeaver1.35;
@@ -1632,7 +1580,7 @@
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
-				VALID_ARCHS = "armv7 arm 64";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1662,7 +1610,7 @@
 				PRODUCT_NAME = SentenceWeaver;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv7 arm 64";
+				VALID_ARCHS = "armv7 arm64";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

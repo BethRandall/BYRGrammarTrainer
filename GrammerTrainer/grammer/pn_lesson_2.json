@@ -4,6 +4,7 @@
     "name3": "Hints",
     "lessonNumber": "2.1",
     "capFirstWord": "no",
+    "needGender": "true",
 
     "pronounWords": [
         "I",
