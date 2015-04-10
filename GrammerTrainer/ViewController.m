@@ -96,6 +96,7 @@
 
 
 static NSString *versionNumber = @"1.37";
+BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
     fliteController = [[FliteController alloc] init]; }
@@ -111,6 +112,12 @@ static NSString *versionNumber = @"1.37";
     [super didReceiveMemoryWarning];
     // Release any cached data, images, etc that aren't in use.
 }
+
+- (void)genderIsChecked {
+    genderChecked = YES;
+}
+
+
 
 #pragma mark - Helper Methods
 
@@ -1181,6 +1188,12 @@ static NSString *versionNumber = @"1.37";
         //menuVisible = NO;
         [self exitLesson];
         [self.theTableView reloadData];
+    }  else if ([functionName isEqualToString:@"genderIsChecked"]) {
+        [self genderIsChecked];
+    }  else if ([functionName isEqualToString:@"isGenderChecked"]) {
+        NSString *genderDone = @"false";
+        if (genderChecked) { genderDone = @"true"; }
+        [self returnResult:callbackId args:genderDone,nil];
     } else if ([functionName isEqualToString:@"toSpeech"]) {
         NSString *oneArg = (NSString*)[args objectAtIndex:0];
         [self toSpeech:oneArg];

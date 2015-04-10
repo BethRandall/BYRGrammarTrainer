@@ -69,7 +69,7 @@ var nounWords;
 var verbWords;
 var adjectiveWords;
 var pronounWords;
-var genderChecked = false;
+//var genderChecked = false;
 
 // Dot Array
 var dotMatrix;
@@ -410,7 +410,6 @@ function eraseAnswer()
         $("#speechBubble p").html(" "); }
 }
 
-
 function saySomething() {
     NativeBridge.call("toSpeech", [currentExercise.oralprompt]); }
 
@@ -420,6 +419,11 @@ function myLeftExit() {
    exitLesson();
 }
 
+/*
+function genderIsChecked() {
+    NativeBridge.call("genderIsChecked");
+}
+ */
 
 function showMenu()
 {
@@ -503,11 +507,26 @@ function getLessonIndex() {
 }
 
 function setLessonConstants() {
-    //alert("will check Gender: genderChecked: " + genderChecked);
-    if (genderChecked == false && (typeof theLesson.needGender != "undefined")) {
-        askGender();
-        genderChecked = true;
-    }
+    //alert("about to call isGenderChecked:")
+    /*
+    if (typeof NativeBridge != 'undefined') {
+        NativeBridge.call("getGender", "", function (response) {
+                          if(response != null) {
+                          setGender(response);
+                          } else { alert("No Response"); }
+                          });
+     */
+/*
+    if (typeof NativeBridge != 'undefined') {
+        NativeBridge.call("isGenderChecked", "", function (response) {
+            if(response != null) {
+                alert("called isGenderChecked: response: " + response);
+                if (response == "false" && (typeof theLesson.needGender != "undefined")) {
+                    askGender();
+                          NativeBridge.call("genderIsChecked"); }}
+                          else { alert("null response from isGenderChecked: "); }
+                          });
+     */
     jitterNext = true;
     didJitter = false;
     numWrong = 0;    

@@ -15,6 +15,7 @@
 		1429073119B64A6F00255328 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072D19B64A6F00255328 /* Slt.framework */; };
 		143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */; };
 		143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838CA1AAA5317001D7128 /* icon76x76~ipad.png */; };
+		143D61571AC990440010E0DD /* libGDataTouchStaticLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3C8A4B1774A3AA00C445BE /* libGDataTouchStaticLib.a */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
 		146D50931AB2025100E103D9 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D50921AB2025100E103D9 /* icon152.png */; };
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
@@ -572,6 +573,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				143D61571AC990440010E0DD /* libGDataTouchStaticLib.a in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,

@@ -159,6 +159,9 @@
     
     <script>
         // This gets a designated query parameter from the query string
+        
+        var genderChecked = false;
+        
         function queryString(search_for) {
                 var query = window.location.search.substring(1);
                 var parms = query.split('&');
@@ -176,7 +179,11 @@
                 theLesson = eval('(' + myJSONtext + ')');
                 // askGender is now called from businessLogic function setLessonConstants.
                 //checkGender();
-                //askGender();
+                if (genderChecked == "false" && (typeof theLesson.needGender != "undefined")) {
+                    askGender();
+                    genderChecked = true;
+                }
+                //alert("got file");
           
                 } else { document.write("error in myJsonTextToObject"); };
         }
@@ -341,13 +348,12 @@
         function askGender() {
             //alert("inside askGender: ");
             var myGender = 'female';
-        
             myGender = prompt("Are you male or female?  Please enter M or F: ", "");
             if ((myGender.indexOf('m') === 0) || (myGender.indexOf('M') === 0))
-            { myGender = 'male'; }
+                { myGender = 'male'; }
             else { myGender = 'female'; }
-        
             //alert("will set your gender to " + myGender);
+            genderChecked = true;
             setGender(myGender);
         }
     
@@ -373,13 +379,13 @@
         }
 
         function checkGender() {
-            console.log("checkGender");
+            //console.log("checkGender");
             if (typeof NativeBridge != 'undefined') {
                 NativeBridge.call("getGender", "", function (response) {
                     if(response != null) {
                         setGender(response);
                     } else { alert("No Response"); }
-            });
+                                  });
             } else { alert("NativeBridge is NOT defined!"); }
         }
 

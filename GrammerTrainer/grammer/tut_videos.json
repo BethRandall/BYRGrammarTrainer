@@ -22,7 +22,7 @@
                                         ],
                       "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
                       "videoFormat": "large",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/instructions1_iPhone.m4v",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/Phrases_directions.m4v",
                       
                       },
                       {
@@ -46,35 +46,10 @@
                                         ],
                       "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
                       "videoFormat": "large",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/instructions2_iPhone.m4v",
-                      
-                      },
-                      {
-                      "exnum": "3",
-                      "timeCaption": "Now",
-                      "question": "The boy is talking to you. He is telling you that he will help the girl. Look at the empty balloon over the boy. What words does the boy use?Type the words that go into the balloon.",
-                      "multipleChoice": [
-                      ],
-                      "answers": [
-                                  "next"
-                                  ],
-                      "unneededWords": [
-                                        "use",
-                                        "uses",
-                                        "word",
-                                        "words",
-                                        "saying",
-                                        "telling",
-                                        "that",
-                                        "girl"
-                                        ],
-                      "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
-                      "videoFormat": "large",
-                      "lessonVideo": "gt_videos/transportation_theme_videos/Lesson3.m4v",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/Pronouns_directions.m4v",
                       
                       }
-
-                 
+                      
                        ],
     "pronounWords": [
                      "next"
