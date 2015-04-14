@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.38";
+static NSString *versionNumber = @"1.43";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
