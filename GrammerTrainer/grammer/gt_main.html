@@ -174,6 +174,7 @@
         }
         
         function myJsonTextToObject(myJSONtext) {
+            //alert("myJSONtext: *" + myJSONtext + "*");
             
             if (myJSONtext.length > 0) {
                 theLesson = eval('(' + myJSONtext + ')');
@@ -183,22 +184,26 @@
                     askGender();
                     genderChecked = true;
                 }
-                //alert("got file");
+                //alert("in myJsonTextToObject: got file: ");
           
-                } else { document.write("error in myJsonTextToObject"); };
+            } else {
+                    alert("error in myJsonTextToObject: myJSONtext: *" + myJSONtext + "*");
+                    document.write("error in myJsonTextToObject"); };
         }
     
         function myLoadLocalJson(filename) {
-            alert("in myLoadLocalJson: " + filename);
+            //alert("in myLoadLocalJson: " + filename);
             var xobj = new XMLHttpRequest();
     
             xobj.open('GET', filename, true);
             xobj.onreadystatechange = function () {
+                //alert("xobj.readyState: " + xobj.readyState);
                 if (xobj.readyState == 4) {
                     var jsonTexto = xobj.responseText;
                     myJsonTextToObject(jsonTexto); }
             }
             xobj.send(null);
+            //alert("leaving myLoadLocalJson:");
         }
                
        lessonName = queryString("lesson");

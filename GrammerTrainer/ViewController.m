@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.43";
+static NSString *versionNumber = @"1.45";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -624,7 +624,7 @@ BOOL genderChecked = NO;
 		buttonLabel.transform = t;
 		buttonLabel.frame = CGRectMake(0.0, 0.0, 125.0, 30.0);
         
-		buttonLabel.textAlignment = UITextAlignmentCenter;
+		buttonLabel.textAlignment = NSTextAlignmentCenter;
 		buttonLabel.center = CGPointMake(xOffset+(pageIndex*10.0) + xIndex*hSpacing, yOffset + yIndex*vSpacing + 40.0 - xIndex*perspectiveShift);
 		buttonLabel.backgroundColor = [UIColor clearColor];
 		buttonLabel.textColor = [UIColor darkGrayColor];
