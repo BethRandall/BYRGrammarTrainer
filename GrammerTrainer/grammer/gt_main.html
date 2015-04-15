@@ -190,30 +190,106 @@
                     alert("error in myJsonTextToObject: myJSONtext: *" + myJSONtext + "*");
                     document.write("error in myJsonTextToObject"); };
         }
-    
+ 
         function myLoadLocalJson(filename) {
             //alert("in myLoadLocalJson: " + filename);
             var xobj = new XMLHttpRequest();
+            //xobj.callback = callback;
+            xobj.overrideMimeType("application/json");
     
             xobj.open('GET', filename, true);
             xobj.onreadystatechange = function () {
                 //alert("xobj.readyState: " + xobj.readyState);
                 if (xobj.readyState == 4) {
-                    var jsonTexto = xobj.responseText;
-                    myJsonTextToObject(jsonTexto); }
+                    //var jsonTexto = xobj.responseText;
+                    //alert("xobj.responseText: " + xobj.responseText);
+                    //callback(xobj.responseText);
+                    myJsonTextToObject(xobj.responseText); }
             }
             xobj.send(null);
             //alert("leaving myLoadLocalJson:");
         }
+ 
+    //var useActiveX = !window.ActiveXObject && window.ActiveXObject;
+    function loadJSON(file,callback){
+        //var xobj;
+      //  if(useActiveX){
+        //    xobj = new ActiveXObject("Microsoft.XMLHTTP");
+       // }else{
+         //   xobj = new XMLHttpRequest();
+        //}
+        var xobj = new XMLHttpRequest();
+        xobj.callback = callback;
+        if(xobj.overrideMimeType){
+            xobj.overrideMimeType("application/json");
+        }
+        xobj.open('GET', file, false);
+        xobj.onreadystatechange = function(){
+            if(this.readyState == 4){
+                this.callback(this);
+            }
+        }
+        xobj.send(null);
+    }
+   
+
+    // Call to function with anonymous callback
+   /* loadJSON(function(response) {
+             // Do Something with the response e.g.
+             //jsonresponse = JSON.parse(response);
+             
+             // Assuming json data is wrapped in square brackets as Drew suggests
+             //console.log(jsonresponse[0].name);
+             myJsonTextToObject(response);
+             
+             });*/
+    
+    /*
+    
+    function loadJSON(callback) {
+        
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', 'my_data.json', true); // Replace 'my_data' with the path to your file
+        xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4&& xobj.status == "200") {
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);  
+    }
+     */
+    
                
        lessonName = queryString("lesson");
        //alert("lessonName is:  " + lessonName);
         
-       if (lessonName.length > 0) {
-           myLoadLocalJson(lessonName);
-         } //else {
+      // if (lessonName.length > 0) {
+         myLoadLocalJson(lessonName);
+         //} //else {
           //  document.write("Must set lesson query parameter json filename");
         //}
+        
+        // Call to function with anonymous callback
+        //loadJSON(function(response) {
+                 // Do Something with the response e.g.
+                 //jsonresponse = JSON.parse(response);
+                 
+                 // Assuming json data is wrapped in square brackets as Drew suggests
+                 //console.log(jsonresponse[0].name);
+                // alert("inside loadJSON: ");
+                // myJsonTextToObject(response);
+                 
+                 //});
+             
+        //Then you just run it by feeding it a filepath and a callback function:
+        //loadJSON(lessonName,function(obj){
+          //            alert(obj.responseText);
+           //           }
+                      
+
+
 
 		// START HERE
 		
