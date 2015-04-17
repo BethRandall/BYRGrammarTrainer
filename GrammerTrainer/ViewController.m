@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.48";
+static NSString *versionNumber = @"1.50";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -274,7 +274,7 @@ BOOL genderChecked = NO;
         //[signLabel_ sizeToFit];
         NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"]; 
         NSURL *url;
-        
+        /*
         if ([theLesson.loadFile isEqualToString:@"demoTrigger"]) {
             
             UIAlertView *alertView = [[UIAlertView alloc] 
@@ -287,7 +287,7 @@ BOOL genderChecked = NO;
             [alertView show];
             //url = [[NSBundle mainBundle] URLForResource:@"playTutorialVideo" withExtension:@"html"];  
             pendingDataModelLoad = NO;
-        } else { 
+        } else { */
             NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
             
             //NSString *baseURLWithQuery = [self addQueryStringToUrlString:baseURLStr withDictionary:[NSDictionary dictionaryWithObject:[lessonFileName stringByDeletingPathExtension] forKey:@"lesson"]];
@@ -295,19 +295,26 @@ BOOL genderChecked = NO;
             NSString *query = [NSString stringWithFormat:@"lesson=%@", lessonFileName];  
             
             NSString *encodedPath = [baseURLStr stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+        
+       // NSString *htmlFile = [[NSBundle mainBundle] pathForResource:selectedBookName_tag
+        //                                                     ofType:@"html"
+        //                                                inDirectory:@"."];
             
             url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@?%@",
                                                encodedPath,
                                                query]];     
             
             pendingDataModelLoad = YES;
-            NSLog(@"Load request: %@", url); 
+            NSLog(@"Load request: %@", url);
+       // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Not Found" message:theMessage
+                    // delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+       // [alert show];
             NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc] initWithURL:url
                                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
                                                                        timeoutInterval:30.0];
             
             [_theWebView loadRequest:theRequest];
-        }
+        //}
     
     } else {
         
@@ -480,8 +487,6 @@ BOOL genderChecked = NO;
     
 }
 
-
-
 - (IBAction)userPushedLogin:(id)sender {
     
     NSString *theUserName = @"guest";
@@ -523,8 +528,6 @@ BOOL genderChecked = NO;
         }];
     }];
 }
-
-
 
 - (void)buttonPushed:(id)sender {
     
@@ -650,12 +653,16 @@ BOOL genderChecked = NO;
     NSFileManager *fileMgr = [NSFileManager defaultManager];
         
     NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+    // NSString *htmlFile = [[NSBundle mainBundle] pathForResource:selectedBookName_tag
+    //                                                     ofType:@"html"
+    //                                                inDirectory:@"."];
+
     
     NSError *error = nil;
     
     BOOL didCopy = [fileMgr copyItemAtPath:grammerDir toPath:docsDir error:&error];
     
-    NSLog(@"%d: Check For Errors: %@",didCopy, error);
+    NSLog(@"%d: PANGOLIN inside copyWebSiteFromBundle: %@, %@", didCopy, error, docsDir);
 }
 
 /* Returns a URL to a local movie in the app bundle. */
