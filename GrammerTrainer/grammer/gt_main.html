@@ -158,12 +158,14 @@
     </div>
     
     <script>
-        // This gets a designated query parameter from the query string
+        
         
         var genderChecked = false;
         
+        // This gets a designated query parameter from the query string
         function queryString(search_for) {
                 var query = window.location.search.substring(1);
+                //alert("query:  " + query);
                 var parms = query.split('&');
                 for (var i=0; i<parms.length; i++) {
                     var pos = parms[i].indexOf('=');
@@ -195,7 +197,7 @@
             xobj.overrideMimeType("application/json");
             xobj.open('GET', filename, true);
             xobj.onreadystatechange = function () {
-                alert("myLoadLocalJSON: xobj.readyState: " + xobj.readyState + ", xobj.status: " + xobj.status);
+                //alert("myLoadLocalJSON: xobj.readyState: " + xobj.readyState + ", xobj.status: " + xobj.status);
                 if (xobj.readyState == 4) {
                     if (xobj.responseText.length <= 0) {
                         alert("xobj.responseText: " + xobj.responseText); }
@@ -206,12 +208,12 @@
     
         function loadJSON(callback) {
             var xobj = new XMLHttpRequest();
-            xobj.overrideMimeType("application/json");
+            //xobj.overrideMimeType("application/json");
             xobj.open('GET', lessonName, true);
             xobj.onreadystatechange = function () {
                 //alert("loadJSON: xobj.readyState: " + xobj.readyState + ", xobj.status: " + xobj.status);
                 //if (xobj.readyState == 4 && xobj.status == "200") {
-                if (xobj.readyState == 4 && xobj.responseText.length > 0) {
+                if (xobj.readyState == 4 && xobj.status == "0") {
                     // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
                     //alert("xobj.responseText: " + xobj.responseText);
                     callback(xobj.responseText);
@@ -222,16 +224,23 @@
 
                
        lessonName = queryString("lesson");
-       //alert("lessonName is:  " + lessonName);
-       
+       //alert("inside gt_main.html: lessonName is:  " + lessonName);
         //myLoadLocalJson(lessonName);
+        // theLesson = eval('(' + response + ')');
        
-        loadJSON(function(response) {
+       loadJSON(function(response) {
             // Parse JSON string into object
             //var actual_JSON = JSON.parse(response);
+                // alert("response:  " + response);
+          if (response.length <= 0) {
+            alert("null response:  " + response + ", lessonName: " + lessonName); }
             theLesson = eval('(' + response + ')');
-        });
+       });
+
+        //alert("theLesson: " + theLesson);
+      
         genderIssues();
+       // alert("returned from genderIssues");
 
 		// START HERE
     

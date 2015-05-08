@@ -31,28 +31,6 @@
         "these",
         "those"
     ],
-    "subjects": [
-        "aNSg"
-    ],
-    "exerciseList": [
-        [
-            "aNSg",
-            "0"
-        ],
-        [
-            "aNSg",
-            "1"
-        ],
-        [
-            "aNSg",
-            "2"
-        ],
-        [
-            "aNSg",
-            "3"
-        ]
-    ],
-    "subjectMasteryLimit": "4",
     "exerciseArray": [
         {
             "exnum": "1",

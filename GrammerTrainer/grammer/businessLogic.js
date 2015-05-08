@@ -493,13 +493,7 @@ function backDoor() {
 // For the moment, I only care if it's the first lesson in the array,
 // so I've marked those as lessonIndex: 0 in the .json file.
 function getLessonIndex() {
-    //NativeBridge.call("getLessonIndex", "", function (response){
-                      //lessonIndex = response; }
-    //lessonIndex = NativeBridge.call("getLessonIndex");
-    //alert("back from NativeBridge call:  lessonIndex: " + lessonIndex);
     if (typeof theLesson.lessonIndex != "undefined") {
-        // alert("found exnum: " + currentExercise.exnum);
-        // subtract 1 because array indices begin at 0 but exnums begin at 1.
         return (theLesson.lessonIndex);
     }
     lessonIndex = 100;

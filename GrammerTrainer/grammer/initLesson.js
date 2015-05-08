@@ -322,6 +322,7 @@ function resetLesson() {
         setIndexArray();
         setDotArray();
     }
+    //alert("leaving resetLesson: ");
 }
 
 function doesFileExist(urlToFile)
@@ -387,7 +388,7 @@ function returnToLesson() {
 
 function initUserInterface() {
     // NOTE: Must call resetLesson() or something else to init vars before calling this
-    //alert("about to call setLessonConstants:");
+    //alert("initUserInterface: about to call setLessonConstants:");
     
     setLessonConstants();
     // Array of answer words

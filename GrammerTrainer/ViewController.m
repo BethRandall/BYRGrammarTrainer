@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.50";
+static NSString *versionNumber = @"1.82";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -249,18 +249,12 @@ BOOL genderChecked = NO;
 
     NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
     
-    if (docsDir) {
-        
-        // This copies selected lesson into initDataModel.js, this will be inserted once page finishes loading
-        //[self copyOverLesson:lessonFileName];
+    //if (docsDir) { // if a string makes no sense.
+    
+        // set up sign.
         
         signLabel_.numberOfLines = 3;
-        //signLabel_.font = UIFont(name: "HelveticaNeue-UltraLight",
-                                // size: 20.0);
-        
-        //[[self signLabel_] setFont:[UIFont systemFontOfSize:36]];
-        //signLabel_ = [[UILabel alloc]initWithFrame:CGRectMake(91, 15, 0, 0)];
-        
+    
         [signLabel_ setFont:[UIFont fontWithName:@"American Typewriter" size:30]];
         if ([theLesson.lessonName rangeOfString:[NSString stringWithFormat:@"%c",':']].location != NSNotFound) {
         
@@ -272,8 +266,8 @@ BOOL genderChecked = NO;
             signLabel_.text = [NSString stringWithFormat:@"Loading %@:\n%@", theLesson.lessonName, theLesson.topic]; 
         }
         //[signLabel_ sizeToFit];
-        NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"]; 
-        NSURL *url;
+        //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+        
         /*
         if ([theLesson.loadFile isEqualToString:@"demoTrigger"]) {
             
@@ -288,7 +282,9 @@ BOOL genderChecked = NO;
             //url = [[NSBundle mainBundle] URLForResource:@"playTutorialVideo" withExtension:@"html"];  
             pendingDataModelLoad = NO;
         } else { */
-            NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
+    //NSString *thePathURL = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"clouds/index.html"];
+    NSString *baseURLStr = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grammer/gt_main.html"];
+            //NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
             
             //NSString *baseURLWithQuery = [self addQueryStringToUrlString:baseURLStr withDictionary:[NSDictionary dictionaryWithObject:[lessonFileName stringByDeletingPathExtension] forKey:@"lesson"]];
             
@@ -299,7 +295,7 @@ BOOL genderChecked = NO;
        // NSString *htmlFile = [[NSBundle mainBundle] pathForResource:selectedBookName_tag
         //                                                     ofType:@"html"
         //                                                inDirectory:@"."];
-            
+            NSURL *url;
             url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@?%@",
                                                encodedPath,
                                                query]];     
@@ -310,12 +306,12 @@ BOOL genderChecked = NO;
                     // delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
        // [alert show];
             NSMutableURLRequest *theRequest = [[NSMutableURLRequest alloc] initWithURL:url
-                                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
-                                                                       timeoutInterval:30.0];
+                                              cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                              timeoutInterval:30.0];
             
             [_theWebView loadRequest:theRequest];
         //}
-    
+    /*
     } else {
         
         NSString *theMessage = [NSString stringWithFormat:@"The referenced javascript file %@ was not found.", lessonFileName ];
@@ -323,7 +319,7 @@ BOOL genderChecked = NO;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Not Found" message:theMessage
                                                        delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [alert show];
-    }
+    } */
 }
 
 - (IBAction)logoutButtonPushed:(id)sender {
@@ -372,7 +368,7 @@ BOOL genderChecked = NO;
     
     signLabel_.hidden = YES;
     // Need to add delay to give time for webview to load
-    [self performSelector:@selector(showMessageBoard) withObject:signLabel_ afterDelay:2.0];
+    [self performSelector:@selector(showMessageBoard) withObject:signLabel_ afterDelay:1.0];
 }
 
 - (void)handleCorrectPassword {
@@ -646,26 +642,96 @@ BOOL genderChecked = NO;
 }
 
 #pragma mark - View lifecycle
-
+/*
 - (void)copyWebSiteFromBundle {
+    UIAlertView *alertView;
+    NSError *error = nil;
     
     NSString *grammerDir = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grammer"];
+    
     NSFileManager *fileMgr = [NSFileManager defaultManager];
         
-    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+    //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+   
+    NSString* docsDir = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent: @"/grammer"];
+    
+    //NSURL *documentsURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    // append a file name to it
+    //documentsURL = [documentsURL URLByAppendingPathComponent:@"/grammer"];
+    
+    //BOOL didRemove = [fileMgr removeItemAtPath:docsDir error:&error];
+    
+    //BOOL removed = [fileMgr removeItemAtURL:documentsURL error:&error];
+    //BOOL didRemove = [fileMgr removeItemAtURL:documentsURL error:&error];
+    
     // NSString *htmlFile = [[NSBundle mainBundle] pathForResource:selectedBookName_tag
     //                                                     ofType:@"html"
     //                                                inDirectory:@"."];
+    
+    
+    
+    
+    BOOL fileExists = [fileMgr fileExistsAtPath:docsDir];
+    
 
+    if (fileExists)
+    {
+        //removing file
+        BOOL didRemove = [fileMgr removeItemAtPath:docsDir error:&error];
+        
+        if (!didRemove)
+        {
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle: error.localizedDescription
+                                      message: @"7. could not remove file"
+                                      delegate:self
+                                      cancelButtonTitle: @"Cancel"
+                                      otherButtonTitles:@"Next", nil];
+            [alertView show];
+            
+            NSLog(@"Could not remove old files. Error:%@",error);
+        }
+   }
+
+   
+    NSFileManager *localFileManager=[[NSFileManager alloc] init];
+    NSDirectoryEnumerator *dirEnum = [localFileManager enumeratorAtPath:grammerDir];
     
-    NSError *error = nil;
+    NSString* fileList = @"Files: ";
     
+    NSString *file;
+    while ((file = [dirEnum nextObject])) {
+        fileList = [fileList stringByAppendingString:file];
+        fileList = [fileList stringByAppendingString:@" $$$ "];
+    }
+    
+    alertView = [[UIAlertView alloc]
+                 initWithTitle: @"grammerDir:  "
+                 message: fileList
+                 delegate:self
+                 cancelButtonTitle: @"Cancel"
+                 otherButtonTitles:@"Next", nil];
+    
+    [alertView show];
+ 
     BOOL didCopy = [fileMgr copyItemAtPath:grammerDir toPath:docsDir error:&error];
+    
+    if (!didCopy) {
+        alertView = [[UIAlertView alloc]
+                              initWithTitle: error.localizedDescription
+                              message: docsDir
+                              delegate:self
+                              cancelButtonTitle: @"Cancel"
+                              otherButtonTitles:@"Next", nil];
+    
+        [alertView show]; }
     
     NSLog(@"%d: PANGOLIN inside copyWebSiteFromBundle: %@, %@", didCopy, error, docsDir);
 }
+*/
+/*
 
-/* Returns a URL to a local movie in the app bundle. */
+// Returns a URL to a local movie in the app bundle.
 -(NSURL *)localMovieURL
 {
 	NSURL *theMovieURL = nil;
@@ -695,6 +761,7 @@ BOOL genderChecked = NO;
     // ...
     [player play];
 }
+ */
 
 - (void)toSpeech:(NSString *)toSay {
     self.fliteController.duration_stretch = 1.4;
@@ -746,10 +813,9 @@ BOOL genderChecked = NO;
     openSectionIndex_ = NSNotFound;
     
     [self layoutIcons:self.levels];
+    //[self copyWebSiteFromBundle];
     
-    [self copyWebSiteFromBundle];
-    
-    // Instanciate JSON parser library
+    // Instantiate JSON parser library
     json = [ SBJSON new ];
     signLabel_.text = [NSString stringWithFormat:@"Welcome to SentenceWeaver %@", versionNumber];
     //[self synchWithServer];
@@ -1082,7 +1148,7 @@ BOOL genderChecked = NO;
     
     // We need to perform selector with afterDelay 0 in order to avoid weird recursion stop
     // when calling NativeBridge in a recursion more then 200 times :s (fails ont 201th calls!!!)
-    [self performSelector:@selector(returnResultAfterDelay:) withObject:[NSString stringWithFormat:@"NativeBridge.resultForCallback(%d,%@);",callbackId,resultArrayString] afterDelay:0];
+    [self performSelector:@selector(returnResultAfterDelay:) withObject:[NSString stringWithFormat:@"NativeBridge.resultForCallback(%d,%@);",callbackId,resultArrayString] afterDelay:1.0];
     NSLog(@"back from returnResultAfterDelay 3: ");
 }
 
@@ -1310,9 +1376,6 @@ BOOL genderChecked = NO;
     }
 }
 
-
-
-
 #pragma UIWebview Delegate
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -1364,18 +1427,18 @@ BOOL genderChecked = NO;
             NSLog(@"The Dict: %@", someJavaScript);
             
             // Instead of calling resetLesson() we pass init using our saved stateVector
+
             NSString *javascriptString = [NSString stringWithFormat:@"%@%@",someJavaScript,  @"initUserInterface();" ];
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 1: ");
 
         } else {
-            NSString *javascriptString = @"resetLesson();  initUserInterface();";
+            NSString *javascriptString = @"resetLesson(); initUserInterface();";
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 2: ");
         }
         
         //NSString *javascriptString = [NSString stringWithContentsOfFile:path encoding:NSASCIIStringEncoding error:nil];
-        
         
         // We need to perform selector with afterDelay 0 in order to avoid weird recursion stop
         // when calling NativeBridge in a recursion more then 200 times :s (fails ont 201th calls!!!)
