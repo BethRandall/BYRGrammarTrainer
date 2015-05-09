@@ -32,7 +32,8 @@ $(document).ready(function(){
                   $("#menuButton").click(function(){ exitLesson(); });
                   
                   // button labelled "Exit" on left-hand side
-                  $("#leftExitButton").click(function(){ exitLesson(); });
+                  $("#leftExitButton").click(function(){ //$("#big_video_box").empty();
+                            document.getElementById('video').pause(); exitLesson(); });
                   
                   // Submit button
                   $("#answerContainer #submitButton").click(function(){ submitAnswer(); });
@@ -549,6 +550,7 @@ function goToNextVideo() {
     dotMatrix[step] = DOT_CORRECT;
     //currentExerciseNumber++;
     step++;
+    $("#big_video_box").empty();
     if((step + 1) > theLesson.exerciseArray.length) {
         toNextLesson(); }
     else {

@@ -10,42 +10,15 @@
 	<string>GrammerTrainer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>22754eea-fc93-e339-b032-c1f495b90c16++2896</key>
-		<string>http://gtm-oauth2.googlecode.com/svn/trunk/Source</string>
 		<key>BC3A28451CEC5EFAFCDE4EFDEB2A347D0A4C337C</key>
 		<string>https://github.com/BethRandall/BYRGrammarTrainer</string>
-		<key>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</key>
-		<string>http://gtm-http-fetcher.googlecode.com/svn/trunk/Source</string>
-		<key>c149197c-92b2-435d-9462-ce57b7db7bff++3047</key>
-		<string>https://github.com/stig/json-framework.git/tags/v2.3.2/Classes</string>
-		<key>f334b912-182a-0410-b59a-f50d4d03ee1a++505</key>
-		<string>http://gdata-objectivec-client.googlecode.com/svn/trunk</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GrammerTrainer.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>22754eea-fc93-e339-b032-c1f495b90c16++2896</key>
-		<string>../../../gdata-objectivec-client-read-only/Source/OAuth2</string>
 		<key>BC3A28451CEC5EFAFCDE4EFDEB2A347D0A4C337C</key>
-		<string>../..</string>
-		<key>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</key>
-		<string>../../../gdata-objectivec-client-read-only/Source/HTTPFetcher</string>
-		<key>c149197c-92b2-435d-9462-ce57b7db7bff++3047</key>
-		<string>../../../gdata-objectivec-client-read-only/Source/JSON</string>
-		<key>f334b912-182a-0410-b59a-f50d4d03ee1a++505</key>
-		<string>../../../gdata-objectivec-client-read-only</string>
-	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>22754eea-fc93-e339-b032-c1f495b90c16++2896</key>
-		<string>http://gtm-oauth2.googlecode.com/svn</string>
-		<key>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</key>
-		<string>http://gtm-http-fetcher.googlecode.com/svn</string>
-		<key>c149197c-92b2-435d-9462-ce57b7db7bff++3047</key>
-		<string>https://github.com/stig/json-framework.git</string>
-		<key>f334b912-182a-0410-b59a-f50d4d03ee1a++505</key>
-		<string>http://gdata-objectivec-client.googlecode.com/svn</string>
+		<string>../../../BYRGrammarTrainer-old</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/BethRandall/BYRGrammarTrainer</string>
@@ -65,35 +38,11 @@
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>f334b912-182a-0410-b59a-f50d4d03ee1a++505</string>
+			<string>BC3A28451CEC5EFAFCDE4EFDEB2A347D0A4C337C</string>
 			<key>IDESourceControlWCCName</key>
-			<string>gdata-objectivec-client-read-only</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>b3aa69f0-f65c-a609-0a27-78855af037c1++2896</string>
-			<key>IDESourceControlWCCName</key>
-			<string>HTTPFetcher</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>c149197c-92b2-435d-9462-ce57b7db7bff++3047</string>
-			<key>IDESourceControlWCCName</key>
-			<string>JSON</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>22754eea-fc93-e339-b032-c1f495b90c16++2896</string>
-			<key>IDESourceControlWCCName</key>
-			<string>OAuth2</string>
+			<string>BYRGrammarTrainer-old</string>
 		</dict>
 	</array>
 </dict>

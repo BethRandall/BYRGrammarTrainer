@@ -1,16 +1,11 @@
 {
     
     "exerciseArray": [
-                      {
-                      "exnum": "1",
-                      "timeCaption": "Now",
-                      "question": "The boy is talking to you. He is telling you that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
-                        "answers": [
-                                    "next"
+                     {
+                      "exnum": “1”,
+                      "answers": [
+                                  "next"
                                   ],
-                      "multipleChoice": [
-                                         
-                                         ],
                       "unneededWords": [
                                         "use",
                                         "uses",
@@ -18,13 +13,14 @@
                                         "words",
                                         "saying",
                                         "telling",
-                                        "that"
+                                        "that",
+                                        "girl"
                                         ],
                       "prompt": "To continue, drag and drop 'next' into the answer box, then click 'Submit'.",
                       "videoFormat": "large",
+                      "lessonVideo": "gt_videos/transportation_theme_videos/Pronoun_directions.m4v"
                       
-                      "lessonVideo": "gt_videos/transportation_theme_videos/Phrases_directions.m4v"
                       }
                       
                        ]
- }
+   }

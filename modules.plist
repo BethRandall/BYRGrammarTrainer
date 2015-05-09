@@ -20,11 +20,21 @@
 						<key>lessonNumber</key>
 						<integer>0</integer>
 						<key>lessonName</key>
-						<string>Tutorial Videos</string>
+						<string>Phrase Trainer Tutorial</string>
 						<key>topic</key>
 						<string></string>
 						<key>loadFile</key>
 						<string>tut_videos.json</string>
+					</dict>
+					<dict>
+						<key>loadFile</key>
+						<string>tut_videos2.json</string>
+						<key>topic</key>
+						<string></string>
+						<key>lessonName</key>
+						<string>Pronoun Trainer Tutorial</string>
+						<key>lessonNumber</key>
+						<integer>1</integer>
 					</dict>
 				</array>
 			</dict>
