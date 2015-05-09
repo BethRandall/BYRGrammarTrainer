@@ -149,7 +149,7 @@ function setVideo(context) {
 }
 
 function setBigVideo() {
-    alert("inside setBigVideo: ");
+    //alert("inside setBigVideo: ");
 
     /* $("#big_video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"1028\" height=\"768\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>"); */
     $("#big_video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"936\" height=\"699\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
@@ -462,7 +462,7 @@ function initUserInterface() {
         //alert("will get poster:  " + posterFilePath);
         if ((currentExercise.videoFormat != "undefined") && (currentExercise.videoFormat == "large"))
         {
-            alert("about to call setBigVideo:  ");
+            //alert("about to call setBigVideo:  ");
             //setBigVideo();
             $("#big_video_box").append("<video autoplay=\"autoplay\" controls=\"controls\" id=\"video\" width=\"936\" height=\"699\" src=" + lessonFilePath + " poster=" + posterFilePath +  "></video>");
             $("#questionContainer").hide();
@@ -472,7 +472,7 @@ function initUserInterface() {
             $("#progressContainer").hide();
             $("#nextButton").html("<a href=\"javascript:goToNextVideo()\">Next</a>");
             $("#nextButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
-            $("#nextButton").show();
+            //$("#nextButton").show();
             $("#leftExitButton").html("<a href=\"javascript:showMenu()\">Exit</a>");
             $("#leftExitButton a").css({"background":"#fdd79f url(img/watercolorTextureTransparent.png) repeat","color":"#522611","-webkit-box-shadow":"inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2)"});
             $("#leftExitButton").show();
