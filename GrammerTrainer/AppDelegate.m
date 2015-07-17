@@ -100,6 +100,16 @@
 
 
 - (void)sendOfflineEntriesToServerIfExist {
+    /*
+    UIAlertView *alertView = [[UIAlertView alloc]
+                              initWithTitle:@"inside sendOfflineEntriesToServerIfExist"
+                              message: @""
+                              delegate:self
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"Next", nil];
+    
+    [alertView show];
+     */
 	
     NSString *path = [[self docDir] stringByAppendingPathComponent:@"offline.plist"];
     

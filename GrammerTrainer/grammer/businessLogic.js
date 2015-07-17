@@ -753,6 +753,7 @@ function appLoaded()
     NativeBridge.call("lessonLoaded");
 }
 
+/*
 //Check for polite mode
 function NotPolite(theFeedbackType)
 {
@@ -763,6 +764,18 @@ function NotPolite(theFeedbackType)
         return true; }
     //alert("polite: ");
     return false;
+}
+ */
+
+//Check for polite mode
+function IsPolite(theFeedbackType)
+{
+    if (theFeedbackType == "subjectRequest") { return true; }
+    if(theFeedbackType.indexOf("polite") == -1 && theFeedbackType.indexOf("Polite") == -1)
+    { //alert("not polite: ");
+        return false; }
+    //alert("polite: ");
+    return true;
 }
 
 // Original GT stuff
@@ -809,7 +822,8 @@ function MetaDetermineFeedback()
 	sendValues(feedbackType, response, points, exNum, lessonNumber);
     //alert("back from sendValues:  ");
 	
-	//alert("your word button marking info is " + wordButtonMarkingInfo);  //if its undefined there are no words to maark
+	//alert("your word button marking info is " + wordButtonMarkingInfo);
+    //if its undefined there are no words to mark
 	//alert("the number of points the user has is: " + points);
 	
 	// Write the message to the feedback box
@@ -817,8 +831,8 @@ function MetaDetermineFeedback()
 	   
     //### using your code, print out the message (which is in html code) and the points
     //depending on what sort of feedback this is, different outputs are necessary
-    if ((feedbackType != "CorrectAnswer") && NotPolite(feedbackType)) { numWrong += 1; }
-    if (feedbackType == "CorrectAnswer" || !(NotPolite(feedbackType))) { numWrong = 0; }
+    if ((feedbackType != "CorrectAnswer") && !(IsPolite(feedbackType))) { numWrong += 1; }
+    if (feedbackType == "CorrectAnswer" || (IsPolite(feedbackType))) { numWrong = 0; }
     //alert("numWrong:  " + numWrong);
 	if (feedbackType == "CorrectAnswer")
     {
@@ -866,12 +880,8 @@ function MetaDetermineFeedback()
     {
 		
         //alert("found wrong words feedback type.");
-        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType))
-    
-        //{
-        if (NotPolite(feedbackType)) {
-            //alert("about to pushPromptToRedo: exNum:  " + exNum);
-            pushPromptToRedo(exNum); }
+        
+        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
         
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
@@ -881,12 +891,12 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "pronounAntecedentFeedback")
     {
-        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        if (NotPolite(feedbackType))
-            { pushPromptToRedo(exNum); }
-		var convertToFullNPList = wordButtonMarkingInfo[0];  //convertToFullNPList tells you which words need to be in red
-		var convertToPronounList = wordButtonMarkingInfo[1]; //convertToPronounList tells you which words need to be in orange
-		//####your button-changing code goes here!
+        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        
+        //convertToFullNPList tells you which words need to be in red
+		var convertToFullNPList = wordButtonMarkingInfo[0];
+        //convertToPronounList tells you which words need to be in orange
+        var convertToPronounList = wordButtonMarkingInfo[1];
         //alert("Pronoun Antecedent Feedback.");
         
         // Display the feedback
@@ -907,35 +917,26 @@ function MetaDetermineFeedback()
                 if( tokenizedResponse[i] == convertToPronounList[k] )
                 { pronounNumbers.push(i); } }
         }
-        
-        // Change the background color of wrong words to red
-        for( var l = 0; l < fullNPNumbers.length; l++ ) {
-        // dark red
-        $("#answer_" + fullNPNumbers[l]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); }
-        
-        // Change the background color of wrong words to orange
-        for( var m = 0; m < pronounNumbers.length; m++ ) {
-        // raw sienna
-        $("#answer_" + pronounNumbers[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat"); }
+       
+        setWordsRed(fullNPNumbers);
+        setWordsRawSienna(pronounNumber);
     }
 	if (feedbackType == "morphologyFeedback")
     {
-        //alert("morphologyFeedback: step:  " + step + ", notPolite:  " + NotPolite(feedbackType));
-        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        if(NotPolite(feedbackType))
-            { pushPromptToRedo(exNum); }
-        //alert("back from pushPromptToRedo: ");
-		var wrongForms = wordButtonMarkingInfo[0];  //wrongForms tell you which buttons need to be in orange ("is" instead of "are")
-		var wrongEndings = wordButtonMarkingInfo[1]; //wrongEndings tells you which buttons need the ending to be in red (for example girl<red>s</red>)
+        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        
+        // wrongForms tell you which buttons need to be in orange ("is" instead of "are")
+		var wrongForms = wordButtonMarkingInfo[0];
+        //wrongEndings tells you which buttons need the ending to be in red (for example girl<red>s</red>)
+        var wrongEndings = wordButtonMarkingInfo[1];
         //Use the GetStem(word) to figure out which part of the word button NOT to be in red:
         //e.g., GetStem("girls") = "girl", and what comes after "girl" ("s") is what needs to be in read.
-        
-		var needEndings = wordButtonMarkingInfo[2];  //needEndings tells you which buttons need a red __  (for example girl_ if we want "girls")
-		var wrongFormAndEnding = wordButtonMarkingInfo[3]; // wrongFormAndEnding tells you which word stems need to be in orange and which word endings need to be in red
+        //needEndings tells you which buttons need a red __  (for example girl_ if we want "girls")
+
+		var needEndings = wordButtonMarkingInfo[2];
+        // wrongFormAndEnding tells you which word stems need to be in orange and which word endings need to be in red
+        var wrongFormAndEnding = wordButtonMarkingInfo[3];
         //use GetStem(word) again for this
-		//####your button-changing code goes here!
-        //alert("Morphology Feedback.");
-       
           
         // Write the message to the feedback box
         //$("#answerFeedbackBox p").html(message);
@@ -987,10 +988,11 @@ function MetaDetermineFeedback()
         }
         
         // Change the background color of wrong words to orange
-        for( var a = 0; a < wrongFormNumbers.length; a++ )
-        {
-            $("#answer_" + wrongFormNumbers[a]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat"); // raw sienna
-        }
+       // for( var a = 0; a < wrongFormNumbers.length; a++ )
+        //{
+          //  $("#answer_" + wrongFormNumbers[a]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat"); // raw sienna
+        //}
+        setWordsRawSienna(wrongFormNumbers);
         
         // Change the background color of wrong words to red
         for( var b = 0; b < wrongEndingNumbers.length; b++ )
@@ -1003,13 +1005,12 @@ function MetaDetermineFeedback()
             //$("#answer_" + wrongEndingNumbers[b]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
         }
         
-        // Change the background color of wrong words to #990099
+        // append dark red dash to words that need ending.
         for( var c = 0; c < needEndingNumbers.length; c++ )
         {
-            //$("#answer_" + needEndingNumbers[c]).html(mainWord + "<span style=\"color:#990000\">" + _ + "</span>");
-            $("#answer_" + needEndingNumbers[c]).append("<span style=\"color:#990000\">_</span>"); // dark red
+           $("#answer_" + needEndingNumbers[c]).append("<span style=\"color:#990000\">_</span>"); // dark red
         }
-        
+   
         // Change the background color of wrong words to #22ff00; BYR would be bright green!
         for( var d = 0; d < wrongFormAndEndingNumbers.length; d++ )
         {
@@ -1021,14 +1022,13 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "articleFeedback")
     {
-        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        if (NotPolite(feedbackType))
-            { pushPromptToRedo(exNum); }
-		var nounWithWrongArticleList = wordButtonMarkingInfo[0];  //nounWithWrongArticleList tells you which buttons need to be in red
-		var nounMissingAnArticleList = wordButtonMarkingInfo[1]; //nounMissingAnArticleList tells you which buttons need to be in orange
-		//####your button-changing code goes here!
-        //alert("articleFeedback");
-        
+        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        // nounWithWrongArticleList tells you which buttons need to be in red
+		var nounWithWrongArticleList = wordButtonMarkingInfo[0];
+        // nounMissingAnArticleList tells you which buttons need to be in orange
+        var nounMissingAnArticleList = wordButtonMarkingInfo[1];
+        //alert("wordButtonMarkingInfo.length:  " + wordButtonMarkingInfo.length);
+      
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
         //$("#answerFeedbackBox p").html("Remove/change the articles in red / add articles before the words in orange.");
@@ -1040,11 +1040,14 @@ function MetaDetermineFeedback()
         {
             for( var j = 0; j < nounWithWrongArticleList.length; j++ )
             {
-                if( (tokenizedResponse[i] == nounWithWrongArticleList[j]) && (i != 0) )
-                {
-                    if( (tokenizedResponse[i-1] == "a") || (tokenizedResponse[i-1] == "an") || (tokenizedResponse[i-1] == "the") )
-                        nounWithWrongArticleNumbers.push(i-1); } }
-            
+                if( (tokenizedResponse[i] == nounWithWrongArticleList[j])) {
+                    if ((i != 0) && (isArticle(tokenizedResponse[i-1]))) {
+                            nounWithWrongArticleNumbers.push(i-1); }
+                    // there might be an adjective in front of the noun; e.g. "an yellow triangle."
+                    if ((i > 1) && (isArticle(tokenizedResponse[i-2]))) {
+                            nounWithWrongArticleNumbers.push(i-2); }
+                }
+            }
             for( var k = 0; k < nounMissingAnArticleList.length; k++ )
             {
                 if( tokenizedResponse[i] == nounMissingAnArticleList[k] )
@@ -1052,36 +1055,15 @@ function MetaDetermineFeedback()
                     nounMissingAnArticleNumbers.push(i); } }
         }
         
-        // Change the background color of wrong words to red
-        for( var l = 0; l < nounWithWrongArticleNumbers.length; l++ )
-        {
-            $("#answer_" + nounWithWrongArticleNumbers[l]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
-            // dark red
-        }
-       /*
-        // Change the background color of wrong words to yellow
-        for( var m = 0; m < nounMissingAnArticleNumbers.length; m++ )
-        {
-            $("#answer_" + nounMissingAnArticleNumbers[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat");
-            // raw sienna
-        }
-        */
-        // Change the background color of words missing articles to blue
-        for( var m = 0; m < nounMissingAnArticleNumbers.length; m++ )
-        {
-            $("#answer_" + nounMissingAnArticleNumbers[m]).css("background", "#0aaaf5 url(img/watercolorTextureTransparent.png) repeat");
-            // raw sienna
-        }
-        
+        setWordsRed(nounWithWrongArticleNumbers);
+        setWordsBlue(nounMissingAnArticleNumbers);
     }
 	if (feedbackType == "strandedArticle")
     {
-        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        if (NotPolite(feedbackType) )
-            { pushPromptToRedo(exNum); }
-		var strandedArticle = wordButtonMarkingInfo[0];  //tells you which word needs to be in red
+        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        
+        var strandedArticle = wordButtonMarkingInfo[0];  //tells you which word needs to be in red
 		var articleIndex = wordButtonMarkingInfo[1]; //tells you which position this word has in the sequence of words that the user inputted (starts at 0)
-		//####your button-changing code goes here!
         //alert("strandedArticle: " + strandedArticle + ", articleIndex:  " + articleIndex);
        
         
@@ -1089,25 +1071,17 @@ function MetaDetermineFeedback()
         $("#answerFeedbackBox p").html(message);
         //$("#answerFeedbackBox p").html("You have one or more unnecessary articles. Remove them.");
         
-        // Change the background color of wrong words to red
-        /*
-        for(var i = 0; i < articleIndex.length; i++)
-        {
-            $("#answer_" + articleIndex[i]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
-        }
-         */
-        $("#answer_" + articleIndex).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+        $("#answer_" + articleIndex).css("background","#990000 url(img/watercolorTextureTransparent.png) repeat");
         
     }
 	if (feedbackType == "syntaxFeedback")
     {
-        //if( dotMatrix[exNum] != DOT_CORRECT )
-        //{
-            pushPromptToRedo(exNum); //}
+        
+        pushPromptToRedo(exNum);
 
-		var orderIndeces = wordButtonMarkingInfo; //orderIndeces gives you pairs of starting and ending points for word sequences that need to be in red
+        //orderIndeces gives you pairs of starting and ending points for word sequences that need to be in red
+		var orderIndeces = wordButtonMarkingInfo;
         //the lowest index is 0
-		//####your button-changing code goes here!
         //alert("Syntax Problem.");
          
         // Write the message to the feedback box
@@ -1131,14 +1105,11 @@ function MetaDetermineFeedback()
     
     if ((feedbackType == "missingWordsPolite") || (feedbackType == "subjectRequest") || (feedbackType == "wrongWordsPolite") || (feedbackType == "missingWords"))
     {
-        //alert("in businessLogic:  looking at feedbackType echidna:");
+        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        
         var missingWordsList = wordButtonMarkingInfo;
         //alert("Missing words: " + missingWordsList);
         
-        //if( dotMatrix[exNum] != DOT_CORRECT && NotPolite(feedbackType) )
-        if( NotPolite(feedbackType) )
-        { pushPromptToRedo(exNum); }
-                    
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
         
@@ -1179,12 +1150,26 @@ function setWrongWordsRed(currentAnswerWords, tokenizedResponse, wordButtonMarki
             if( tokenizedResponse[j] == wordButtonMarkingInfo[i] ) {
                 // Then add the element number of the user's answer array into the wrongAnswerWords array
                 wrongAnswerNumbers.push(j); }}}
-    
-    // Change the background color of wrong words to red
-        //alert("will set wrong words to red");
-    for(var k = 0; k < wrongAnswerNumbers.length; k++) {
-    $("#answer_" + wrongAnswerNumbers[k]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat"); // dark red
-    }}
+        setWordsRed(wrongAnswerNumbers);
+    }
+}
+
+function setWordsRed(wordList) {
+    for(var k = 0; k < wordList.length; k++) {
+    $("#answer_" + wordList[k]).css("background", "#990000 url(img/watercolorTextureTransparent.png) repeat");
+    }
+}
+
+function setWordsBlue(wordList) {
+    for( var m = 0; m < wordList.length; m++ ) {
+    $("#answer_" + wordList[m]).css("background", "#0aaaf5 url(img/watercolorTextureTransparent.png) repeat");
+    }
+}
+
+function setWordsRawSienna(wordList) {
+    for( var m = 0; m < wordList.length; m++ ) {
+    $("#answer_" + wordList[m]).css("background", "#cc6600 url(img/watercolorTextureTransparent.png) repeat");
+    }
 }
 
 function buildResponse(currAnsWor) {
@@ -1273,6 +1258,14 @@ function GetExercise(exerciseNumber)
 	this.wordsLists = GetWordsLists(this.answersList);
 	this.allWordsLists = this.wordsLists;
 	//if (this.choices.length > 0) this.type = "multiple_choice";
+}
+
+function isArticle(someWord) {
+    
+    if( (someWord == "a") || (someWord == "an") || (someWord == "the") ) {
+        return true; }
+    else {
+        return false; }
 }
 
 function GetScore()

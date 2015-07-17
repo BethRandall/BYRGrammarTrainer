@@ -2,7 +2,7 @@
     
     "exerciseArray": [
                      {
-                      "exnum": “1”,
+                      "exnum": "1",
                       "timeCaption": "Now",
                       "question": "The boy is talking to you. He is telling you that he will help you. Look at the empty balloon over the boy. What words does the boy use? Type the words that go into the balloon.",
                       "answers": [
@@ -26,3 +26,4 @@
                       }  
                       ]
 }
+

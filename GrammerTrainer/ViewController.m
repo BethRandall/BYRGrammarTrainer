@@ -13,7 +13,7 @@
 #import "SectionInfo.h"
 #import "QuoteCell.h"
 #import "ResultsTableViewCell.h"
-//#import "SpreadsheetController.h"
+#import "SpreadsheetController.h"
 #import "AppDelegate.h"
 #import "NSString+HTML.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.83";
+static NSString *versionNumber = @"1.87";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -247,7 +247,7 @@ BOOL genderChecked = NO;
     
     //NSString *lessonFile = [[NSBundle mainBundle] pathForResource:[lessonFileName stringByDeletingPathExtension] ofType:@"json"];
 
-    NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
+    //NSString *docsDir = [NSHomeDirectory() stringByAppendingPathComponent:  @"Documents/grammer"];
     
     //if (docsDir) { // if a string makes no sense.
     
@@ -282,7 +282,7 @@ BOOL genderChecked = NO;
             //url = [[NSBundle mainBundle] URLForResource:@"playTutorialVideo" withExtension:@"html"];  
             pendingDataModelLoad = NO;
         } else { */
-    //NSString *thePathURL = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"clouds/index.html"];
+    
     NSString *baseURLStr = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grammer/gt_main.html"];
             //NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
             
@@ -433,6 +433,7 @@ BOOL genderChecked = NO;
 
     BOOL youreIn = NO;
     NSDictionary *userInfo = [loginInfo_ objectForKey:user];
+    NSLog(@"UserInfo: %@", userInfo);
     
     if (userInfo != nil) {
         
@@ -459,7 +460,8 @@ BOOL genderChecked = NO;
     }
 }
 
-- (void)blindPassword:(NSString *)password forUser:(NSString *)user {
+//- (void)blindPassword:(NSString *)password forUser:(NSString *)user {
+- (void)blindPassword:(NSString *)user {
     
     user = [user stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
     self.userName = user;
@@ -493,7 +495,8 @@ BOOL genderChecked = NO;
     }
     
     //[self checkPassword:passwordTextView_.text forUser:theUserName];
-    [self blindPassword:passwordTextView_.text forUser:theUserName];
+    //[self blindPassword:passwordTextView_.text forUser:theUserName];
+    [self blindPassword:theUserName];
 }
 
 - (IBAction)backButtonPushed:(id)sender {
@@ -702,7 +705,7 @@ BOOL genderChecked = NO;
     NSString *file;
     while ((file = [dirEnum nextObject])) {
         fileList = [fileList stringByAppendingString:file];
-        fileList = [fileList stringByAppendingString:@" $$$ "];
+ 
     }
     
     alertView = [[UIAlertView alloc]
@@ -861,7 +864,7 @@ BOOL genderChecked = NO;
 #pragma mark Text View Delegate
 
 - (void)textViewDidChange:(UITextView *)textView {
-    
+  
     if (textView == passwordTextView_) {
         // See if they hit the enter key
         if ([textView.text hasSuffix:@"\n"]) {
@@ -873,6 +876,7 @@ BOOL genderChecked = NO;
             [textView setText:@""]; // Blank it out
         }
     } else {
+   
         // See if they hit the enter key
         // loginTextView
         if ([textView.text hasSuffix:@"\n"]) {
@@ -886,6 +890,7 @@ BOOL genderChecked = NO;
         }
     }
 }
+
 
 #pragma mark Table view data source and delegate
 
@@ -1165,6 +1170,8 @@ BOOL genderChecked = NO;
 	
     // userID, entryDate,responseText,lesson, module, questionNumber,feedbackType
     
+    //userID = [userID stringByAppendingString:@" $$$ "];
+    
     NSMutableString *theQuery = [[NSMutableString alloc] init];
     [theQuery appendFormat:@"?userID=%@", [entry objectForKey:@"userID"]];
     [theQuery appendFormat:@"&entryDate=%@", [entry objectForKey:@"entryDate"]];
@@ -1206,6 +1213,7 @@ BOOL genderChecked = NO;
         if (error) {
             
             // Save the encoded URL to a file, we'll try again later
+            
               
             NSString *path = [[self docDir] stringByAppendingPathComponent:@"offline.plist"];
             NSMutableArray *cacheArray;
@@ -1219,7 +1227,15 @@ BOOL genderChecked = NO;
                  
             [cacheArray addObject:theRequest.URL.absoluteString];            
             [cacheArray writeToFile:path atomically:YES];
+            UIAlertView *alertView = [[UIAlertView alloc]
+                                      initWithTitle:@"Error: offline: "
+                                      message: @"Please connect to the internet so your answer will be recorded."
+                                      delegate:self
+                                      cancelButtonTitle:nil
+                                      otherButtonTitles:@"Next", nil];
             
+            [alertView show];
+
             NSLog(@"Error: %@", error);
             return;
         }
@@ -1327,7 +1343,7 @@ BOOL genderChecked = NO;
         
         if ([feedback isEqualToString:@"CorrectAnswer"]) {
             
-            UIAlertView *alertView = [[UIAlertView alloc] 
+            UIAlertView *alertView = [[UIAlertView alloc]
                          initWithTitle:@"All right!"
                          message:@"That is the correct answer!" 
                          delegate:self 
@@ -1505,7 +1521,7 @@ BOOL genderChecked = NO;
 
 
 #pragma mark - Spreadsheet Delegate
-/*
+
 
 - (void)spreadsheetController:(SpreadsheetController *)controller didFetchSpreadSheets:(NSArray *)entries {
     
@@ -1565,7 +1581,7 @@ BOOL genderChecked = NO;
         [loginInfo_ writeToFile:loginPlist atomically:YES];      
     }
 }
-*/
+
 
 - (NSString *)docDir {
     
