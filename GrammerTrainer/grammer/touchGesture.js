@@ -38,9 +38,12 @@ var touchGesture = {
 	},
 
 	init: function() { //initialises touch events on elements stored in touchArray.
+        
+        // N.B. this function is the source of the weird blacking-out of the multiple choice box.
 
 		this.touchArray = [];	
-		this.touchArray = document.querySelectorAll('#multipleChoiceBox');
+		//this.touchArray = document.querySelectorAll('#multipleChoiceButton');
+        //alert("inside touchArray");
   		
   		//for each card, listen for a touchstart event.
 		for (var i = 0; i < this.touchArray.length; i++) {

@@ -59,17 +59,17 @@ function setWordTabs() {
         $("#prepositionTab").hide(); }
 }
 
-function setMultipleChoiceBox(context) {
+function setMultipleChoiceButton(context) {
     // context is currentExercise.
     var choiceArray = context.multipleChoice;
     
     if ((typeof context.multipleChoice == 'undefined') ||  (choiceArray.length < 1)) {
-        $("#multipleChoiceBox").hide();
-        $("#multipleChoiceDisplay").hide();
+        $("#multipleChoiceButton").hide();
+        //$("#multipleChoiceDisplay").hide();
         return; }
     
-    $("#multipleChoiceBox").show();     
-    $("#multipleChoiceBox #presentedChoices").html("");
+    $("#multipleChoiceButton").show();
+    $("#multipleChoiceButton #presentedChoices").html("");
     
     //BYR randomize multiple choices here.
     var usedDex = new Array(); 
@@ -193,7 +193,7 @@ function setCurrentExercise(currEx) {
     // Clear answer feedback box
     $("#answerContainer #answerFeedbackBox p").html("  ");
     // Update multiple choices
-    setMultipleChoiceBox(currEx);
+    setMultipleChoiceButton(currEx);
     
     // Update dot feedback
     //updateDotFeedback();
@@ -487,7 +487,7 @@ function initUserInterface() {
 
     initDots();
     initLessonNameContainer();
-    setMultipleChoiceBox(currentExercise);
+    setMultipleChoiceButton(currentExercise);
     
     // word list are initialized in <lesson>.json file
     setWordTabs();

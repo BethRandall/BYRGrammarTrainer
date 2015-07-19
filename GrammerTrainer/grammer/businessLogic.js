@@ -21,7 +21,11 @@ $(document).ready(function(){
                           $(tab).show();                                     
                           }
                       });
-                   
+                  
+                  $('#multipleChoiceButton').click(function(){ //alert("noticed click: ");
+                                                //multipleStuff();
+                                                   });
+                  
                   // Orator button
                   $("#oralPromptButton").click(function(){ saySomething(); });
                   
@@ -131,9 +135,15 @@ function buildRedoNumArray() {
     }
 }
 
+function multipleStuff() {
+    //alert ("inside multipleStuff: ");
+    setMultipleChoiceButton(currentExercise);
+}
 
-function pushPromptToRedo(exNum)
+
+function pushPromptToRedo(exNum, feedbackType)
 {
+    if (IsPolite(feedbackType)) { return; }
     // promptsToRedo is a list of the exercises that were answered wrong.
     // redoNumArray is a list of how many more times each exercise needs to be answered right.
     //alert("inside pushPromptToRedo: ");
@@ -143,15 +153,9 @@ function pushPromptToRedo(exNum)
     for (var i = 0; i < promptsToRedo.length; i++) {
         if (promptsToRedo[i] == exNum) { already_recorded = true; break; }
     }
-    /*
-    if (!already_recorded) {
-        if (redoMode) { promptsToRedo.unshift(indexArray[exNum]); } // unshift adds to the beginning of the array.
-        else { promptsToRedo.push(indexArray[exNum]); } }
-     */
     if (!already_recorded) {
         if (redoMode) { promptsToRedo.unshift(exNum); } // unshift adds to the beginning of the array.
         else { promptsToRedo.push(exNum); } }
-
     dotMatrix[exNum] = DOT_WRONG;
     try {
         if (!redoMode) {
@@ -878,10 +882,9 @@ function MetaDetermineFeedback()
     
     if ((feedbackType == "wrongWords")|| (feedbackType == "wrongWordsPolite"))
     {
-		
         //alert("found wrong words feedback type.");
         
-        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        pushPromptToRedo(exNum, feedbackType);
         
         // Write the message to the feedback box
         $("#answerFeedbackBox p").html(message);
@@ -891,7 +894,7 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "pronounAntecedentFeedback")
     {
-        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        pushPromptToRedo(exNum, feedbackType);
         
         //convertToFullNPList tells you which words need to be in red
 		var convertToFullNPList = wordButtonMarkingInfo[0];
@@ -923,7 +926,7 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "morphologyFeedback")
     {
-        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        pushPromptToRedo(exNum, feedbackType);
         
         // wrongForms tell you which buttons need to be in orange ("is" instead of "are")
 		var wrongForms = wordButtonMarkingInfo[0];
@@ -1022,7 +1025,7 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "articleFeedback")
     {
-        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        pushPromptToRedo(exNum, feedbackType);
         // nounWithWrongArticleList tells you which buttons need to be in red
 		var nounWithWrongArticleList = wordButtonMarkingInfo[0];
         // nounMissingAnArticleList tells you which buttons need to be in orange
@@ -1041,13 +1044,12 @@ function MetaDetermineFeedback()
             for( var j = 0; j < nounWithWrongArticleList.length; j++ )
             {
                 if( (tokenizedResponse[i] == nounWithWrongArticleList[j])) {
-                    if ((i != 0) && (isArticle(tokenizedResponse[i-1]))) {
-                            nounWithWrongArticleNumbers.push(i-1); }
-                    // there might be an adjective in front of the noun; e.g. "an yellow triangle."
-                    if ((i > 1) && (isArticle(tokenizedResponse[i-2]))) {
-                            nounWithWrongArticleNumbers.push(i-2); }
-                }
-            }
+                    // search words preceding the noun for an article.
+                    for (var m = i; m >= 0; m --) {
+                        if (isArticle(tokenizedResponse[m])) {
+                            nounWithWrongArticleNumbers.push(m);
+                            break; } } }
+            } 
             for( var k = 0; k < nounMissingAnArticleList.length; k++ )
             {
                 if( tokenizedResponse[i] == nounMissingAnArticleList[k] )
@@ -1060,7 +1062,7 @@ function MetaDetermineFeedback()
     }
 	if (feedbackType == "strandedArticle")
     {
-        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        pushPromptToRedo(exNum, feedbackType);
         
         var strandedArticle = wordButtonMarkingInfo[0];  //tells you which word needs to be in red
 		var articleIndex = wordButtonMarkingInfo[1]; //tells you which position this word has in the sequence of words that the user inputted (starts at 0)
@@ -1077,7 +1079,7 @@ function MetaDetermineFeedback()
 	if (feedbackType == "syntaxFeedback")
     {
         
-        pushPromptToRedo(exNum);
+        pushPromptToRedo(exNum, feedbackType);
 
         //orderIndeces gives you pairs of starting and ending points for word sequences that need to be in red
 		var orderIndeces = wordButtonMarkingInfo;
@@ -1105,7 +1107,7 @@ function MetaDetermineFeedback()
     
     if ((feedbackType == "missingWordsPolite") || (feedbackType == "subjectRequest") || (feedbackType == "wrongWordsPolite") || (feedbackType == "missingWords"))
     {
-        if (!(IsPolite(feedbackType))) { pushPromptToRedo(exNum); }
+        pushPromptToRedo(exNum, feedbackType);
         
         var missingWordsList = wordButtonMarkingInfo;
         //alert("Missing words: " + missingWordsList);

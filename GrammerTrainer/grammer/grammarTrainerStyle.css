@@ -289,26 +289,31 @@ p.speechRight:after
     left: 60px;
 }
 
+/*
 #multipleChoiceContainer
 {
 	position: fixed;
 	top: 286px;
 	left: 830px;
 }
+*/
 
 /* BYR:  Is this code in use? */
+/*
 #multipleChoiceContainer #multipleChoiceTab
 {
-	/*background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; pale orangey-beige */
-	color: #522611; /* dark brown */
+	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat; pale orangey-beige
+	color: #522611;  dark brown
+    color: #ffffff;
 	font-size: 18px;
 	font-weight: bold;
 	padding: 12px;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 	
-	/*-webkit-box-shadow:inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2);*/
+	-webkit-box-shadow:inset 3px 3px 3px rgba(255,255,255,0.2), inset -3px -3px 3px rgba(0,0,0,0.2);
 }
+*/
 
 /* BYR:  Is this code in use? */
 /*#multipleChoiceDisplay
@@ -326,7 +331,7 @@ p.speechRight:after
 }*/
 
 /* BYR:  This chunk of code is in use.  */
-#multipleChoiceBox
+#multipleChoiceButton
 {
 	position:absolute;
 	top:530px;
@@ -346,7 +351,7 @@ p.speechRight:after
     z-index: 3;
 }
 
-#multipleChoiceBox p
+#multipleChoiceButton p
 {
 	margin-left: 20px;
 	margin-right: 20px;
