@@ -95,7 +95,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.87";
+static NSString *versionNumber = @"1.88";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -1176,10 +1176,13 @@ BOOL genderChecked = NO;
     [theQuery appendFormat:@"?userID=%@", [entry objectForKey:@"userID"]];
     [theQuery appendFormat:@"&entryDate=%@", [entry objectForKey:@"entryDate"]];
     [theQuery appendFormat:@"&responseText=%@", [entry objectForKey:@"responseText"]];
+    //[theQuery appendFormat:@"?newLesson=%@", [entry objectForKey:@"lesson"]];
     [theQuery appendFormat:@"&lesson=%@", [entry objectForKey:@"lesson"]];
+     //[theQuery appendFormat:@"&lesson=%@", [entry objectForKey:@"lesson"]];
     [theQuery appendFormat:@"&module=%@", [entry objectForKey:@"module"]];
     [theQuery appendFormat:@"&questionNumber=%@", [entry objectForKey:@"questionNumber"]];
     [theQuery appendFormat:@"&feedbackType=%@", [entry objectForKey:@"feedbackType"]];
+  //  NSLog(@"lesson: %@", lesson);
     
 	NSString *urlString = [[NSString alloc] initWithFormat:@"http://leo.goodwin.drexel.edu/grammerapp/addGTEvent.php%@", theQuery];
     
@@ -1306,6 +1309,7 @@ BOOL genderChecked = NO;
         NSLog(@"Javascript: getGender");
 
         NSDictionary *userInfo = [self.loginInfo objectForKey:userName_];
+        
         NSString *gender = @"male";
         if (userInfo) {
             NSString *morf = [userInfo objectForKey:@"gender"]; // M or F
@@ -1362,7 +1366,7 @@ BOOL genderChecked = NO;
         [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         NSString *formattedDateString = [dateFormatter stringFromDate:now];
         
-        NSLog(@"Values: %@, %@, %@, %@, %@",userName_, formattedDateString, feedback,responseText,points);
+        NSLog(@"Values: %@, %@, %@, %@, %@, %@",userName_, formattedDateString, lessonNumber, feedback,responseText,points);
         
         // userID, entryDate,responseText,lesson,module, questionNumber,feedbackType
 

@@ -193,7 +193,7 @@ function randomizeRedo() {
 // Add a draggable word to the answer
 function addWordToAnswer(targetWord, wordID)
 {
-	//alert("Target word: " + targetWord + " ID: " + wordID);
+	//alert("inside addWordToAnswer: Target word: " + targetWord + " ID: " + wordID);
 	var tempAnswerID = 0;
 	var tempWord;
 	var tempLeftPosition = 4;
@@ -249,21 +249,17 @@ function addWordToAnswer(targetWord, wordID)
 					for( var i = 0; i < (currentAnswerWords.length - 1); i++ )
 					{
 						var j = i + 1;
-						
 						// Check if the word being dragged is between two words
 						if( ((tempJQueryPosition.left + (document.getElementById(wordID).offsetWidth / 2)) >= ($("#droppableAnswerBox p #answer_" + i).offset().left + document.getElementById("answer_" + i).offsetWidth / 2)) && ((tempJQueryPosition.left + (document.getElementById(wordID).offsetWidth / 2)) < ($("#droppableAnswerBox p #answer_" + j).offset().left + document.getElementById("answer_" + j).offsetWidth / 2)) )
-						{
-							// Add the new word between two words
-							var tempNewWordPosition = j;
-							//alert("Found position: " + tempNewWordPosition);
+						{ // Add the new word between two words
+							var tempNewWordPosition = j;  //alert("Found position: " + tempNewWordPosition);
 							currentAnswerWords.splice(tempNewWordPosition, 0, String(targetWord));
 						}
 					}
-				}
-			}
-		}
-		
-		// Initialize the answer ID tracker
+                }
+            }
+        }
+        // Initialize the answer ID tracker
 		tempAnswerID = 0;
 		
 		// Clear the draggable answer array
@@ -273,6 +269,18 @@ function addWordToAnswer(targetWord, wordID)
         capFirstAnswerWord();
         displayAnswerWords();
     }
+    // allow click on word to add to answer.
+    else {
+        currentAnswerWords.push(targetWord);
+        // Initialize the answer ID tracker
+        tempAnswerID = 0;
+        
+        // Clear the draggable answer array
+        draggableAnswerWords = new Array();
+        
+        answerWordsLowerCase();
+        capFirstAnswerWord();
+        displayAnswerWords(); }
 }
 
 // Used to move or delete answer words

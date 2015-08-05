@@ -413,6 +413,7 @@ function initUserInterface() {
     
     setLessonConstants();
     // Array of answer words
+    genderIssues();
     
     currentAnswerWords = new Array();   // the state of this is not saved
     draggableAnswerWords = new Array(); // the state of this is not saved

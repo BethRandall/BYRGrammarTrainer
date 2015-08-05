@@ -47,7 +47,7 @@
 		<array>
 			<dict>
 				<key>moduleNumber</key>
-				<integer>1</integer>
+				<string>1</string>
 				<key>moduleName</key>
 				<string>Module 1</string>
 				<key>topic</key>
@@ -64,7 +64,7 @@
 					</dict>
 					<dict>
 						<key>lessonName</key>
-						<string> Lesson 1.2: Shapes</string>
+						<string>Lesson 1.2: Shapes</string>
 						<key>topic</key>
 						<string>no Hints</string>
 						<key>loadFile</key>
@@ -256,12 +256,12 @@
 		<key>modules</key>
 		<array>
 			<dict>
-				<key>moduleNumber</key>
-				<integer>1</integer>
 				<key>moduleName</key>
-				<string>Module 1</string>
+				<string>Module 2</string>
+				<key>moduleNumber</key>
+				<string>2</string>
 				<key>topic</key>
-				<string>This is a description of Module 1 content</string>
+				<string>This is a description of Module 2 content</string>
 				<key>lessons</key>
 				<array>
 					<dict>

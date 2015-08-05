@@ -84,7 +84,7 @@
                 "that"
             ],
             "oralprompt": "The boy says that they will help you.",
-            "prompt": "The boy says that he will help you.  What goes in the speech bubble?",
+            "prompt": "The boy says that they will help you.  What goes in the speech bubble?",
             "lessonVideo": "gt_videos/transportation_theme_videos/3_lesson_1.m4v",
             "balloonSpecs": "left, 100, 10"
         },
