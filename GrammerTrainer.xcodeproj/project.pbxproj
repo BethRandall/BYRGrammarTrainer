@@ -13,11 +13,19 @@
 		1429072F19B64A6F00255328 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1429072B19B64A6F00255328 /* AcousticModelSpanish.bundle */; };
 		1429073019B64A6F00255328 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072C19B64A6F00255328 /* OpenEars.framework */; };
 		1429073119B64A6F00255328 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1429072D19B64A6F00255328 /* Slt.framework */; };
+		14318C621B7E90AA00929B7A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14318C611B7E90AA00929B7A /* CFNetwork.framework */; };
+		14318C691B7E90BE00929B7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14318C681B7E90BE00929B7A /* CoreLocation.framework */; };
+		14318C6B1B7E90D100929B7A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14318C6A1B7E90D100929B7A /* Security.framework */; };
+		14318C6D1B7E90DF00929B7A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14318C6C1B7E90DF00929B7A /* StoreKit.framework */; };
+		14318C6F1B7E90FA00929B7A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14318C6E1B7E90FA00929B7A /* libz.dylib */; };
+		14318C711B7E911900929B7A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 14318C701B7E911900929B7A /* libsqlite3.dylib */; };
 		143838CB1AAA5317001D7128 /* icon76x76@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */; };
 		143838CC1AAA5317001D7128 /* icon76x76~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 143838CA1AAA5317001D7128 /* icon76x76~ipad.png */; };
 		14419D881AA776B400756E87 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5825CBBC14E89F6000467271 /* icon72.png */; };
 		146D50931AB2025100E103D9 /* icon152.png in Resources */ = {isa = PBXBuildFile; fileRef = 146D50921AB2025100E103D9 /* icon152.png */; };
 		148B96651AA7A0CA001B9AA3 /* icon72 copy.png in Resources */ = {isa = PBXBuildFile; fileRef = 148B96641AA7A0CA001B9AA3 /* icon72 copy.png */; };
+		148CA7ED1B77D145004386B3 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148CA7EC1B77D145004386B3 /* Bolts.framework */; };
+		148CA7F61B77D20F004386B3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 148CA7F51B77D20F004386B3 /* Parse.framework */; };
 		14AA2E2E18F88A410020FA57 /* GrammerTrainerLogin.003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */; };
 		14AA2E3018F896FA0020FA57 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */; };
 		29D714B416C84E0A0054A400 /* DownloadUrlToDiskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D714B316C84E0A0054A400 /* DownloadUrlToDiskOperation.m */; };
@@ -129,6 +137,12 @@
 		1429072B19B64A6F00255328 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
 		1429072C19B64A6F00255328 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
 		1429072D19B64A6F00255328 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
+		14318C611B7E90AA00929B7A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		14318C681B7E90BE00929B7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		14318C6A1B7E90D100929B7A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		14318C6C1B7E90DF00929B7A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		14318C6E1B7E90FA00929B7A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		14318C701B7E911900929B7A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		143838C91AAA5317001D7128 /* icon76x76@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76@2x~ipad.png"; sourceTree = "<group>"; };
 		143838CA1AAA5317001D7128 /* icon76x76~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon76x76~ipad.png"; sourceTree = "<group>"; };
 		144F1CB31AC4AB1800E86624 /* project.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = project.xcworkspace; path = GrammerTrainer.xcodeproj/project.xcworkspace; sourceTree = "<group>"; };
@@ -136,6 +150,8 @@
 		146210CE1B0107F100BF3A47 /* SpreadsheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpreadsheetController.h; path = "../../BYRGrammarTrainer-old/SpreadsheetController.h"; sourceTree = "<group>"; };
 		146D50921AB2025100E103D9 /* icon152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon152.png; sourceTree = "<group>"; };
 		148B96641AA7A0CA001B9AA3 /* icon72 copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon72 copy.png"; sourceTree = "<group>"; };
+		148CA7EC1B77D145004386B3 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		148CA7F51B77D20F004386B3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		14A3C6131AE923B30011FF7A /* libGDataTouchStaticLib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGDataTouchStaticLib.a; path = "../BYRGrammarTrainer-old/libGDataTouchStaticLib.a"; sourceTree = "<group>"; };
 		14AA2E2D18F88A410020FA57 /* GrammerTrainerLogin.003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrammerTrainerLogin.003.jpg; sourceTree = "<group>"; };
 		14AA2E2F18F896FA0020FA57 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
@@ -614,11 +630,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14318C711B7E911900929B7A /* libsqlite3.dylib in Frameworks */,
+				14318C6F1B7E90FA00929B7A /* libz.dylib in Frameworks */,
+				14318C6D1B7E90DF00929B7A /* StoreKit.framework in Frameworks */,
+				14318C6B1B7E90D100929B7A /* Security.framework in Frameworks */,
+				14318C691B7E90BE00929B7A /* CoreLocation.framework in Frameworks */,
+				14318C621B7E90AA00929B7A /* CFNetwork.framework in Frameworks */,
 				1429072819B6492300255328 /* AVFoundation.framework in Frameworks */,
 				1429072619B648F700255328 /* AudioToolbox.framework in Frameworks */,
 				58415C6D158E425A00890522 /* SystemConfiguration.framework in Frameworks */,
+				148CA7ED1B77D145004386B3 /* Bolts.framework in Frameworks */,
 				58D00A8C151CB86F0044897C /* MediaPlayer.framework in Frameworks */,
 				58C813D8150445CB00E12B25 /* libxml2.dylib in Frameworks */,
+				148CA7F61B77D20F004386B3 /* Parse.framework in Frameworks */,
 				5809533D14E6D06000740756 /* QuartzCore.framework in Frameworks */,
 				5818615614AAAF2100DEA945 /* UIKit.framework in Frameworks */,
 				5818615814AAAF2100DEA945 /* Foundation.framework in Frameworks */,
@@ -1099,6 +1123,14 @@
 		5818615414AAAF2100DEA945 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14318C701B7E911900929B7A /* libsqlite3.dylib */,
+				14318C6E1B7E90FA00929B7A /* libz.dylib */,
+				14318C6C1B7E90DF00929B7A /* StoreKit.framework */,
+				14318C6A1B7E90D100929B7A /* Security.framework */,
+				14318C681B7E90BE00929B7A /* CoreLocation.framework */,
+				14318C611B7E90AA00929B7A /* CFNetwork.framework */,
+				148CA7F51B77D20F004386B3 /* Parse.framework */,
+				148CA7EC1B77D145004386B3 /* Bolts.framework */,
 				14A3C6131AE923B30011FF7A /* libGDataTouchStaticLib.a */,
 				144F1CB31AC4AB1800E86624 /* project.xcworkspace */,
 				5809533C14E6D06000740756 /* QuartzCore.framework */,
@@ -1505,6 +1537,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
@@ -1570,6 +1603,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
@@ -1673,6 +1707,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";
@@ -1703,6 +1738,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Downloads/OpenEarsDistribution 2/Framework\"",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GrammerTrainer/GrammerTrainer-Prefix.pch";

@@ -13,18 +13,19 @@
 #import "Module.h"
 #import "Lesson.h"
 #import "Reachability.h"
+#import <Parse/Parse.h>
+
+// ...
 
 @interface AppDelegate ()
 
 @property (nonatomic, strong) NSArray *levels;
-
 @end
 
 @implementation AppDelegate
 
 @synthesize window = _window, levels=levels_;
 @synthesize viewController = _viewController;
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -35,6 +36,18 @@
     } else {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
+    
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"iPp2G5XrogGKnNUa82h5MFXjLcmko46MQk0PzrOh"
+                  clientKey:@"Zyh2KAuLnbOReHyKzQVRByp6ALY2lqccyxx0YOKM"];
+    
+    // [Optional] Track statistics around application opens.
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
     
     /*
      Get the levels,modules, and lessons data from the plist, then pass the array on to the table view controller.

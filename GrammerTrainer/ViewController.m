@@ -21,6 +21,7 @@
 #import "DownloadUrlToDiskOperation.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import <Parse/Parse.h>
 
 #pragma mark -
 #pragma mark ViewController
@@ -95,7 +96,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.88";
+static NSString *versionNumber = @"1.89";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -774,7 +775,11 @@ BOOL genderChecked = NO;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    /*
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"AARDVARK";
+    [testObject saveInBackground];
+    */
     menuVisible = YES;
     iconsVisible = YES;
     pendingDataModelLoad = NO;
@@ -1167,18 +1172,26 @@ BOOL genderChecked = NO;
 
 
 - (void)sendEntryToServer:(NSDictionary *)entry {
-	
-    // userID, entryDate,responseText,lesson, module, questionNumber,feedbackType
     
-    //userID = [userID stringByAppendingString:@" $$$ "];
+    // see this data at https://www.parse.com/apps/sentenceweaver/collections#class/TestObject
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"userID"] = [entry objectForKey:@"userID"];
+    testObject[@"module"] = [entry objectForKey:@"module"];
+    testObject[@"lesson"] = [entry objectForKey:@"lesson"];
+    testObject[@"qNum"] = [entry objectForKey:@"questionNumber"];
+    testObject[@"responseText"] = [entry objectForKey:@"responseText"];
+    testObject[@"feedbackType"] = [entry objectForKey:@"feedbackType"];
+    
+    [testObject saveInBackground];
+    
+    // userID, entryDate,responseText,lesson, module, questionNumber,feedbackType
     
     NSMutableString *theQuery = [[NSMutableString alloc] init];
     [theQuery appendFormat:@"?userID=%@", [entry objectForKey:@"userID"]];
     [theQuery appendFormat:@"&entryDate=%@", [entry objectForKey:@"entryDate"]];
     [theQuery appendFormat:@"&responseText=%@", [entry objectForKey:@"responseText"]];
-    //[theQuery appendFormat:@"?newLesson=%@", [entry objectForKey:@"lesson"]];
     [theQuery appendFormat:@"&lesson=%@", [entry objectForKey:@"lesson"]];
-     //[theQuery appendFormat:@"&lesson=%@", [entry objectForKey:@"lesson"]];
     [theQuery appendFormat:@"&module=%@", [entry objectForKey:@"module"]];
     [theQuery appendFormat:@"&questionNumber=%@", [entry objectForKey:@"questionNumber"]];
     [theQuery appendFormat:@"&feedbackType=%@", [entry objectForKey:@"feedbackType"]];
@@ -1217,7 +1230,6 @@ BOOL genderChecked = NO;
             
             // Save the encoded URL to a file, we'll try again later
             
-              
             NSString *path = [[self docDir] stringByAppendingPathComponent:@"offline.plist"];
             NSMutableArray *cacheArray;
             
@@ -1236,15 +1248,12 @@ BOOL genderChecked = NO;
                                       delegate:self
                                       cancelButtonTitle:nil
                                       otherButtonTitles:@"Next", nil];
-            
             [alertView show];
-
             NSLog(@"Error: %@", error);
             return;
         }
         NSLog(@"All right! No Error");
     }];
-	
 }
 
 -(void)updateStateWithDict:(NSDictionary *)state {

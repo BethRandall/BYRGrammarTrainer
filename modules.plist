@@ -47,7 +47,7 @@
 		<array>
 			<dict>
 				<key>moduleNumber</key>
-				<string>1</string>
+				<string>1. Phrases</string>
 				<key>moduleName</key>
 				<string>Module 1</string>
 				<key>topic</key>
@@ -259,7 +259,7 @@
 				<key>moduleName</key>
 				<string>Module 2</string>
 				<key>moduleNumber</key>
-				<string>2</string>
+				<string>2. Pronouns</string>
 				<key>topic</key>
 				<string>This is a description of Module 2 content</string>
 				<key>lessons</key>
