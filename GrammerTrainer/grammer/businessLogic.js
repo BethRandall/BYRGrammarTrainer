@@ -1,4 +1,5 @@
 
+
 function BlockMove(event)
 {
 	event.preventDefault();
@@ -271,6 +272,7 @@ function addWordToAnswer(targetWord, wordID)
     }
     // allow click on word to add to answer.
     else {
+        callClickSound();
         currentAnswerWords.push(targetWord);
         // Initialize the answer ID tracker
         tempAnswerID = 0;
@@ -426,6 +428,9 @@ function eraseAnswer()
 function saySomething() {
     NativeBridge.call("toSpeech", [currentExercise.oralprompt]); }
 
+function callClickSound() {
+    NativeBridge.call("clickSound"); }
+
 function myLeftExit() {
     //alert("step:  " + step);
     //dotMatrix[step] = DOT_CORRECT;
@@ -486,18 +491,19 @@ function submitAnswer()
 
 // "backdoor" method for advancing to particular exercise; repeat an answer word at beginning of sentence ("I I").
 function backDoor() {
-    //for (var j = 0; j < currentAnswerWords.length; j++) {
-      //  alert("currentAnswerWords[" + j + "]:  " + currentAnswerWords[j]); }
-    //alert("currentAnswerWords.length: " + currentAnswerWords.length);
     if (currentAnswerWords.length < 2) { return false; }
     for (var i = 0; i + 1 < currentAnswerWords.length; i++) {
         if (currentAnswerWords[i].toLowerCase() == currentAnswerWords[i + 1].toLowerCase()) {
            // alert("currentAnswerWords[i] == currentAnswerWords[i+1]: i = " + i); }
            continue; }
         else { return false; } }
-    //alert("back door to exercise number " + currentAnswerWords.length);
     var backNum = parseInt(prompt("Enter the number of the exercise you'd like to go to: ", ""), 10);
     //subtract 1 because the Lesson array is indexed beginning at 0 rather than 1.
+    //alert("backNum:  " + backNum);
+    if (isNaN(backNum)) {
+        alert ("no new exercise number found; will return to current exercise");
+        return true;
+    }
     backDoorUpdateExercise(backNum - 1);
     return true;
 }
@@ -701,6 +707,8 @@ function backDoorUpdateExercise(newExNum) {
     // if newExNum is too big for the exercise array, set it to the last index of the array
     if (newExNum >= (theLesson.exerciseArray).length) {
         newExNum = theLesson.exerciseArray.length - 1; }
+    if (newExNum < 0) {
+        newExNum = 0; }
     // proceed from the new exercise onward.
     step = newExNum;
     unRandomizeExes();

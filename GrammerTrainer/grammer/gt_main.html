@@ -414,13 +414,24 @@
 		}
     
         function askGender() {
+            // currently sets gender to female by default.  Later: write code to deal with errors, e.g. enter "5".
             //alert("inside askGender: ");
             var myGender = 'female';
             myGender = prompt("Are you male or female?  Please enter M or F: ", "");
             if ((myGender.indexOf('m') === 0) || (myGender.indexOf('M') === 0))
                 { myGender = 'male'; }
-            else { myGender = 'female'; }
-            //alert("will set your gender to " + myGender);
+            if ((myGender.indexOf('f') === 0) || (myGender.indexOf('F') === 0))
+                { myGender = 'female'; }
+                /*
+            while ((!(myGender.indexOf('f') === 0)) && (!(myGender.indexOf('F') === 0))
+                (!(myGender.indexOf('m') === 0)) && (!(myGender.indexOf('M') === 0)))
+                { myGender = prompt("Are you male or female?  Please enter M or F: ", ""); }
+            if ((myGender.indexOf('m') === 0) || (myGender.indexOf('M') === 0))
+                { myGender = 'male'; }
+            if ((myGender.indexOf('f') === 0) || (myGender.indexOf('F') === 0))
+                { myGender = 'female'; }
+                 */
+             //alert("will set your gender to " + myGender);
             genderChecked = true;
             setGender(myGender);
         }

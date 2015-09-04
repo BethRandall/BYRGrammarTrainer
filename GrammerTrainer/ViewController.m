@@ -22,6 +22,7 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import <Parse/Parse.h>
+#import <AudioToolbox/AudioToolbox.h>
 
 #pragma mark -
 #pragma mark ViewController
@@ -96,7 +97,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.89";
+static NSString *versionNumber = @"1.91";
 BOOL genderChecked = NO;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
@@ -116,6 +117,10 @@ BOOL genderChecked = NO;
 
 - (void)genderIsChecked {
     genderChecked = YES;
+}
+
+- (void) clickSound {
+    AudioServicesPlaySystemSound(0x450);
 }
 
 
@@ -325,6 +330,7 @@ BOOL genderChecked = NO;
 
 - (IBAction)logoutButtonPushed:(id)sender {
     
+    [self checkConnection];
    
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:2.00];
@@ -334,8 +340,7 @@ BOOL genderChecked = NO;
     [self.view addSubview:loginView_ ];
     
     // Animate!
-    [UIView commitAnimations];
-    
+    [UIView commitAnimations];    
 }
 
 
@@ -483,7 +488,40 @@ BOOL genderChecked = NO;
     
     NSLog(@"You're in, %@!", userName_);
     [self handleCorrectPassword];
+    [self checkConnection];
     
+}
+
+- (void)checkConnection {
+    UIAlertView *alertView;
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://oilf.blogspot.html"];
+    
+    NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
+    
+    if (data) {
+    /*
+    alertView = [[UIAlertView alloc]
+                              initWithTitle:@"OK: online"
+                              message: @""
+                              delegate:self
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"Next", nil];
+    [alertView show];
+    */
+    
+        NSLog(@"Device is connected to the internet"); }
+    
+    else {
+        alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Error: offline: "
+                                  message: @"Please connect to the internet so your answer will be recorded."
+                                  delegate:self
+                                  cancelButtonTitle:nil
+                                  otherButtonTitles:@"Next", nil];
+        [alertView show];
+
+    
+        NSLog(@"Device is not connected to the internet"); }
 }
 
 - (IBAction)userPushedLogin:(id)sender {
@@ -498,6 +536,7 @@ BOOL genderChecked = NO;
     //[self checkPassword:passwordTextView_.text forUser:theUserName];
     //[self blindPassword:passwordTextView_.text forUser:theUserName];
     [self blindPassword:theUserName];
+    
 }
 
 - (IBAction)backButtonPushed:(id)sender {
@@ -1171,6 +1210,10 @@ BOOL genderChecked = NO;
 }
 
 
+- (void)blindSendEntryToServer:(NSDictionary *)entry {
+    
+}
+
 - (void)sendEntryToServer:(NSDictionary *)entry {
     
     // see this data at https://www.parse.com/apps/sentenceweaver/collections#class/TestObject
@@ -1279,6 +1322,9 @@ BOOL genderChecked = NO;
         //NSLog(@"Did call lessonLoaded");
         menuVisible = YES;
         [self showMenu];
+    } else if ([functionName isEqualToString:@"clickSound"]) {
+        //NSLog(@"Did call lessonLoaded");
+        [self clickSound];
    /* }  else if ([functionName isEqualToString:@"showMenu"]) {
         //NSLog(@"Did call showMenu");
         menuVisible = NO;
