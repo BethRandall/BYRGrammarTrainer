@@ -452,6 +452,7 @@ function showMenu()
 function exitLesson()
 {
 	//alert("will call exitLesson:");
+    playSound("doorSlamSound");
     saveProgramState();
     NativeBridge.call("exitLesson"); }
 
@@ -857,6 +858,7 @@ function MetaDetermineFeedback()
     //alert("numWrong:  " + numWrong);
 	if (feedbackType == "CorrectAnswer")
     {
+        playSound("applauseSound");
         //alert("found correct answer:  redoMode:  " + redoMode + ", promptsToRedo.length: " + promptsToRedo.length + ", jitterNext: " + jitterNext);
         //alert("found correct answer: ");
         if (redoMode) {
@@ -896,6 +898,8 @@ function MetaDetermineFeedback()
         //$("#answerFeedbackBox p").html("Your answer is correct!");
         return;
     }
+    // if we got here, the answer is incorrect.
+    playSound("bloopSound");
     
     if ((feedbackType == "wrongWords")|| (feedbackType == "wrongWordsPolite"))
     {
