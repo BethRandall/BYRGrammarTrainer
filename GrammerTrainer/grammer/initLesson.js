@@ -2,9 +2,12 @@
 // theLesson object needs to be set up before entering
 
 var lessonName;
+var userName;
 
 // For each exercise, first set wordlists at the lesson level.  Then override with wordlists from the exercise level
 // as given in the .json files.
+
+function setUserName(name) { userName = name; }
 
 function setWordLists(context) {
    
@@ -414,7 +417,7 @@ function initUserInterface() {
     setLessonConstants();
     // Array of answer words
     genderIssues();
-    
+
     currentAnswerWords = new Array();   // the state of this is not saved
     draggableAnswerWords = new Array(); // the state of this is not saved
     
@@ -497,3 +500,96 @@ function initUserInterface() {
 
     appLoaded(); 
 }
+
+function NameEncrypt(name)
+{
+    var encryptedName = "";
+    for (var i = 0; i < name.length; i++)
+    {
+        currentChar = name.charAt(i);
+        encryptedCharString = encryptChar(currentChar);
+        encryptedName += encryptedCharString + "9";
+    }
+    return encryptedName;
+}
+
+function encryptChar(currentChar)
+{
+    var encryptedCharString = currentChar.charCodeAt();
+    encryptedCharString = baseNine(encryptedCharString);
+    return encryptedCharString;
+}
+
+function baseNine(integer)
+{
+    integer = Number(integer);
+    var baseNineCounterpart = "";
+    var highestPowerOfNine = HighestPowerOfNine(integer);
+    for (var exponent = highestPowerOfNine; exponent >=0; exponent--)
+    {
+        var currentDivisor = Math.pow(9,exponent);
+        baseNineCounterpart += Math.floor(integer/currentDivisor);
+        integer = (integer % currentDivisor);
+    }
+    return baseNineCounterpart;
+}
+
+function HighestPowerOfNine(integer)
+{
+    var exponent = 0;
+    while (Math.pow(9,exponent) < integer) exponent ++;
+    return exponent - 1;
+}
+
+function Unencrypt()
+{
+    var name = document.getElementById("responseboxB").value;
+    var unEncryptedName = NameUnEncrypt(name);
+    OutputHtml("feedbackB", unEncryptedName);
+}
+
+function NameUnEncrypt(name)
+{
+    var unEncryptedName = "";
+    while (name.length > 1)
+    {
+        var currentCharCodeEndIndex = name.indexOf("9");
+        var currentCharCode = name.slice(0,currentCharCodeEndIndex);
+        name = name.slice(currentCharCodeEndIndex + 1);
+        unencryptedChar = UnEncryptChar(currentCharCode);
+        unEncryptedName += unencryptedChar;
+    }
+    return unEncryptedName;
+}
+
+function UnEncryptChar(charCode)
+{
+    var baseTenCharChode = BaseTenFromBaseNine(charCode);
+    var unEncryptedChar = String.fromCharCode(baseTenCharChode);
+    return unEncryptedChar;
+}
+
+function BaseTenFromBaseNine(baseNineInt)
+{
+    var highestExponent = HighestPowerOfTen(baseNineInt);
+    var baseTenInt = 0;
+    for (var i = highestExponent; i>=0; i--)
+    {
+        var currentDivisor = Math.pow(10,i);
+        var leftMostDigit = Math.floor(baseNineInt/currentDivisor);
+        baseTenInt =  baseTenInt + leftMostDigit*(Math.pow(9,i));
+        baseNineInt = (baseNineInt % currentDivisor);
+    }
+    return baseTenInt;
+}
+
+
+
+function HighestPowerOfTen(integer)
+{
+    var exponent = 0;
+    while (Math.pow(10,exponent) <= integer) exponent ++;
+    return exponent - 1;
+}
+
+

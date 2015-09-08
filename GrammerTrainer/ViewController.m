@@ -289,25 +289,28 @@ BOOL genderChecked = NO;
             pendingDataModelLoad = NO;
         } else { */
     
+   
     NSString *baseURLStr = [[[NSBundle mainBundle] bundlePath] stringByAppendingPathComponent:@"grammer/gt_main.html"];
+    
+    //NSURL *url1 = [NSURL URLWithString:[NSString stringWithFormat:@"%@?bob=123&frank=321&tom=213", baseURLStr]];
+    
+    //NSURLRequest *req = [NSURLRequest requestWithURL:url1];
+    
+    //[_theWebView loadRequest:req];
+     
             //NSString *baseURLStr = [docsDir stringByAppendingPathComponent:@"gt_main.html"];
             
             //NSString *baseURLWithQuery = [self addQueryStringToUrlString:baseURLStr withDictionary:[NSDictionary dictionaryWithObject:[lessonFileName stringByDeletingPathExtension] forKey:@"lesson"]];
-            
-            NSString *query = [NSString stringWithFormat:@"lesson=%@", lessonFileName];  
-            
-            NSString *encodedPath = [baseURLStr stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-        
-       // NSString *htmlFile = [[NSBundle mainBundle] pathForResource:selectedBookName_tag
-        //                                                     ofType:@"html"
-        //                                                inDirectory:@"."];
-            NSURL *url;
-            url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@?%@",
+    
+    NSString *query = [NSString stringWithFormat:@"lesson=%@&userName=%@", lessonFileName, userName_];
+ 
+    NSString *encodedPath = [baseURLStr stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    NSURL *url;
+    url = [NSURL URLWithString:[NSString stringWithFormat:@"file://%@?%@",
                                                encodedPath,
                                                query]];     
-            
-            pendingDataModelLoad = YES;
-            NSLog(@"Load request: %@", url);
+    pendingDataModelLoad = YES;
+    NSLog(@"Load request: %@", url);
        // UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"File Not Found" message:theMessage
                     // delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
        // [alert show];
@@ -1215,7 +1218,13 @@ BOOL genderChecked = NO;
 }
 
 - (void)sendEntryToServer:(NSDictionary *)entry {
+  /*
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?bob=123&frank=321&tom=213", base]];
     
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    
+    [webView loadRequest:req];
+  */  
     // see this data at https://www.parse.com/apps/sentenceweaver/collections#class/TestObject
     
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
@@ -1384,8 +1393,8 @@ BOOL genderChecked = NO;
     }  else if ([functionName isEqualToString:@"recordNative"]) {
         NSLog(@"Did call recordNative");
         
-        if ([args count]!=5) {
-            NSLog(@"recordNative exactly 5 arguments!");
+        if ([args count]!=6) {
+            NSLog(@"recordNative needs exactly 6 arguments!");
             return;
         }
         
@@ -1394,6 +1403,7 @@ BOOL genderChecked = NO;
         NSString *points = (NSString*)[args objectAtIndex:2];
         NSString *exNum = (NSString*)[args objectAtIndex:3];
         NSString *lessonNumber = (NSString*)[args objectAtIndex:4];
+        NSString *cryptoid = (NSString*) [args objectAtIndex: 5];
         
         NSLog(@"lessonNumber: %@", lessonNumber);
         
@@ -1425,7 +1435,7 @@ BOOL genderChecked = NO;
         
         // userID, entryDate,responseText,lesson,module, questionNumber,feedbackType
 
-        NSDictionary *theEntry = @{@"userID": userName_,
+        NSDictionary *theEntry = @{@"userID": cryptoid,
                                   @"entryDate": formattedDateString,
                                   @"responseText": responseText,
                                   @"lesson": lessonNumber,

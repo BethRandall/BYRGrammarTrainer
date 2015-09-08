@@ -456,7 +456,8 @@ function exitLesson()
     NativeBridge.call("exitLesson"); }
 
 
-function sendValues(a, b, c, d, e)
+// will send these values: feedbackType, response, points, exNum, lessonNumber, crypto
+function sendValues(a, b, c, d, e, f)
 {
 	// Send some values to the native side
 	// The send arg is an array of arguments
@@ -464,7 +465,7 @@ function sendValues(a, b, c, d, e)
     //    arguments[ i ] ;
     //}
     
-    NativeBridge.call("recordNative", [a,b,c,d,e]);    }
+    NativeBridge.call("recordNative", [a,b,c,d,e, f]);    }
 
 function sendDebug(a, b, c, d)
 {
@@ -837,9 +838,9 @@ function MetaDetermineFeedback()
     //alert("the feedback message is: " + message);
     
     sendDebug(feedbackTuple, message, feedbackType, exNum);
-    
-    //alert("about to send values:  ");
-	sendValues(feedbackType, response, points, exNum, lessonNumber);
+    var crypt = NameEncrypt(userName);
+    //alert("about to send values:  username, crypt: " + userName + ", " + crypt);
+	sendValues(feedbackType, response, points, exNum, lessonNumber, crypt);
     //alert("back from sendValues:  ");
 	
 	//alert("your word button marking info is " + wordButtonMarkingInfo);
