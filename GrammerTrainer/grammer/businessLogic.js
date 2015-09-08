@@ -272,7 +272,7 @@ function addWordToAnswer(targetWord, wordID)
     }
     // allow click on word to add to answer.
     else {
-        callClickSound();
+        playSound("clickSound");
         currentAnswerWords.push(targetWord);
         // Initialize the answer ID tracker
         tempAnswerID = 0;
