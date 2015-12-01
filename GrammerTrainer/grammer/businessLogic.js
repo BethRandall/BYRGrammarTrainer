@@ -594,7 +594,7 @@ function goToNextExercise()
     }
 	else
 	{
-        // Not all the dots are green. Were either have not been through all the quesions, or we got some wrong. Determine which.
+        // Not all the dots are green. We either have not been through all the questions, or we got some wrong. Determine which.
         // determine if we are in redoMode or if we should move to redoMode
 		// If the user is redoing the prompts he/she got wrong
         //alert("about to check for redoMode: ");
@@ -835,13 +835,16 @@ function MetaDetermineFeedback()
 	var wordButtonMarkingInfo = feedbackTuple[2];
 	var message = feedbackTuple[3];
 	var points = feedbackTuple[4];
+    //points = countGreenDots();
+    
     //alert("the type of feedback is: " + feedbackType);
     //alert("the feedback message is: " + message);
     
     sendDebug(feedbackTuple, message, feedbackType, exNum);
+    //alert("about to encrypt:  username: " + userName);
     var crypt = NameEncrypt(userName);
     //alert("about to send values:  username, crypt: " + userName + ", " + crypt);
-	sendValues(feedbackType, response, points, exNum, lessonNumber, crypt);
+	//sendValues(feedbackType, response, points, exNum, lessonNumber, crypt);
     //alert("back from sendValues:  ");
 	
 	//alert("your word button marking info is " + wordButtonMarkingInfo);
@@ -878,6 +881,9 @@ function MetaDetermineFeedback()
                     dotMatrix[index] = DOT_CORRECT;
                     saveProgramState();
                     if (promptsToRedo.length == 0) {
+                        points = countGreenDots();
+                        setPointsContainer();
+                        sendValues(feedbackType, response, points, exNum, lessonNumber, crypt);
                         return;
                     }}
                 else { dotMatrix[exNum] = DOT_INCOMPLETE; }
@@ -896,11 +902,17 @@ function MetaDetermineFeedback()
             saveProgramState(); }
         // Display the correct answer feedback
         //$("#answerFeedbackBox p").html("Your answer is correct!");
+        points = countGreenDots();
+        setPointsContainer();
+        //setPoints(points);
+        sendValues(feedbackType, response, points, exNum, lessonNumber, crypt);
         return;
     }
     // if we got here, the answer is incorrect.
     playSound("bloopSound");
-    
+    points = countGreenDots();
+    //setPoints(points);
+    sendValues(feedbackType, response, points, exNum, lessonNumber, crypt);
     if ((feedbackType == "wrongWords")|| (feedbackType == "wrongWordsPolite"))
     {
         //alert("found wrong words feedback type.");

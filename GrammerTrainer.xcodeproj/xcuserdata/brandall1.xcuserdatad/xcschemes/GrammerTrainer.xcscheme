@@ -83,7 +83,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "SentenceWeaver1.36"
-      customArchiveName = "SentenceWeaver1.36"
+      customArchiveName = "SentenceWeaver1.94"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

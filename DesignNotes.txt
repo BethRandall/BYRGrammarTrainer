@@ -1,18 +1,23 @@
-http://leo.goodwin.drexel.edu/grammerapp/grammerAppReport.php
 
-1.9
-    - Added synching from http://stream.goodwin.drexel.edu/grammerapp/jsoneditoronline/app/web/
-    - The following web site can be used to modify the lesson files:
-    http://stream.goodwin.drexel.edu/grammerapp/jsoneditoronline/app/web/test.html
-    - Login/Auth now uses grammer.trainer@gmail.com with password: Grammer@Trainer
+As of Sept 2015, none of this is true: {
+
+    http://leo.goodwin.drexel.edu/grammerapp/grammerAppReport.php
+
+
+
+    1.9
+        - Added synching from http://stream.goodwin.drexel.edu/grammerapp/jsoneditoronline/app/web/
+        - The following web site can be used to modify the lesson files:
+        http://stream.goodwin.drexel.edu/grammerapp/jsoneditoronline/app/web/test.html
+        - Login/Auth now uses grammer.trainer@gmail.com with password: Grammer@Trainer
     
-    - http://tflig.ht/104fPUY
+        - http://tflig.ht/104fPUY
 
-1.8
-- Added synching from https://dl.dropbox.com/u/26582460/grammerApp/lessonFiles.json
- The lessonFiles.json contains a list of files hosted in the same directory, which will be downloaded by the app everytime it starts up.
+    1.8
+    - Added synching from https://dl.dropbox.com/u/26582460/grammerApp/lessonFiles.json
+    The lessonFiles.json contains a list of files hosted in the same directory, which will be downloaded by the app everytime it starts up.
  
-
+}
 
 TODO: 
 

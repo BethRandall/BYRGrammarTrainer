@@ -13,7 +13,7 @@
 #import "SectionInfo.h"
 #import "QuoteCell.h"
 #import "ResultsTableViewCell.h"
-#import "SpreadsheetController.h"
+//#import "SpreadsheetController.h"
 #import "AppDelegate.h"
 #import "NSString+HTML.h"
 #import <MediaPlayer/MediaPlayer.h>
@@ -39,6 +39,7 @@
 @property (strong, nonatomic) IBOutlet UIView *iconView;
 @property (strong, nonatomic) IBOutlet UILabel *levelLabel;
 @property (strong, nonatomic) IBOutlet UILabel *signLabel;
+//@property (strong, nonatomic) IBOutlet UILabel *pointsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *versionLabel;
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) IBOutlet UITextView *loginTextView;
@@ -97,8 +98,15 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.91";
+static NSString *versionNumber = @"1.98";
 BOOL genderChecked = NO;
+
+// smilesArray is a list of completed lessons (marked with a smiley face).
+// The list is used to prevent kids from "perseverating" by repeatedly doing a completed lesson.
+
+static NSMutableArray *smilesArray = nil;
+static int total_points = 0;
+static int pointsSoFar = 0;
 
 - (FliteController *)fliteController { if (fliteController == nil) {
     fliteController = [[FliteController alloc] init]; }
@@ -160,6 +168,8 @@ BOOL genderChecked = NO;
 }
 
 - (void)exitLesson {
+    total_points += pointsSoFar;
+    NSLog(@"in exitLesson: total_points: %d", total_points);
     
     CGRect newFrame;
     CGRect newFrame2;
@@ -246,6 +256,7 @@ BOOL genderChecked = NO;
 }
 
 - (void)loadLesson:(Lesson *)theLesson {
+    pointsSoFar = 0;
     
     NSString *lessonFileName = theLesson.loadFile;
     
@@ -302,7 +313,7 @@ BOOL genderChecked = NO;
             
             //NSString *baseURLWithQuery = [self addQueryStringToUrlString:baseURLStr withDictionary:[NSDictionary dictionaryWithObject:[lessonFileName stringByDeletingPathExtension] forKey:@"lesson"]];
     
-    NSString *query = [NSString stringWithFormat:@"lesson=%@&userName=%@", lessonFileName, userName_];
+    NSString *query = [NSString stringWithFormat:@"lesson=%@&userName=%@&totalpoints=%d", lessonFileName, userName_, total_points];
  
     NSString *encodedPath = [baseURLStr stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
     NSURL *url;
@@ -473,6 +484,7 @@ BOOL genderChecked = NO;
 - (void)blindPassword:(NSString *)user {
     
     user = [user stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+    user = [user stringByReplacingOccurrencesOfString:@" " withString: @"_"];
     self.userName = user;
     
     NSLog(@"BYR UserName: +%@+", userName_);
@@ -497,7 +509,8 @@ BOOL genderChecked = NO;
 
 - (void)checkConnection {
     UIAlertView *alertView;
-    NSURL *scriptUrl = [NSURL URLWithString:@"http://oilf.blogspot.html"];
+    
+    NSURL *scriptUrl = [NSURL URLWithString:@"http://www.google.com"];
     
     NSData *data = [NSData dataWithContentsOfURL:scriptUrl];
     
@@ -515,6 +528,7 @@ BOOL genderChecked = NO;
         NSLog(@"Device is connected to the internet"); }
     
     else {
+       
         alertView = [[UIAlertView alloc]
                                   initWithTitle:@"Error: offline: "
                                   message: @"Please connect to the internet so your answer will be recorded."
@@ -613,6 +627,8 @@ BOOL genderChecked = NO;
 }
 
 - (void)layoutIcons: (NSArray *)levelsArray {
+    
+    smilesArray = [NSMutableArray array];
 
 	// reset iconScrollView
 	for (UIView *view in [iconScrollView_ subviews])
@@ -1005,6 +1021,18 @@ BOOL genderChecked = NO;
         cell.redCount.text = wrongCnt;
         
         if (currentStep == [dotMatrix count]) {
+            NSString *myLesson = theLesson.lessonName;
+            // check to see whether lesson is already listed in smilesArray.
+            if (![self lessonAlreadyCompleted:myLesson]) {
+                [smilesArray addObject:myLesson]; }
+            /*
+            int i; int count;
+            for (i = 0, count = [smilesArray count]; i < count; i = i + 1)
+            {
+                NSString *element = [smilesArray objectAtIndex:i];
+                NSLog(@"The element at index %d in smilesArray is: %@", i, element); 
+            }
+             */
             imageName = @"HappyFace.png";
             cell.redCount.text = @"";
             cell.greenCount.text = @"";
@@ -1083,7 +1111,20 @@ BOOL genderChecked = NO;
 {
     Module *theModule = (Module *)[modules_ objectAtIndex:indexPath.section]; 
     Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:indexPath.row];
-
+    NSString *myLesson = theLesson.lessonName;
+ 
+    if ([self lessonAlreadyCompleted:myLesson]) {
+            UIAlertView *alertView = [[UIAlertView alloc]
+                        initWithTitle:@"Let's go to the next uncompleted lesson."
+                        message: @""
+                        delegate:self
+                        cancelButtonTitle:nil
+                        otherButtonTitles:@"OK", nil];
+            [alertView show];
+            self.myLessonIndex = indexPath.row;
+            [self goToNextLesson];
+            return; }
+    
     // Save the currently selected module and lesson
     self.currentModule = theModule;
     self.currentLesson = theLesson;
@@ -1098,7 +1139,19 @@ BOOL genderChecked = NO;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)lessonAlreadyCompleted:(NSString *)myLesson {
+    int i; int count;
+    
+    for (i = 0, count = [smilesArray count]; i < count; i = i + 1)
+    {
+        NSString *element = [smilesArray objectAtIndex:i];
+        if ([element isEqualToString:myLesson]) {
+            return TRUE;
+        } }
+    return FALSE;
+}
+
+
 - (void)goToNextLesson
 {
     
@@ -1116,8 +1169,21 @@ BOOL genderChecked = NO;
     }
     
     Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
-   
-    // Save the currently selected module and lesson
+    NSString *myLesson = theLesson.lessonName;
+    while ([self lessonAlreadyCompleted:myLesson]) {
+        self.myLessonIndex = self.myLessonIndex + 1;
+        if (self.myLessonIndex >= theModule.lessons.count) {
+            NSLog(@"found myLessonIndex >= theModule.lessons.count:");
+            //self.myLessonIndex = self.myLessonIndex - 1;
+            Lesson *theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
+            [self loadLesson:theLesson];
+            [self exitLesson];
+            return;
+        }
+        theLesson = (Lesson *)[theModule.lessons objectAtIndex:self.myLessonIndex];
+        myLesson = theLesson.lessonName;
+    }
+        // Save the currently selected module and lesson
     self.currentModule = theModule;
     self.currentLesson = theLesson;
     
@@ -1212,11 +1278,6 @@ BOOL genderChecked = NO;
     NSLog(@"about to exit returnResultAfterDelay: ");
 }
 
-
-- (void)blindSendEntryToServer:(NSDictionary *)entry {
-    
-}
-
 - (void)sendEntryToServer:(NSDictionary *)entry {
   /*
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?bob=123&frank=321&tom=213", base]];
@@ -1238,7 +1299,7 @@ BOOL genderChecked = NO;
     [testObject saveInBackground];
     
     // userID, entryDate,responseText,lesson, module, questionNumber,feedbackType
-    
+    /*
     NSMutableString *theQuery = [[NSMutableString alloc] init];
     [theQuery appendFormat:@"?userID=%@", [entry objectForKey:@"userID"]];
     [theQuery appendFormat:@"&entryDate=%@", [entry objectForKey:@"entryDate"]];
@@ -1259,6 +1320,7 @@ BOOL genderChecked = NO;
 	NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:encodedURL]
 											  cachePolicy:NSURLRequestUseProtocolCachePolicy
 										  timeoutInterval:60.0];
+*/
 /*    
 	// create the connection with the request
 	// and start loading the data
@@ -1274,7 +1336,7 @@ BOOL genderChecked = NO;
 	}
 	// end new code
 */
-    
+    /*
     [NSURLConnection sendAsynchronousRequest:theRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *theData, NSError *error) {
         
         // If there was an error getting the data
@@ -1306,6 +1368,7 @@ BOOL genderChecked = NO;
         }
         NSLog(@"All right! No Error");
     }];
+     */
 }
 
 -(void)updateStateWithDict:(NSDictionary *)state {
@@ -1405,7 +1468,9 @@ BOOL genderChecked = NO;
         NSString *lessonNumber = (NSString*)[args objectAtIndex:4];
         NSString *cryptoid = (NSString*) [args objectAtIndex: 5];
         
-        NSLog(@"lessonNumber: %@", lessonNumber);
+        //total_points += [points intValue];
+        pointsSoFar = [points intValue];
+        
         
         // if feedback is equal to "correct"
         // put up an alert or fireworks or something,
@@ -1518,7 +1583,7 @@ BOOL genderChecked = NO;
             NSLog(@"back from returnResultAfterDelay 1: ");
 
         } else {
-            NSString *javascriptString = @"resetLesson(); initUserInterface();";
+            NSString *javascriptString = @"initUserInterface();";
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 2: ");
         }
@@ -1590,7 +1655,7 @@ BOOL genderChecked = NO;
 
 
 #pragma mark - Spreadsheet Delegate
-
+/*
 
 - (void)spreadsheetController:(SpreadsheetController *)controller didFetchSpreadSheets:(NSArray *)entries {
     
@@ -1650,7 +1715,7 @@ BOOL genderChecked = NO;
         [loginInfo_ writeToFile:loginPlist atomically:YES];      
     }
 }
-
+*/
 
 - (NSString *)docDir {
     

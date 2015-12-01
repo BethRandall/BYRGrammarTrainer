@@ -399,6 +399,15 @@ p.speechRight:after
 	left: 20px;
 }
 
+#pointsContainer
+{
+    position: fixed;
+    font-size: 18px;
+    color: #ffffff;
+    top: 200px;
+    left: 920px;
+}
+
 #progressContainer #dotContainer
 {
 	position: relative;
@@ -668,21 +677,17 @@ p.speechRight:after
 	top:80px;
 }
 
-
-
-/* Menu Button */
-
+/* Menu Button labeled "Exit"*/
 #menuButton{
 	float:right;
 	width:55px;
 	height:25px;
 	position:fixed;
-	left:920px;
-	top:260px;
+	left:940px;
+	top:30px;
 }
 
 /* Exit Button located on left of screen*/
-
 #leftExitButton{
 	float:right;
 	width:55px;
@@ -757,13 +762,14 @@ For when exercise is completed, next button is active
 	-webkit-box-shadow: 0 0 0 transparent;
 }
 
-
+/* labeled "Exit" */
 #menuButton a
 {
 	display:block;
-	background:#fdd79f url(img/watercolorTextureTransparent.png) repeat;
+	/*background:#fdd79f url(img/watercolorTextureTransparent.png) repeat;*/
+    background:#bf5e30 url(img/watercolorTextureTransparent.png) repeat; /* brick red */
 	border-radius: 10px;
-	color: #522611;
+	color: #522611; /* dark brown */ 
 	position: relative;
 	padding:12px 10px 8px;
 	height: 25px;

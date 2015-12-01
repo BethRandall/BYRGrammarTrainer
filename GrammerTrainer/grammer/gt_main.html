@@ -86,6 +86,15 @@
         </div>
     </section>
     
+    <!-- points container (number of correctly answered exercises) -->
+    <section id="pointsContainer">
+        <!--<h3>Points:</h3>-->
+        <!--<p>Points:</p>-->
+        <div id="pointsContainer">
+        <div id="presentedPoints">
+        </div>
+    </section>
+    
     <!-- Question container -->
     <section id="questionContainer">
     	<!--<p><script type="text/javascript">document.write(theCurrentExercise.prompt);</script></p>-->
@@ -165,7 +174,6 @@
     
     <script>
         
-        
         var genderChecked = false;
         
         // This gets a designated query parameter from the query string
@@ -189,7 +197,7 @@
                 //genderChecked = true;
             }
         }
-    
+ /*
         function myJsonTextToObject(myJSONtext) {
             //alert("myJSONtext: *" + myJSONtext + "*");
             
@@ -198,7 +206,9 @@
             } else {
                 alert("error in myJsonTextToObject: myJSONtext: *" + myJSONtext + "*"); }
         }
+  */
  
+ /*
         function myLoadLocalJson(filename) {
             //alert("in myLoadLocalJson: " + filename);
             var xobj = new XMLHttpRequest();
@@ -213,7 +223,7 @@
             }
             xobj.send(null);
         }
-    
+    */
         function loadJSON(callback) {
             var xobj = new XMLHttpRequest();
             //xobj.overrideMimeType("application/json");
@@ -232,6 +242,7 @@
 
                
        lessonName = queryString("lesson");
+       myPrevPoints = Math.floor(queryString("totalpoints"));
        //alert("inside gt_main.html: lessonName is:  " + lessonName);
         //myLoadLocalJson(lessonName);
         // theLesson = eval('(' + response + ')');

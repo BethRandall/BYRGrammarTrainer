@@ -3,6 +3,7 @@
 
 var lessonName;
 var userName;
+var myPrevPoints; // points accumulated over previous lessons.
 
 // For each exercise, first set wordlists at the lesson level.  Then override with wordlists from the exercise level
 // as given in the .json files.
@@ -62,6 +63,15 @@ function setWordTabs() {
         $("#prepositionTab").hide(); }
 }
 
+
+function setPointsContainer() {
+    var showPoints = myPrevPoints + countGreenDots();
+    //alert("myTotalPoints:  " + myTotalPoints + ", countGreenDots():  " + countGreenDots() + ", showPoints:  " + showPoints);
+    $("#pointsContainer").show();
+    $("#pointsContainer #presentedPoints").html("");
+    $("#presentedPoints").append("<p>" + "Points:  " + showPoints + "</p>");
+}
+
 function setMultipleChoiceButton(context) {
     // context is currentExercise.
     var choiceArray = context.multipleChoice;
@@ -82,11 +92,12 @@ function setMultipleChoiceButton(context) {
  
     for(var answerChoice = 0; answerChoice < choiceArray.length; answerChoice++)
     {
-        //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>"); 
+        //document.write("<p>" + firstExercise.multipleChoice[answerChoice] + "</p>");
         var randdex =  Math.floor(Math.random()*usedDex.length);
         var newranddex = usedDex[randdex];
         $("#presentedChoices").append("<p>" + choiceArray[newranddex] + "</p>");
         usedDex.splice(randdex, 1); }
+    
     return;
 }
 
@@ -197,6 +208,7 @@ function setCurrentExercise(currEx) {
     $("#answerContainer #answerFeedbackBox p").html("  ");
     // Update multiple choices
     setMultipleChoiceButton(currEx);
+    //setPointsContainer();
     
     // Update dot feedback
     //updateDotFeedback();
@@ -260,17 +272,15 @@ function initDots() {
     for( var d = 0; d < dotMatrix.length; d++ )
     {
         if( (d % 6 == 0) && (d != 0) )
-        {
-            $("#dotContainer").append("<br />");
-        }
+            { $("#dotContainer").append("<br />"); }
         if(dotMatrix[d] == DOT_UNTRIED)
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
+            { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/blueDot.png\" />"); }
         else if(dotMatrix[d] == DOT_INCOMPLETE)
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
+            { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/yellowDot.png\" />"); }
         else if(dotMatrix[d] == DOT_WRONG)
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
+            { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/redDot.png\" />"); }
         else
-        { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
+            { $("#dotContainer").append("<img class=\"dotImage\" src=\"img/greenDot.png\" />"); }
     }
 }
 
@@ -279,7 +289,7 @@ function setIndexArray() {
     indexArray = new Array();
     // Create an array of numbers in numerical order
     for( var a = 0; a < theLesson.exerciseArray.length; a++ )
-    { indexArray.push(a); }
+        { indexArray.push(a); }
 
     //BYR randomize here.
     //alert("about to randomize: ");
@@ -411,21 +421,18 @@ function returnToLesson() {
 
 
 function initUserInterface() {
-    // NOTE: Must call resetLesson() or something else to init vars before calling this
-    //alert("initUserInterface: about to call setLessonConstants:");
+    resetLesson();
     
     setLessonConstants();
-    // Array of answer words
+    
     genderIssues();
-
+    
+    // Array of answer words
     currentAnswerWords = new Array();   // the state of this is not saved
     draggableAnswerWords = new Array(); // the state of this is not saved
     
-    // Call Native to find out gender of user
-    // checkGender() inits the following variables; him_her,he_she,Him_Her,He_She
-    //checkGender();
-    
     //currentExercise = theLesson.exerciseArray[indexArray[step]];
+   
     if ((indexArray[0] >= theLesson.exerciseArray.length) || (indexArray[0] < 0)) {
         alert("FRANKENSTEIN cannot load exerciseNumber:  " + indexArray[0] + ", theLesson.length:  " + theLesson.exerciseArray.length);
     }
@@ -433,7 +440,6 @@ function initUserInterface() {
     //alert("about to removeGreenDotExercises: ");
     returnToLesson();
     step = 0;
-    //while((dotMatrix[step] != DOT_INCOMPLETE) && (dotMatrix[step] != DOT_UNTRIED)) {
     while((dotMatrix[indexArray[step]] != DOT_INCOMPLETE) && (dotMatrix[indexArray[step]] != DOT_UNTRIED)) {
         step++;
         if  (step >= dotMatrix.length) {break;}}
@@ -497,6 +503,7 @@ function initUserInterface() {
     setWordTabs();
     setOralPrompt(currentExercise);
     //setFeedBackStuff(currentExercise);
+    setPointsContainer();
 
     appLoaded(); 
 }
