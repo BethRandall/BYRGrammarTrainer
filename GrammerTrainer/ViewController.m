@@ -98,7 +98,7 @@
 @synthesize slt;
 
 
-static NSString *versionNumber = @"1.98";
+static NSString *versionNumber = @"1.100";
 BOOL genderChecked = NO;
 
 // smilesArray is a list of completed lessons (marked with a smiley face).
