@@ -168,7 +168,7 @@ static int pointsSoFar = 0;
 }
 
 - (void)exitLesson {
-    total_points += pointsSoFar;
+    //total_points += pointsSoFar;
     NSLog(@"in exitLesson: total_points: %d", total_points);
     
     CGRect newFrame;
@@ -1121,7 +1121,7 @@ static int pointsSoFar = 0;
                         cancelButtonTitle:nil
                         otherButtonTitles:@"OK", nil];
             [alertView show];
-            self.myLessonIndex = indexPath.row;
+        self.myLessonIndex = indexPath.row;
             [self goToNextLesson];
             return; }
     
@@ -1384,6 +1384,7 @@ static int pointsSoFar = 0;
 {
          
    if ([functionName isEqualToString:@"goToNextLesson"]) {
+        total_points += pointsSoFar;
         [self goToNextLesson];
     }else if ([functionName isEqualToString:@"goToPreviousLesson"]) {
         [self goToPreviousLesson];
@@ -1583,7 +1584,7 @@ static int pointsSoFar = 0;
             NSLog(@"back from returnResultAfterDelay 1: ");
 
         } else {
-            NSString *javascriptString = @"initUserInterface();";
+            NSString *javascriptString = @"resetLesson(); initUserInterface();";
             [self performSelector:@selector(returnResultAfterDelay:) withObject:javascriptString afterDelay:1.0];
             NSLog(@"back from returnResultAfterDelay 2: ");
         }

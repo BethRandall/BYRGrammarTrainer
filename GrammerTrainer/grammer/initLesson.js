@@ -421,7 +421,7 @@ function returnToLesson() {
 
 
 function initUserInterface() {
-    resetLesson();
+    //resetLesson();
     
     setLessonConstants();
     
@@ -505,7 +505,7 @@ function initUserInterface() {
     //setFeedBackStuff(currentExercise);
     setPointsContainer();
 
-    appLoaded(); 
+    appLoaded();
 }
 
 function NameEncrypt(name)
